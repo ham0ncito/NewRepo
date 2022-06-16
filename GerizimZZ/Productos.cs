@@ -29,11 +29,15 @@ namespace GerizimZZ
             + "; Integrated Security=" + seguridad
             ;
       
-           SqlConnection conection = new SqlConnection(conector);
-           conection.Open();
+        Public SqlConnection conection = new SqlConnection();
+          
 
         // metodos
 
-
+        public void cuadrados (FlowLayoutPanel Panel)
+        {
+            conection.open();
+            string Consultas = "select * from dbo.productos"
+        }
     }
 }
