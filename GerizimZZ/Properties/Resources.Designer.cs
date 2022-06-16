@@ -63,6 +63,16 @@ namespace GerizimZZ.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _012_Tempting_Azure {
+            get {
+                object obj = ResourceManager.GetObject("012 Tempting Azure", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _026_Saint_Petersburg {
             get {
                 object obj = ResourceManager.GetObject("026 Saint Petersburg", resourceCulture);
@@ -106,6 +116,16 @@ namespace GerizimZZ.Properties {
         internal static System.Drawing.Bitmap menu__2_ {
             get {
                 object obj = ResourceManager.GetObject("menu (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plus {
+            get {
+                object obj = ResourceManager.GetObject("plus", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
