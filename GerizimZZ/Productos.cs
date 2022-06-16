@@ -17,13 +17,19 @@ namespace GerizimZZ
         private string descripcion;
         private int estado;
 
-        string fuente = "DESKTOP-2H6N4DP";
-        string bd = "Gerizim";
-        string seguridad = "true";
-        string id = "";
-        string contrasena = "";
+        public string Id_producto { get => Id_producto; set => Id_producto = value; }
+        public double Precio_producto { get => Precio_producto; set => Precio_producto = value; }
+        public string Nombre { get => Nombre; set => Nombre = value; }
+        public string CodigoBarra { get => CodigoBarra; set => CodigoBarra = value; }
+        public string Descripcion { get => Descripcion; set => Descripcion = value; }
+        public int Estado { get => Estado; set => Estado = value; }
 
+        string conector = "Data Source =DESKTOP-2H6N4DP; Initial Catalog =Gerizim " +
+            "; Integrated Security=True"; 
+    
+       SqlConnection conection = new SqlConnection();
 
+<<<<<<< HEAD
         string conector = "Data Source =" + fuente
             + "; Initial Catalog =" + bd
             + "; Integrated Security=" + seguridad
@@ -39,6 +45,9 @@ namespace GerizimZZ
         conection = new SqlConnection();
           
 
+=======
+        
+>>>>>>> c79c98f0a6e78659c99a0e874ed559543444b14c
         // metodos
 
         public void cuadrados (FlowLayoutPanel Panel)
