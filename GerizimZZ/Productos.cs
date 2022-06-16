@@ -24,18 +24,9 @@ namespace GerizimZZ
         public string Descripcion { get => Descripcion; set => Descripcion = value; }
         public int Estado { get => Estado; set => Estado = value; }
 
-        string fuente = "DESKTOP-2H6N4DP";
-        string bd = "Gerizim";
-        string seguridad = "true";
-        string id = "";
-        string contrasena = "";
-
-
-        string conector = "Data Source =" + fuente
-            + "; Initial Catalog =" + bd
-            + "; Integrated Security=" + seguridad
-            ;
-      
+        string conector = "Data Source =DESKTOP-2H6N4DP; Initial Catalog =Gerizim " +
+            "; Integrated Security=True"; 
+    
        SqlConnection conection = new SqlConnection();
 
         
