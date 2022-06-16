@@ -45,12 +45,12 @@ namespace GerizimZZ
             
             while (reader.Read())
             {
-                Id_producto1 = Convert.ToInt32(reader[0]);
-                Precio_producto1 = reader[2].toDouble();
-                Nombre1 = reader[3].ToString();
-                CodigoBarra1 = reader[4].ToString();
-                Descripcion1 = reader[8].ToString();
-                Estado1 = Convert.ToInt32(reader[9]);
+                id_producto = Convert.ToInt32(reader[0]);
+                precio_producto = reader[2].toDouble();
+                nombre = reader[3].ToString();
+                codigoBarra = reader[4].ToString();
+                descripcion = reader[8].ToString();
+                estado = Convert.ToInt32(reader[9]);
             }
         }
     }
