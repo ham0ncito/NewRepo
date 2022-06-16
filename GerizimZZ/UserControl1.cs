@@ -12,6 +12,8 @@ namespace GerizimZZ
 {
     public partial class Producto : UserControl
     {
+        private int id = 0;
+        private string descripcion = "Esencia que te encantara";
         public Producto()
         {
             InitializeComponent();
@@ -26,5 +28,32 @@ namespace GerizimZZ
         {
 
         }
+
+        private void Producto_Load(object sender, EventArgs e)
+        {
+
+        }
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public Image IngProducto
+        {
+            get 
+            { return guna2PictureBox1.Image; }
+            set
+            {
+                guna2PictureBox1.Image value;
+            }
+        }
+        public string DescripcionProducto
+        {
+            get
+            { return descripcion; }
+            set
+            { descripcion = value; }
+        }
+
     }
 }

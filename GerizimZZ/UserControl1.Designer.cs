@@ -129,6 +129,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Producto";
             this.Size = new System.Drawing.Size(195, 241);
+            this.Load += new System.EventHandler(this.Producto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

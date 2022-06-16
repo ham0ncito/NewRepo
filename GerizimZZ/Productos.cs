@@ -16,6 +16,7 @@ namespace GerizimZZ
         private string codigoBarra;
         private string descripcion;
         private int estado;
+        
 
         public string Id_producto { get => Id_producto; set => Id_producto = value; }
         public double Precio_producto { get => Precio_producto; set => Precio_producto = value; }
