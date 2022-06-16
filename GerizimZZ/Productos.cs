@@ -38,7 +38,22 @@ namespace GerizimZZ
         {
             conection.open();
             string consultas = "select * from dbo.Producto";
+            SqlCommand bdconsulta = new SqlCommand(consultas, conection)
+            bdconsulta.CommandType CommandType.Text;
 
+            //llenado del panel
+            SqlDataReader reader bdconsulta.ExecuteReader();
+           
+            
+            while (reader.Read())
+            {
+                id_producto = Convert.ToInt32(reader[0]);
+                precio_producto = reader[2].toDouble();
+                nombre = reader[3].ToString();
+                codigoBarra = reader[4].ToString();
+                descripcion = reader[8].ToString();
+                estado = Convert.ToInt32(reader[9]);
+            }
         }
     }
 }
