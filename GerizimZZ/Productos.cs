@@ -10,12 +10,19 @@ namespace GerizimZZ
     {
         /* atributos esenciales de los productos */
 
-        public string id_producto;
-        public double precio_producto;
-        public string nombre;
-        public string codigoBarra;
-        public string descripcion;
-        public int estado;
+        private string id_producto;
+        private double precio_producto;
+        private string nombre;
+        private string codigoBarra;
+        private string descripcion;
+        private int estado;
+
+        public string Id_producto { get => Id_producto; set => Id_producto = value; }
+        public double Precio_producto { get => Precio_producto; set => Precio_producto = value; }
+        public string Nombre { get => Nombre; set => Nombre = value; }
+        public string CodigoBarra { get => CodigoBarra; set => CodigoBarra = value; }
+        public string Descripcion { get => Descripcion; set => Descripcion = value; }
+        public int Estado { get => Estado; set => Estado = value; }
 
         string fuente = "DESKTOP-2H6N4DP";
         string bd = "Gerizim";
@@ -29,9 +36,9 @@ namespace GerizimZZ
             + "; Integrated Security=" + seguridad
             ;
       
-        Public SqlConnection conection = new SqlConnection();
-          
+       SqlConnection conection = new SqlConnection();
 
+        
         // metodos
 
         public void cuadrados (FlowLayoutPanel Panel)
@@ -47,12 +54,12 @@ namespace GerizimZZ
             
             while (reader.Read())
             {
-                id_producto = Convert.ToInt32(reader[0]);
-                precio_producto = reader[2].toDouble();
-                nombre = reader[3].ToString();
-                codigoBarra = reader[4].ToString();
-                descripcion = reader[8].ToString();
-                estado = Convert.ToInt32(reader[9]);
+                Id_producto1 = Convert.ToInt32(reader[0]);
+                Precio_producto1 = reader[2].toDouble();
+                Nombre1 = reader[3].ToString();
+                CodigoBarra1 = reader[4].ToString();
+                Descripcion1 = reader[8].ToString();
+                Estado1 = Convert.ToInt32(reader[9]);
             }
         }
     }
