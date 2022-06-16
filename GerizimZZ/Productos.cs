@@ -37,7 +37,8 @@ namespace GerizimZZ
         public void cuadrados (FlowLayoutPanel Panel)
         {
             conection.open();
-            string Consultas = "select * from dbo.productos"
+            string consultas = "select * from dbo.Producto";
+
         }
     }
 }
