@@ -33,13 +33,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.producto1 = new GerizimZZ.Producto();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.component11 = new GerizimZZ.Component1(this.components);
-            this.producto1 = new GerizimZZ.Producto();
             this.component12 = new GerizimZZ.Component1(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -81,10 +81,19 @@
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel1.Controls.Add(this.producto1);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(72, 162);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(71, 162);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(858, 353);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(859, 362);
             this.flowLayoutPanel1.TabIndex = 6;
+            // 
+            // producto1
+            // 
+            this.producto1.Location = new System.Drawing.Point(3, 4);
+            this.producto1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.producto1.Name = "producto1";
+            this.producto1.Size = new System.Drawing.Size(150, 149);
+            this.producto1.TabIndex = 0;
+            this.producto1.Load += new System.EventHandler(this.producto1_Load);
             // 
             // button2
             // 
@@ -133,15 +142,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // producto1
-            // 
-            this.producto1.Location = new System.Drawing.Point(-2, 0);
-            this.producto1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.producto1.Name = "producto1";
-            this.producto1.Size = new System.Drawing.Size(150, 149);
-            this.producto1.TabIndex = 0;
-            this.producto1.Load += new System.EventHandler(this.producto1_Load);
             // 
             // Inicio
             // 
