@@ -25,9 +25,9 @@ namespace GerizimZZ
         public int Estado { get => Estado; set => Estado = value; }
 
         string conector = "Data Source =DESKTOP-2H6N4DP; Initial Catalog =Gerizim " +
-            "; Integrated Security=True"; 
-    
-       SqlConnection conection = new SqlConnection();
+            "; Integrated Security=True";
+
+        SqlConnection conection = new SqlConnection();
 
 <<<<<<< HEAD
         string conector = "Data Source =" + fuente
