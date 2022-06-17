@@ -38,15 +38,19 @@ namespace GerizimZZ
             get { return id; }
             set { id = value; }
         }
+        /*
         public Image IngProducto
         {
+            /*
             get 
             { return guna2PictureBox1.Image; }
             set
             {
                 guna2PictureBox1.Image value;
             }
+            /
         }
+        */
         public string DescripcionProducto
         {
             get
