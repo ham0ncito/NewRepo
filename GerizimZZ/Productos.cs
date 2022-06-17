@@ -30,7 +30,6 @@ namespace GerizimZZ
 
         SqlConnection conection = new SqlConnection();
 
-<<<<<<< HEAD
         string conector = "Data Source =" + fuente
             + "; Initial Catalog =" + bd
             + "; Integrated Security=" + seguridad
@@ -46,9 +45,7 @@ namespace GerizimZZ
         conection = new SqlConnection();
           
 
-=======
-        
->>>>>>> c79c98f0a6e78659c99a0e874ed559543444b14c
+
         // metodos
 
         public void cuadrados (FlowLayoutPanel Panel)
