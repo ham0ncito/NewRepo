@@ -25,10 +25,10 @@ namespace GerizimZZ
         public string Descripcion { get => Descripcion; set => Descripcion = value; }
         public int Estado { get => Estado; set => Estado = value; }
 
-        string conector = "Data Source =DESKTOP-2H6N4DP; Initial Catalog =Gerizim " +
+        string conector = "Data Source =(localdb)\Gerizim ; Initial Catalog =Gerizim " +
             "; Integrated Security=True";
 
-        SqlConnection conection = new SqlConnection();
+        SqlConnection conection = new SqlConnection(conector);
 
         string conector = "Data Source =" + fuente
             + "; Initial Catalog =" + bd
