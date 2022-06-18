@@ -36,7 +36,7 @@
             this.bt = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.Contenedor = new System.Windows.Forms.FlowLayoutPanel();
             this.producto1 = new GerizimZZ.Producto();
             this.producto2 = new GerizimZZ.Producto();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.Contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel_titlebar.SuspendLayout();
             this.panelsidemenu.SuspendLayout();
@@ -87,7 +87,7 @@
             this.panel1.Controls.Add(this.bt);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.flowLayoutPanel1);
+            this.panel1.Controls.Add(this.Contenedor);
             this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
@@ -150,50 +150,54 @@
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // flowLayoutPanel1
+            // Contenedor
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.Contenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.BackgroundImage = global::GerizimZZ.Properties.Resources._109_River_City;
-            this.flowLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.flowLayoutPanel1.Controls.Add(this.producto1);
-            this.flowLayoutPanel1.Controls.Add(this.producto2);
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(88, 187);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(842, 322);
-            this.flowLayoutPanel1.TabIndex = 6;
+            this.Contenedor.BackgroundImage = global::GerizimZZ.Properties.Resources._109_River_City;
+            this.Contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Contenedor.Controls.Add(this.producto1);
+            this.Contenedor.Controls.Add(this.producto2);
+            this.Contenedor.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
+            this.Contenedor.Location = new System.Drawing.Point(88, 187);
+            this.Contenedor.Name = "Contenedor";
+            this.Contenedor.Size = new System.Drawing.Size(842, 322);
+            this.Contenedor.TabIndex = 6;
             // 
             // producto1
             // 
+            this.producto1.AutoSize = true;
             this.producto1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.producto1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("producto1.BackgroundImage")));
+            this.producto1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.producto1.DescripcionProducto = "Esencia que te encantara";
             this.producto1.Estado = null;
             this.producto1.Id = 0;
-            this.producto1.Location = new System.Drawing.Point(4, 77);
+            this.producto1.Location = new System.Drawing.Point(4, -422);
             this.producto1.Margin = new System.Windows.Forms.Padding(4);
             this.producto1.Name = "producto1";
             this.producto1.NombreProducto = "Fragancia Aqva";
             this.producto1.PrecioProducto = "100.00";
-            this.producto1.Size = new System.Drawing.Size(195, 241);
+            this.producto1.Size = new System.Drawing.Size(253, 740);
             this.producto1.Stock = "Stock : 10";
             this.producto1.TabIndex = 0;
             // 
             // producto2
             // 
+            this.producto2.AutoSize = true;
             this.producto2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.producto2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("producto2.BackgroundImage")));
+            this.producto2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.producto2.DescripcionProducto = "Esencia que te encantara";
             this.producto2.Estado = null;
             this.producto2.Id = 0;
-            this.producto2.Location = new System.Drawing.Point(207, 77);
+            this.producto2.Location = new System.Drawing.Point(265, -386);
             this.producto2.Margin = new System.Windows.Forms.Padding(4);
             this.producto2.Name = "producto2";
             this.producto2.NombreProducto = "Fragancia Aqva";
             this.producto2.PrecioProducto = "100.00";
-            this.producto2.Size = new System.Drawing.Size(195, 241);
+            this.producto2.Size = new System.Drawing.Size(253, 704);
             this.producto2.Stock = "Stock : 10";
             this.producto2.TabIndex = 1;
             // 
@@ -419,7 +423,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.Contenedor.ResumeLayout(false);
+            this.Contenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel_titlebar.ResumeLayout(false);
             this.panelsidemenu.ResumeLayout(false);
@@ -438,7 +443,7 @@
         private Button bt;
         private ErrorProvider errorProvider1;
         private Component1 component11;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private FlowLayoutPanel Contenedor;
         private Component1 component12;
         private FontAwesome.Sharp.IconButton btnCerrar;
         private FontAwesome.Sharp.IconButton btnMaximizar;

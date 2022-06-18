@@ -21,8 +21,7 @@ namespace GerizimZZ
         public string Descripcion_producto { get => descripcion_producto; set => descripcion_producto = value; }
         public int Estado_producto { get => estado_producto; set => estado_producto = value; }
 
-        SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim " +
-            "; Integrated Security=True");
+        SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
 
 
         public void llenado(FlowLayoutPanel Contenedor)
@@ -43,9 +42,11 @@ namespace GerizimZZ
                 estado_producto = Convert.ToInt32(reader[9]);
 
                 Producto sd = new Producto();
-                sd.Id = idproducto;
+                sd.Id = Convert.ToInt32(idproducto);
                 sd.DescripcionProducto = descripcion_producto;
-
+                sd.NombreProducto = nombre_producto;
+                sd.PrecioProducto = precio_producto.ToString();
+                sd.estado = estado_producto.ToString();
 
                 Contenedor.Controls.Add(sd);
 
