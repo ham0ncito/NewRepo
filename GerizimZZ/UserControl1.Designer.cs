@@ -88,7 +88,7 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(16, 204);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 23);
+            this.textBox1.Size = new System.Drawing.Size(110, 23);
             this.textBox1.TabIndex = 4;
             // 
             // button1
@@ -96,10 +96,11 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::GerizimZZ.Properties.Resources.plus;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(150, 204);
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(136, 193);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(28, 27);
+            this.button1.Size = new System.Drawing.Size(42, 34);
             this.button1.TabIndex = 5;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -109,6 +110,9 @@
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = global::GerizimZZ.Properties.Resources.star;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.button2.Location = new System.Drawing.Point(150, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(42, 34);

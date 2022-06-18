@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Configuration;
-using System.Windows.Forms;
+﻿using System.Data.SqlClient;
 
 namespace GerizimZZ
 {
     internal class Cl_Login
     {
-        SqlConnection con = new SqlConnection("Data Source=MEMO;Initial Catalog=GERIZIM; Integrated Security=True;");
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-2H6N4DP;Initial Catalog=Gerizim; Integrated Security=True;");
         private String nombreUsuario { get; set; }
         private string contraseñaUsuario { get; set; }
 

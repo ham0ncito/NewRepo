@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace GerizimZZ
+﻿namespace GerizimZZ
 {
     public partial class FrmLogin : Form
     {
@@ -25,7 +15,7 @@ namespace GerizimZZ
 
         private void lblContraseña_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Para recuperar su contraseña, contactese con soporte +50433510129", "Restablecer Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -61,6 +51,16 @@ namespace GerizimZZ
         private void btSalir_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MessageBox.Show("Para recuperar su contraseña, contactese con soporte +50433510129", "Restablecer Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
