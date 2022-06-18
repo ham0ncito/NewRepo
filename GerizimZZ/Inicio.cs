@@ -93,9 +93,36 @@ namespace GerizimZZ
             Application.Exit();
         }
 
+        private void bt_Click(object sender, EventArgs e)
+        {
+            CollapseMenu();
+        }
+        private void CollapseMenu()
+        {
+            if (this.panelsidemenu.Width > 200)
+            {
 
+                panelsidemenu.Width = 0;
+                //panelsidemenu.Dock = DockStyle.Left;
+                foreach (Button menuButton in panelsidemenu.Controls.OfType<Button>())
+                {
+                    menuButton.Visible = false;
+                }
+            }
+            else
+            {
 
+                panelsidemenu.Width = 240;
+                //panelsidemenu.Dock = DockStyle.None;
+                foreach (Button menuButton in panelsidemenu.Controls.OfType<Button>())
+                {
+                    menuButton.Visible = true;
+                }
+            }
+        }
 
-        
+        private void btnregresarMI_Click(object sender, EventArgs e)
+        {
+            CollapseMenu();
+        }
     }
-}

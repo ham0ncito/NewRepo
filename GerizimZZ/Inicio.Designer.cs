@@ -33,8 +33,9 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.producto1 = new GerizimZZ.Producto();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.bt = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
@@ -42,13 +43,21 @@
             this.btnMinimizar = new FontAwesome.Sharp.IconButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel_titlebar = new System.Windows.Forms.Panel();
-            this.producto1 = new GerizimZZ.Producto();
+            this.panelsidemenu = new System.Windows.Forms.Panel();
+            this.btnclientesmi = new FontAwesome.Sharp.IconButton();
+            this.btnventasmi = new FontAwesome.Sharp.IconButton();
+            this.btnpedidosmi = new FontAwesome.Sharp.IconButton();
+            this.btninventariomi = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnregresarMI = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel_titlebar.SuspendLayout();
+            this.panelsidemenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -75,7 +84,7 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.bt);
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Location = new System.Drawing.Point(0, 43);
@@ -97,6 +106,19 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(842, 322);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
+            // producto1
+            // 
+            this.producto1.AutoSize = true;
+            this.producto1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("producto1.BackgroundImage")));
+            this.producto1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.producto1.DescripcionProducto = "Esencia que te encantara";
+            this.producto1.Id = 0;
+            this.producto1.Location = new System.Drawing.Point(4, 4);
+            this.producto1.Margin = new System.Windows.Forms.Padding(4);
+            this.producto1.Name = "producto1";
+            this.producto1.Size = new System.Drawing.Size(253, 308);
+            this.producto1.TabIndex = 0;
+            // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -114,18 +136,19 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // bt
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::GerizimZZ.Properties.Resources.menu;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(88, 58);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(51, 45);
-            this.button1.TabIndex = 5;
-            this.button1.UseVisualStyleBackColor = false;
+            this.bt.BackColor = System.Drawing.Color.Transparent;
+            this.bt.BackgroundImage = global::GerizimZZ.Properties.Resources.menu;
+            this.bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.bt.FlatAppearance.BorderSize = 0;
+            this.bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt.Location = new System.Drawing.Point(88, 58);
+            this.bt.Name = "bt";
+            this.bt.Size = new System.Drawing.Size(51, 45);
+            this.bt.TabIndex = 5;
+            this.bt.UseVisualStyleBackColor = false;
+            this.bt.Click += new System.EventHandler(this.bt_Click);
             // 
             // pictureBox2
             // 
@@ -161,7 +184,7 @@
             this.btnCerrar.IconColor = System.Drawing.Color.Black;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 15;
-            this.btnCerrar.Location = new System.Drawing.Point(934, 14);
+            this.btnCerrar.Location = new System.Drawing.Point(676, 14);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Rotation = 45D;
             this.btnCerrar.Size = new System.Drawing.Size(34, 25);
@@ -180,7 +203,7 @@
             this.btnMaximizar.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnMaximizar.IconSize = 15;
             this.btnMaximizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMaximizar.Location = new System.Drawing.Point(896, 14);
+            this.btnMaximizar.Location = new System.Drawing.Point(638, 14);
             this.btnMaximizar.Margin = new System.Windows.Forms.Padding(0);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(34, 25);
@@ -199,7 +222,7 @@
             this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Regular;
             this.btnMinimizar.IconSize = 15;
             this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMinimizar.Location = new System.Drawing.Point(857, 14);
+            this.btnMinimizar.Location = new System.Drawing.Point(599, 14);
             this.btnMinimizar.Margin = new System.Windows.Forms.Padding(0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(34, 25);
@@ -216,34 +239,151 @@
             this.panel_titlebar.Controls.Add(this.btnCerrar);
             this.panel_titlebar.Controls.Add(this.btnMaximizar);
             this.panel_titlebar.Controls.Add(this.btnMinimizar);
-            this.panel_titlebar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_titlebar.Location = new System.Drawing.Point(0, 0);
+            this.panel_titlebar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel_titlebar.Location = new System.Drawing.Point(258, 0);
             this.panel_titlebar.Name = "panel_titlebar";
-            this.panel_titlebar.Size = new System.Drawing.Size(994, 45);
+            this.panel_titlebar.Size = new System.Drawing.Size(736, 578);
             this.panel_titlebar.TabIndex = 2;
             this.panel_titlebar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_titlebar_Paint);
             this.panel_titlebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_titlebar_MouseDown);
             // 
-            // producto1
+            // panelsidemenu
             // 
-            this.producto1.AutoSize = true;
-            this.producto1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("producto1.BackgroundImage")));
-            this.producto1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.producto1.DescripcionProducto = "Esencia que te encantara";
-            this.producto1.Id = 0;
-            this.producto1.Location = new System.Drawing.Point(4, 4);
-            this.producto1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.producto1.Name = "producto1";
-            this.producto1.Size = new System.Drawing.Size(253, 308);
-            this.producto1.TabIndex = 0;
+            this.panelsidemenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
+            this.panelsidemenu.Controls.Add(this.btnclientesmi);
+            this.panelsidemenu.Controls.Add(this.btnventasmi);
+            this.panelsidemenu.Controls.Add(this.btnpedidosmi);
+            this.panelsidemenu.Controls.Add(this.btninventariomi);
+            this.panelsidemenu.Controls.Add(this.panel3);
+            this.panelsidemenu.Controls.Add(this.label1);
+            this.panelsidemenu.Controls.Add(this.btnregresarMI);
+            this.panelsidemenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelsidemenu.Location = new System.Drawing.Point(0, 0);
+            this.panelsidemenu.Name = "panelsidemenu";
+            this.panelsidemenu.Size = new System.Drawing.Size(240, 578);
+            this.panelsidemenu.TabIndex = 11;
+            // 
+            // btnclientesmi
+            // 
+            this.btnclientesmi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(224)))), ((int)(((byte)(229)))));
+            this.btnclientesmi.FlatAppearance.BorderSize = 0;
+            this.btnclientesmi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclientesmi.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnclientesmi.IconChar = FontAwesome.Sharp.IconChar.User;
+            this.btnclientesmi.IconColor = System.Drawing.Color.Black;
+            this.btnclientesmi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnclientesmi.IconSize = 35;
+            this.btnclientesmi.Location = new System.Drawing.Point(35, 423);
+            this.btnclientesmi.Name = "btnclientesmi";
+            this.btnclientesmi.Padding = new System.Windows.Forms.Padding(10);
+            this.btnclientesmi.Size = new System.Drawing.Size(145, 57);
+            this.btnclientesmi.TabIndex = 10;
+            this.btnclientesmi.Tag = "user";
+            this.btnclientesmi.Text = "Clientes";
+            this.btnclientesmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnclientesmi.UseVisualStyleBackColor = false;
+            // 
+            // btnventasmi
+            // 
+            this.btnventasmi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(224)))), ((int)(((byte)(229)))));
+            this.btnventasmi.FlatAppearance.BorderSize = 0;
+            this.btnventasmi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnventasmi.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnventasmi.IconChar = FontAwesome.Sharp.IconChar.ShoppingBag;
+            this.btnventasmi.IconColor = System.Drawing.Color.Black;
+            this.btnventasmi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnventasmi.IconSize = 35;
+            this.btnventasmi.Location = new System.Drawing.Point(35, 343);
+            this.btnventasmi.Name = "btnventasmi";
+            this.btnventasmi.Padding = new System.Windows.Forms.Padding(10);
+            this.btnventasmi.Size = new System.Drawing.Size(145, 57);
+            this.btnventasmi.TabIndex = 9;
+            this.btnventasmi.Tag = "ventas";
+            this.btnventasmi.Text = "Ventas";
+            this.btnventasmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnventasmi.UseVisualStyleBackColor = false;
+            // 
+            // btnpedidosmi
+            // 
+            this.btnpedidosmi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(224)))), ((int)(((byte)(229)))));
+            this.btnpedidosmi.FlatAppearance.BorderSize = 0;
+            this.btnpedidosmi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpedidosmi.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnpedidosmi.IconChar = FontAwesome.Sharp.IconChar.Truck;
+            this.btnpedidosmi.IconColor = System.Drawing.Color.Black;
+            this.btnpedidosmi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnpedidosmi.IconSize = 35;
+            this.btnpedidosmi.Location = new System.Drawing.Point(35, 257);
+            this.btnpedidosmi.Name = "btnpedidosmi";
+            this.btnpedidosmi.Padding = new System.Windows.Forms.Padding(10);
+            this.btnpedidosmi.Size = new System.Drawing.Size(145, 57);
+            this.btnpedidosmi.TabIndex = 8;
+            this.btnpedidosmi.Tag = "pedidos";
+            this.btnpedidosmi.Text = "Pedidos";
+            this.btnpedidosmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnpedidosmi.UseVisualStyleBackColor = false;
+            // 
+            // btninventariomi
+            // 
+            this.btninventariomi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(224)))), ((int)(((byte)(229)))));
+            this.btninventariomi.FlatAppearance.BorderSize = 0;
+            this.btninventariomi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btninventariomi.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btninventariomi.IconChar = FontAwesome.Sharp.IconChar.CommentMedical;
+            this.btninventariomi.IconColor = System.Drawing.Color.Black;
+            this.btninventariomi.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btninventariomi.IconSize = 35;
+            this.btninventariomi.Location = new System.Drawing.Point(35, 172);
+            this.btninventariomi.Name = "btninventariomi";
+            this.btninventariomi.Padding = new System.Windows.Forms.Padding(10);
+            this.btninventariomi.Size = new System.Drawing.Size(145, 57);
+            this.btninventariomi.TabIndex = 7;
+            this.btninventariomi.Tag = "Inventario";
+            this.btninventariomi.Text = "Inventario";
+            this.btninventariomi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btninventariomi.UseVisualStyleBackColor = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(12, 128);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 1);
+            this.panel3.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(79, 101);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Tag = "Menu";
+            this.label1.Text = "MENU";
+            // 
+            // btnregresarMI
+            // 
+            this.btnregresarMI.BackColor = System.Drawing.Color.Transparent;
+            this.btnregresarMI.FlatAppearance.BorderSize = 0;
+            this.btnregresarMI.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnregresarMI.IconChar = FontAwesome.Sharp.IconChar.ChevronLeft;
+            this.btnregresarMI.IconColor = System.Drawing.Color.Black;
+            this.btnregresarMI.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnregresarMI.Location = new System.Drawing.Point(12, 14);
+            this.btnregresarMI.Name = "btnregresarMI";
+            this.btnregresarMI.Size = new System.Drawing.Size(49, 53);
+            this.btnregresarMI.TabIndex = 0;
+            this.btnregresarMI.UseVisualStyleBackColor = false;
+            this.btnregresarMI.Click += new System.EventHandler(this.btnregresarMI_Click);
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(994, 578);
+            this.Controls.Add(this.panelsidemenu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_titlebar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -261,6 +401,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel_titlebar.ResumeLayout(false);
+            this.panelsidemenu.ResumeLayout(false);
+            this.panelsidemenu.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -272,7 +414,7 @@
         private TextBox textBox1;
         private Button button2;
         private PictureBox pictureBox2;
-        private Button button1;
+        private Button bt;
         private ErrorProvider errorProvider1;
         private Component1 component11;
         private FlowLayoutPanel flowLayoutPanel1;
@@ -282,5 +424,13 @@
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private Panel panel_titlebar;
         private Producto producto1;
+        private Panel panelsidemenu;
+        private FontAwesome.Sharp.IconButton btnclientesmi;
+        private FontAwesome.Sharp.IconButton btnventasmi;
+        private FontAwesome.Sharp.IconButton btnpedidosmi;
+        private FontAwesome.Sharp.IconButton btninventariomi;
+        private Panel panel3;
+        private Label label1;
+        private FontAwesome.Sharp.IconButton btnregresarMI;
     }
 }
