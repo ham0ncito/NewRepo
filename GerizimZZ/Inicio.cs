@@ -7,8 +7,14 @@ namespace GerizimZZ
         public Inicio()
         {
             InitializeComponent();
+            Llenado();
         }
+        private void Llenado()
+        {
+            Productos llenar = new Productos();
+            llenar.llenado(Contenedor);
 
+        }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -127,6 +133,16 @@ namespace GerizimZZ
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Contenedor_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

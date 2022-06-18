@@ -35,8 +35,8 @@ namespace GerizimZZ
             while (reader.Read())
             {
                 idproducto = Convert.ToInt32(reader[0]);
-                precio_producto = Convert.ToDecimal(reader[2]);
-                nombre_producto = reader[3].ToString();
+                precio_producto = Convert.ToDecimal(reader[1]);
+                nombre_producto = reader[2].ToString();
                 codigoBarra_producto = reader[4].ToString();
                 descripcion_producto = reader[8].ToString();
                 estado_producto = Convert.ToInt32(reader[9]);
@@ -53,6 +53,8 @@ namespace GerizimZZ
             }
 
             conexion.Close();
+            conexion.Dispose();
+
         }
 
     }

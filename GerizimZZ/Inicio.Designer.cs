@@ -43,6 +43,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel_titlebar = new System.Windows.Forms.Panel();
             this.panelsidemenu = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnclientesmi = new FontAwesome.Sharp.IconButton();
             this.btnventasmi = new FontAwesome.Sharp.IconButton();
             this.btnpedidosmi = new FontAwesome.Sharp.IconButton();
@@ -50,12 +51,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnregresarMI = new FontAwesome.Sharp.IconButton();
-            this.producto1 = new GerizimZZ.Producto();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.Contenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel_titlebar.SuspendLayout();
             this.panelsidemenu.SuspendLayout();
@@ -94,6 +92,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(994, 535);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button2
             // 
@@ -158,12 +157,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Contenedor.BackColor = System.Drawing.Color.Transparent;
             this.Contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Contenedor.Controls.Add(this.producto1);
             this.Contenedor.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
             this.Contenedor.Location = new System.Drawing.Point(88, 187);
             this.Contenedor.Name = "Contenedor";
             this.Contenedor.Size = new System.Drawing.Size(842, 322);
             this.Contenedor.TabIndex = 6;
+            this.Contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Contenedor_Paint);
             // 
             // btnCerrar
             // 
@@ -253,6 +252,17 @@
             this.panelsidemenu.Name = "panelsidemenu";
             this.panelsidemenu.Size = new System.Drawing.Size(240, 578);
             this.panelsidemenu.TabIndex = 11;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GerizimZZ.Properties.Resources._199848567_4174426372616759_1130399733558613204_n_PhotoRoom;
+            this.pictureBox3.Location = new System.Drawing.Point(69, 504);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // btnclientesmi
             // 
@@ -368,34 +378,6 @@
             this.btnregresarMI.UseVisualStyleBackColor = false;
             this.btnregresarMI.Click += new System.EventHandler(this.btnregresarMI_Click);
             // 
-            // producto1
-            // 
-            this.producto1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.producto1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("producto1.BackgroundImage")));
-            this.producto1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.producto1.DescripcionProducto = "Esencia que te encantara";
-            this.producto1.Estado = null;
-            this.producto1.Id = 0;
-            this.producto1.Location = new System.Drawing.Point(4, 79);
-            this.producto1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.producto1.Name = "producto1";
-            this.producto1.NombreProducto = "Fragancia Aqva";
-            this.producto1.PrecioProducto = "100.00";
-            this.producto1.Size = new System.Drawing.Size(193, 239);
-            this.producto1.Stock = "Stock : 10";
-            this.producto1.TabIndex = 0;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::GerizimZZ.Properties.Resources._199848567_4174426372616759_1130399733558613204_n_PhotoRoom;
-            this.pictureBox3.Location = new System.Drawing.Point(69, 504);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -416,7 +398,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.Contenedor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel_titlebar.ResumeLayout(false);
             this.panelsidemenu.ResumeLayout(false);
@@ -450,7 +431,6 @@
         private Panel panel3;
         private Label label1;
         private FontAwesome.Sharp.IconButton btnregresarMI;
-        private Producto producto1;
         private PictureBox pictureBox3;
     }
 }
