@@ -42,13 +42,16 @@ namespace GerizimZZ
                 descripcion_producto = reader[8].ToString();
                 estado_producto = Convert.ToInt32(reader[9]);
 
-                // PantallaProducto sd = new PantallaProducto();
+                Producto sd = new Producto();
+                sd.Id = idproducto;
+                sd.DescripcionProducto = descripcion_producto;
 
 
+                Contenedor.Controls.Add(sd);
 
             }
 
-
+            conexion.Close();
         }
 
     }

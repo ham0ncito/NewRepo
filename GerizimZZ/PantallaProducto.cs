@@ -6,7 +6,7 @@
         private string descripcion = "Esencia que te encantara";
         private double precio = 0;
         public string estado;
-
+        int cantidad = 0;
         public Producto()
         {
             InitializeComponent();
@@ -21,7 +21,8 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            cantidad += 1;
+            textBox1.Text = cantidad.ToString();
         }
 
         private void Producto_Load(object sender, EventArgs e)
@@ -69,6 +70,10 @@
             set { estado = value; }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
