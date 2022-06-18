@@ -60,7 +60,10 @@
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show("Para recuperar su contraseña, contactese con soporte +50433510129", "Restablecer Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string[] numeros = { "+50499499797", "+50433505976", "+50496140758", "+50496671433", "+50494951699", "+50433027713" };
+            Random rnd = new Random();
+            int llamar = rnd.Next(0, 6);
+            MessageBox.Show("Para recuperar su contraseña, contactese con soporte " + numeros[llamar], "Restablecer Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
