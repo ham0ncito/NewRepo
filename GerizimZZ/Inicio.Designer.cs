@@ -33,7 +33,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.producto1 = new GerizimZZ.Producto();
             this.button2 = new System.Windows.Forms.Button();
             this.bt = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,6 +50,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnregresarMI = new FontAwesome.Sharp.IconButton();
+            this.producto1 = new GerizimZZ.Producto();
+            this.producto2 = new GerizimZZ.Producto();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -100,24 +101,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanel1.Controls.Add(this.producto1);
+            this.flowLayoutPanel1.Controls.Add(this.producto2);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(88, 187);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(842, 322);
             this.flowLayoutPanel1.TabIndex = 6;
-            // 
-            // producto1
-            // 
-            this.producto1.AutoSize = true;
-            this.producto1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("producto1.BackgroundImage")));
-            this.producto1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.producto1.DescripcionProducto = "Esencia que te encantara";
-            this.producto1.Id = 0;
-            this.producto1.Location = new System.Drawing.Point(4, 4);
-            this.producto1.Margin = new System.Windows.Forms.Padding(4);
-            this.producto1.Name = "producto1";
-            this.producto1.Size = new System.Drawing.Size(253, 308);
-            this.producto1.TabIndex = 0;
             // 
             // button2
             // 
@@ -377,6 +366,36 @@
             this.btnregresarMI.UseVisualStyleBackColor = false;
             this.btnregresarMI.Click += new System.EventHandler(this.btnregresarMI_Click);
             // 
+            // producto1
+            // 
+            this.producto1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.producto1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("producto1.BackgroundImage")));
+            this.producto1.DescripcionProducto = "Esencia que te encantara";
+            this.producto1.Id = 0;
+            this.producto1.Location = new System.Drawing.Point(4, 4);
+            this.producto1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.producto1.Name = "producto1";
+            this.producto1.NombreProducto = "Fragancia Aqva";
+            this.producto1.PrecioProducto = "100.00";
+            this.producto1.Size = new System.Drawing.Size(195, 241);
+            this.producto1.Stock = "Stock : 10";
+            this.producto1.TabIndex = 0;
+            // 
+            // producto2
+            // 
+            this.producto2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.producto2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("producto2.BackgroundImage")));
+            this.producto2.DescripcionProducto = "Esencia que te encantara";
+            this.producto2.Id = 0;
+            this.producto2.Location = new System.Drawing.Point(207, 4);
+            this.producto2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.producto2.Name = "producto2";
+            this.producto2.NombreProducto = "Fragancia Aqva";
+            this.producto2.PrecioProducto = "100.00";
+            this.producto2.Size = new System.Drawing.Size(195, 241);
+            this.producto2.Stock = "Stock : 10";
+            this.producto2.TabIndex = 1;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -397,7 +416,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel_titlebar.ResumeLayout(false);
@@ -423,7 +441,6 @@
         private FontAwesome.Sharp.IconButton btnMaximizar;
         private FontAwesome.Sharp.IconButton btnMinimizar;
         private Panel panel_titlebar;
-        private Producto producto1;
         private Panel panelsidemenu;
         private FontAwesome.Sharp.IconButton btnclientesmi;
         private FontAwesome.Sharp.IconButton btnventasmi;
@@ -432,5 +449,7 @@
         private Panel panel3;
         private Label label1;
         private FontAwesome.Sharp.IconButton btnregresarMI;
+        private Producto producto1;
+        private Producto producto2;
     }
 }

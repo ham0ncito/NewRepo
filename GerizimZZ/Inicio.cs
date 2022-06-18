@@ -42,7 +42,7 @@ namespace GerizimZZ
         protected override void WndProc(ref Message m)
         {
             const int WM_NCCALCSIZE = 0x0083;
-            if(m.Msg == WM_NCCALCSIZE && m.WParam.ToInt32() == 1)
+            if (m.Msg == WM_NCCALCSIZE && m.WParam.ToInt32() == 1)
             {
                 return;
             }
@@ -78,7 +78,7 @@ namespace GerizimZZ
         // click a boton de maximizar
         private void btnMaximizar_Click(object sender, EventArgs e)
         {
-            if(this.WindowState == FormWindowState.Normal)
+            if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
             }
@@ -126,3 +126,5 @@ namespace GerizimZZ
             CollapseMenu();
         }
     }
+
+}

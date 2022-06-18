@@ -1,73 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Data.SqlClient;
+
 namespace GerizimZZ
 {
     public class Productos
     {
         /* atributos esenciales de los productos */
 
-        private string id_producto;
-        private double precio_producto;
-        private string nombre;
-        private string codigoBarra;
-        private string descripcion;
-        private int estado;
-        
-        /*
-        public string Id_producto { get => Id_producto; set => Id_producto = value; }
-        public double Precio_producto { get => Precio_producto; set => Precio_producto = value; }
-        public string Nombre { get => Nombre; set => Nombre = value; }
-        public string CodigoBarra { get => CodigoBarra; set => CodigoBarra = value; }
-        public string Descripcion { get => Descripcion; set => Descripcion = value; }
-        public int Estado { get => Estado; set => Estado = value; }
+        private int idproducto;
+        private decimal precio_producto;
+        private string nombre_producto;
+        private string codigoBarra_producto;
+        private string descripcion_producto;
+        private int estado_producto;
 
-        string conector = "Data Source =(localdb)\Gerizim ; Initial Catalog =Gerizim " +
-            "; Integrated Security=True";
+        public int Idproducto { get => idproducto; set => idproducto = value; }
+        public decimal Precio_producto { get => precio_producto; set => precio_producto = value; }
+        public string Nombre_producto { get => nombre_producto; set => nombre_producto = value; }
+        public string CodigoBarra_producto { get => codigoBarra_producto; set => codigoBarra_producto = value; }
+        public string Descripcion_producto { get => descripcion_producto; set => descripcion_producto = value; }
+        public int Estado_producto { get => estado_producto; set => estado_producto = value; }
 
-        SqlConnection conection = new SqlConnection(conector);
-
-        string conector = "Data Source =" + fuente
-            + "; Initial Catalog =" + bd
-            + "; Integrated Security=" + seguridad
-            ;
-      
-        public string Id_producto { get => id_producto; set => id_producto = value; }
-        public double Precio_producto { get => precio_producto; set => precio_producto = value; }
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string CodigoBarra { get => codigoBarra; set => codigoBarra = value; }
-        public string Descripcion { get => descripcion; set => descripcion = value; }
-        public int Estado { get => estado; set => estado = value; }
-
-        /*conection = new SqlConnection();
-          
+        SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim " +
+            "; Integrated Security=True");
 
 
-        // metodos
-
-        public void cuadrados (FlowLayoutPanel Panel)
+        public void llenado(FlowLayoutPanel Contenedor)
         {
-            /conection.open();
-            string consultas = "select * from dbo.Producto";
-            SqlCommand bdconsulta = new SqlCommand(consultas, conection);
-            bdconsulta.CommandType CommandType.Text;
+            conexion.Open();
+            string consulta = "Select * from Producto";
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.CommandType = CommandType.Text;
+            SqlDataReader reader = comando.ExecuteReader();
 
-            //llenado del panel
-            SqlDataReader reader bdconsulta.ExecuteReader();
-           
-            
             while (reader.Read())
             {
-                id_producto = Convert.ToInt32(reader[0]);
-                precio_producto = reader[2].toDouble();
-                nombre = reader[3].ToString();
-                codigoBarra = reader[4].ToString();
-                descripcion = reader[8].ToString();
-                estado = Convert.ToInt32(reader[9]);
+                idproducto = Convert.ToInt32(reader[0]);
+                precio_producto = Convert.ToDecimal(reader[2]);
+                nombre_producto = reader[3].ToString();
+                codigoBarra_producto = reader[4].ToString();
+                descripcion_producto = reader[8].ToString();
+                estado_producto = Convert.ToInt32(reader[9]);
+
+                // PantallaProducto sd = new PantallaProducto();
+
+
+
             }
-        }*/
+
+
+        }
+
     }
 }
