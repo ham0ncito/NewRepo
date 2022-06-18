@@ -10,7 +10,7 @@
         public Producto()
         {
             InitializeComponent();
-
+            textBox1.Text = "0";
         }
 
 
@@ -21,6 +21,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             cantidad += 1;
             textBox1.Text = cantidad.ToString();
         }
@@ -59,10 +60,10 @@
             get { return label2.Text; }
             set { label2.Text = value; }
         }
-        public string Stock
+        public int Stock
         {
-            get { return label3.Text; }
-            set { label3.Text = value; }
+            get { return Convert.ToInt32(label3.Text); }
+            set { label3.Text = value.ToString(); }
         }
         public string Estado
         {
@@ -73,6 +74,15 @@
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (cantidad > 0)
+            {
+                cantidad -= 1;
+                textBox1.Text = cantidad.ToString();
+            }
         }
     }
 }

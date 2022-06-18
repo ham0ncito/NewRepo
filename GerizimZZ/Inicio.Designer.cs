@@ -152,15 +152,18 @@
             // 
             // Contenedor
             // 
+            this.Contenedor.AllowDrop = true;
             this.Contenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.Contenedor.AutoScroll = true;
+            this.Contenedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Contenedor.BackColor = System.Drawing.Color.Transparent;
             this.Contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Contenedor.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.Contenedor.Location = new System.Drawing.Point(88, 187);
+            this.Contenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Contenedor.Location = new System.Drawing.Point(105, 187);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(842, 322);
+            this.Contenedor.Size = new System.Drawing.Size(825, 322);
             this.Contenedor.TabIndex = 6;
             this.Contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Contenedor_Paint);
             // 
