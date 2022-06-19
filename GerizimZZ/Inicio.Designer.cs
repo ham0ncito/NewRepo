@@ -299,6 +299,8 @@
             this.btnclientesmi.Text = "Clientes";
             this.btnclientesmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnclientesmi.UseVisualStyleBackColor = false;
+            this.btnclientesmi.MouseLeave += new System.EventHandler(this.btnclientesmi_MouseLeaves);
+            this.btnclientesmi.MouseHover += new System.EventHandler(this.btnclientesmi_Hover);
             // 
             // btnventasmi
             // 
@@ -319,6 +321,8 @@
             this.btnventasmi.Text = "Ventas";
             this.btnventasmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnventasmi.UseVisualStyleBackColor = false;
+            this.btnventasmi.MouseLeave += new System.EventHandler(this.btnventasmi_MouseLeaves);
+            this.btnventasmi.MouseHover += new System.EventHandler(this.btnventasmi_Hover);
             // 
             // btnpedidosmi
             // 
@@ -339,6 +343,8 @@
             this.btnpedidosmi.Text = "Pedidos";
             this.btnpedidosmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnpedidosmi.UseVisualStyleBackColor = false;
+            this.btnpedidosmi.MouseLeave += new System.EventHandler(this.btnpedidosmi_MouseLeaves);
+            this.btnpedidosmi.MouseHover += new System.EventHandler(this.btnpedidosmi_Hover);
             // 
             // btninventariomi
             // 
@@ -359,6 +365,11 @@
             this.btninventariomi.Text = "Inventario";
             this.btninventariomi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btninventariomi.UseVisualStyleBackColor = false;
+            this.btninventariomi.Click += new System.EventHandler(this.btninventariomi_Click);
+            this.btninventariomi.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn);
+            this.btninventariomi.MouseEnter += new System.EventHandler(this.btninventariomi_Click);
+            this.btninventariomi.MouseLeave += new System.EventHandler(this.btninventarioomi_MouseLeaves);
+            this.btninventariomi.MouseHover += new System.EventHandler(this.btninventarioomi_Hover);
             // 
             // panel3
             // 

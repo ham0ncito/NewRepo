@@ -147,6 +147,49 @@ namespace GerizimZZ
         {
 
         }
+
+        private void btninventariomi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btninventarioomi_Hover(object sender, EventArgs e)
+        {
+            btninventariomi.BackColor = Color.Cyan;
+        }
+        private void btninventarioomi_MouseLeaves(object sender, EventArgs e)
+        {
+            btninventariomi.BackColor = Color.FromArgb(214, 224, 229);
+        }
+        private void btnclientesmi_Hover(object sender, EventArgs e)
+        {
+            btninventariomi.BackColor = Color.Cyan;
+        }
+        private void btnclientesmi_MouseLeaves(object sender, EventArgs e)
+        {
+            btninventariomi.BackColor = Color.FromArgb(214, 224, 229);
+        }
+        private void btnpedidosmi_Hover(object sender, EventArgs e)
+        {
+            btninventariomi.BackColor = Color.Cyan;
+        }
+        private void btnpedidosmi_MouseLeaves(object sender, EventArgs e)
+        {
+            btninventariomi.BackColor = Color.FromArgb(214, 224, 229);
+        }
+        private void btnventasmi_Hover(object sender, EventArgs e)
+        {
+            btninventariomi.BackColor = Color.Cyan;
+        }
+        private void btnventasmi_MouseLeaves(object sender, EventArgs e)
+        {
+            btninventariomi.BackColor = Color.FromArgb(214, 224, 229);
+        }
+
+        private void btn(object sender, MouseEventArgs e)
+        {
+
+        }
     }
 
 }
