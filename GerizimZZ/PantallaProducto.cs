@@ -88,7 +88,7 @@
         public void pictureBox1_Click_1(object sender, EventArgs e)
         {
             InfoProductos pr = new InfoProductos();
-            // pr.lblNombre.text = NombreProducto;
+            pr.ShowDialog();
 
         }
     }
