@@ -29,7 +29,7 @@ namespace GerizimZZ
         public void llenado(FlowLayoutPanel Contenedor)
         {
             conexion.Open();
-            string consulta = "Select * from Producto";
+            string consulta = "select * from dbo.Producto order by estadoPRoducto DESC; ";
             SqlCommand comando = new SqlCommand(consulta, conexion);
             comando.CommandType = CommandType.Text;
             SqlDataReader reader = comando.ExecuteReader();
@@ -52,6 +52,11 @@ namespace GerizimZZ
                 sd.estado = estado_producto.ToString();
                 sd.Stockactual = existencia;
                 sd.Codigobarra = codigoBarra_producto;
+                if (sd.estado == "2")
+                {
+                    sd.BackgroundImage = null;
+                    sd.BackColor = Color.DodgerBlue;
+                }
                 Contenedor.Controls.Add(sd);
 
             }

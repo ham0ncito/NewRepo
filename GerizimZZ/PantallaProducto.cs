@@ -8,7 +8,7 @@
         public string estado;
         private string nom;
         private string codigobarra;
-        int cantidad = 0;
+        public int cantidad = 0;
 
         public Producto()
         {
@@ -33,10 +33,7 @@
 
         public void Producto_Load(object sender, EventArgs e)
         {
-            if (estado == "2")
-            {
-                // Producto.Properties.BackgroundImage = global::GerizimZZ.Properties.Resources._012_Tempting_Azure;
-            }
+
         }
 
         public int Id
@@ -84,7 +81,14 @@
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            if (estado == "2")
+            {
+                estado = "1";
+            }
+            else
+            {
+                estado = "2";
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
