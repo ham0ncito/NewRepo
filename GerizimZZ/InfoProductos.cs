@@ -11,5 +11,15 @@
         {
 
         }
+
+        private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void InfoProductos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

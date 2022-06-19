@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfoProductos));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblcodigo = new System.Windows.Forms.Label();
+            this.lbldescripcion = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblstock = new System.Windows.Forms.Label();
+            this.lblprecio = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -60,16 +60,17 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Garamond", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(65, 284);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 42);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Producto Gerizim";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Garamond", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblNombre.Location = new System.Drawing.Point(65, 284);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(278, 42);
+            this.lblNombre.TabIndex = 1;
+            this.lblNombre.Text = "Producto Gerizim";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // linkLabel1
             // 
@@ -83,29 +84,29 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "ver existencias";
             // 
-            // label2
+            // lblcodigo
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(243, 330);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "007288394";
+            this.lblcodigo.AutoSize = true;
+            this.lblcodigo.BackColor = System.Drawing.Color.Transparent;
+            this.lblcodigo.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblcodigo.Location = new System.Drawing.Point(243, 330);
+            this.lblcodigo.Name = "lblcodigo";
+            this.lblcodigo.Size = new System.Drawing.Size(100, 24);
+            this.lblcodigo.TabIndex = 3;
+            this.lblcodigo.Text = "007288394";
             // 
-            // label3
+            // lbldescripcion
             // 
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Garamond", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(33, 354);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(329, 80);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i" +
+            this.lbldescripcion.BackColor = System.Drawing.Color.Transparent;
+            this.lbldescripcion.Font = new System.Drawing.Font("Garamond", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.lbldescripcion.Location = new System.Drawing.Point(33, 354);
+            this.lbldescripcion.Name = "lbldescripcion";
+            this.lbldescripcion.Size = new System.Drawing.Size(329, 80);
+            this.lbldescripcion.TabIndex = 4;
+            this.lbldescripcion.Text = "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i" +
     "ncididunt ut labore et dolore magna aliqua. ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lbldescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbldescripcion.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -129,27 +130,27 @@
             this.label5.TabIndex = 6;
             this.label5.Text = "Precio";
             // 
-            // label6
+            // lblstock
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(151, 447);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 27);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Stock";
+            this.lblstock.AutoSize = true;
+            this.lblstock.BackColor = System.Drawing.Color.Transparent;
+            this.lblstock.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblstock.Location = new System.Drawing.Point(151, 447);
+            this.lblstock.Name = "lblstock";
+            this.lblstock.Size = new System.Drawing.Size(64, 27);
+            this.lblstock.TabIndex = 7;
+            this.lblstock.Text = "Stock";
             // 
-            // label7
+            // lblprecio
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(180, 488);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(23, 27);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "0";
+            this.lblprecio.AutoSize = true;
+            this.lblprecio.BackColor = System.Drawing.Color.Transparent;
+            this.lblprecio.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblprecio.Location = new System.Drawing.Point(180, 488);
+            this.lblprecio.Name = "lblprecio";
+            this.lblprecio.Size = new System.Drawing.Size(23, 27);
+            this.lblprecio.TabIndex = 8;
+            this.lblprecio.Text = "0";
             // 
             // label8
             // 
@@ -186,7 +187,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(147, 525);
+            this.textBox1.Location = new System.Drawing.Point(59, 543);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 25);
             this.textBox1.TabIndex = 12;
@@ -196,7 +197,7 @@
             this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = global::GerizimZZ.Properties.Resources.minus_sign;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(112, 522);
+            this.button1.Location = new System.Drawing.Point(24, 540);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(30, 30);
             this.button1.TabIndex = 13;
@@ -207,7 +208,7 @@
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = global::GerizimZZ.Properties.Resources.plus__1_;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(253, 522);
+            this.button2.Location = new System.Drawing.Point(165, 540);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(30, 30);
             this.button2.TabIndex = 14;
@@ -218,7 +219,7 @@
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(112, 565);
+            this.label11.Location = new System.Drawing.Point(201, 543);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(147, 27);
             this.label11.TabIndex = 15;
@@ -229,7 +230,7 @@
             this.button3.BackColor = System.Drawing.Color.Transparent;
             this.button3.BackgroundImage = global::GerizimZZ.Properties.Resources._checked;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(253, 562);
+            this.button3.Location = new System.Drawing.Point(351, 543);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(30, 30);
             this.button3.TabIndex = 16;
@@ -241,7 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GerizimZZ.Properties.Resources._106_Party_Bliss;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(393, 601);
+            this.ClientSize = new System.Drawing.Size(397, 587);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.button2);
@@ -250,14 +251,14 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblprecio);
+            this.Controls.Add(this.lblstock);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbldescripcion);
+            this.Controls.Add(this.lblcodigo);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -270,6 +271,7 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Información Producto";
+            this.Load += new System.EventHandler(this.InfoProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -279,14 +281,14 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label label1;
+        private Label lblNombre;
         private LinkLabel linkLabel1;
-        private Label label2;
-        private Label label3;
+        private Label lblcodigo;
+        private Label lbldescripcion;
         private Label label4;
         private Label label5;
-        private Label label6;
-        private Label label7;
+        private Label lblstock;
+        private Label lblprecio;
         private Label label8;
         private Label label9;
         private Label label10;
