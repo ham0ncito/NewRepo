@@ -10,7 +10,7 @@ namespace GerizimZZ
             CollapseMenu();
             Llenado();
         }
-        private void Llenado()
+        public void Llenado()
         {
             Productos llenar = new Productos();
             llenar.llenado(Contenedor);

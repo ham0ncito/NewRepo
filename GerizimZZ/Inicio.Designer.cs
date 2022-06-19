@@ -433,7 +433,6 @@
         private Button bt;
         private ErrorProvider errorProvider1;
         private Component1 component11;
-        private FlowLayoutPanel Contenedor;
         private Component1 component12;
         private FontAwesome.Sharp.IconButton btnCerrar;
         private FontAwesome.Sharp.IconButton btnMaximizar;
@@ -449,5 +448,6 @@
         private FontAwesome.Sharp.IconButton btnregresarMI;
         private PictureBox pictureBox3;
         private Button button1;
+        public FlowLayoutPanel Contenedor;
     }
 }
