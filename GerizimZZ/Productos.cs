@@ -50,8 +50,8 @@ namespace GerizimZZ
                 sd.NombreProducto = nombre_producto;
                 sd.PrecioProducto = precio_producto.ToString();
                 sd.estado = estado_producto.ToString();
-                sd.Stock = existencia;
-
+                sd.Stockactual = existencia;
+                sd.Codigobarra = codigoBarra_producto;
                 Contenedor.Controls.Add(sd);
 
             }

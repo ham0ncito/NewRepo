@@ -189,8 +189,6 @@
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -200,6 +198,7 @@
         private Label label4;
         private Label label5;
         private Button button3;
+        public PictureBox pictureBox1;
         /*private EventHandler button1_Click;
 
 public EventHandler Producto_Load { get; private set; }*/

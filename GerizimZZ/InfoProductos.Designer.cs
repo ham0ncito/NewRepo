@@ -59,6 +59,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblNombre
             // 
@@ -268,7 +269,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InfoProductos";
-            this.Opacity = 0.9D;
+            this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Información Producto";
             this.Load += new System.EventHandler(this.InfoProductos_Load);
@@ -281,21 +282,21 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label lblNombre;
-        private LinkLabel linkLabel1;
-        private Label lblcodigo;
-        private Label lbldescripcion;
+        public Label lblNombre;
         private Label label4;
         private Label label5;
-        private Label lblstock;
-        private Label lblprecio;
         private Label label8;
-        private Label label9;
-        private Label label10;
-        private TextBox textBox1;
-        private Button button1;
-        private Button button2;
         private Label label11;
-        private Button button3;
+        public Label lbldescripcion;
+        public Label lblcodigo;
+        public Label lblstock;
+        public Label lblprecio;
+        public Button button2;
+        public Button button1;
+        public TextBox textBox1;
+        public Button button3;
+        public LinkLabel linkLabel1;
+        public Label label9;
+        public Label label10;
     }
 }

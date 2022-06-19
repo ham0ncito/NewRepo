@@ -6,7 +6,10 @@
         private string descripcion = "Esencia que te encantara";
         private double precio = 0;
         public string estado;
+        private string nom;
+        private string codigobarra;
         int cantidad = 0;
+
         public Producto()
         {
             InitializeComponent();
@@ -26,7 +29,7 @@
             textBox1.Text = cantidad.ToString();
         }
 
-        private void Producto_Load(object sender, EventArgs e)
+        public void Producto_Load(object sender, EventArgs e)
         {
             if (estado == "2")
             {
@@ -60,7 +63,7 @@
             get { return label2.Text; }
             set { label2.Text = value; }
         }
-        public int Stock
+        public int Stockactual
         {
             get { return Convert.ToInt32(label3.Text); }
             set { label3.Text = value.ToString(); }
@@ -69,6 +72,12 @@
         {
             get { return estado; }
             set { estado = value; }
+        }
+
+        public string Codigobarra
+        {
+            get { return codigobarra; }
+            set { codigobarra = value; }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -85,9 +94,14 @@
             }
         }
 
-        public void pictureBox1_Click_1(object sender, EventArgs e)
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             InfoProductos pr = new InfoProductos();
+            pr.lblNombre.Text = this.NombreProducto;
+            pr.lbldescripcion.Text = this.descripcion;
+            pr.lblcodigo.Text = this.codigobarra.ToString();
+            pr.lblprecio.Text = this.PrecioProducto.ToString();
+            pr.lblstock.Text = this.Stockactual.ToString();
             pr.ShowDialog();
 
         }
