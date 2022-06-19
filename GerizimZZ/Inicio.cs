@@ -7,6 +7,7 @@ namespace GerizimZZ
         public Inicio()
         {
             InitializeComponent();
+            CollapseMenu();
             Llenado();
         }
         private void Llenado()

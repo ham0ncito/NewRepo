@@ -24,9 +24,11 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            cantidad += 1;
-            textBox1.Text = cantidad.ToString();
+            if (cantidad < Stockactual)
+            {
+                cantidad += 1;
+                textBox1.Text = cantidad.ToString();
+            }
         }
 
         public void Producto_Load(object sender, EventArgs e)
