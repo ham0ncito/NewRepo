@@ -54,3 +54,4 @@ C:\Users\HP\.git\Git\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win\lib\netcore
 C:\Users\HP\.git\Git\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.CopyComplete
 C:\Users\HP\.git\Git\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.genruntimeconfig.cache
 C:\Users\HP\.git\Git\GerizimZZ\obj\Debug\net6.0-windows\ref\GerizimZZ.dll
+C:\Users\HP\.git\Git\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.InfoProductos.resources

@@ -84,6 +84,11 @@
                 textBox1.Text = cantidad.ToString();
             }
         }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
