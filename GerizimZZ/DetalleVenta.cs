@@ -67,5 +67,10 @@
         {
 
         }
+
+        private void DetalleVenta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
