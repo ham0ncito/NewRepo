@@ -201,15 +201,22 @@ namespace GerizimZZ
         private void button1_Click(object sender, EventArgs e)
         {
             string busqueda;
-            bool nueva_busqueda = true;
-            if (this.barraBusqueda.Text != "" && nueva_busqueda == true)
+            
+            Productos pr = new Productos();
+            if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
-                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or ID_codigoProducto like '% " + barraBusqueda.Text + "%' or precio_producto = " + int.Parse(barraBusqueda.Text) + " or codigoBarra like '%" + this.barraBusqueda.Text + "%'  order by nombreProducto, estadoPRoducto DESC; ";
+                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' order by nombreProducto, estadoPRoducto DESC; ";
                 SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
-                Productos pr = new Productos();
-                pr.llenado(Contenedor, busqueda);
-                nueva_busqueda = false;
-                this.barraBusqueda = null;
+                Contenedor.Controls.Clear(); 
+                pr.llenado(Contenedor, busqueda);       
+            }
+            if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
+            {
+
+                busqueda = "select * from dbo.Producto order by estadoPRoducto DESC; ";
+                Contenedor.Controls.Clear();
+                pr.llenado(Contenedor, busqueda); 
+                
             }
         }
 
