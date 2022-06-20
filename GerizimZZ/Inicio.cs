@@ -212,5 +212,12 @@ namespace GerizimZZ
                 this.barraBusqueda = null;
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DetalleVenta detalleVenta = new DetalleVenta();
+            detalleVenta.ShowDialog();
+
+        }
     }
 }
