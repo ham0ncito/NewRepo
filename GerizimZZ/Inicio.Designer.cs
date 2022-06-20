@@ -67,7 +67,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::GerizimZZ.Properties.Resources._199848567_4174426372616759_1130399733558613204_n_PhotoRoom1;
+            this.pictureBox1.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
             this.pictureBox1.Location = new System.Drawing.Point(370, -29);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
@@ -293,7 +293,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::GerizimZZ.Properties.Resources._199848567_4174426372616759_1130399733558613204_n_PhotoRoom;
+            this.pictureBox3.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
             this.pictureBox3.Location = new System.Drawing.Point(69, 504);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 50);
