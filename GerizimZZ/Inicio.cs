@@ -219,6 +219,27 @@ namespace GerizimZZ
                 
             }
         }
+        private void BarraBusqueda_TextChanged (object sender, EventArgs e)
+        {
+            string busqueda;
+
+            Productos pr = new Productos();
+            if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
+            {
+                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' order by nombreProducto, estadoPRoducto DESC; ";
+                SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
+                Contenedor.Controls.Clear();
+                pr.llenado(Contenedor, busqueda);
+            }
+            if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
+            {
+
+                busqueda = "select * from dbo.Producto order by estadoPRoducto DESC; ";
+                Contenedor.Controls.Clear();
+                pr.llenado(Contenedor, busqueda);
+
+            }
+        }
 
         private void button3_Click(object sender, EventArgs e)
         {

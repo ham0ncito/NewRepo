@@ -183,7 +183,7 @@
             this.barraBusqueda.Name = "barraBusqueda";
             this.barraBusqueda.Size = new System.Drawing.Size(580, 39);
             this.barraBusqueda.TabIndex = 1;
-            this.barraBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.barraBusqueda.TextChanged += new System.EventHandler(this.BarraBusqueda_TextChanged);
             // 
             // Contenedor
             // 
