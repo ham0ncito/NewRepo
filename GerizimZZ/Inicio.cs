@@ -1,3 +1,4 @@
+using System.Data.SqlClient;
 using System.Runtime.InteropServices;
 
 namespace GerizimZZ
@@ -13,7 +14,8 @@ namespace GerizimZZ
         public void Llenado()
         {
             Productos llenar = new Productos();
-            llenar.llenado(Contenedor);
+            string consulta = "select * from dbo.Producto order by estadoPRoducto DESC; ";
+            llenar.llenado(Contenedor, consulta);
 
         }
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -190,6 +192,25 @@ namespace GerizimZZ
         {
 
         }
-    }
 
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string busqueda;
+            bool nueva_busqueda = true;
+            if (this.barraBusqueda.Text != "" && nueva_busqueda == true)
+            {
+                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or ID_codigoProducto like '% " + barraBusqueda.Text + "%' or precio_producto = " + int.Parse(barraBusqueda.Text) + " or codigoBarra like '%" + this.barraBusqueda.Text + "%'  order by nombreProducto, estadoPRoducto DESC; ";
+                SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
+                Productos pr = new Productos();
+                pr.llenado(Contenedor, busqueda);
+                nueva_busqueda = false;
+                this.barraBusqueda = null;
+            }
+        }
+    }
 }

@@ -26,10 +26,10 @@ namespace GerizimZZ
         SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
 
 
-        public void llenado(FlowLayoutPanel Contenedor)
+        public void llenado(FlowLayoutPanel Contenedor, string consulta)
         {
             conexion.Open();
-            string consulta = "select * from dbo.Producto order by estadoPRoducto DESC; ";
+
             SqlCommand comando = new SqlCommand(consulta, conexion);
             comando.CommandType = CommandType.Text;
             SqlDataReader reader = comando.ExecuteReader();

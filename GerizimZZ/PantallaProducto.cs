@@ -102,7 +102,7 @@
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
-            InfoProductos pr = new InfoProductos();
+            VentanaInfoProductos pr = new VentanaInfoProductos();
             pr.lblNombre.Text = this.NombreProducto;
             pr.lbldescripcion.Text = this.descripcion;
             pr.lblcodigo.Text = this.codigobarra.ToString();

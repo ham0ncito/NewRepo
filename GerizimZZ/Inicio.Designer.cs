@@ -32,11 +32,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.bt = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.barraBusqueda = new System.Windows.Forms.TextBox();
             this.Contenedor = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
             this.btnMaximizar = new FontAwesome.Sharp.IconButton();
@@ -82,12 +83,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.bt);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.barraBusqueda);
             this.panel1.Controls.Add(this.Contenedor);
             this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -95,6 +97,22 @@
             this.panel1.Size = new System.Drawing.Size(994, 535);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = global::GerizimZZ.Properties.Resources.shopping_cart;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.Transparent;
+            this.button3.Location = new System.Drawing.Point(798, 58);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(51, 45);
+            this.button3.TabIndex = 8;
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -106,6 +124,7 @@
             this.button1.Size = new System.Drawing.Size(30, 28);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -151,17 +170,17 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // textBox1
+            // barraBusqueda
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.barraBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(230, 141);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(580, 39);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.barraBusqueda.Location = new System.Drawing.Point(230, 141);
+            this.barraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barraBusqueda.Multiline = true;
+            this.barraBusqueda.Name = "barraBusqueda";
+            this.barraBusqueda.Size = new System.Drawing.Size(580, 39);
+            this.barraBusqueda.TabIndex = 1;
+            this.barraBusqueda.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // Contenedor
             // 
@@ -438,7 +457,6 @@
 
         private PictureBox pictureBox1;
         private Panel panel1;
-        private TextBox textBox1;
         private Button button2;
         private PictureBox pictureBox2;
         private Button bt;
@@ -460,5 +478,7 @@
         private PictureBox pictureBox3;
         private Button button1;
         public FlowLayoutPanel Contenedor;
+        private Button button3;
+        public TextBox barraBusqueda;
     }
 }

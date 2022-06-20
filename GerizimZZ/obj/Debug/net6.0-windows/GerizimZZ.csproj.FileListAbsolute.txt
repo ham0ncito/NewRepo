@@ -69,7 +69,6 @@ C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\bin\Debug\net6.0-window
 C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.AssemblyReference.cache
 C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.FrmLogin.resources
-C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.InfoProductos.resources
 C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Inicio.resources
 C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Producto.resources
 C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Properties.Resources.resources
@@ -84,3 +83,4 @@ C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-window
 C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pdb
 C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.genruntimeconfig.cache
 C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\ref\GerizimZZ.dll
+C:\Users\HP\OneDrive\Documentos\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.VentanaInfoProductos.resources
