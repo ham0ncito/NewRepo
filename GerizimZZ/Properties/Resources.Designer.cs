@@ -163,6 +163,16 @@ namespace GerizimZZ.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap file {
+            get {
+                object obj = ResourceManager.GetObject("file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Imagen1_PhotoRoom__1_ {
             get {
                 object obj = ResourceManager.GetObject("Imagen1-PhotoRoom (1)", resourceCulture);
@@ -266,6 +276,16 @@ namespace GerizimZZ.Properties {
         internal static System.Drawing.Bitmap substract {
             get {
                 object obj = ResourceManager.GetObject("substract", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trade {
+            get {
+                object obj = ResourceManager.GetObject("trade", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
