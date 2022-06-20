@@ -219,5 +219,13 @@ namespace GerizimZZ
             detalleVenta.ShowDialog();
 
         }
+        private void button3_Hover(object sender, EventArgs e)
+        {
+            this.button3.BackColor = Color.Cyan;
+        }
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            this.button3.BackColor = Color.Transparent;
+        }
     }
 }

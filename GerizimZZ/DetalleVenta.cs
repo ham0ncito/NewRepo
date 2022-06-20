@@ -44,7 +44,7 @@
 
         private void button1_Hover(object sender, EventArgs e)
         {
-            this.button1.BackColor = Color.Red;
+            this.button1.BackColor = Color.IndianRed;
         }
         private void button1_MouseLeaves(object sender, EventArgs e)
         {
@@ -52,13 +52,18 @@
         }
         private void button2_Hover(object sender, EventArgs e)
         {
-            this.button2.BackColor = Color.Green;
+            this.button2.BackColor = Color.Cyan;
         }
         private void button2_MouseLeaves(object sender, EventArgs e)
         {
             this.button2.BackColor = Color.Transparent;
         }
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

@@ -313,6 +313,8 @@
             this.button1.TabIndex = 26;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeaves);
+            this.button1.MouseHover += new System.EventHandler(this.button1_Hover);
             // 
             // button2
             // 
@@ -324,6 +326,9 @@
             this.button2.Size = new System.Drawing.Size(55, 45);
             this.button2.TabIndex = 27;
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeaves);
+            this.button2.MouseHover += new System.EventHandler(this.button2_Hover);
             // 
             // DetalleVenta
             // 
