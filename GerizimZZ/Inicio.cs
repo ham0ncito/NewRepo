@@ -75,7 +75,17 @@ namespace GerizimZZ
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Barra_preview barra_Preview = new Barra_preview();
+            barra_Preview.ShowDialog();
+        }
 
+        private void button2_Hover(object sender, EventArgs e)
+        {
+            this.button2.BackColor = Color.Cyan;
+        }
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            this.button2.BackColor = Color.Transparent;
         }
 
         // click a boton de minimizar

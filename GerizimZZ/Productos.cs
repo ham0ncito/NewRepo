@@ -23,7 +23,7 @@ namespace GerizimZZ
         public int Estado_producto { get => estado_producto; set => estado_producto = value; }
         public int Existencia { get => existencia; set => existencia = value; }
 
-        SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+        SqlConnection conexion = new SqlConnection("Data Source =LAPTOP-5T0JR9PE\\SQLEXPRESS ; Initial Catalog =Gerizim ; Integrated Security = True");
 
 
         public void llenado(FlowLayoutPanel Contenedor, string consulta)
