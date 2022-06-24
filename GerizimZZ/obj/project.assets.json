@@ -484,19 +484,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cesar\\.nuget\\packages\\": {}
+    "C:\\Users\\guill\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cesar\\OneDrive\\Escritorio\\Clases\\Diseño de sotfwar\\Repo2\\GerizimZZ\\GerizimZZ.csproj",
+      "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\GitHub\\NewRepo\\GerizimZZ\\GerizimZZ.csproj",
       "projectName": "GerizimZZ",
-      "projectPath": "C:\\Users\\cesar\\OneDrive\\Escritorio\\Clases\\Diseño de sotfwar\\Repo2\\GerizimZZ\\GerizimZZ.csproj",
-      "packagesPath": "C:\\Users\\cesar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cesar\\OneDrive\\Escritorio\\Clases\\Diseño de sotfwar\\Repo2\\GerizimZZ\\obj\\",
+      "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\GitHub\\NewRepo\\GerizimZZ\\GerizimZZ.csproj",
+      "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\GitHub\\NewRepo\\GerizimZZ\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cesar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -549,7 +549,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
