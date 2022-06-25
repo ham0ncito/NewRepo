@@ -5,7 +5,7 @@ namespace GerizimZZ
 {
     internal class Cl_Login
     {
-        SqlConnection con = new SqlConnection("Data Source=TATO180\\SQLEXPRESS;Initial Catalog=Gerizim; Integrated Security=True;");
+        SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private String nombreUsuario { get; set; }
         private string contraseñaUsuario { get; set; }
 
