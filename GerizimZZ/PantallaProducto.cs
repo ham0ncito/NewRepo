@@ -28,6 +28,7 @@
             {
                 cantidad += 1;
                 textBox1.Text = cantidad.ToString();
+                MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information)
             }
         }
 
@@ -98,6 +99,7 @@
                 cantidad -= 1;
                 textBox1.Text = cantidad.ToString();
             }
+            MessageBox.Show("Cantidad modificada correctamente", "Modificacion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information)
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
