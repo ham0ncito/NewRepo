@@ -6,7 +6,7 @@
         private string descripcion = "Esencia que te encantara";
         private double precio = 0;
         public string estado;
-        private string nom;
+        
         private string codigobarra;
         public int cantidad = 0;
 
@@ -109,6 +109,11 @@
             pr.lblprecio.Text = this.PrecioProducto.ToString();
             pr.lblstock.Text = this.Stockactual.ToString();
             pr.ShowDialog();
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
     }

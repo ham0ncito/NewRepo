@@ -148,3 +148,8 @@ C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\Geri
 C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.CopyComplete
 C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.genruntimeconfig.cache
 C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\ref\GerizimZZ.dll
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\Interop.Accessibility.dll
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.ResolveComReference.cache
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pantallafactura.resources
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistrosVentas.resources
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistroVentas.resources
