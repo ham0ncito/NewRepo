@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GerizimZZ",
+    "\\GerizimZZ\\Properties",
+    "\\GerizimZZ\\Resources"
   ],
-  "SelectedNode": "\\GerizimZZ.sln",
+  "SelectedNode": "\\GerizimZZ\\Properties\\Resources.resx",
   "PreviewInSolutionExplorer": false
 }
