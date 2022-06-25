@@ -117,10 +117,13 @@ namespace GerizimZZ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            valores[0] = id.ToString() ;
-            nom = valores[1];
-            valores[2]  = cantidad.ToString()  ; 
-
+            if (Convert.ToInt32(this.textBox1.Text) != 0)
+            {
+                valores[0] = id.ToString();
+                valores[1] = nom;
+                valores[2] = cantidad.ToString();
+                
+            }
         }
     }
 }
