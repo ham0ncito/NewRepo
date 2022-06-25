@@ -66,5 +66,9 @@ namespace GerizimZZ
 
         }
 
+        public void llenar(DataGridView data)
+        {
+            data.Rows.Add(0,); 
+
     }
 }

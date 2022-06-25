@@ -122,7 +122,8 @@ namespace GerizimZZ
                 valores[0] = id.ToString();
                 valores[1] = nom;
                 valores[2] = cantidad.ToString();
-                
+                Productos pr = new Productos();
+                pr.llenar(); 
             }
         }
     }
