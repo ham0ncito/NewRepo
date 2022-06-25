@@ -5,3 +5,7 @@
 namespace GerizimZZ
 {
 }
+
+namespace GerizimZZ
+{
+}
