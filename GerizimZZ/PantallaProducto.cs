@@ -10,7 +10,7 @@ namespace GerizimZZ
         private string nom;
         private string codigobarra;
         public int cantidad = 0;
-        public string[] valores; 
+        public string[] valores = new string[2]; 
         public Producto()
         {
             InitializeComponent();
@@ -117,7 +117,10 @@ namespace GerizimZZ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            valores[0] = id.ToString() ;
+            nom = valores[1];
+            valores[2]  = cantidad.ToString()  ; 
+
         }
     }
 }
