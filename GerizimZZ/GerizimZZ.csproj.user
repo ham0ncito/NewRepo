@@ -14,6 +14,12 @@
     <Compile Update="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="pantallafactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegistrosVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="VentanaInfoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -23,5 +29,10 @@
     <Compile Update="PantallaProducto.cs">
       <SubType>UserControl</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="DataSet2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

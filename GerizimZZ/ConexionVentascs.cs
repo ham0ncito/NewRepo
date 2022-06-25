@@ -10,7 +10,7 @@ namespace GerizimZZ
 {
     internal class ConexionVentascs
     {
-        SqlConnection conectar = new SqlConnection("Data Source =ORTEGA\\ORTEGA1 ; Initial Catalog =Gerizim ; Integrated Security = True");
+        SqlConnection conectar = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         public void llenargrid(DataGridView grid)
         {

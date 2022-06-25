@@ -10,7 +10,7 @@ namespace GerizimZZ
 {
     internal class conexionfactura
     {
-        SqlConnection conec = new SqlConnection("Data Source =ORTEGA\\ORTEGA1 ; Initial Catalog =Gerizim ; Integrated Security = True");
+        SqlConnection conec = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         public void datosgrid(DataGridView grid)
         {
