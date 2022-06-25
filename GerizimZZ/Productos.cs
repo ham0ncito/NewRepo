@@ -68,7 +68,7 @@ namespace GerizimZZ
 
         public void llenar(DataGridView data)
         {
-            data.Rows.Add(0,); 
+            data.Rows.Add(0,idproducto,precio_producto); 
 
     }
 }
