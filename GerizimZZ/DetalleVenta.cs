@@ -72,5 +72,15 @@
         {
 
         }
+
+        private void dgDetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+    }
+        public class carrito
+    {
+        string idpro;
+
     }
 }

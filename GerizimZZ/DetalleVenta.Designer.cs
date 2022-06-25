@@ -344,6 +344,7 @@
             this.dgDetalleVenta.RowTemplate.Height = 25;
             this.dgDetalleVenta.Size = new System.Drawing.Size(479, 163);
             this.dgDetalleVenta.TabIndex = 28;
+            this.dgDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDetalleVenta_CellContentClick);
             // 
             // Column1
             // 

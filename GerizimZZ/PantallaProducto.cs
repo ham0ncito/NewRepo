@@ -10,7 +10,7 @@ namespace GerizimZZ
         private string nom;
         private string codigobarra;
         public int cantidad = 0;
-        public string[] valores = new string[2]; 
+        public string[] valores = {};
         public Producto()
         {
             InitializeComponent();
@@ -30,6 +30,10 @@ namespace GerizimZZ
                 cantidad += 1;
                 textBox1.Text = cantidad.ToString();
                 MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DetalleVenta dv = new DetalleVenta();
+                int contador = dv.dgDetalleVenta.Rows.Add();
+                int contcell = 0;
+                dv.dgDetalleVenta.Rows[contador].Cells[contcell].Value = "as";
             }
         }
 
@@ -119,13 +123,25 @@ namespace GerizimZZ
         {
             if (Convert.ToInt32(this.textBox1.Text) != 0)
             {
-                valores[0] = id.ToString();
-                valores[1] = nom;
-                valores[2] = cantidad.ToString();
                 Productos pr = new Productos();
-                pr.llenar(); 
+                DetalleVenta ps = new DetalleVenta();
+                carrito car = new carrito();
+                car.nombre = this.NombreProducto;
+                car.precioproducto = this.PrecioProducto.ToString();
+                car.id = this.id.ToString();
+                ps.dgDetalleVenta.Rows.Add(car.id, car.nombre, this.textBox1, car.precioproducto, 0);
+
             }
         }
+            public class carrito
+        {
+            public string nombre { get; set; }
+            public string precioproducto { get; set; }
+            public string id { get; set; }
+
+        }
+
     }
-}
+    }
+
 
