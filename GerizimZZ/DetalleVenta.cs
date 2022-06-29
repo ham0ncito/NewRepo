@@ -42,22 +42,22 @@
 
         }
 
-        //private void button1_Hover(object sender, EventArgs e)
-        //{
-        //    this.button1.BackColor = Color.IndianRed;
-        //}
-        //private void button1_MouseLeaves(object sender, EventArgs e)
-        //{
-        //    this.button1.BackColor = Color.Transparent;
-        //}
-        //private void button2_Hover(object sender, EventArgs e)
-        //{
-        //    this.button2.BackColor = Color.Cyan;
-        //}
-        //private void button2_MouseLeaves(object sender, EventArgs e)
-        //{
-        //    this.button2.BackColor = Color.Transparent;
-        //}
+        private void button1_Hover(object sender, EventArgs e)
+        {
+            this.button1.BackColor = Color.IndianRed;
+        }
+        private void button1_MouseLeaves(object sender, EventArgs e)
+        {
+            this.button1.BackColor = Color.Transparent;
+        }
+        private void button2_Hover(object sender, EventArgs e)
+        {
+            this.button2.BackColor = Color.Cyan;
+        }
+        private void button2_MouseLeaves(object sender, EventArgs e)
+        {
+            this.button2.BackColor = Color.Transparent;
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
 
@@ -73,29 +73,14 @@
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void dgDetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+    }
+        public class carrito
+    {
+        string idpro;
 
-        private void btninventariomi_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
