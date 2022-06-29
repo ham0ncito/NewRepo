@@ -1,4 +1,5 @@
-﻿namespace GerizimZZ
+﻿using System; 
+namespace GerizimZZ
 {
     public partial class DetalleVenta : Form
     {
@@ -94,6 +95,25 @@
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime fecha_expiracion;
+            DateTime thisDay = DateTime.Today;
+            this.txtfecha.Text = thisDay.ToString("G");
+            fecha_expiracion = thisDay.AddDays(15);
+            this.textBox3.Text = fecha_expiracion.ToString("G");
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

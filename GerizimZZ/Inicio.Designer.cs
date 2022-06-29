@@ -71,7 +71,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(339, -26);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(267, 143);
+            this.pictureBox1.Size = new System.Drawing.Size(300, 143);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -94,7 +94,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 38);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(911, 471);
+            this.panel1.Size = new System.Drawing.Size(944, 484);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -107,7 +107,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(733, 51);
+            this.button3.Location = new System.Drawing.Point(766, 51);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(44, 40);
@@ -138,7 +138,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(806, 51);
+            this.button2.Location = new System.Drawing.Point(839, 51);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(47, 40);
@@ -167,7 +167,7 @@
             this.pictureBox2.Image = global::GerizimZZ.Properties.Resources.substract;
             this.pictureBox2.Location = new System.Drawing.Point(81, 111);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(776, 20);
+            this.pictureBox2.Size = new System.Drawing.Size(809, 20);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -181,7 +181,7 @@
             this.barraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barraBusqueda.Multiline = true;
             this.barraBusqueda.Name = "barraBusqueda";
-            this.barraBusqueda.Size = new System.Drawing.Size(532, 35);
+            this.barraBusqueda.Size = new System.Drawing.Size(565, 35);
             this.barraBusqueda.TabIndex = 1;
             this.barraBusqueda.TextChanged += new System.EventHandler(this.BarraBusqueda_TextChanged);
             // 
@@ -198,7 +198,7 @@
             this.Contenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Contenedor.Location = new System.Drawing.Point(96, 165);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(756, 284);
+            this.Contenedor.Size = new System.Drawing.Size(789, 297);
             this.Contenedor.TabIndex = 6;
             this.Contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Contenedor_Paint);
             // 
@@ -267,9 +267,9 @@
             this.panel_titlebar.Controls.Add(this.btnMaximizar);
             this.panel_titlebar.Controls.Add(this.btnMinimizar);
             this.panel_titlebar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_titlebar.Location = new System.Drawing.Point(236, 0);
+            this.panel_titlebar.Location = new System.Drawing.Point(269, 0);
             this.panel_titlebar.Name = "panel_titlebar";
-            this.panel_titlebar.Size = new System.Drawing.Size(675, 509);
+            this.panel_titlebar.Size = new System.Drawing.Size(675, 522);
             this.panel_titlebar.TabIndex = 2;
             this.panel_titlebar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_titlebar_Paint);
             this.panel_titlebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_titlebar_MouseDown);
@@ -288,7 +288,7 @@
             this.panelsidemenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelsidemenu.Location = new System.Drawing.Point(0, 0);
             this.panelsidemenu.Name = "panelsidemenu";
-            this.panelsidemenu.Size = new System.Drawing.Size(220, 509);
+            this.panelsidemenu.Size = new System.Drawing.Size(220, 522);
             this.panelsidemenu.TabIndex = 11;
             // 
             // pictureBox3
@@ -408,7 +408,7 @@
             this.label1.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(72, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 30);
+            this.label1.Size = new System.Drawing.Size(72, 24);
             this.label1.TabIndex = 1;
             this.label1.Tag = "Menu";
             this.label1.Text = "MENU";
@@ -430,10 +430,10 @@
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(911, 509);
+            this.ClientSize = new System.Drawing.Size(944, 522);
             this.Controls.Add(this.panelsidemenu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_titlebar);

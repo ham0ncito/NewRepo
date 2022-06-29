@@ -153,3 +153,11 @@ C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-wind
 C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pantallafactura.resources
 C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistrosVentas.resources
 C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistroVentas.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\Interop.Accessibility.dll
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.ResolveComReference.cache
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.DetalleVenta.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Inventarios.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pantallafactura.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistrosVentas.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistroVentas.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.VentanaInfoProductos.resources
