@@ -23,7 +23,7 @@ namespace GerizimZZ
         public int Idproducto { get => idproducto; set => idproducto = value; }
         public int Existencia { get => existencia; set => existencia = value; }
 
-        SqlConnection conexion = new SqlConnection("Data Source =TOONS\\SQLEXPRESS ; Initial Catalog =Gerizim ; Integrated Security = True");
+        SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
 
         public void llenado(FlowLayoutPanel Contenedor, string consulta)
@@ -65,7 +65,6 @@ namespace GerizimZZ
             conexion.Dispose();
 
         }
-
 
     }
 }

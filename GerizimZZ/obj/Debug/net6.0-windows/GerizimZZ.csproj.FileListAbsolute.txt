@@ -117,39 +117,39 @@ C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-wind
 C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pdb
 C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.genruntimeconfig.cache
 C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\ref\GerizimZZ.dll
-C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.DetalleVenta.resources
-C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Inventarios.resources
-C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.VentanaInfoProductos.resources
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.AssemblyReference.cache
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\Interop.Accessibility.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.ResolveComReference.cache
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.DetalleVenta.resources
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.FrmLogin.resources
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Inicio.resources
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Inventarios.resources
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Producto.resources
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Properties.Resources.resources
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.VentanaInfoProductos.resources
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.GenerateResource.cache
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.AssemblyInfoInputs.cache
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.AssemblyInfo.cs
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.CoreCompileInputs.cache
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\refint\GerizimZZ.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pdb
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.exe
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.deps.json
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.runtimeconfig.json
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.pdb
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.CopyComplete
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.genruntimeconfig.cache
-C:\Users\Kevin\Source\Repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\ref\GerizimZZ.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.DetalleVenta.resources
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.FrmLogin.resources
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Inicio.resources
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Inventarios.resources
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Producto.resources
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Properties.Resources.resources
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.VentanaInfoProductos.resources
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.GenerateResource.cache
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.AssemblyInfoInputs.cache
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.AssemblyInfo.cs
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\refint\GerizimZZ.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pdb
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.exe
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.deps.json
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.runtimeconfig.json
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\GerizimZZ.pdb
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.CopyComplete
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.genruntimeconfig.cache
+C:\Users\PC\Documents\Tareas\6to periodo\Desarrollo de software\Repositorio\GerizimZZ\obj\Debug\net6.0-windows\ref\GerizimZZ.dll
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\Interop.Accessibility.dll
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.ResolveComReference.cache
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pantallafactura.resources
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistrosVentas.resources
+C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistroVentas.resources
