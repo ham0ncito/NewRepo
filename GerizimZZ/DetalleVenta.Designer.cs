@@ -33,7 +33,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -58,6 +57,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -100,19 +100,11 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.Honeydew;
-            this.textBox1.Location = new System.Drawing.Point(290, 192);
+            this.textBox1.Location = new System.Drawing.Point(290, 193);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 25);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.Honeydew;
-            this.textBox4.Location = new System.Drawing.Point(290, 331);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 25);
-            this.textBox4.TabIndex = 7;
             // 
             // listBox1
             // 
@@ -347,18 +339,18 @@
             // txtfecha
             // 
             this.txtfecha.BackColor = System.Drawing.Color.Honeydew;
-            this.txtfecha.Location = new System.Drawing.Point(198, 236);
+            this.txtfecha.Location = new System.Drawing.Point(215, 236);
             this.txtfecha.Name = "txtfecha";
-            this.txtfecha.Size = new System.Drawing.Size(217, 25);
+            this.txtfecha.Size = new System.Drawing.Size(200, 25);
             this.txtfecha.TabIndex = 33;
             this.txtfecha.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.Color.Honeydew;
-            this.textBox3.Location = new System.Drawing.Point(198, 281);
+            this.textBox3.Location = new System.Drawing.Point(215, 281);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(217, 25);
+            this.textBox3.Size = new System.Drawing.Size(200, 25);
             this.textBox3.TabIndex = 34;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
@@ -375,12 +367,21 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(215, 333);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(200, 26);
+            this.comboBox5.TabIndex = 36;
+            // 
             // DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(823, 640);
+            this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.txtfecha);
@@ -404,7 +405,6 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -434,7 +434,6 @@
         private PictureBox pictureBox2;
         private Label label1;
         private TextBox textBox1;
-        private TextBox textBox4;
         private ListBox listBox1;
         private ComboBox comboBox1;
         private CheckBox checkBox1;
@@ -460,5 +459,6 @@
         private TextBox textBox3;
         private TextBox textBox8;
         private System.Windows.Forms.Timer timer1;
+        private ComboBox comboBox5;
     }
 }
