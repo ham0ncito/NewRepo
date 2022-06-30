@@ -150,3 +150,12 @@ C:\Users\cesar\OneDrive\Escritorio\Clases\Diseño de sotfwar\Repo2\GerizimZZ\obj
 C:\Users\cesar\OneDrive\Escritorio\Clases\Diseño de sotfwar\Repo2\GerizimZZ\obj\Debug\net6.0-windows\ref\GerizimZZ.dll
 C:\Users\cesar\OneDrive\Escritorio\Clases\Diseño de sotfwar\Repo2\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Barra_preview.resources
 C:\Users\cesar\OneDrive\Escritorio\Clases\Diseño de sotfwar\Repo2\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Opciones.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Barra_de_derecha_preview.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Barra_preview.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.DetalleVenta.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Inventarios.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Opciones.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pantallafactura.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistrosVentas.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistroVentas.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.VentanaInfoProductos.resources
