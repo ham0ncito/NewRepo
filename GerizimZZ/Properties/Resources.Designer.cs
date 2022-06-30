@@ -10,9 +10,8 @@
 
 namespace GerizimZZ.Properties {
     using System;
-    using System.Drawing;
-
-
+    
+    
     /// <summary>
     ///   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
     /// </summary>
@@ -32,15 +31,7 @@ namespace GerizimZZ.Properties {
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resources() {
         }
-
-        public static Image reporte_removebg_preview1 { get; internal set; }
-        public static Image pleca { get; internal set; }
-        public static Image avisos1 { get; internal set; }
-        public static Image update_removebg_preview { get; internal set; }
-        public static Image configu_removebg_preview { get; internal set; }
-        public static Image historial2 { get; internal set; }
-        public static Image cliente_removebg_preview1 { get; internal set; }
-
+        
         /// <summary>
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
