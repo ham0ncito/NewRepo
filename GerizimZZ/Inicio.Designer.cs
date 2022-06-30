@@ -321,6 +321,7 @@
             this.btnclientesmi.Text = "Clientes";
             this.btnclientesmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnclientesmi.UseVisualStyleBackColor = false;
+            this.btnclientesmi.Click += new System.EventHandler(this.btnclientesmi_Click);
             this.btnclientesmi.MouseLeave += new System.EventHandler(this.btnclientesmi_MouseLeaves);
             this.btnclientesmi.MouseHover += new System.EventHandler(this.btnclientesmi_Hover);
             // 
@@ -408,7 +409,7 @@
             this.label1.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(72, 89);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 24);
+            this.label1.Size = new System.Drawing.Size(94, 30);
             this.label1.TabIndex = 1;
             this.label1.Tag = "Menu";
             this.label1.Text = "MENU";
@@ -430,7 +431,7 @@
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(944, 522);

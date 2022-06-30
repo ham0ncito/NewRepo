@@ -261,5 +261,11 @@ namespace GerizimZZ
             RegistrosVentas bs = new RegistrosVentas();
             bs.ShowDialog();
         }
+
+        private void btnclientesmi_Click(object sender, EventArgs e)
+        {
+            FrmCliente cliente = new FrmCliente();
+            cliente.ShowDialog();
+        }
     }
 }
