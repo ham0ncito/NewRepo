@@ -1,14 +1,10 @@
-﻿using System.Data.SqlClient;
+﻿using System.Data.SqlClient; 
 
 namespace GerizimZZ
 {
     internal class Cl_Login
     {
-<<<<<<< HEAD
-        SqlConnection con = new SqlConnection("Data Source=TATO180\\SQLEXPRESS;Initial Catalog=Gerizim; Integrated Security=True;");
-=======
-        SqlConnection con = new SqlConnection("Data Source=LAPTOP-5T0JR9PE\\SQLEXPRESS;Initial Catalog=Gerizim; Integrated Security=True;");
->>>>>>> e3d0bad7e9a5bad91e0b483d2d8d839ef1078bc0
+        SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private String nombreUsuario { get; set; }
         private string contraseñaUsuario { get; set; }
 

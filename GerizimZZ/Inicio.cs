@@ -75,17 +75,7 @@ namespace GerizimZZ
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Barra_preview barra_Preview = new Barra_preview();
-            barra_Preview.ShowDialog();
-        }
 
-        private void button2_Hover(object sender, EventArgs e)
-        {
-            this.button2.BackColor = Color.Cyan;
-        }
-        private void button2_MouseLeave(object sender, EventArgs e)
-        {
-            this.button2.BackColor = Color.Transparent;
         }
 
         // click a boton de minimizar
@@ -191,11 +181,11 @@ namespace GerizimZZ
         }
         private void btnventasmi_Hover(object sender, EventArgs e)
         {
-            btnventasmi.BackColor = Color.Cyan;
+            VInicio.BackColor = Color.Cyan;
         }
         private void btnventasmi_MouseLeaves(object sender, EventArgs e)
         {
-            btnventasmi.BackColor = Color.FromArgb(214, 224, 229);
+            VInicio.BackColor = Color.FromArgb(214, 224, 229);
         }
 
         private void btn(object sender, MouseEventArgs e)
@@ -266,11 +256,10 @@ namespace GerizimZZ
             this.button3.BackColor = Color.Transparent;
         }
 
-        //Boton para abrir form de pedido
-        private void btnpedidosmi_Click(object sender, EventArgs e)
+        private void btnventasmi_Click(object sender, EventArgs e)
         {
-            frmPantallaPedido frmPantallaPedido = new frmPantallaPedido();
-            frmPantallaPedido.ShowDialog();
+            RegistrosVentas bs = new RegistrosVentas();
+            bs.ShowDialog();
         }
     }
 }
