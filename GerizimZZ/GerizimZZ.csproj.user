@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Barra de derecha preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Barra preview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -18,6 +21,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Opciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="pantallafactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegistrosVentas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="VentanaInfoProductos.cs">
