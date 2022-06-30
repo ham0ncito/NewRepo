@@ -15,15 +15,15 @@ namespace GerizimZZ
         private int estado_producto;
         private int existencia;
 
+        public int Idproducto { get => idproducto; set => idproducto = value; }
         public decimal Precio_producto { get => precio_producto; set => precio_producto = value; }
         public string Nombre_producto { get => nombre_producto; set => nombre_producto = value; }
         public string CodigoBarra_producto { get => codigoBarra_producto; set => codigoBarra_producto = value; }
         public string Descripcion_producto { get => descripcion_producto; set => descripcion_producto = value; }
         public int Estado_producto { get => estado_producto; set => estado_producto = value; }
-        public int Idproducto { get => idproducto; set => idproducto = value; }
         public int Existencia { get => existencia; set => existencia = value; }
 
-        SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+        SqlConnection conexion = new SqlConnection("Data Source =LAPTOP-5T0JR9PE\\SQLEXPRESS ; Initial Catalog =Gerizim ; Integrated Security = True");
 
 
         public void llenado(FlowLayoutPanel Contenedor, string consulta)
