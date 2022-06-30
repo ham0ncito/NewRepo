@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPantallaPedido));
-            this.LogoGerizim = new System.Windows.Forms.PictureBox();
             this.LineaNegraEstetica = new System.Windows.Forms.PictureBox();
             this.BarraDeBusqueda = new System.Windows.Forms.TextBox();
             this.datagridPedidosRecientes = new System.Windows.Forms.DataGridView();
@@ -45,24 +44,11 @@
             this.txtEntrega = new System.Windows.Forms.TextBox();
             this.txtFechaPedido = new System.Windows.Forms.TextBox();
             this.botonCancelarPedido = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridPedidosRecientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LogoGerizim
-            // 
-            this.LogoGerizim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogoGerizim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LogoGerizim.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
-            this.LogoGerizim.Location = new System.Drawing.Point(201, -18);
-            this.LogoGerizim.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LogoGerizim.Name = "LogoGerizim";
-            this.LogoGerizim.Size = new System.Drawing.Size(330, 117);
-            this.LogoGerizim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.LogoGerizim.TabIndex = 1;
-            this.LogoGerizim.TabStop = false;
             // 
             // LineaNegraEstetica
             // 
@@ -210,9 +196,20 @@
             this.botonCancelarPedido.UseVisualStyleBackColor = true;
             this.botonCancelarPedido.Click += new System.EventHandler(this.botonCancelarPedido_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GerizimZZ.Properties.Resources._199848567_4174426372616759_1130399733558613204_n_PhotoRoom1;
+            this.pictureBox1.Location = new System.Drawing.Point(310, -4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(118, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmPantallaPedido
             // 
             this.ClientSize = new System.Drawing.Size(744, 446);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.botonCancelarPedido);
             this.Controls.Add(this.txtFechaPedido);
             this.Controls.Add(this.txtEntrega);
@@ -228,33 +225,19 @@
             this.Controls.Add(this.datagridPedidosRecientes);
             this.Controls.Add(this.BarraDeBusqueda);
             this.Controls.Add(this.LineaNegraEstetica);
-            this.Controls.Add(this.LogoGerizim);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPantallaPedido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.PantallaDescripcionProducto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagridPedidosRecientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        //private PictureBox pictureBox1;
-        //private PictureBox pictureBox2;
-        //public TextBox barraBusqueda;
-        //private Button button1;
-        //private Label label1;
-        //private Button btnMinorista;
-        //private Button btnInternet;
-        //private Button btnMayorista;
-        //private Label label2;
-        //private Button btnSalir;
-        //private DataGridView dataGridView1;
-        private PictureBox LogoGerizim;
         private PictureBox LineaNegraEstetica;
         public TextBox BarraDeBusqueda;
         private DataGridView datagridPedidosRecientes;
@@ -270,6 +253,7 @@
         private TextBox txtEntrega;
         private TextBox txtFechaPedido;
         private Button botonCancelarPedido;
+        private PictureBox pictureBox1;
         //private Button button1;
     }
 }
