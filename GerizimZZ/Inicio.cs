@@ -87,16 +87,6 @@ namespace GerizimZZ
         {
             this.button2.BackColor = Color.Transparent;
         }
-
-        private void button2_Hover(object sender, EventArgs e)
-        {
-            this.button2.BackColor = Color.Cyan;
-        }
-        private void button2_MouseLeave(object sender, EventArgs e)
-        {
-            this.button2.BackColor = Color.Transparent;
-        }
-
         // click a boton de minimizar
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
