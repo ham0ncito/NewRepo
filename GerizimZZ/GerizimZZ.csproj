@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="C:\Users\PC\Desktop\ConexionPedido.cs" Link="ConexionPedido.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="199848567_4174426372616759_1130399733558613204_n-PhotoRoom.ico" />
   </ItemGroup>
 
