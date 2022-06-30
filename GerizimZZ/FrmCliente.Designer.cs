@@ -58,7 +58,6 @@
             this.lblID_cliente.Size = new System.Drawing.Size(134, 22);
             this.lblID_cliente.TabIndex = 0;
             this.lblID_cliente.Text = "Numero de ID :";
-            this.lblID_cliente.Click += new System.EventHandler(this.lblID_cliente_Click);
             // 
             // lblprimerNombre
             // 
@@ -68,7 +67,6 @@
             this.lblprimerNombre.Size = new System.Drawing.Size(142, 22);
             this.lblprimerNombre.TabIndex = 1;
             this.lblprimerNombre.Text = "Primer Nombre :";
-            this.lblprimerNombre.Click += new System.EventHandler(this.lblprimerNombre_Click);
             // 
             // lblsegundoNombre
             // 
@@ -78,7 +76,6 @@
             this.lblsegundoNombre.Size = new System.Drawing.Size(156, 22);
             this.lblsegundoNombre.TabIndex = 2;
             this.lblsegundoNombre.Text = "Segundo Nombre :";
-            this.lblsegundoNombre.Click += new System.EventHandler(this.lblsegundoNombre_Click);
             // 
             // lblprimerApellido
             // 
@@ -88,7 +85,6 @@
             this.lblprimerApellido.Size = new System.Drawing.Size(144, 22);
             this.lblprimerApellido.TabIndex = 3;
             this.lblprimerApellido.Text = "Primer Apellido :";
-            this.lblprimerApellido.Click += new System.EventHandler(this.lblprimerApellido_Click);
             // 
             // lblsegundoApellido
             // 
@@ -98,7 +94,6 @@
             this.lblsegundoApellido.Size = new System.Drawing.Size(158, 22);
             this.lblsegundoApellido.TabIndex = 4;
             this.lblsegundoApellido.Text = "Segundo Apellido :";
-            this.lblsegundoApellido.Click += new System.EventHandler(this.lblsegundoApellido_Click);
             // 
             // lbldireccion
             // 
@@ -108,7 +103,6 @@
             this.lbldireccion.Size = new System.Drawing.Size(95, 22);
             this.lbldireccion.TabIndex = 5;
             this.lbldireccion.Text = "Dirección :";
-            this.lbldireccion.Click += new System.EventHandler(this.lbldireccion_Click);
             // 
             // lbltelefono
             // 
@@ -118,7 +112,6 @@
             this.lbltelefono.Size = new System.Drawing.Size(88, 22);
             this.lbltelefono.TabIndex = 6;
             this.lbltelefono.Text = "Teléfono :";
-            this.lbltelefono.Click += new System.EventHandler(this.lbltelefono_Click);
             // 
             // txtID_cliente
             // 
@@ -126,7 +119,6 @@
             this.txtID_cliente.Name = "txtID_cliente";
             this.txtID_cliente.Size = new System.Drawing.Size(293, 30);
             this.txtID_cliente.TabIndex = 7;
-            this.txtID_cliente.TextChanged += new System.EventHandler(this.txtID_cliente_TextChanged);
             // 
             // txtprimerNombre
             // 
@@ -134,7 +126,6 @@
             this.txtprimerNombre.Name = "txtprimerNombre";
             this.txtprimerNombre.Size = new System.Drawing.Size(293, 30);
             this.txtprimerNombre.TabIndex = 8;
-            this.txtprimerNombre.TextChanged += new System.EventHandler(this.txtprimerNombre_TextChanged);
             // 
             // txtsegundoNombre
             // 
@@ -142,7 +133,6 @@
             this.txtsegundoNombre.Name = "txtsegundoNombre";
             this.txtsegundoNombre.Size = new System.Drawing.Size(293, 30);
             this.txtsegundoNombre.TabIndex = 9;
-            this.txtsegundoNombre.TextChanged += new System.EventHandler(this.txtsegundoNombre_TextChanged);
             // 
             // txtprimerApellido
             // 
@@ -150,7 +140,6 @@
             this.txtprimerApellido.Name = "txtprimerApellido";
             this.txtprimerApellido.Size = new System.Drawing.Size(293, 30);
             this.txtprimerApellido.TabIndex = 10;
-            this.txtprimerApellido.TextChanged += new System.EventHandler(this.txtprimerApellido_TextChanged);
             // 
             // txtsegundoApellido
             // 
@@ -158,7 +147,6 @@
             this.txtsegundoApellido.Name = "txtsegundoApellido";
             this.txtsegundoApellido.Size = new System.Drawing.Size(293, 30);
             this.txtsegundoApellido.TabIndex = 11;
-            this.txtsegundoApellido.TextChanged += new System.EventHandler(this.txtsegundoApellido_TextChanged);
             // 
             // txtTelefono
             // 
@@ -166,7 +154,6 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(293, 30);
             this.txtTelefono.TabIndex = 12;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // txtdireccion
             // 
@@ -175,7 +162,6 @@
             this.txtdireccion.Name = "txtdireccion";
             this.txtdireccion.Size = new System.Drawing.Size(805, 89);
             this.txtdireccion.TabIndex = 13;
-            this.txtdireccion.TextChanged += new System.EventHandler(this.txtdireccion_TextChanged);
             // 
             // btnagregar_Cliente
             // 
