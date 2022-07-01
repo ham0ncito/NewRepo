@@ -40,6 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -173,8 +174,19 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "label5";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(462, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(58, 21);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "label6";
+            // 
             // Mensaje
             // 
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -211,5 +223,6 @@
         private Label label4;
         private Panel panel2;
         private Label label5;
+        private Label label6;
     }
 }

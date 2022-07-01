@@ -19,6 +19,7 @@ namespace GerizimZZ
         public string Mensajeenviado { get => mensajeenviado; set => mensajeenviado = value; }
         public string Fecha { get => fecha; set => fecha = value; }
         public string Nombre_usuario { get => nombre_usuario; set => nombre_usuario = value; }
+        public string IdMensaje { get => idMensaje; set => idMensaje = value; }
 
         SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
@@ -36,10 +37,11 @@ namespace GerizimZZ
             {
                 nombre_usuario = reader[0].ToString();
                 mensajeenviado = reader[3].ToString();
-
-                 Mensaje ms = new Mensaje();
+                fecha = reader[1].ToString();
+                IdMensaje = reader[2].ToString();
+                Mensaje ms = new Mensaje();
                  
-                 panel.Controls.Add(ms);
+                panel.Controls.Add(ms);
                 
             }
 

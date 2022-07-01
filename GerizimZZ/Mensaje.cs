@@ -13,7 +13,23 @@ namespace GerizimZZ
 {
     public partial class Mensaje : UserControl
     {
-        
+        private string idMensaje;
+        private string nombreUsuario;
+        private string mensajeenviar;
+        private string Fecha;
+
+        public string IdMensaje {
+            get { return label4.Text; }
+            set { label4.Text = value; } 
+        }
+        public string NombreUsuario
+        {
+            get { return label3.Text; } 
+            set {label3.Text = value; } 
+        }
+        public string Mensajeenviar { get => mensajeenviar; set => mensajeenviar = value; }
+        public string Fecha1 { get => Fecha; set => Fecha = value; }
+
         public Mensaje()
         {
             InitializeComponent();
