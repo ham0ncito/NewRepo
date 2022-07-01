@@ -271,5 +271,11 @@ namespace GerizimZZ
             frmPantallaPedido frmPantallaPedido = new frmPantallaPedido();
             frmPantallaPedido.ShowDialog();
         }
+
+        private void btnventasmi_Click(object sender, EventArgs e)
+        {
+            RegistrosVentas bs = new RegistrosVentas();
+            bs.ShowDialog();
+        }
     }
 }

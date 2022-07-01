@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -345,6 +344,7 @@
             this.btnventasmi.Text = "Ventas";
             this.btnventasmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnventasmi.UseVisualStyleBackColor = false;
+            this.btnventasmi.Click += new System.EventHandler(this.btnventasmi_Click);
             this.btnventasmi.MouseLeave += new System.EventHandler(this.btnventasmi_MouseLeaves);
             this.btnventasmi.MouseHover += new System.EventHandler(this.btnventasmi_Hover);
             // 
@@ -440,8 +440,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_titlebar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            Icon icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Icon = icon;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
