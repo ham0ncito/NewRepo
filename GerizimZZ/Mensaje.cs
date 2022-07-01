@@ -21,40 +21,8 @@ namespace GerizimZZ
 
        public void activar(FlowLayoutPanel contenedor, string consulta)
         {
-                conexion.Open();
-
-                SqlCommand comando = new SqlCommand(consulta, conexion);
-                comando.CommandType = CommandType.Text;
-                SqlDataReader reader = comando.ExecuteReader();
-
-             
-              
-                while (reader.Read())
-                {
-                nombre_usuario = reader[0].ToString();
-                mensajeenviado = reader[3].ToString();
-
-                   /* Producto sd = new Producto();
-                    sd.Id = Convert.ToInt32(idproducto);
-                    sd.DescripcionProducto = descripcion_producto;
-                    sd.NombreProducto = nombre_producto;
-                    sd.PrecioProducto = precio_producto.ToString();
-                    sd.estado = estado_producto.ToString();
-                    sd.Stockactual = existencia;
-                    sd.Codigobarra = codigoBarra_producto;
-                    if (sd.estado == "2")
-                    {
-                        sd.BackgroundImage = null;
-                        sd.BackColor = Color.DodgerBlue;
-                    }
-                    Contenedor.Controls.Add(sd);
-                   */
-                }
-
-                conexion.Close();
-                conexion.Dispose();
-
-            }
+               
+        }
 
         private void Mensaje_Load(object sender, EventArgs e)
         {

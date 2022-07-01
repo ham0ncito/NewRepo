@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Data; 
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
@@ -21,5 +22,29 @@ namespace GerizimZZ
 
         SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
+        public void init(FlowLayoutPanel panel, string consulta)
+        {
+            conexion.Open();
+
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            comando.CommandType = CommandType.Text;
+            SqlDataReader reader = comando.ExecuteReader();
+
+
+
+            while (reader.Read())
+            {
+                nombre_usuario = reader[0].ToString();
+                mensajeenviado = reader[3].ToString();
+
+                 Mensaje ms = new Mensaje();
+                 
+                 panel.Controls.Add(ms);
+                
+            }
+
+            conexion.Close();
+            conexion.Dispose();
+        }
     }
 }
