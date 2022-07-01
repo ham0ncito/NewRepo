@@ -361,7 +361,6 @@
             // 
             // dgDetalleVenta
             // 
-            this.dgDetalleVenta.AllowUserToDeleteRows = false;
             this.dgDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
