@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="Barra preview.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Component1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -17,10 +20,10 @@
     <Compile Update="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="pantallafactura.cs">
+    <Compile Update="frmPantallaPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="RegistrosVentas.cs">
+    <Compile Update="Opciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="VentanaInfoProductos.cs">
@@ -34,8 +37,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Update="DataSet2.xsd">
+    <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
-    </None>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>
