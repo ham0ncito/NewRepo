@@ -97,5 +97,14 @@
         {
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime fecha_expiracion;
+            DateTime thisDay = DateTime.Today;
+            this.txtfecha.Text = thisDay.ToString("G");
+            fecha_expiracion = thisDay.AddDays(15);
+            this.textBox3.Text = fecha_expiracion.ToString("G");
+        }
     }
 }
