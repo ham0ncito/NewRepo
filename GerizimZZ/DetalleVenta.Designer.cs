@@ -33,13 +33,13 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.cbTerceraEdad = new System.Windows.Forms.CheckBox();
+            this.cbDescuentos = new System.Windows.Forms.CheckBox();
+            this.cmbDescuentos = new System.Windows.Forms.ComboBox();
+            this.cbDelivery = new System.Windows.Forms.CheckBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txttotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,7 +62,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
@@ -110,57 +111,59 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(125, 25);
             this.textBox1.TabIndex = 4;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // checkBox1
+            // cbTerceraEdad
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.Location = new System.Drawing.Point(510, 238);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(113, 22);
-            this.checkBox1.TabIndex = 11;
-            this.checkBox1.Text = "Tercera Edad";
-            this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbTerceraEdad.AutoSize = true;
+            this.cbTerceraEdad.BackColor = System.Drawing.Color.Transparent;
+            this.cbTerceraEdad.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbTerceraEdad.Location = new System.Drawing.Point(510, 238);
+            this.cbTerceraEdad.Name = "cbTerceraEdad";
+            this.cbTerceraEdad.Size = new System.Drawing.Size(113, 22);
+            this.cbTerceraEdad.TabIndex = 11;
+            this.cbTerceraEdad.Text = "Tercera Edad";
+            this.cbTerceraEdad.UseVisualStyleBackColor = false;
+            this.cbTerceraEdad.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // checkBox2
+            // cbDescuentos
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox2.Location = new System.Drawing.Point(510, 286);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(101, 22);
-            this.checkBox2.TabIndex = 12;
-            this.checkBox2.Text = "Descuentos";
-            this.checkBox2.UseVisualStyleBackColor = false;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.cbDescuentos.AutoSize = true;
+            this.cbDescuentos.BackColor = System.Drawing.Color.Transparent;
+            this.cbDescuentos.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbDescuentos.Location = new System.Drawing.Point(510, 286);
+            this.cbDescuentos.Name = "cbDescuentos";
+            this.cbDescuentos.Size = new System.Drawing.Size(101, 22);
+            this.cbDescuentos.TabIndex = 12;
+            this.cbDescuentos.Text = "Descuentos";
+            this.cbDescuentos.UseVisualStyleBackColor = false;
+            this.cbDescuentos.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
-            // comboBox2
+            // cmbDescuentos
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.Honeydew;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbDescuentos.BackColor = System.Drawing.Color.Honeydew;
+            this.cmbDescuentos.FormattingEnabled = true;
+            this.cmbDescuentos.Items.AddRange(new object[] {
             "Cliente Frecuente"});
-            this.comboBox2.Location = new System.Drawing.Point(661, 281);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 26);
-            this.comboBox2.TabIndex = 13;
+            this.cmbDescuentos.Location = new System.Drawing.Point(661, 281);
+            this.cmbDescuentos.Name = "cmbDescuentos";
+            this.cmbDescuentos.Size = new System.Drawing.Size(121, 26);
+            this.cmbDescuentos.TabIndex = 13;
+            this.cmbDescuentos.Text = "Cliente Frecuente";
             // 
-            // checkBox3
+            // cbDelivery
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox3.Location = new System.Drawing.Point(510, 333);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(81, 22);
-            this.checkBox3.TabIndex = 14;
-            this.checkBox3.Text = "Delivery";
-            this.checkBox3.UseVisualStyleBackColor = false;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.cbDelivery.AutoSize = true;
+            this.cbDelivery.BackColor = System.Drawing.Color.Transparent;
+            this.cbDelivery.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbDelivery.Location = new System.Drawing.Point(510, 333);
+            this.cbDelivery.Name = "cbDelivery";
+            this.cbDelivery.Size = new System.Drawing.Size(81, 22);
+            this.cbDelivery.TabIndex = 14;
+            this.cbDelivery.Text = "Delivery";
+            this.cbDelivery.UseVisualStyleBackColor = false;
+            this.cbDelivery.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // textBox5
             // 
@@ -169,23 +172,33 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(125, 25);
             this.textBox5.TabIndex = 16;
+            this.textBox5.Text = "San Pedro Sula";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox6
             // 
+            this.textBox6.AllowDrop = true;
             this.textBox6.BackColor = System.Drawing.Color.Honeydew;
+            this.textBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBox6.Location = new System.Drawing.Point(661, 377);
+            this.textBox6.Multiline = true;
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(125, 25);
             this.textBox6.TabIndex = 15;
+            this.textBox6.Text = "colonia";
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox7
+            // txttotal
             // 
-            this.textBox7.BackColor = System.Drawing.Color.Honeydew;
-            this.textBox7.Location = new System.Drawing.Point(637, 433);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(149, 25);
-            this.textBox7.TabIndex = 17;
+            this.txttotal.BackColor = System.Drawing.Color.Honeydew;
+            this.txttotal.Location = new System.Drawing.Point(637, 433);
+            this.txttotal.MaxLength = 99999999;
+            this.txttotal.Name = "txttotal";
+            this.txttotal.Size = new System.Drawing.Size(149, 25);
+            this.txttotal.TabIndex = 17;
+            this.txttotal.Text = "0";
+            this.txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label2
             // 
@@ -310,6 +323,7 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 26);
             this.comboBox4.TabIndex = 31;
+            this.comboBox4.Text = "Efectivo";
             this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // label8
@@ -321,6 +335,7 @@
             this.label8.Size = new System.Drawing.Size(64, 18);
             this.label8.TabIndex = 32;
             this.label8.Text = "Subtotal";
+            this.label8.Click += new System.EventHandler(this.label8_Click_1);
             // 
             // txtfecha
             // 
@@ -329,6 +344,7 @@
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.Size = new System.Drawing.Size(178, 25);
             this.txtfecha.TabIndex = 33;
+            this.txtfecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox3
             // 
@@ -337,14 +353,18 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(178, 25);
             this.textBox3.TabIndex = 34;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox8
             // 
             this.textBox8.BackColor = System.Drawing.Color.Honeydew;
-            this.textBox8.Location = new System.Drawing.Point(657, 317);
+            this.textBox8.Location = new System.Drawing.Point(657, 335);
+            this.textBox8.MaxLength = 99999999;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(125, 25);
             this.textBox8.TabIndex = 35;
+            this.textBox8.Text = "#Telefono";
+            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // timer1
             // 
@@ -397,13 +417,21 @@
             this.Column5.HeaderText = "Eliminar";
             this.Column5.Name = "Column5";
             // 
-            // comboBox1
+            // textBox2
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(269, 333);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 37;
+            this.textBox2.Location = new System.Drawing.Point(322, 331);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 25);
+            this.textBox2.TabIndex = 37;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(266, 338);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(149, 25);
+            this.txtCliente.TabIndex = 38;
+            this.txtCliente.Text = "Cliente";
+            this.txtCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DetalleVenta
             // 
@@ -411,7 +439,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GerizimZZ.Properties.Resources._026_Saint_Petersburg;
             this.ClientSize = new System.Drawing.Size(823, 640);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txtCliente);
+            this.Controls.Add(this.textBox2);
             this.Controls.Add(this.dgDetalleVenta);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox3);
@@ -427,13 +456,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txttotal);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.cbDelivery);
+            this.Controls.Add(this.cmbDescuentos);
+            this.Controls.Add(this.cbDescuentos);
+            this.Controls.Add(this.cbTerceraEdad);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -464,13 +493,13 @@
         private PictureBox pictureBox2;
         private Label label1;
         private TextBox textBox1;
-        private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private ComboBox comboBox2;
-        private CheckBox checkBox3;
+        private CheckBox cbTerceraEdad;
+        private CheckBox cbDescuentos;
+        private ComboBox cmbDescuentos;
+        private CheckBox cbDelivery;
         private TextBox textBox5;
         private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox txttotal;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -494,6 +523,7 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewCheckBoxColumn Column5;
-        private ComboBox comboBox1;
+        private TextBox textBox2;
+        private TextBox txtCliente;
     }
 }

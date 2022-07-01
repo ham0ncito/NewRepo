@@ -139,5 +139,14 @@ namespace GerizimZZ
             fecha_expiracion = thisDay.AddDays(15);
             this.textBox3.Text = fecha_expiracion.ToString("G");
         }
+
+        private void label8_Click_1(object sender, EventArgs e)
+        {
+            if (cbDelivery.Checked && cbTerceraEdad.Checked && cbDescuentos.Checked && cmbDescuentos.SelectedItem == "Cliente Frecuente")
+            {
+                label8.Text = String.Concat("Subtotal : ", (Convert.ToInt16(txttotal.Text)));
+            }
+
+        }
     }
 }
