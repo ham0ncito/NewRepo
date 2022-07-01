@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "LgV8RWYjdYMy8bA4ppc8CerGIbhbMlakAsu/AzXsy6l3HXjuJPe2MzbuprBo7CEQpLm9w7o9JiQCgyTFbJTY2g==",
+  "dgSpecHash": "gGXSJWzVV0faD5QB4m6NBzW4gmWlEKEO9v+4BeXEGIleH8jWvieHTTvz84LnsFYcbxKg8FWeFgLEQjxNd/Eigw==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\GerizimZZ\\GerizimZZ.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\HP\\.nuget\\packages\\bunifu.dataviz.winforms\\2.2.1\\bunifu.dataviz.winforms.2.2.1.nupkg.sha512",
-    "C:\\Users\\HP\\.nuget\\packages\\bunifu.ui.winforms\\5.3.0\\bunifu.ui.winforms.5.3.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\fontawesome.sharp\\6.1.1\\fontawesome.sharp.6.1.1.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
@@ -18,26 +16,5 @@
     "C:\\Users\\HP\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"Bunifu.Dataviz.WinForms 2.2.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "libraryId": "Bunifu.Dataviz.WinForms",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    },
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"Bunifu.UI.WinForms 5.3.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "libraryId": "Bunifu.UI.WinForms",
-      "targetGraphs": [
-        "net6.0-windows7.0"
-      ]
-    }
-  ]
+  "logs": []
 }

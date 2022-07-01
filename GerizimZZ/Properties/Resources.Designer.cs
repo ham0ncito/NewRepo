@@ -343,6 +343,16 @@ namespace GerizimZZ.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap warehouse {
+            get {
+                object obj = ResourceManager.GetObject("warehouse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2022_06_30_at_7_40_00_PM {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2022-06-30 at 7.40.00 PM", resourceCulture);

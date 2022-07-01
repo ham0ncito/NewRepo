@@ -18,8 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Bunifu.Dataviz.WinForms" Version="2.2.1" />
-    <PackageReference Include="Bunifu.UI.WinForms" Version="5.3.0" />
     <PackageReference Include="FontAwesome.Sharp" Version="6.1.1" />
     <PackageReference Include="Serilog" Version="2.11.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
