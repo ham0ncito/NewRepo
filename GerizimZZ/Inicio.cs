@@ -161,6 +161,7 @@ namespace GerizimZZ
 
         private void btninventariomi_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -276,6 +277,18 @@ namespace GerizimZZ
         {
             RegistrosVentas bs = new RegistrosVentas();
             bs.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void btnclientesmi_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }

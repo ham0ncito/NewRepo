@@ -29,7 +29,7 @@ namespace GerizimZZ
         }
         private void btnUsua_Hover(object sender, EventArgs e)
         {
-            this.btnUsua.BackColor = Color.LawnGreen;
+            this.btnUsua.BackColor = Color.Cyan;
         }
         private void btnUsua_MouseLeave(object sender, EventArgs e)
         {
@@ -38,12 +38,13 @@ namespace GerizimZZ
 
         private void btnHisto_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
         private void btnHisto_Hover(object sender, EventArgs e)
         {
-            this.btnHisto.BackColor = Color.LawnGreen;
+            this.btnHisto.BackColor = Color.Cyan;
         }
         private void btnHisto_MouseLeave(object sender, EventArgs e)
         {
@@ -59,7 +60,7 @@ namespace GerizimZZ
 
         private void btnOpcio_Hover(object sender, EventArgs e)
         {
-            this.btnOpcio.BackColor = Color.LawnGreen;
+            this.btnOpcio.BackColor = Color.Cyan;
         }
         private void btnOpcio_MouseLeave(object sender, EventArgs e)
         {
@@ -68,12 +69,12 @@ namespace GerizimZZ
 
         private void btnRepor_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void btnRepor_Hover(object sender, EventArgs e)
         {
-            this.btnRepor.BackColor = Color.LawnGreen;
+            this.btnRepor.BackColor = Color.Cyan;
         }
         private void btnRepor_MouseLeave(object sender, EventArgs e)
         {
@@ -87,7 +88,7 @@ namespace GerizimZZ
 
         private void btnUpdate_Hover(object sender, EventArgs e)
         {
-            this.btnUpdate.BackColor = Color.LawnGreen;
+            this.btnUpdate.BackColor = Color.Cyan;
         }
         private void btnUpdate_MouseLeave(object sender, EventArgs e)
         {
@@ -101,7 +102,7 @@ namespace GerizimZZ
 
         private void btnAviso_Hover(object sender, EventArgs e)
         {
-            this.btnAviso.BackColor = Color.LawnGreen;
+            this.btnAviso.BackColor = Color.Cyan;
         }
         private void btnAviso_MouseLeave(object sender, EventArgs e)
         {
