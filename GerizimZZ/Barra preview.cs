@@ -25,7 +25,8 @@ namespace GerizimZZ
 
         private void btnUsua_Click(object sender, EventArgs e)
         {
-
+            frmUsuario nuevoUsuario = new frmUsuario();
+            nuevoUsuario.ShowDialog();
         }
         private void btnUsua_Hover(object sender, EventArgs e)
         {
