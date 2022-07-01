@@ -33,7 +33,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -63,6 +62,7 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
@@ -111,14 +111,6 @@
             this.textBox1.Size = new System.Drawing.Size(125, 25);
             this.textBox1.TabIndex = 4;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.Honeydew;
-            this.textBox4.Location = new System.Drawing.Point(290, 331);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 25);
-            this.textBox4.TabIndex = 7;
             // 
             // checkBox1
             // 
@@ -405,12 +397,21 @@
             this.Column5.HeaderText = "Eliminar";
             this.Column5.Name = "Column5";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(269, 333);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 26);
+            this.comboBox1.TabIndex = 37;
+            // 
             // DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GerizimZZ.Properties.Resources._026_Saint_Petersburg;
             this.ClientSize = new System.Drawing.Size(823, 640);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dgDetalleVenta);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBox3);
@@ -433,7 +434,6 @@
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -464,7 +464,6 @@
         private PictureBox pictureBox2;
         private Label label1;
         private TextBox textBox1;
-        private TextBox textBox4;
         private CheckBox checkBox1;
         private CheckBox checkBox2;
         private ComboBox comboBox2;
@@ -495,5 +494,6 @@
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewCheckBoxColumn Column5;
+        private ComboBox comboBox1;
     }
 }

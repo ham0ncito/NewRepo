@@ -1,8 +1,10 @@
-﻿namespace GerizimZZ
+﻿using System.Data.SqlClient; 
+namespace GerizimZZ
 {
     public partial class DetalleVenta : Form
     {
-        public int x = 0; 
+        public int x = 0;
+       
         public DetalleVenta()
         {
             InitializeComponent();
@@ -71,7 +73,19 @@
 
         private void DetalleVenta_Load(object sender, EventArgs e)
         {
+           
+            SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+            SqlCommand cm = new SqlCommand("select max(Id_factura) + 1 as maximo from Factura;", conexion);
             funcionllenardg();
+            conexion.Open(); 
+            SqlDataReader registro = cm.ExecuteReader();
+            if (registro.Read())
+            {
+                textBox1.Text = registro["maximo"].ToString();
+            }
+
+            
+
         }
         public void funcionllenardg()
         {
