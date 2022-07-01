@@ -357,6 +357,10 @@
             this.textBox8.Size = new System.Drawing.Size(125, 25);
             this.textBox8.TabIndex = 35;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            // 
             // DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
