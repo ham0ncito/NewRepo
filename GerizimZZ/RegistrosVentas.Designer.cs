@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrosVentas));
             this.barraBusqueda = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -66,11 +67,10 @@
             this.barraBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.barraBusqueda.BackColor = System.Drawing.Color.Honeydew;
-            this.barraBusqueda.Location = new System.Drawing.Point(75, 296);
-            this.barraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barraBusqueda.Location = new System.Drawing.Point(66, 222);
             this.barraBusqueda.Multiline = true;
             this.barraBusqueda.Name = "barraBusqueda";
-            this.barraBusqueda.Size = new System.Drawing.Size(184, 28);
+            this.barraBusqueda.Size = new System.Drawing.Size(162, 22);
             this.barraBusqueda.TabIndex = 19;
             this.barraBusqueda.TextChanged += new System.EventHandler(this.barraBusqueda_TextChanged_1);
             this.barraBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.barraBusqueda_KeyUp);
@@ -82,10 +82,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
-            this.pictureBox1.Location = new System.Drawing.Point(274, 13);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(240, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(270, 152);
+            this.pictureBox1.Size = new System.Drawing.Size(236, 114);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
@@ -95,9 +94,10 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::GerizimZZ.Properties.Resources.substract;
-            this.pictureBox2.Location = new System.Drawing.Point(29, 172);
+            this.pictureBox2.Location = new System.Drawing.Point(25, 129);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(804, 25);
+            this.pictureBox2.Size = new System.Drawing.Size(704, 19);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -108,9 +108,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(21, 526);
+            this.label1.Location = new System.Drawing.Point(18, 394);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 22);
+            this.label1.Size = new System.Drawing.Size(95, 18);
             this.label1.TabIndex = 9;
             this.label1.Text = "Total Diario:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -121,26 +121,28 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(21, 574);
+            this.label2.Location = new System.Drawing.Point(18, 430);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 22);
+            this.label2.Size = new System.Drawing.Size(111, 18);
             this.label2.TabIndex = 13;
             this.label2.Text = "Total Semanal:";
             // 
             // intsemanal
             // 
             this.intsemanal.BackColor = System.Drawing.Color.Honeydew;
-            this.intsemanal.Location = new System.Drawing.Point(165, 572);
+            this.intsemanal.Location = new System.Drawing.Point(144, 429);
+            this.intsemanal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.intsemanal.Name = "intsemanal";
-            this.intsemanal.Size = new System.Drawing.Size(125, 27);
+            this.intsemanal.Size = new System.Drawing.Size(110, 23);
             this.intsemanal.TabIndex = 14;
             // 
             // intventasdia
             // 
             this.intventasdia.BackColor = System.Drawing.Color.Honeydew;
-            this.intventasdia.Location = new System.Drawing.Point(165, 526);
+            this.intventasdia.Location = new System.Drawing.Point(144, 394);
+            this.intventasdia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.intventasdia.Name = "intventasdia";
-            this.intventasdia.Size = new System.Drawing.Size(125, 27);
+            this.intventasdia.Size = new System.Drawing.Size(110, 23);
             this.intventasdia.TabIndex = 15;
             this.intventasdia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -150,12 +152,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 345);
+            this.dataGridView1.Location = new System.Drawing.Point(18, 259);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(457, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(400, 110);
             this.dataGridView1.TabIndex = 18;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -176,18 +179,19 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(301, 211);
+            this.label3.Location = new System.Drawing.Point(263, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(216, 31);
+            this.label3.Size = new System.Drawing.Size(169, 25);
             this.label3.TabIndex = 17;
             this.label3.Text = "Registros Ventas";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::GerizimZZ.Properties.Resources.search;
-            this.pictureBox3.Location = new System.Drawing.Point(29, 296);
+            this.pictureBox3.Location = new System.Drawing.Point(25, 222);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(40, 28);
+            this.pictureBox3.Size = new System.Drawing.Size(35, 21);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
@@ -197,9 +201,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(29, 257);
+            this.label4.Location = new System.Drawing.Point(25, 193);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(253, 22);
+            this.label4.Size = new System.Drawing.Size(209, 18);
             this.label4.TabIndex = 21;
             this.label4.Text = "Busqueda de fechas de venta";
             // 
@@ -210,9 +214,10 @@
             this.VFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.VFactura.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.VFactura.ForeColor = System.Drawing.Color.Black;
-            this.VFactura.Location = new System.Drawing.Point(592, 572);
+            this.VFactura.Location = new System.Drawing.Point(518, 429);
+            this.VFactura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.VFactura.Name = "VFactura";
-            this.VFactura.Size = new System.Drawing.Size(144, 37);
+            this.VFactura.Size = new System.Drawing.Size(126, 28);
             this.VFactura.TabIndex = 22;
             this.VFactura.Text = "Ver Factura";
             this.VFactura.UseVisualStyleBackColor = false;
@@ -223,9 +228,9 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(542, 298);
+            this.label5.Location = new System.Drawing.Point(474, 224);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 22);
+            this.label5.Size = new System.Drawing.Size(72, 18);
             this.label5.TabIndex = 24;
             this.label5.Text = "Id Venta:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -235,9 +240,9 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(542, 345);
+            this.label6.Location = new System.Drawing.Point(474, 259);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(114, 22);
+            this.label6.Size = new System.Drawing.Size(94, 18);
             this.label6.TabIndex = 25;
             this.label6.Text = "Fecha Pago:";
             // 
@@ -246,9 +251,9 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(542, 391);
+            this.label7.Location = new System.Drawing.Point(474, 293);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 22);
+            this.label7.Size = new System.Drawing.Size(80, 18);
             this.label7.TabIndex = 26;
             this.label7.Text = "Id Cliente:";
             // 
@@ -257,9 +262,9 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(542, 438);
+            this.label8.Location = new System.Drawing.Point(474, 328);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 22);
+            this.label8.Size = new System.Drawing.Size(90, 18);
             this.label8.TabIndex = 27;
             this.label8.Text = "Id Sucursal:";
             // 
@@ -268,58 +273,63 @@
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(542, 485);
+            this.label9.Location = new System.Drawing.Point(474, 364);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 22);
+            this.label9.Size = new System.Drawing.Size(69, 18);
             this.label9.TabIndex = 28;
             this.label9.Text = "Id Cajas:";
             // 
             // txtid
             // 
             this.txtid.BackColor = System.Drawing.Color.Honeydew;
-            this.txtid.Location = new System.Drawing.Point(684, 298);
+            this.txtid.Location = new System.Drawing.Point(598, 224);
+            this.txtid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtid.Name = "txtid";
-            this.txtid.Size = new System.Drawing.Size(125, 27);
+            this.txtid.Size = new System.Drawing.Size(110, 23);
             this.txtid.TabIndex = 29;
             // 
             // nventa
             // 
             this.nventa.BackColor = System.Drawing.Color.Honeydew;
-            this.nventa.Location = new System.Drawing.Point(684, 345);
+            this.nventa.Location = new System.Drawing.Point(598, 259);
+            this.nventa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nventa.Name = "nventa";
-            this.nventa.Size = new System.Drawing.Size(125, 27);
+            this.nventa.Size = new System.Drawing.Size(110, 23);
             this.nventa.TabIndex = 34;
             // 
             // fechapago
             // 
             this.fechapago.BackColor = System.Drawing.Color.Honeydew;
-            this.fechapago.Location = new System.Drawing.Point(684, 391);
+            this.fechapago.Location = new System.Drawing.Point(598, 293);
+            this.fechapago.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechapago.Name = "fechapago";
-            this.fechapago.Size = new System.Drawing.Size(125, 27);
+            this.fechapago.Size = new System.Drawing.Size(110, 23);
             this.fechapago.TabIndex = 31;
             // 
             // idsucursal
             // 
             this.idsucursal.BackColor = System.Drawing.Color.Honeydew;
-            this.idsucursal.Location = new System.Drawing.Point(684, 436);
+            this.idsucursal.Location = new System.Drawing.Point(598, 327);
+            this.idsucursal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idsucursal.Name = "idsucursal";
-            this.idsucursal.Size = new System.Drawing.Size(125, 27);
+            this.idsucursal.Size = new System.Drawing.Size(110, 23);
             this.idsucursal.TabIndex = 32;
             // 
             // idcajas
             // 
             this.idcajas.BackColor = System.Drawing.Color.Honeydew;
-            this.idcajas.Location = new System.Drawing.Point(684, 485);
+            this.idcajas.Location = new System.Drawing.Point(598, 364);
+            this.idcajas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idcajas.Name = "idcajas";
-            this.idcajas.Size = new System.Drawing.Size(125, 27);
+            this.idcajas.Size = new System.Drawing.Size(110, 23);
             this.idcajas.TabIndex = 33;
             // 
             // RegistrosVentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GerizimZZ.Properties.Resources._026_Saint_Petersburg;
-            this.ClientSize = new System.Drawing.Size(851, 623);
+            this.ClientSize = new System.Drawing.Size(745, 467);
             this.Controls.Add(this.idcajas);
             this.Controls.Add(this.idsucursal);
             this.Controls.Add(this.fechapago);
@@ -342,7 +352,10 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.barraBusqueda);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RegistrosVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.RegistrosVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

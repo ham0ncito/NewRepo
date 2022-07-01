@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Barra_preview));
             this.btnUsua = new System.Windows.Forms.Button();
             this.btnHisto = new System.Windows.Forms.Button();
             this.btnOpcio = new System.Windows.Forms.Button();
@@ -40,10 +41,10 @@
             // btnUsua
             // 
             this.btnUsua.BackColor = System.Drawing.Color.Transparent;
-            this.btnUsua.BackgroundImage = global::GerizimZZ.Properties.Resources.cliente_removebg_preview1;
             this.btnUsua.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnUsua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsua.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnUsua.Image = global::GerizimZZ.Properties.Resources.WhatsApp_Image_2022_06_30_at_7_40_00_PM;
             this.btnUsua.Location = new System.Drawing.Point(21, 50);
             this.btnUsua.Name = "btnUsua";
             this.btnUsua.Size = new System.Drawing.Size(85, 93);
@@ -58,9 +59,9 @@
             // btnHisto
             // 
             this.btnHisto.BackColor = System.Drawing.Color.Transparent;
-            this.btnHisto.BackgroundImage = global::GerizimZZ.Properties.Resources.historial2;
             this.btnHisto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnHisto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHisto.Image = global::GerizimZZ.Properties.Resources.WhatsApp_Image_2022_06_30_at_7_40_00_PM__2_;
             this.btnHisto.Location = new System.Drawing.Point(154, 50);
             this.btnHisto.Name = "btnHisto";
             this.btnHisto.Size = new System.Drawing.Size(85, 93);
@@ -75,9 +76,9 @@
             // btnOpcio
             // 
             this.btnOpcio.BackColor = System.Drawing.Color.Transparent;
-            this.btnOpcio.BackgroundImage = global::GerizimZZ.Properties.Resources.configu_removebg_preview;
             this.btnOpcio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnOpcio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpcio.Image = global::GerizimZZ.Properties.Resources.WhatsApp_Image_2022_06_30_at_7_40_00_PM__1_;
             this.btnOpcio.Location = new System.Drawing.Point(21, 149);
             this.btnOpcio.Name = "btnOpcio";
             this.btnOpcio.Size = new System.Drawing.Size(85, 93);
@@ -92,9 +93,9 @@
             // btnRepor
             // 
             this.btnRepor.BackColor = System.Drawing.Color.Transparent;
-            this.btnRepor.BackgroundImage = global::GerizimZZ.Properties.Resources.reporte_removebg_preview1;
             this.btnRepor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnRepor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRepor.Image = global::GerizimZZ.Properties.Resources.WhatsApp_Image_2022_06_30_at_7_40_00_PM__3_;
             this.btnRepor.Location = new System.Drawing.Point(154, 149);
             this.btnRepor.Name = "btnRepor";
             this.btnRepor.Size = new System.Drawing.Size(85, 93);
@@ -109,9 +110,9 @@
             // btnUpdate
             // 
             this.btnUpdate.BackColor = System.Drawing.Color.Transparent;
-            this.btnUpdate.BackgroundImage = global::GerizimZZ.Properties.Resources.update_removebg_preview;
             this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Image = global::GerizimZZ.Properties.Resources.WhatsApp_Image_2022_06_30_at_7_40_01_PM;
             this.btnUpdate.Location = new System.Drawing.Point(21, 248);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(85, 93);
@@ -126,9 +127,9 @@
             // btnAviso
             // 
             this.btnAviso.BackColor = System.Drawing.Color.Transparent;
-            this.btnAviso.BackgroundImage = global::GerizimZZ.Properties.Resources.avisos1;
             this.btnAviso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnAviso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAviso.Image = global::GerizimZZ.Properties.Resources.WhatsApp_Image_2022_06_30_at_7_40_01_PM__1_;
             this.btnAviso.Location = new System.Drawing.Point(154, 248);
             this.btnAviso.Name = "btnAviso";
             this.btnAviso.Size = new System.Drawing.Size(85, 93);
@@ -143,7 +144,7 @@
             // btncerrarBP
             // 
             this.btncerrarBP.BackColor = System.Drawing.Color.Transparent;
-            this.btncerrarBP.BackgroundImage = global::GerizimZZ.Properties.Resources.pleca;
+            this.btncerrarBP.BackgroundImage = global::GerizimZZ.Properties.Resources.WhatsApp_Image_2022_06_30_at_7_44_33_PM;
             this.btncerrarBP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btncerrarBP.FlatAppearance.BorderSize = 0;
             this.btncerrarBP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -158,6 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GerizimZZ.Properties.Resources._053_Soft_Grass;
             this.ClientSize = new System.Drawing.Size(269, 353);
             this.Controls.Add(this.btncerrarBP);
             this.Controls.Add(this.btnAviso);
@@ -167,9 +169,11 @@
             this.Controls.Add(this.btnHisto);
             this.Controls.Add(this.btnUsua);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Barra_preview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Configuracion";
             this.Load += new System.EventHandler(this.Barra_preview_Load);
             this.ResumeLayout(false);
