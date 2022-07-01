@@ -367,6 +367,7 @@
             this.btnpedidosmi.Text = "Pedidos";
             this.btnpedidosmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnpedidosmi.UseVisualStyleBackColor = false;
+            this.btnpedidosmi.Click += new System.EventHandler(this.btnpedidosmi_Click);
             this.btnpedidosmi.MouseLeave += new System.EventHandler(this.btnpedidosmi_MouseLeaves);
             this.btnpedidosmi.MouseHover += new System.EventHandler(this.btnpedidosmi_Hover);
             // 
@@ -439,7 +440,8 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_titlebar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            Icon icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Icon = icon;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Inicio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
