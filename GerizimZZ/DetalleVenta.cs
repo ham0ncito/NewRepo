@@ -2,6 +2,7 @@
 {
     public partial class DetalleVenta : Form
     {
+        public int x = 0; 
         public DetalleVenta()
         {
             InitializeComponent();
@@ -70,7 +71,20 @@
 
         private void DetalleVenta_Load(object sender, EventArgs e)
         {
+            funcionllenardg();
+        }
+        public void funcionllenardg()
+        {
 
+            x = dgDetalleVenta.Rows.Add();
+            int j = 0;
+            textc pr = new textc();
+            x = textc.contcolumnas;
+            dgDetalleVenta.Rows[x].Cells[j].Value = textc.Id.ToString();
+            dgDetalleVenta.Rows[x].Cells[j += 1].Value = textc.NombreProducto;
+            dgDetalleVenta.Rows[x].Cells[j += 1].Value = textc.Cantidad;
+            dgDetalleVenta.Rows[x].Cells[j += 1].Value = textc.precio;
+            dgDetalleVenta.Rows[x].Cells[j += 1].Value = textc.total;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

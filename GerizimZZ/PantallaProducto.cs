@@ -24,10 +24,31 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cantidad < Stockactual)
+           
             {
-                cantidad += 1;
-                textBox1.Text = cantidad.ToString();
+                if (cantidad < Stockactual)
+                {
+                    cantidad += 1;
+                    textBox1.Text = cantidad.ToString();
+                    MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                DetalleVenta dgv = new DetalleVenta();
+                int x = 0;
+                textc.contcolumnas = 0;
+                if (x > 0)
+                {
+                    dgv.funcionllenardg();
+                    for (int h = 0; h < dgv.dgDetalleVenta.Rows.Count; h++)
+                    {
+                        if (dgv.dgDetalleVenta.Rows[x].Cells[0].Value != this.id.ToString())
+                        {
+                            textc.contcolumnas += 1;
+                            dgv.funcionllenardg();
+                        }
+                    }
+
+                }
+
             }
         }
 
@@ -110,6 +131,30 @@
             pr.lblstock.Text = this.Stockactual.ToString();
             pr.ShowDialog();
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            DetalleVenta dgv = new DetalleVenta();
+            int n = dgv.dgDetalleVenta.Rows.Add();
+            int j = 0;
+            string precio = this.PrecioProducto;
+            textc.Id = this.Id.ToString();
+            textc.NombreProducto = this.NombreProducto;
+            dgv.dgDetalleVenta.Rows[n].Cells[j].Value = textc.Id;
+            dgv.dgDetalleVenta.Rows[n].Cells[j += 1].Value = textc.NombreProducto;
+
+
+
+            string cantidadtextbox = textBox1.Text.ToString();
+            textc.Cantidad = cantidadtextbox;
+            textc.precio = this.PrecioProducto;
+
+            int cantidadtextbox2 = int.Parse(cantidadtextbox);
+            string precio2 = this.PrecioProducto.ToString();
+            float precio3 = float.Parse(precio2);
+            float total = cantidadtextbox2 * precio3;
+            textc.total = total.ToString();
         }
     }
 }
