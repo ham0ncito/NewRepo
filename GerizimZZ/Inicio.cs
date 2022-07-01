@@ -87,6 +87,7 @@ namespace GerizimZZ
         {
             this.button2.BackColor = Color.Transparent;
         }
+
         // click a boton de minimizar
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
@@ -263,13 +264,6 @@ namespace GerizimZZ
         private void button3_MouseLeave(object sender, EventArgs e)
         {
             this.button3.BackColor = Color.Transparent;
-        }
-
-        //Boton para abrir form de pedido
-        private void btnpedidosmi_Click(object sender, EventArgs e)
-        {
-            frmPantallaPedido frmPantallaPedido = new frmPantallaPedido();
-            frmPantallaPedido.ShowDialog();
         }
     }
 }
