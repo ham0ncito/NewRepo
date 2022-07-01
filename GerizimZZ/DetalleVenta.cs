@@ -83,7 +83,7 @@ namespace GerizimZZ
             {
                 textBox1.Text = registro["maximo"].ToString();
             }
-
+            conexion.Close(); 
             
 
         }
