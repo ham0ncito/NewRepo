@@ -98,7 +98,9 @@ namespace GerizimZZ
 
         private void btnAviso_Click(object sender, EventArgs e)
         {
-
+            frmAvisos aviso = new frmAvisos();
+            
+            aviso.Show();
         }
 
         private void btnAviso_Hover(object sender, EventArgs e)

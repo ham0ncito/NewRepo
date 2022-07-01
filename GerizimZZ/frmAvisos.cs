@@ -20,8 +20,13 @@ namespace GerizimZZ
         private void frmAvisos_Load(object sender, EventArgs e)
         {
             CsMensajes ms = new CsMensajes();
-            string consulta = "select u.nombreUsuario as NombreUsuario, m.fechaEnvio as fechaEnvio, m.Id_Mensaje as IdMensaje, m.mensaje as Mensaje from Usuarios as u inner join Mensajes as m on m.Fk_Usuarios = u.ID_Usuarios where m.estado = 1; ";
-            ms.init(this.flowLayoutPanel1)
+            string consulta = "select u.nombreUsuario as NombreUsuario, m.fechaEnvio as fechaEnvio, m.Id_Mensaje as IdMensaje, m.mensaje as Mensaje from Usuarios as u inner join Mensajes as m on m.Fk_Usuarios = u.ID_Usuarios where m.estado = 1 order by m.fechaEnvio DESC; ";
+            ms.init(this.flowLayoutPanel1, consulta);
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
