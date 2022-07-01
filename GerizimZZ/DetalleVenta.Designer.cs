@@ -62,6 +62,7 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
@@ -356,10 +357,10 @@
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
             // 
             // dgDetalleVenta
             // 
-            this.dgDetalleVenta.AllowUserToAddRows = false;
             this.dgDetalleVenta.AllowUserToDeleteRows = false;
             this.dgDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -367,10 +368,10 @@
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column6});
+            this.Column6,
+            this.Column5});
             this.dgDetalleVenta.Location = new System.Drawing.Point(34, 377);
             this.dgDetalleVenta.Name = "dgDetalleVenta";
-            this.dgDetalleVenta.ReadOnly = true;
             this.dgDetalleVenta.RowTemplate.Height = 25;
             this.dgDetalleVenta.Size = new System.Drawing.Size(367, 158);
             this.dgDetalleVenta.TabIndex = 36;
@@ -379,31 +380,31 @@
             // 
             this.Column1.HeaderText = "Codigo";
             this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Nombre";
             this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Cantidad";
             this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Precio";
             this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Total";
             this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Eliminar";
+            this.Column5.Name = "Column5";
             // 
             // DetalleVenta
             // 
@@ -494,5 +495,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column6;
+        private DataGridViewCheckBoxColumn Column5;
     }
 }

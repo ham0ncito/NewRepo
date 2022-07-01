@@ -9,11 +9,12 @@
         private string nom;
         private string codigobarra;
         public int cantidad = 0;
-
+        public DetalleVenta dgv = new DetalleVenta();
         public Producto()
         {
             InitializeComponent();
             textBox1.Text = "0";
+            
         }
 
 
@@ -135,7 +136,8 @@
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            DetalleVenta dgv = new DetalleVenta();
+            dgv.dgDetalleVenta.Rows.Add();
+            dgv.dgDetalleVenta.Rows.Add();
             int n = dgv.dgDetalleVenta.Rows.Add();
             int j = 0;
             string precio = this.PrecioProducto;
@@ -155,6 +157,7 @@
             float precio3 = float.Parse(precio2);
             float total = cantidadtextbox2 * precio3;
             textc.total = total.ToString();
+            dgv.dgDetalleVenta.Rows.Add();
         }
     }
 }
