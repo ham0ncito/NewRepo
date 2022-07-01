@@ -23,6 +23,12 @@
     <Compile Update="Opciones.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="pantallafactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RegistrosVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="VentanaInfoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
