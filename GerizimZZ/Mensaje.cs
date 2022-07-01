@@ -27,9 +27,16 @@ namespace GerizimZZ
             get { return label3.Text; } 
             set {label3.Text = value; } 
         }
-        public string Mensajeenviar { get => mensajeenviar; set => mensajeenviar = value; }
-        public string Fecha1 { get => Fecha; set => Fecha = value; }
-
+        public string Mensajeenviar
+        {
+            get { return label5.Text; }
+            set { label5.Text = value; }
+        }
+        public string Fecha1
+        { 
+            get { return label6.Text; }
+            set { label6.Text = value; }
+        }
         public Mensaje()
         {
             InitializeComponent();

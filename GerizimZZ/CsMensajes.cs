@@ -40,7 +40,10 @@ namespace GerizimZZ
                 fecha = reader[1].ToString();
                 IdMensaje = reader[2].ToString();
                 Mensaje ms = new Mensaje();
-                 
+                ms.IdMensaje = idMensaje;
+                ms.NombreUsuario = nombre_usuario;
+                ms.Fecha1 = fecha;
+                ms.Mensajeenviar = mensajeenviado;
                 panel.Controls.Add(ms);
                 
             }
