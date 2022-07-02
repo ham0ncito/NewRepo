@@ -189,8 +189,8 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mi Perfil";
-            this.Load += new System.EventHandler(this.frmUsuario_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
