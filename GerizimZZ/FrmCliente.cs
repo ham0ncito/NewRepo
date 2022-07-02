@@ -13,7 +13,11 @@ namespace GerizimZZ
 {
     public partial class FrmCliente : Form
     {
+        Cl_ConexionDB conexion = new Cl_ConexionDB();
         Cl_Clientes clientes = new Cl_Clientes();
+        Clientedst dstCliente;
+        DataTable dtCliente;
+
         public FrmCliente()
         {
             InitializeComponent();
@@ -23,7 +27,91 @@ namespace GerizimZZ
         private void FrmCliente_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'Gerizimdst.Cliente' table. You can move, or remove it, as needed.
-            this.clienteTableAdapter.Fill(this.Gerizimdst.Clientes);
+            dtCliente = Cl_Clientes.GetAll();
+            dstCliente = new Clientedst();
+            dstCliente.Tables.Add(dtCliente);
+            dgvCliente.DataSource = dstCliente.Tables[0];
+        }
+
+        private void btneliminar_Cliente_Click(object sender, EventArgs e)
+        {
+            if (txtdireccion.Text == "" || txtID_cliente.Text == "" || txtprimerApellido.Text == "" || txtprimerNombre.Text == "" || txtsegundoApellido.Text == "" || txtsegundoNombre.Text == "" || txtTelefono.Text == "")
+            {
+                MessageBox.Show("Los campos no pueden ir vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string ID_cliente;
+                foreach (DataGridViewRow item in this.dgvCliente.SelectedRows)
+                {
+                    ID_cliente = item.Cells[0].Value.ToString();
+                    clientes.Eliminar_Cliente(ID_cliente);
+                }
+                SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+                SqlDataAdapter comando = new SqlDataAdapter();
+                string sql = "SELECT * FROM Cliente";
+                comando.SelectCommand = new SqlCommand(sql, con);
+                dtCliente = Cl_Clientes.GetAll();
+                dstCliente = new Clientedst();
+                dstCliente.Tables.Add(dtCliente);
+                dgvCliente.DataSource = dstCliente.Tables[0];
+                con.Close();
+            }            
+        }
+
+        private void btnmodificar_Cliente_Click(object sender, EventArgs e)
+        {
+            if (txtdireccion.Text == "" || txtID_cliente.Text == "" || txtprimerApellido.Text == "" || txtprimerNombre.Text == "" || txtsegundoApellido.Text == "" || txtsegundoNombre.Text == "" || txtTelefono.Text == "")
+            {
+                MessageBox.Show("Los campos no pueden ir vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                clientes.Modificar_Cliente(txtID_cliente.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtTelefono.Text, txtdireccion.Text);
+                SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+                SqlDataAdapter comando = new SqlDataAdapter();
+                string sql = "SELECT * FROM Cliente";
+                comando.SelectCommand = new SqlCommand(sql, con);
+                dtCliente = Cl_Clientes.GetAll();
+                dstCliente = new Clientedst();
+                dstCliente.Tables.Add(dtCliente);
+                dgvCliente.DataSource = dstCliente.Tables[0];
+                con.Close();
+            }
+        }
+
+        private void btnagregar_Cliente_Click(object sender, EventArgs e)
+        {
+            if (txtdireccion.Text == "" || txtID_cliente.Text == "" || txtprimerApellido.Text == "" || txtprimerNombre.Text == "" || txtsegundoApellido.Text == "" || txtsegundoNombre.Text == "" || txtTelefono.Text == "")
+            {
+                MessageBox.Show("Los campos no pueden ir vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                clientes.Agregar_Cliente(txtID_cliente.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtTelefono.Text, txtdireccion.Text);
+                SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+                SqlDataAdapter comando = new SqlDataAdapter();
+                string sql = "SELECT * FROM Cliente";
+                comando.SelectCommand = new SqlCommand(sql, con);
+                dtCliente = Cl_Clientes.GetAll();
+                dstCliente = new Clientedst();
+                dstCliente.Tables.Add(dtCliente);
+                dgvCliente.DataSource = dstCliente.Tables[0];
+                con.Close();
+                MessageBox.Show("Registro modificado con exito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }            
+        }
+
+        private void txtBuscar_Cliente_TextChanged(object sender, EventArgs e)
+        {
+            dstCliente.Tables[0].DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "ID_cliente", txtBuscar_Cliente.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "primerNombre", txtBuscar_Cliente.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "segundoNombre", txtBuscar_Cliente.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "primerApellido", txtBuscar_Cliente.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "SegundoApellido", txtBuscar_Cliente.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "telefono", txtBuscar_Cliente.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "direccion", txtBuscar_Cliente.Text);
+            dgvCliente.DataSource = dstCliente.Tables[0].DefaultView;
         }
 
         private void dgvCliente_Click(object sender, EventArgs e)
@@ -38,87 +126,6 @@ namespace GerizimZZ
                 txtTelefono.Text = item.Cells[5].Value.ToString();
                 txtdireccion.Text = item.Cells[6].Value.ToString();
             }
-        }
-
-        private void btneliminar_Cliente_Click(object sender, EventArgs e)
-        {
-            DialogResult = MessageBox.Show("Esta seguro que desea eliminar este registro", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (DialogResult == DialogResult.Yes)
-            {
-                string ID_cliente;
-                foreach (DataGridViewRow item in this.dgvCliente.SelectedRows)
-                {
-                    ID_cliente = item.Cells[0].Value.ToString();
-                    clientes.Eliminar_Cliente(ID_cliente);
-                }
-                SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
-                SqlDataAdapter comando = new SqlDataAdapter();
-                string sql = "SELECT * FROM Cliente";
-                comando.SelectCommand = new SqlCommand(sql, con);
-                DataTable tabla = new DataTable();
-                comando.Fill(tabla);
-                BindingSource bSource = new BindingSource();
-                bSource.DataSource = tabla;
-                dgvCliente.DataSource = bSource;
-                con.Close();
-                MessageBox.Show("Registro eliminado con exito", "Eliminar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void btnmodificar_Cliente_Click(object sender, EventArgs e)
-        {
-            if (txtdireccion.Text == "" || txtID_cliente.Text == "" || txtprimerApellido.Text == "" || txtprimerNombre.Text == "" || txtsegundoApellido.Text == "" || txtsegundoNombre.Text == "" || txtTelefono.Text == "")
-            {
-                MessageBox.Show("Los campos no pueden ir vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                clientes.Modificar_Cliente(txtID_cliente.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtTelefono.Text, txtdireccion.Text);
-            }
-        }
-
-        private void btnagregar_Cliente_Click(object sender, EventArgs e)
-        {
-            if (txtdireccion.Text == "" || txtID_cliente.Text == "" || txtprimerApellido.Text == "" || txtprimerNombre.Text == "" || txtsegundoApellido.Text == "" || txtsegundoNombre.Text == "" || txtTelefono.Text == "")
-            {
-                MessageBox.Show("Los campos no pueden ir vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                clientes.Agregar_Cliente(txtID_cliente.Text, txtprimerNombre.Text, txtsegundoNombre.Text, txtprimerApellido.Text, txtsegundoApellido.Text, txtTelefono.Text, txtdireccion.Text);
-                MessageBox.Show("Registro modificado con exito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
-            SqlDataAdapter comando = new SqlDataAdapter();
-            string sql = "SELECT * FROM Cliente";
-            comando.SelectCommand = new SqlCommand(sql, con);
-            DataTable tabla = new DataTable();
-            comando.Fill(tabla);
-            BindingSource bSource = new BindingSource();
-            bSource.DataSource = tabla;
-            dgvCliente.DataSource = bSource;
-            con.Close();
-        }
-
-        private void txtBuscar_Cliente_TextChanged(object sender, EventArgs e)
-        {
-            BindingSource bs = new BindingSource();
-            bs.DataSource = dgvCliente.DataSource;
-            bs.Filter = string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "ID_cliente",
-                txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "primerNombre",
-                txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "segundoNombre",
-                txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "primerApellido",
-                txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "segundoApellido",
-                txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "telefono",
-                txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "direccion",
-                txtBuscar_Cliente.Text);
-            dgvCliente.DataSource = bs;
         }
     }
 }
