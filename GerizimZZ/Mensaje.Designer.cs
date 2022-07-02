@@ -129,7 +129,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::GerizimZZ.Properties.Resources.user__1_;
-            this.pictureBox4.Location = new System.Drawing.Point(26, 30);
+            this.pictureBox4.Location = new System.Drawing.Point(10, 30);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(74, 47);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,7 +140,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 80);
+            this.label3.Location = new System.Drawing.Point(10, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 18);
             this.label3.TabIndex = 2;
@@ -160,9 +160,9 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Location = new System.Drawing.Point(106, 29);
+            this.panel2.Location = new System.Drawing.Point(90, 30);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(489, 48);
+            this.panel2.Size = new System.Drawing.Size(510, 48);
             this.panel2.TabIndex = 4;
             // 
             // label5
@@ -179,7 +179,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(462, 6);
+            this.label6.Location = new System.Drawing.Point(351, 6);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 21);
             this.label6.TabIndex = 5;
@@ -222,8 +222,8 @@
         private PictureBox pictureBox4;
         private Label label3;
         private Label label4;
-        private Panel panel2;
         private Label label5;
         private Label label6;
+        public Panel panel2;
     }
 }

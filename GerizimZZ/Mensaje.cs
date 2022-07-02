@@ -17,6 +17,7 @@ namespace GerizimZZ
         private string nombreUsuario;
         private string mensajeenviar;
         private string Fecha;
+        private string importancia;
 
         public string IdMensaje {
             get { return label4.Text; }
@@ -36,6 +37,11 @@ namespace GerizimZZ
         { 
             get { return label6.Text; }
             set { label6.Text = value; }
+        }
+        public string Importancia
+        {
+            get { return importancia; }
+            set { importancia = value; }
         }
         public Mensaje()
         {
