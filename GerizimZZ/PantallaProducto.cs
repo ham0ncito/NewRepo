@@ -103,14 +103,7 @@
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (estado == "2")
-            {
-                estado = "1";
-            }
-            else
-            {
-                estado = "2";
-            }
+            MessageBox.Show("Proximamente en nuevas actualizaciones", "Proximamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
         private void button3_Click(object sender, EventArgs e)

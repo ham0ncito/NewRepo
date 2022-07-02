@@ -36,17 +36,21 @@ namespace GerizimZZ
 
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string contraseña = "";
-            string contra;
-            int cambio; 
-            if(InputBox.inputBox("Cambio de Contraseña", "Ingrese su nueva contraseña", ref contraseña) == DialogResult.OK)
+            if(MessageBox.Show("¿Desea continuar?", "Continuar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)== DialogResult.Yes)
             {
-                contra = contraseña;
-              
-                string consulta = "use Gerizim; Update Usuarios set contraseñaUsuario = '" + contraseña + "' where nombreUsuario = '" + Usuario.username + "';";
-                Usuario.Conexion(consulta);    
-                
+                string contraseña = "";
+                string contra;
+                int cambio;
+                if (InputBox.inputBox("Cambio de Contraseña", "Ingrese su nueva contraseña", ref contraseña) == DialogResult.OK)
+                {
+                    contra = contraseña;
+
+                    string consulta = "use Gerizim; Update Usuarios set contraseñaUsuario = '" + contraseña + "' where nombreUsuario = '" + Usuario.username + "';";
+                    Usuario.Conexion(consulta);
+
+                }
             }
+            
             
         }
 
