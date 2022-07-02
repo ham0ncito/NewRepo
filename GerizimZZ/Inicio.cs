@@ -10,7 +10,11 @@ namespace GerizimZZ
             InitializeComponent();
             CollapseMenu();
             Llenado();
+           
         }
+
+       
+
         public void Llenado()
         {
             Productos llenar = new Productos();
@@ -289,6 +293,11 @@ namespace GerizimZZ
         {
             MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

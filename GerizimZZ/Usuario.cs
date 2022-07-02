@@ -8,6 +8,8 @@ namespace GerizimZZ
 {
     internal class Usuario
     {
-        //CI_Login cs = new CI_Login; 
+        
+        public string usuario { get; set; }
+        
     }
 }

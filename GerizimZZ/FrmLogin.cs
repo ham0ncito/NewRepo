@@ -2,6 +2,7 @@
 {
     public partial class FrmLogin : Form
     {
+       
         public FrmLogin()
         {
             InitializeComponent();
@@ -29,12 +30,18 @@
             Inicio inicio = new Inicio();
             Cl_Login login = new Cl_Login();
             entro = login.iniciarSesion(txtUsuario.Text, txtContraseña.Text);
+     
             if (entro)
             {
                 this.Hide();
                 inicio.Show();
+               
+
             }
+           
         }
+        
+  
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {

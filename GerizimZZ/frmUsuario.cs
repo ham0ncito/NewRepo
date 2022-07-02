@@ -16,5 +16,10 @@ namespace GerizimZZ
         {
             InitializeComponent();
         }
+
+        private void frmUsuario_Load()
+        {
+
+        }
     }
 }
