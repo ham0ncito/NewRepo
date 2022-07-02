@@ -18,7 +18,7 @@ namespace GerizimZZ
         {
             InitializeComponent();
             CollapseMenu();
-            Llenado();
+            
 
         }
 
@@ -26,9 +26,7 @@ namespace GerizimZZ
 
         public void Llenado()
         {
-            Productos llenar = new Productos();
-            string consulta = "select * from dbo.Producto order by estadoPRoducto DESC; ";
-            llenar.llenado(Contenedor, consulta);
+            
 
         }
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -223,51 +221,21 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string busqueda;
+            
 
-            Productos pr = new Productos();
-            if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
-            {
-                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' order by nombreProducto, estadoPRoducto DESC; ";
-                SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
-                Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
-            }
-            if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
-            {
 
-                busqueda = "select * from dbo.Producto order by estadoPRoducto DESC; ";
-                Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
-
-            }
+            
         }
         private void BarraBusqueda_TextChanged(object sender, EventArgs e)
         {
-            string busqueda;
-
-            Productos pr = new Productos();
-            if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
-            {
-                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' order by nombreProducto, estadoPRoducto DESC; ";
-                SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
-                Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
-            }
-            if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
-            {
-
-                busqueda = "select * from dbo.Producto order by estadoPRoducto DESC; ";
-                Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
-
-            }
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DetalleVenta detalleVenta = new DetalleVenta();
-            detalleVenta.ShowDialog();
+            Inicio fr = new Inicio();
+            fr.Show();
+            this.Close();
 
         }
         private void button3_Hover(object sender, EventArgs e)

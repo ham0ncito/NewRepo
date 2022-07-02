@@ -82,6 +82,7 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Close();
             MessageBox.Show("Nos vemos pronto");
             FrmLogin fr = new FrmLogin();
             fr.Show();

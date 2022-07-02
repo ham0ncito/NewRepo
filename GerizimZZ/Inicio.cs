@@ -285,7 +285,9 @@ namespace GerizimZZ
 
         private void button4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frInicioBodega fr = new frInicioBodega();
+            fr.Show();
+            this.Close();
 
         }
 
