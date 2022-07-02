@@ -127,7 +127,7 @@
             this.button4.Size = new System.Drawing.Size(48, 45);
             this.button4.TabIndex = 9;
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+           // this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -377,7 +377,7 @@
             this.btnventasmi.Text = "Ventas";
             this.btnventasmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnventasmi.UseVisualStyleBackColor = false;
-            this.btnventasmi.Click += new System.EventHandler(this.btnventasmi_Click);
+           // this.btnventasmi.Click += new System.EventHandler(this.btnventasmi_Click);
             this.btnventasmi.MouseLeave += new System.EventHandler(this.btnventasmi_MouseLeaves);
             this.btnventasmi.MouseHover += new System.EventHandler(this.btnventasmi_Hover);
             // 
