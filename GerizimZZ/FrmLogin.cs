@@ -30,7 +30,7 @@
             Inicio inicio = new Inicio();
             Cl_Login login = new Cl_Login();
             entro = login.iniciarSesion(txtUsuario.Text, txtContraseña.Text);
-     
+            Usuario.username = txtUsuario.Text;
             if (entro)
             {
                 this.Hide();

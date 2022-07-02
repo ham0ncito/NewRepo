@@ -180,12 +180,12 @@
 
         private Label lblUsuario;
         private Label lblContraseña;
-        private TextBox txtUsuario;
         private TextBox txtContraseña;
         private Button btSalir;
         private Button btConectar;
         private CheckBox chbxmotrar;
         private PictureBox pictureBox1;
         private LinkLabel linkLabel1;
+        public TextBox txtUsuario;
     }
 }

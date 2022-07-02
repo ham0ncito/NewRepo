@@ -3,13 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace GerizimZZ
 {
-    internal class Usuario
+    public static class Usuario
     {
-        
-        public string usuario { get; set; }
-        
+        public static string username; 
+       
+        public static void Conexion(string consulta)
+        {
+            int cambio; 
+            SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+            conexion.Open();
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            cambio = comando.ExecuteNonQuery();
+            if (cambio == 1)
+            {
+                MessageBox.Show("Se realizo el cambio");
+
+            }
+            else { MessageBox.Show("No se realizo el cambio"); }
+
+            conexion.Close();            
+        }
+
     }
+    
 }

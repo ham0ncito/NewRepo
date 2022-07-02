@@ -72,6 +72,7 @@
             this.configuracionesToolStripMenuItem.Name = "configuracionesToolStripMenuItem";
             this.configuracionesToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.configuracionesToolStripMenuItem.Text = "Configuraciones";
+            this.configuracionesToolStripMenuItem.Click += new System.EventHandler(this.configuracionesToolStripMenuItem_Click);
             // 
             // cambiarConfiguracionToolStripMenuItem
             // 
@@ -84,6 +85,7 @@
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
             this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
             // seguridadToolStripMenuItem
             // 
@@ -99,12 +101,14 @@
             this.cambiarContraseñaToolStripMenuItem.Name = "cambiarContraseñaToolStripMenuItem";
             this.cambiarContraseñaToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.cambiarContraseñaToolStripMenuItem.Text = "Cambiar Contraseña";
+            this.cambiarContraseñaToolStripMenuItem.Click += new System.EventHandler(this.cambiarContraseñaToolStripMenuItem_Click);
             // 
             // cambiarCorreoToolStripMenuItem
             // 
             this.cambiarCorreoToolStripMenuItem.Name = "cambiarCorreoToolStripMenuItem";
             this.cambiarCorreoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.cambiarCorreoToolStripMenuItem.Text = "Cambiar Correo";
+            this.cambiarCorreoToolStripMenuItem.Click += new System.EventHandler(this.cambiarCorreoToolStripMenuItem_Click);
             // 
             // usuarioToolStripMenuItem
             // 
@@ -119,6 +123,7 @@
             this.cambiarFotoDePerfilToolStripMenuItem.Name = "cambiarFotoDePerfilToolStripMenuItem";
             this.cambiarFotoDePerfilToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.cambiarFotoDePerfilToolStripMenuItem.Text = "Cambiar foto de perfil";
+            this.cambiarFotoDePerfilToolStripMenuItem.Click += new System.EventHandler(this.cambiarFotoDePerfilToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -146,12 +151,13 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(48, 125);
+            this.label1.Location = new System.Drawing.Point(42, 124);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(133, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bienvenido Usuario";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -173,6 +179,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Cerrar Sesion";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmUsuario
             // 

@@ -107,3 +107,5 @@ C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\bin\Debug\net6.0-windows\Serilo
 C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.frmAvisos.resources
 C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.frmUsuario.resources
 C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Mensaje.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\Interop.VBIDE.dll
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.csproj.ResolveComReference.cache
