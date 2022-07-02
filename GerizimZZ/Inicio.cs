@@ -10,11 +10,7 @@ namespace GerizimZZ
             InitializeComponent();
             CollapseMenu();
             Llenado();
-            
         }
-
-       
-
         public void Llenado()
         {
             Productos llenar = new Productos();
@@ -112,10 +108,7 @@ namespace GerizimZZ
         //click a boton de cerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea Continuar?", "Confirmacion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
+            Application.Exit();
         }
 
         private void bt_Click(object sender, EventArgs e)
@@ -168,7 +161,6 @@ namespace GerizimZZ
 
         private void btninventariomi_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 
@@ -280,30 +272,10 @@ namespace GerizimZZ
             frmPantallaPedido.ShowDialog();
         }
 
-        private void btnventasmi_Click(object sender, EventArgs e)
-        {
-            RegistrosVentas bs = new RegistrosVentas();
-            bs.ShowDialog();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            frInicioBodega fr = new frInicioBodega();
-            fr.Show();
-            this.Close();
-
-        }
-
         private void btnclientesmi_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-   
+            FrmCliente cliente = new FrmCliente();
+            cliente.ShowDialog();
         }
     }
 }
