@@ -1,5 +1,7 @@
-﻿namespace GerizimZZ
+﻿using System.Data;
+namespace GerizimZZ
 {
+
     public partial class Producto : UserControl
     {
         private int id = 0;
@@ -14,7 +16,7 @@
         {
             InitializeComponent();
             textBox1.Text = "0";
-            
+
         }
 
 
@@ -25,7 +27,7 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
             {
                 if (cantidad < Stockactual)
                 {
@@ -34,21 +36,8 @@
                     MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 DetalleVenta dgv = new DetalleVenta();
-                int x = 0;
-                textc.contcolumnas = 0;
-                if (x > 0)
-                {
-                    dgv.funcionllenardg();
-                    for (int h = 0; h < dgv.dgDetalleVenta.Rows.Count; h++)
-                    {
-                        if (dgv.dgDetalleVenta.Rows[x].Cells[0].Value != this.id.ToString())
-                        {
-                            textc.contcolumnas += 1;
-                            dgv.funcionllenardg();
-                        }
-                    }
+                dgv.llenartablita();
 
-                }
 
             }
         }
@@ -103,7 +92,14 @@
 
         private void button2_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Proximamente en nuevas actualizaciones", "Proximamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (estado == "2")
+            {
+                estado = "1";
+            }
+            else
+            {
+                estado = "2";
+            }
 
         }
         private void button3_Click(object sender, EventArgs e)
@@ -129,16 +125,10 @@
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dgv.dgDetalleVenta.Rows.Add();
-            dgv.dgDetalleVenta.Rows.Add();
-            int n = dgv.dgDetalleVenta.Rows.Add();
             int j = 0;
             string precio = this.PrecioProducto;
             textc.Id = this.Id.ToString();
             textc.NombreProducto = this.NombreProducto;
-            dgv.dgDetalleVenta.Rows[n].Cells[j].Value = textc.Id;
-            dgv.dgDetalleVenta.Rows[n].Cells[j += 1].Value = textc.NombreProducto;
-
 
 
             string cantidadtextbox = textBox1.Text.ToString();
@@ -150,7 +140,7 @@
             float precio3 = float.Parse(precio2);
             float total = cantidadtextbox2 * precio3;
             textc.total = total.ToString();
-            dgv.dgDetalleVenta.Rows.Add();
+
         }
     }
 }

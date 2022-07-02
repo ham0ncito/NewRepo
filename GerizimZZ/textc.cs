@@ -14,7 +14,5 @@ namespace GerizimZZ
         static public string precio { get; set; }
         static public string total { get; set; }
         static public int contcolumnas { get; set; }
-        static public int vtotal { get; set; }
-        public int filas { get; set; }
     }
 }
