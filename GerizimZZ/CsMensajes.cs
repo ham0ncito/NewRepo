@@ -56,6 +56,10 @@ namespace GerizimZZ
                 {
                     ms.panel2.BackColor = Color.YellowGreen;
                 }
+                else if (ms.Importancia == "1")
+                {
+                    ms.panel2.BackColor = Color.SpringGreen;
+                }
                 else
                 {
                     ms.panel2.BackColor = Color.Chartreuse;
