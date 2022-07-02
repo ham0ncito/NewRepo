@@ -11,6 +11,9 @@
     <Compile Update="DetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frAgregarInformacionAviso.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmAvisos.cs">
       <SubType>Form</SubType>
     </Compile>

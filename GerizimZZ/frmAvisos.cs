@@ -22,7 +22,7 @@ namespace GerizimZZ
             InitializeComponent();
         }
 
-        private void frmAvisos_Load(object sender, EventArgs e)
+        public void frmAvisos_Load(object sender, EventArgs e)
         {
             CsMensajes ms = new CsMensajes();
             string consulta = "select u.nombreUsuario as NombreUsuario, m.fechaEnvio as fechaEnvio, m.Id_Mensaje as IdMensaje, m.mensaje as Mensaje, m.importancia as color from Usuarios as u inner join Mensajes as m on m.Fk_Usuarios = u.ID_Usuarios where m.estado = 1 order by m.fechaEnvio DESC; ";
@@ -46,5 +46,10 @@ namespace GerizimZZ
             ms.init(this.flowLayoutPanel1, consulta);
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frAgregarInformacionAviso fr = new frAgregarInformacionAviso();
+            fr.ShowDialog(); 
+        }
     }
 }

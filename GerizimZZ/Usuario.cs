@@ -21,13 +21,14 @@ namespace GerizimZZ
             cambio = comando.ExecuteNonQuery();
             if (cambio == 1)
             {
-                MessageBox.Show("Se realizo el cambio");
+                MessageBox.Show("Accion Ejecutada");
 
             }
-            else { MessageBox.Show("No se realizo el cambio"); }
+            else { MessageBox.Show("No se realizo ninguna accion"); }
 
             conexion.Close();            
         }
+
 
     }
     
