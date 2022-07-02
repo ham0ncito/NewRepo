@@ -1,6 +1,7 @@
-﻿
+﻿using System.Data;
 namespace GerizimZZ
 {
+
     public partial class Producto : UserControl
     {
         private int id = 0;
@@ -10,11 +11,12 @@ namespace GerizimZZ
         private string nom;
         private string codigobarra;
         public int cantidad = 0;
-        public string[] valores = {};
+        public DetalleVenta dgv = new DetalleVenta();
         public Producto()
         {
             InitializeComponent();
             textBox1.Text = "0";
+
         }
 
 
@@ -25,15 +27,18 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cantidad < Stockactual)
+
             {
-                cantidad += 1;
-                textBox1.Text = cantidad.ToString();
-                MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                DetalleVenta dv = new DetalleVenta();
-                int contador = dv.dgDetalleVenta.Rows.Add();
-                int contcell = 0;
-                dv.dgDetalleVenta.Rows[contador].Cells[contcell].Value = "as";
+                if (cantidad < Stockactual)
+                {
+                    cantidad += 1;
+                    textBox1.Text = cantidad.ToString();
+                    MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                DetalleVenta dgv = new DetalleVenta();
+                dgv.llenartablita();
+
+
             }
         }
 
@@ -104,7 +109,6 @@ namespace GerizimZZ
                 cantidad -= 1;
                 textBox1.Text = cantidad.ToString();
             }
-            MessageBox.Show("Cantidad modificada correctamente", "Modificacion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -121,27 +125,23 @@ namespace GerizimZZ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(this.textBox1.Text) != 0)
-            {
-                Productos pr = new Productos();
-                DetalleVenta ps = new DetalleVenta();
-                carrito car = new carrito();
-                car.nombre = this.NombreProducto;
-                car.precioproducto = this.PrecioProducto.ToString();
-                car.id = this.id.ToString();
-                ps.dgDetalleVenta.Rows.Add(car.id, car.nombre, this.textBox1, car.precioproducto, 0);
+            int j = 0;
+            string precio = this.PrecioProducto;
+            textc.Id = this.Id.ToString();
+            textc.NombreProducto = this.NombreProducto;
 
-            }
-        }
-            public class carrito
-        {
-            public string nombre { get; set; }
-            public string precioproducto { get; set; }
-            public string id { get; set; }
+
+            string cantidadtextbox = textBox1.Text.ToString();
+            textc.Cantidad = cantidadtextbox;
+            textc.precio = this.PrecioProducto;
+
+            int cantidadtextbox2 = int.Parse(cantidadtextbox);
+            string precio2 = this.PrecioProducto.ToString();
+            float precio3 = float.Parse(precio2);
+            float total = cantidadtextbox2 * precio3;
+            textc.total = total.ToString();
 
         }
-
     }
-    }
-
+}
 
