@@ -119,7 +119,13 @@ namespace GerizimZZ
         //click a boton de cerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if(MessageBox.Show("¿Desea Continuar?", "Confirmacion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes) 
+            {
+                Application.Exit();
+            }
+         
+                       
+           
         }
 
         private void bt_Click(object sender, EventArgs e)
@@ -275,6 +281,16 @@ namespace GerizimZZ
         private void label2_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
 
         }
     }
