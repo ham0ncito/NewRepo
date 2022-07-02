@@ -61,16 +61,19 @@ namespace GerizimZZ
 
         private void cambiarCorreoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string correo = "";
-            string con;
-            int cambio;
-            if (InputBox.inputBox("Cambio de Correo", "Ingrese su nuevo correo", ref correo) == DialogResult.OK)
+            if (MessageBox.Show("¿Desea continuar?", "Continuar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                con = correo;
+                string correo = "";
+                string con;
+                int cambio;
+                if (InputBox.inputBox("Cambio de Correo", "Ingrese su nuevo correo", ref correo) == DialogResult.OK)
+                {
+                    con = correo;
 
-                string consulta = "use Gerizim; Update Usuarios set EmailUsuario = '" + con + "' where nombreUsuario = '" + Usuario.username + "';";
-                Usuario.Conexion(consulta);
+                    string consulta = "use Gerizim; Update Usuarios set EmailUsuario = '" + con + "' where nombreUsuario = '" + Usuario.username + "';";
+                    Usuario.Conexion(consulta);
 
+                }
             }
         }
 
