@@ -118,7 +118,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
-            this.pictureBox3.Location = new System.Drawing.Point(242, 69);
+            this.pictureBox3.Location = new System.Drawing.Point(327, 69);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;

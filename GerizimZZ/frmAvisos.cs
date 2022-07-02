@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace GerizimZZ
 {
@@ -27,6 +30,16 @@ namespace GerizimZZ
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+           
+            string busqueda = textBox1.Text;
+            CsMensajes ms = new CsMensajes();
+            flowLayoutPanel1.Controls.Clear(); 
+            string consulta = "select u.nombreUsuario as NombreUsuario, m.fechaEnvio as fechaEnvio, m.Id_Mensaje as IdMensaje, m.mensaje as Mensaje, m.importancia as color from Usuarios as u inner join Mensajes as m on m.Fk_Usuarios = u.ID_Usuarios where m.estado = 1 and m.mensaje like '%" + busqueda + "%' order by m.fechaEnvio DESC";
+            ms.init(this.flowLayoutPanel1, consulta);
         }
     }
 }
