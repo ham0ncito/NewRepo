@@ -3,9 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace GerizimZZ
 {
-    public partial class Inicio : Form
+    public partial class Bodega : Form
     {
-        public Inicio()
+        public Bodega()
         {
             InitializeComponent();
             CollapseMenu();
