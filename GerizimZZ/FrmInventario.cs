@@ -11,15 +11,15 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ
 {
-    public partial class FrmProducto : Form
+    public partial class FrmInventario : Form
     {
-        Cl_Productos productos = new Cl_Productos();
+        Cl_Inventario productos = new Cl_Inventario();
         Productosdst dstProducto;
         DataTable dtProducto;
         int codigo, cantidadproducto, cantidadminima, estadoproducto;
         double precio_producto, pesoproducto;
 
-        public FrmProducto()
+        public FrmInventario()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace GerizimZZ
 
         private void FrmProducto_Load(object sender, EventArgs e)
         {
-            dtProducto = Cl_Productos.GetAll();
+            dtProducto = Cl_Inventario.GetAll();
             dstProducto = new Productosdst();
             dstProducto.Tables.Add(dtProducto);
             dgvProducto.DataSource = dstProducto.Tables[0];
@@ -115,7 +115,7 @@ namespace GerizimZZ
                 SqlDataAdapter comando = new SqlDataAdapter();
                 string sql = "SELECT * FROM Producto";
                 comando.SelectCommand = new SqlCommand(sql, con);
-                dtProducto = Cl_Productos.GetAll();
+                dtProducto = Cl_Inventario.GetAll();
                 dstProducto = new Productosdst();
                 dstProducto.Tables.Add(dtProducto);
                 dgvProducto.DataSource = dstProducto.Tables[0];
@@ -141,7 +141,7 @@ namespace GerizimZZ
                 SqlDataAdapter comando = new SqlDataAdapter();
                 string sql = "SELECT * FROM Cliente";
                 comando.SelectCommand = new SqlCommand(sql, con);
-                dtProducto = Cl_Productos.GetAll();
+                dtProducto = Cl_Inventario.GetAll();
                 dstProducto = new Productosdst();
                 dstProducto.Tables.Add(dtProducto);
                 dgvProducto.DataSource = dstProducto.Tables[0];

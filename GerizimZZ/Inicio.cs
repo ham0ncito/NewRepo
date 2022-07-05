@@ -161,7 +161,8 @@ namespace GerizimZZ
 
         private void btninventariomi_Click(object sender, EventArgs e)
         {
-
+            FrmInventario inventario = new FrmInventario();
+            inventario.Show();
         }
 
         private void btninventarioomi_Hover(object sender, EventArgs e)

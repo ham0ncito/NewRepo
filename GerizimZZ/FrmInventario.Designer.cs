@@ -1,6 +1,6 @@
 ﻿namespace GerizimZZ
 {
-    partial class FrmProducto
+    partial class FrmInventario
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInventario));
             this.dgvProducto = new System.Windows.Forms.DataGridView();
             this.LineaNegraEstetica = new System.Windows.Forms.PictureBox();
             this.LogoGerizim = new System.Windows.Forms.PictureBox();
@@ -335,7 +336,7 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
-            // FrmProducto
+            // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -371,8 +372,9 @@
             this.Controls.Add(this.LineaNegraEstetica);
             this.Controls.Add(this.LogoGerizim);
             this.Controls.Add(this.dgvProducto);
-            this.Name = "FrmProducto";
-            this.Text = "FrmProducto";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FrmInventario";
+            this.Text = "Inventario";
             this.Load += new System.EventHandler(this.FrmProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).EndInit();

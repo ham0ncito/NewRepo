@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ
 {
-    internal class Cl_Productos
+    internal class Cl_Inventario
     {
         SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private int iD_codigoProducto;
