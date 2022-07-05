@@ -108,9 +108,9 @@
             this.label3.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(506, 144);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 30);
+            this.label3.Size = new System.Drawing.Size(131, 30);
             this.label3.TabIndex = 33;
-            this.label3.Text = "Productos";
+            this.label3.Text = "Inventario";
             // 
             // txtBuscar
             // 
