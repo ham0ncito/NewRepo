@@ -47,7 +47,7 @@
             this.btnmodificar_Cliente = new System.Windows.Forms.Button();
             this.btneliminar_Cliente = new System.Windows.Forms.Button();
             this.lblBuscar_Cliente = new System.Windows.Forms.Label();
-            this.txtBuscar_Cliente = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.LineaNegraEstetica = new System.Windows.Forms.PictureBox();
@@ -209,13 +209,13 @@
             this.lblBuscar_Cliente.TabIndex = 17;
             this.lblBuscar_Cliente.Text = "Buscar :";
             // 
-            // txtBuscar_Cliente
+            // txtBuscar
             // 
-            this.txtBuscar_Cliente.Location = new System.Drawing.Point(759, 170);
-            this.txtBuscar_Cliente.Name = "txtBuscar_Cliente";
-            this.txtBuscar_Cliente.Size = new System.Drawing.Size(229, 30);
-            this.txtBuscar_Cliente.TabIndex = 18;
-            this.txtBuscar_Cliente.TextChanged += new System.EventHandler(this.txtBuscar_Cliente_TextChanged);
+            this.txtBuscar.Location = new System.Drawing.Point(759, 170);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(229, 30);
+            this.txtBuscar.TabIndex = 18;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dgvCliente
             // 
@@ -274,7 +274,7 @@
             this.Controls.Add(this.LineaNegraEstetica);
             this.Controls.Add(this.LogoGerizim);
             this.Controls.Add(this.dgvCliente);
-            this.Controls.Add(this.txtBuscar_Cliente);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblBuscar_Cliente);
             this.Controls.Add(this.btneliminar_Cliente);
             this.Controls.Add(this.btnmodificar_Cliente);
@@ -329,7 +329,7 @@
         private Button btnmodificar_Cliente;
         private Button btneliminar_Cliente;
         private Label lblBuscar_Cliente;
-        private TextBox txtBuscar_Cliente;
+        private TextBox txtBuscar;
         private DataGridView dgvCliente;
         private Label label3;
         private PictureBox LineaNegraEstetica;

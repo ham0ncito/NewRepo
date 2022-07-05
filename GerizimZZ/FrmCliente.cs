@@ -13,7 +13,6 @@ namespace GerizimZZ
 {
     public partial class FrmCliente : Form
     {
-        Cl_ConexionDB conexion = new Cl_ConexionDB();
         Cl_Clientes clientes = new Cl_Clientes();
         Clientedst dstCliente;
         DataTable dtCliente;
@@ -102,18 +101,6 @@ namespace GerizimZZ
             }            
         }
 
-        private void txtBuscar_Cliente_TextChanged(object sender, EventArgs e)
-        {
-            dstCliente.Tables[0].DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "ID_cliente", txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "primerNombre", txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "segundoNombre", txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "primerApellido", txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "SegundoApellido", txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "telefono", txtBuscar_Cliente.Text) + " OR " +
-                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "direccion", txtBuscar_Cliente.Text);
-            dgvCliente.DataSource = dstCliente.Tables[0].DefaultView;
-        }
-
         private void dgvCliente_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.dgvCliente.SelectedRows)
@@ -126,6 +113,18 @@ namespace GerizimZZ
                 txtTelefono.Text = item.Cells[5].Value.ToString();
                 txtdireccion.Text = item.Cells[6].Value.ToString();
             }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            dstCliente.Tables[0].DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "ID_cliente", txtBuscar.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "primerNombre", txtBuscar.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "segundoNombre", txtBuscar.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "primerApellido", txtBuscar.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "SegundoApellido", txtBuscar.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "telefono", txtBuscar.Text) + " OR " +
+                string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "direccion", txtBuscar.Text);
+            dgvCliente.DataSource = dstCliente.Tables[0].DefaultView;
         }
     }
 }
