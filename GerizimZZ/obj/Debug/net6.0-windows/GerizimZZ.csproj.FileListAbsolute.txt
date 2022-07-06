@@ -216,3 +216,4 @@ C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-wind
 C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistrosVentas.resources
 C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.RegistroVentas.resources
 C:\Users\guill\OneDrive\Documents\GitHub\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.FrmInventario.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.FrmInventario.resources
