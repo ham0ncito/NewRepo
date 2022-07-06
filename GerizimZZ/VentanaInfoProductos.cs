@@ -31,5 +31,10 @@
         {
 
         }
+
+        private void lblcodigo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
