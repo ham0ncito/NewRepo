@@ -28,8 +28,6 @@ namespace GerizimZZ
 
             conexion.Close();            
         }
-
-
     }
     
 }

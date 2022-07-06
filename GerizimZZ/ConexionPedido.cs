@@ -10,18 +10,41 @@ namespace GerizimZZ
 {
     internal class ConexionPedido
     {
-        SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
-
-        public void llenargrid(DataGridView grid)
+        private static SqlConnection GetConnection()
         {
-            SqlCommand cm = new SqlCommand("Select * From Pedidos", conexion);
-            SqlDataAdapter da = new SqlDataAdapter(cm);
-            DataTable dt = new DataTable();
+            SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+            return con;
+        }
 
-            da.Fill(dt); //Para llenar la tabla con lo que está dentro de DataAdapter
+        public static DataTable GetAll()
+        {
+            SqlConnection con = GetConnection();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = con;
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "select p.fechapedido, p.fechaentrega, p.direccionEntrega, p.estadoentrega, p.ID_factura, r.nombreRepartidor from Pedidos as p inner join Repartidores as r on r.ID_repartidores = p.ID_repartidores;;";
+            using (con)
+            {
+                con.Open();
+                SqlDataReader reader = comando.ExecuteReader();
+                DataTable table = new DataTable();
+                table.Load(reader);
+                return table;
+            }
+        }
 
-            grid.DataSource = dt;
-
+        public static void cancelarPedido(int Factura)
+        {
+            String cancelado = "Cancelado";
+            SqlConnection con = GetConnection();
+            string sql = "UPDATE Pedidos SET estadoentrega = '" +
+            cancelado + "' WHERE ID_factura = '" +
+            Factura + "'";
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            MessageBox.Show("Pedido Cancelado con exito", "Cancelacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

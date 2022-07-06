@@ -15,63 +15,34 @@ using System.Diagnostics;
 namespace GerizimZZ
 {
     public partial class frmPantallaPedido : Form
-
     {
-        
+        Productosdst dstProductos;
+        DataTable dt;
+
         //Inicia el formulario
         public frmPantallaPedido()
-        {
-          
-            InitializeComponent();
-           
-
+        {          
+            InitializeComponent();         
         }
 
 
         private void PantallaDescripcionProducto_Load(object sender, EventArgs e)
         {
-            cmda.llenargrid(datagridPedidosRecientes);
-            
+            dt = ConexionPedido.GetAll();
+            dstProductos = new Productosdst();
+            dstProductos.Tables.Add(dt);
+            datagridPedidosRecientes.DataSource = dstProductos.Tables[0];
         }
-        //Clase para cerrar form
-        //private void CerrarForm (object sender, EventArgs e)
-        //{
-        //    Inicio FrmPrincipal = new Inicio();
-        //    this.Hide();
-        //    FrmPrincipal.Show();
-
-        ConexionPedido cmda = new ConexionPedido ();
-
-        //_______________________________________________________________________________
-        SqlConnection conectaa = new SqlConnection("Data Source =TATO180\\SQLEXPRESS ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         private void BarraDeBusqueda_TextChanged(object sender, EventArgs e)
         {
-            conectaa.Open();
-
-            SqlCommand cmd = conectaa.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = " SELECT * FROM Pedidos where direccionEntrega LIKE ('" + BarraDeBusqueda.Text + "%')";
-            cmd.ExecuteNonQuery();
-
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-
-            datagridPedidosRecientes.DataSource = dt;
-
-
-            conectaa.Close();
-        }
-
-        //Agarra valores de las celdas del datagrid y las puestra en los textbox
-        private void datagridPedidosRecientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtFactura.Text = datagridPedidosRecientes.CurrentRow.Cells[5].Value.ToString();
-            txtRepartidor.Text = datagridPedidosRecientes.CurrentRow.Cells[3].Value.ToString();
-            txtEntrega.Text = datagridPedidosRecientes.CurrentRow.Cells[4].Value.ToString();
-            txtFechaPedido.Text = datagridPedidosRecientes.CurrentRow.Cells[1].Value.ToString();
-
+            dstProductos.Tables[0].DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "fechapedido", BarraDeBusqueda.Text) + " OR " +
+            string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "fechaentrega", BarraDeBusqueda.Text) + " OR " +
+            string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "direccionEntrega", BarraDeBusqueda.Text) + " OR " +
+            string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "estadoentrega", BarraDeBusqueda.Text) + " OR " +
+            string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "ID_factura", BarraDeBusqueda.Text) + " OR " +
+            string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "nombreRepartidor", BarraDeBusqueda.Text);
+            datagridPedidosRecientes.DataSource = dstProductos.Tables[0].DefaultView;
         }
 
         private void botonCancelarPedido_Click(object sender, EventArgs e)
@@ -86,31 +57,39 @@ namespace GerizimZZ
                 txtFactura.Clear();
             
             }
-            //if (MessageBox.Show("¿Desea cancelar el pedido?", "Precaución", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
-            //{
-            //    MessageBox.Show("")
-
-            //}
         }
 
+        private void datagridPedidosRecientes_Click(object sender, EventArgs e)
+        {
+            txtFactura.Text = datagridPedidosRecientes.CurrentRow.Cells[4].Value.ToString();
+            txtRepartidor.Text = datagridPedidosRecientes.CurrentRow.Cells[5].Value.ToString();
+            txtEntrega.Text = datagridPedidosRecientes.CurrentRow.Cells[2].Value.ToString();
+            txtFechaPedido.Text = datagridPedidosRecientes.CurrentRow.Cells[0].Value.ToString();
+        }
 
-
-
-
-        //private void PantallaDescripcionProducto_Load(object sender, EventArgs e)
-        //{
-        //   cmda.llenargrid(datagridPedidosRecientes);
-        //    //para cerrar Form y abrir el principal al tocar la "x"
-        //   // this.FormClosed += new FormClosedEventHandler(CerrarForm);
-        //}
-        //Clase para cerrar form
-        //private void CerrarForm (object sender, EventArgs e)
-        //{
-        //    Inicio FrmPrincipal = new Inicio();
-        //    this.Hide();
-        //    FrmPrincipal.Show();
-
-
-        //}
+        private void botonCancelarPedido_Click_1(object sender, EventArgs e)
+        {
+            String estado = datagridPedidosRecientes.CurrentRow.Cells[3].Value.ToString();
+            ConexionPedido pedido = new ConexionPedido();
+            if (txtEntrega.Text == "" || txtFactura.Text == "" || txtFechaPedido.Text == "" || txtRepartidor.Text == "")
+            {
+                MessageBox.Show("Los campos no pueden ir vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                if (estado == "En Proceso")
+                {
+                    ConexionPedido.cancelarPedido(Convert.ToInt32(txtFactura.Text));
+                    dt = ConexionPedido.GetAll();
+                    dstProductos = new Productosdst();
+                    dstProductos.Tables.Add(dt);
+                    datagridPedidosRecientes.DataSource = dstProductos.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("No se puede Cancelar un pedido Entregado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
