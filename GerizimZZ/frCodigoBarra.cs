@@ -35,11 +35,40 @@ namespace GerizimZZ
                         textBox1.Text =codigoLeido.ToString();
                     }
                 }
+           
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if ((string.IsNullOrEmpty(textBox1.Text) == true || string.IsNullOrEmpty(textBox2.Text) == true))
+            {
+                errorProvider1.SetError(groupBox1, "Ingrese todos los datos");
+            }
+            else
+            {
+                errorProvider1.SetError(groupBox1, "");
+            }
+            string consulta = "select * from Producto where codigoBarra = '" + textBox1.Text + "';";
         }
     }
 }
