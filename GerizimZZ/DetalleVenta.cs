@@ -102,7 +102,7 @@ namespace GerizimZZ
                 int estado = 0;
                 for (int i = 0; i < tablita.Rows.Count; i++)
                 {
-                    //if(textc.Id == tablita.Rows[i].cells[j
+                  
                     if (idlist[i] == textc.Id)
                     {
                         tablita.Rows.RemoveAt(i);
@@ -130,9 +130,6 @@ namespace GerizimZZ
         public void DetalleVenta_Load(object sender, EventArgs e)
         {
 
-            //funcion llenar puesta en comentario para intento de tabla
-            //funcionllenardg();
-
             dgDetalleVenta.DataSource = tablita;
 
         }
@@ -140,25 +137,8 @@ namespace GerizimZZ
         public void dgDetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            //int n = dgDetalleVenta.Rows.Add();
-            //int j = 0;
-            //int cantidad = 50;
 
-
-
-            //Producto sd = new Producto();
-            ////string precio = sd.PrecioProducto;
-            //////int precio2 = int.Parse(precio);
-            //////int total = Convert.ToUInt32(sd.PrecioProducto) * cantidad;
-            //////float total = cantidad * precio2;
-            ////int total = 100;
-            //////dgDetalleVenta.Rows[n].Cells[j].Value = text.Id.ToString();
-
-            ////dgDetalleVenta.Rows[n].Cells[j+=1].Value = sd.NombreProducto;
-            ////dgDetalleVenta.Rows[n].Cells[j += 1].Value = cantidad.ToString(); ;
-            ////dgDetalleVenta.Rows[n].Cells[j+=1].Value = sd.PrecioProducto;
-            ////dgDetalleVenta.Rows[n].Cells[j+=1].Value = total.ToString();
-
+        
 
         }
 
@@ -179,24 +159,10 @@ namespace GerizimZZ
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            frCodigoBarra CodigoBarra = new frCodigoBarra();
+            CodigoBarra.Show();
+            
         }
 
-        //funcion llenar puesta en comentario para prueba de tabla 
-        //public void funcionllenardg()
-        //{
-
-        //    x = dgDetalleVenta.Rows.Add();
-        //    int j = 0;
-        //    textc pr = new textc();
-        //    dgDetalleVenta.Rows[x].Cells[j].Value = textc.Id.ToString();
-        //    dgDetalleVenta.Rows[x].Cells[j += 1].Value = textc.NombreProducto;
-        //    dgDetalleVenta.Rows[x].Cells[j += 1].Value = textc.Cantidad;
-        //    dgDetalleVenta.Rows[x].Cells[j += 1].Value = textc.precio;
-        //    dgDetalleVenta.Rows[x].Cells[j += 1].Value = textc.total;
-
-        //    int numbersofRows = dgDetalleVenta.Rows.Count;
-
-        //}
     }
 }

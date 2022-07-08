@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleVenta));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,13 +52,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dgDetalleVenta = new System.Windows.Forms.DataGridView();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.idproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoBarraproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.existenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -255,37 +263,79 @@
             // dgDetalleVenta
             // 
             this.dgDetalleVenta.AllowUserToAddRows = false;
-            this.dgDetalleVenta.AllowUserToDeleteRows = false;
+            this.dgDetalleVenta.AutoGenerateColumns = false;
+            this.dgDetalleVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgDetalleVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgDetalleVenta.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idproductoDataGridViewTextBoxColumn,
+            this.precioproductoDataGridViewTextBoxColumn,
+            this.nombreproductoDataGridViewTextBoxColumn,
+            this.codigoBarraproductoDataGridViewTextBoxColumn,
+            this.descripcionproductoDataGridViewTextBoxColumn,
+            this.estadoproductoDataGridViewTextBoxColumn,
+            this.existenciaDataGridViewTextBoxColumn});
+            this.dgDetalleVenta.DataSource = this.productosBindingSource;
             this.dgDetalleVenta.Location = new System.Drawing.Point(25, 336);
             this.dgDetalleVenta.Name = "dgDetalleVenta";
-            this.dgDetalleVenta.ReadOnly = true;
             this.dgDetalleVenta.RowTemplate.Height = 25;
             this.dgDetalleVenta.Size = new System.Drawing.Size(774, 209);
             this.dgDetalleVenta.TabIndex = 28;
             this.dgDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDetalleVenta_CellContentClick_1);
             // 
-            // button3
+            // idproductoDataGridViewTextBoxColumn
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::GerizimZZ.Properties.Resources.file;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.Location = new System.Drawing.Point(454, 298);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(55, 45);
-            this.button3.TabIndex = 30;
-            this.button3.UseVisualStyleBackColor = false;
+            this.idproductoDataGridViewTextBoxColumn.DataPropertyName = "Idproducto";
+            this.idproductoDataGridViewTextBoxColumn.HeaderText = "Idproducto";
+            this.idproductoDataGridViewTextBoxColumn.Name = "idproductoDataGridViewTextBoxColumn";
+            this.idproductoDataGridViewTextBoxColumn.Width = 103;
             // 
-            // label3
+            // precioproductoDataGridViewTextBoxColumn
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(313, 309);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 21);
-            this.label3.TabIndex = 29;
-            this.label3.Text = "Cancelar Venta";
+            this.precioproductoDataGridViewTextBoxColumn.DataPropertyName = "Precio_producto";
+            this.precioproductoDataGridViewTextBoxColumn.HeaderText = "Precio_producto";
+            this.precioproductoDataGridViewTextBoxColumn.Name = "precioproductoDataGridViewTextBoxColumn";
+            this.precioproductoDataGridViewTextBoxColumn.Width = 138;
+            // 
+            // nombreproductoDataGridViewTextBoxColumn
+            // 
+            this.nombreproductoDataGridViewTextBoxColumn.DataPropertyName = "Nombre_producto";
+            this.nombreproductoDataGridViewTextBoxColumn.HeaderText = "Nombre_producto";
+            this.nombreproductoDataGridViewTextBoxColumn.Name = "nombreproductoDataGridViewTextBoxColumn";
+            this.nombreproductoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // codigoBarraproductoDataGridViewTextBoxColumn
+            // 
+            this.codigoBarraproductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoBarra_producto";
+            this.codigoBarraproductoDataGridViewTextBoxColumn.HeaderText = "CodigoBarra_producto";
+            this.codigoBarraproductoDataGridViewTextBoxColumn.Name = "codigoBarraproductoDataGridViewTextBoxColumn";
+            this.codigoBarraproductoDataGridViewTextBoxColumn.Width = 177;
+            // 
+            // descripcionproductoDataGridViewTextBoxColumn
+            // 
+            this.descripcionproductoDataGridViewTextBoxColumn.DataPropertyName = "Descripcion_producto";
+            this.descripcionproductoDataGridViewTextBoxColumn.HeaderText = "Descripcion_producto";
+            this.descripcionproductoDataGridViewTextBoxColumn.Name = "descripcionproductoDataGridViewTextBoxColumn";
+            this.descripcionproductoDataGridViewTextBoxColumn.Width = 174;
+            // 
+            // estadoproductoDataGridViewTextBoxColumn
+            // 
+            this.estadoproductoDataGridViewTextBoxColumn.DataPropertyName = "Estado_producto";
+            this.estadoproductoDataGridViewTextBoxColumn.HeaderText = "Estado_producto";
+            this.estadoproductoDataGridViewTextBoxColumn.Name = "estadoproductoDataGridViewTextBoxColumn";
+            this.estadoproductoDataGridViewTextBoxColumn.Width = 143;
+            // 
+            // existenciaDataGridViewTextBoxColumn
+            // 
+            this.existenciaDataGridViewTextBoxColumn.DataPropertyName = "Existencia";
+            this.existenciaDataGridViewTextBoxColumn.HeaderText = "Existencia";
+            this.existenciaDataGridViewTextBoxColumn.Name = "existenciaDataGridViewTextBoxColumn";
+            this.existenciaDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // productosBindingSource
+            // 
+            this.productosBindingSource.DataSource = typeof(GerizimZZ.Productos);
             // 
             // button4
             // 
@@ -318,8 +368,6 @@
             this.ClientSize = new System.Drawing.Size(823, 640);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgDetalleVenta);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -355,6 +403,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -385,9 +434,15 @@
         private Button button2;
         private EventHandler button1_Click;
         public DataGridView dgDetalleVenta;
-        private Button button3;
-        private Label label3;
         private Button button4;
         private Label label4;
+        private DataGridViewTextBoxColumn idproductoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn precioproductoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreproductoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn codigoBarraproductoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn descripcionproductoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn estadoproductoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn existenciaDataGridViewTextBoxColumn;
+        private BindingSource productosBindingSource;
     }
 }
