@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Drawing.Printing; 
 
 namespace GerizimZZ
 {
@@ -69,6 +70,14 @@ namespace GerizimZZ
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Imprimir = new PrintDocument();
+            PrinterSettings ps = new PrinterSettings();
+            Imprimir.PrinterSettings = ps;
+            Imprimir.PrintPage += printDocument1_PrintPage;
+            Imprimir.Print(); 
+
+
+
 
         }
 
@@ -164,5 +173,24 @@ namespace GerizimZZ
             
         }
 
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            Font fuente = new Font("Arial",12);
+            Font Titulo = new Font("Arial", 36);
+            e.Graphics.DrawString(" Multiservicios Gerizim  ", Titulo, Brushes.Black, new RectangleF(100,60,500, 60));
+            e.Graphics.DrawString(" Barrio Paz Barahona  ", fuente, Brushes.Black, new RectangleF(100, 60, 200, 60));
+        }
+
+        private void lblHora_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            lblFecha.Text = DateTime.Now.ToLongDateString();
+            lblHora.Text = DateTime.Now.ToString("hh:mm:ss:ff");
+        }
     }
 }

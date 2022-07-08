@@ -33,16 +33,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.txtFactura = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
+            this.Imprimir = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.cmbPago = new System.Windows.Forms.ComboBox();
+            this.delivery = new System.Windows.Forms.CheckBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,6 +61,9 @@
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.lblHora = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
@@ -102,27 +104,24 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Detalles de la venta";
             // 
-            // progressBar1
+            // txtFactura
             // 
-            this.progressBar1.Location = new System.Drawing.Point(25, 67);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(141, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 3;
+            this.txtFactura.Location = new System.Drawing.Point(290, 192);
+            this.txtFactura.Name = "txtFactura";
+            this.txtFactura.Size = new System.Drawing.Size(125, 25);
+            this.txtFactura.TabIndex = 4;
             // 
-            // textBox1
+            // txtCliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(290, 192);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 25);
-            this.textBox1.TabIndex = 4;
+            this.txtCliente.Location = new System.Drawing.Point(290, 246);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.Size = new System.Drawing.Size(125, 25);
+            this.txtCliente.TabIndex = 7;
             // 
-            // textBox4
+            // Imprimir
             // 
-            this.textBox4.Location = new System.Drawing.Point(290, 246);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(125, 25);
-            this.textBox4.TabIndex = 7;
+            this.Imprimir.DocumentName = "Factura";
+            this.Imprimir.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
             // 
             // printPreviewDialog1
             // 
@@ -134,48 +133,48 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // comboBox1
+            // cmbPago
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(661, 191);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 26);
-            this.comboBox1.TabIndex = 10;
+            this.cmbPago.FormattingEnabled = true;
+            this.cmbPago.Location = new System.Drawing.Point(661, 191);
+            this.cmbPago.Name = "cmbPago";
+            this.cmbPago.Size = new System.Drawing.Size(121, 26);
+            this.cmbPago.TabIndex = 10;
             // 
-            // checkBox3
+            // delivery
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox3.Location = new System.Drawing.Point(510, 242);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(81, 22);
-            this.checkBox3.TabIndex = 14;
-            this.checkBox3.Text = "Delivery";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            this.delivery.AutoSize = true;
+            this.delivery.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.delivery.Location = new System.Drawing.Point(510, 242);
+            this.delivery.Name = "delivery";
+            this.delivery.Size = new System.Drawing.Size(81, 22);
+            this.delivery.TabIndex = 14;
+            this.delivery.Text = "Delivery";
+            this.delivery.UseVisualStyleBackColor = true;
+            this.delivery.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // textBox5
+            // txtNumero
             // 
-            this.textBox5.Location = new System.Drawing.Point(657, 242);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(125, 25);
-            this.textBox5.TabIndex = 16;
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtNumero.Location = new System.Drawing.Point(657, 242);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(125, 25);
+            this.txtNumero.TabIndex = 16;
+            this.txtNumero.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox6
+            // txtDireccion
             // 
-            this.textBox6.Location = new System.Drawing.Point(514, 286);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(268, 25);
-            this.textBox6.TabIndex = 15;
+            this.txtDireccion.Location = new System.Drawing.Point(514, 286);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(268, 25);
+            this.txtDireccion.TabIndex = 15;
             // 
-            // textBox7
+            // txtTotal
             // 
-            this.textBox7.Location = new System.Drawing.Point(290, 290);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(125, 25);
-            this.textBox7.TabIndex = 17;
-            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.txtTotal.Location = new System.Drawing.Point(290, 290);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(125, 25);
+            this.txtTotal.TabIndex = 17;
+            this.txtTotal.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label2
             // 
@@ -360,12 +359,40 @@
             this.label4.Text = "Escanear Codigo";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
+            // lblHora
+            // 
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblHora.Location = new System.Drawing.Point(55, 53);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(43, 18);
+            this.lblHora.TabIndex = 33;
+            this.lblHora.Text = "label3";
+            this.lblHora.Click += new System.EventHandler(this.lblHora_Click);
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFecha.Location = new System.Drawing.Point(55, 26);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(55, 18);
+            this.lblFecha.TabIndex = 34;
+            this.lblFecha.Text = "label10";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(823, 640);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.lblHora);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgDetalleVenta);
@@ -377,14 +404,13 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.txtNumero);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.delivery);
+            this.Controls.Add(this.cmbPago);
+            this.Controls.Add(this.txtCliente);
+            this.Controls.Add(this.txtFactura);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -414,16 +440,14 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Label label1;
-        private ProgressBar progressBar1;
-        private TextBox textBox1;
-        private TextBox textBox4;
-        private System.Drawing.Printing.PrintDocument printDocument1;
+        private TextBox txtFactura;
+        private TextBox txtCliente;
         private PrintPreviewDialog printPreviewDialog1;
-        private ComboBox comboBox1;
-        private CheckBox checkBox3;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private ComboBox cmbPago;
+        private CheckBox delivery;
+        private TextBox txtNumero;
+        private TextBox txtDireccion;
+        private TextBox txtTotal;
         private Label label2;
         private Label label5;
         private Label label6;
@@ -444,5 +468,9 @@
         private DataGridViewTextBoxColumn estadoproductoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn existenciaDataGridViewTextBoxColumn;
         private BindingSource productosBindingSource;
+        public System.Drawing.Printing.PrintDocument Imprimir;
+        private Label lblHora;
+        private Label lblFecha;
+        private System.Windows.Forms.Timer timer1;
     }
 }
