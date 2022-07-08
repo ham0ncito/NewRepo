@@ -162,6 +162,26 @@ namespace GerizimZZ
 
         }
 
+        private void dgDetalleVenta_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //funcion llenar puesta en comentario para prueba de tabla 
         //public void funcionllenardg()
         //{
