@@ -177,10 +177,13 @@ namespace GerizimZZ
         {
             Font fuente = new Font("Arial",12);
             Font Titulo = new Font("Arial", 24,FontStyle.Bold);
-            e.Graphics.DrawString(" Multiservicios Gerizim  ", Titulo, Brushes.Black, new RectangleF(240,60,600, 60));
-            e.Graphics.DrawString(" Barrio Paz Barahona  1 Calle  2 Avenida  22505876 ", fuente, Brushes.Black, new RectangleF(230, 100, 1000, 100));
-            e.Graphics.DrawString(String.Concat("   " +lblFecha.Text + "   " + lblHora.Text) , fuente, Brushes.Black, new RectangleF(280, 120, 1000, 100));
-          
+            e.Graphics.DrawImage(pictureBox1.Image, 350, 60, 150, 150);
+            e.Graphics.DrawString(" Multiservicios Gerizim  ", Titulo, Brushes.Black, new RectangleF(250,220,600, 60));
+            e.Graphics.DrawString(" Barrio Paz Barahona  1 Calle  2 Avenida  22505876 ", fuente, Brushes.Black, new RectangleF(230, 280, 1000, 100));
+            e.Graphics.DrawString(String.Concat("   " +lblFecha.Text + "   " + lblHora.Text) , fuente, Brushes.Black, new RectangleF(280, 300, 1000, 100));
+            e.Graphics.DrawString(String.Concat("Factura #  " + txtFactura.Text), fuente, Brushes.Black, new RectangleF(360, 320, 1000, 100));
+            e.Graphics.DrawString(String.Concat("Cliente  " + txtCliente.Text), fuente, Brushes.Black, new RectangleF(340, 340, 1000, 100));
+
         }
 
         private void lblHora_Click(object sender, EventArgs e)
