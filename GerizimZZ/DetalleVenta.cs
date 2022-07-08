@@ -176,9 +176,11 @@ namespace GerizimZZ
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
             Font fuente = new Font("Arial",12);
-            Font Titulo = new Font("Arial", 36);
-            e.Graphics.DrawString(" Multiservicios Gerizim  ", Titulo, Brushes.Black, new RectangleF(100,60,500, 60));
-            e.Graphics.DrawString(" Barrio Paz Barahona  ", fuente, Brushes.Black, new RectangleF(100, 60, 200, 60));
+            Font Titulo = new Font("Arial", 24,FontStyle.Bold);
+            e.Graphics.DrawString(" Multiservicios Gerizim  ", Titulo, Brushes.Black, new RectangleF(240,60,600, 60));
+            e.Graphics.DrawString(" Barrio Paz Barahona  1 Calle  2 Avenida  22505876 ", fuente, Brushes.Black, new RectangleF(230, 100, 1000, 100));
+            e.Graphics.DrawString(String.Concat("   " +lblFecha.Text + "   " + lblHora.Text) , fuente, Brushes.Black, new RectangleF(280, 120, 1000, 100));
+          
         }
 
         private void lblHora_Click(object sender, EventArgs e)
