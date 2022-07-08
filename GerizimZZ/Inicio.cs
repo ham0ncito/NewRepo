@@ -161,7 +161,8 @@ namespace GerizimZZ
 
         private void btninventariomi_Click(object sender, EventArgs e)
         {
-
+            FrmInventario inventario = new FrmInventario();
+            inventario.ShowDialog();
         }
 
         private void btninventarioomi_Hover(object sender, EventArgs e)
@@ -272,10 +273,10 @@ namespace GerizimZZ
             frmPantallaPedido.ShowDialog();
         }
 
-        private void btnventasmi_Click(object sender, EventArgs e)
+        private void btnclientesmi_Click(object sender, EventArgs e)
         {
-            RegistrosVentas bs = new RegistrosVentas();
-            bs.ShowDialog();
+            FrmCliente cliente = new FrmCliente();
+            cliente.ShowDialog();
         }
     }
 }

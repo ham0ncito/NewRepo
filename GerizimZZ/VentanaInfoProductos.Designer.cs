@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaInfoProductos));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.lblcodigo = new System.Windows.Forms.Label();
             this.lbldescripcion = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,9 +40,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,28 +67,17 @@
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.linkLabel1.Location = new System.Drawing.Point(65, 336);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(86, 18);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "ver existencias";
-            // 
             // lblcodigo
             // 
             this.lblcodigo.AutoSize = true;
             this.lblcodigo.BackColor = System.Drawing.Color.Transparent;
             this.lblcodigo.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblcodigo.Location = new System.Drawing.Point(243, 330);
+            this.lblcodigo.Location = new System.Drawing.Point(151, 330);
             this.lblcodigo.Name = "lblcodigo";
             this.lblcodigo.Size = new System.Drawing.Size(100, 24);
             this.lblcodigo.TabIndex = 3;
             this.lblcodigo.Text = "007288394";
+            this.lblcodigo.Click += new System.EventHandler(this.lblcodigo_Click);
             // 
             // lbldescripcion
             // 
@@ -184,46 +169,13 @@
             this.label10.TabIndex = 11;
             this.label10.Text = "Frutal";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(141, 538);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 12;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::GerizimZZ.Properties.Resources.minus_sign;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(106, 535);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 30);
-            this.button1.TabIndex = 13;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::GerizimZZ.Properties.Resources.plus__1_;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Location = new System.Drawing.Point(247, 535);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(30, 30);
-            this.button2.TabIndex = 14;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // VentanaInfoProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GerizimZZ.Properties.Resources._106_Party_Bliss;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(397, 587);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(402, 553);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -233,7 +185,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lbldescripcion);
             this.Controls.Add(this.lblcodigo);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
@@ -265,10 +216,6 @@
         public Label lblcodigo;
         public Label lblstock;
         public Label lblprecio;
-        public Button button2;
-        public Button button1;
-        public TextBox textBox1;
-        public LinkLabel linkLabel1;
         public Label label9;
         public Label label10;
     }

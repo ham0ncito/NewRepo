@@ -11,6 +11,24 @@
     <Compile Update="DetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="frAgregarInformacionAviso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frInicioBodega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmAvisos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Inventarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -19,6 +37,9 @@
     </Compile>
     <Compile Update="frmPantallaPedido.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Mensaje.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Opciones.cs">
       <SubType>Form</SubType>
@@ -43,5 +64,13 @@
     <EmbeddedResource Update="Properties\Resources.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Clientedst.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Productosdst.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

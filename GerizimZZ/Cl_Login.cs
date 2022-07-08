@@ -7,7 +7,8 @@ namespace GerizimZZ
         SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private String nombreUsuario { get; set; }
         private string contraseñaUsuario { get; set; }
-
+        
+        
         public bool iniciarSesion(string nombreUsuario, String contraseñaUsuario)
         {
             this.nombreUsuario = nombreUsuario;
@@ -22,6 +23,7 @@ namespace GerizimZZ
             if (dr.Read())
             {
                 MessageBox.Show("Login exitoso", "Log In", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 entro = true;
             }
             else
@@ -31,5 +33,10 @@ namespace GerizimZZ
             con.Close();
             return entro;
         }
+        
+
+        
+       
+   
     }
 }

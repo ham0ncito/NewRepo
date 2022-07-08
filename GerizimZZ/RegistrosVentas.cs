@@ -53,7 +53,7 @@ namespace GerizimZZ
         {
 
         }
-        SqlConnection conectarr = new SqlConnection("Data Source =ORTEGA\\ORTEGA1 ; Initial Catalog =Gerizim ; Integrated Security = True");
+        SqlConnection conectarr = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         private void barraBusqueda_KeyUp(object sender, KeyEventArgs e)
         {

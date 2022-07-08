@@ -1,5 +1,7 @@
-﻿namespace GerizimZZ
+﻿using System.Data;
+namespace GerizimZZ
 {
+
     public partial class Producto : UserControl
     {
         private int id = 0;
@@ -9,11 +11,12 @@
         private string nom;
         private string codigobarra;
         public int cantidad = 0;
-
+        public DetalleVenta dgv = new DetalleVenta();
         public Producto()
         {
             InitializeComponent();
             textBox1.Text = "0";
+
         }
 
 
@@ -24,10 +27,18 @@
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cantidad < Stockactual)
+
             {
-                cantidad += 1;
-                textBox1.Text = cantidad.ToString();
+                if (cantidad < Stockactual)
+                {
+                    cantidad += 1;
+                    textBox1.Text = cantidad.ToString();
+                    MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                DetalleVenta dgv = new DetalleVenta();
+                dgv.llenartablita();
+
+
             }
         }
 
@@ -109,6 +120,26 @@
             pr.lblprecio.Text = this.PrecioProducto.ToString();
             pr.lblstock.Text = this.Stockactual.ToString();
             pr.ShowDialog();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int j = 0;
+            string precio = this.PrecioProducto;
+            textc.Id = this.Id.ToString();
+            textc.NombreProducto = this.NombreProducto;
+
+
+            string cantidadtextbox = textBox1.Text.ToString();
+            textc.Cantidad = cantidadtextbox;
+            textc.precio = this.PrecioProducto;
+
+            int cantidadtextbox2 = int.Parse(cantidadtextbox);
+            string precio2 = this.PrecioProducto.ToString();
+            float precio3 = float.Parse(precio2);
+            float total = cantidadtextbox2 * precio3;
+            textc.total = total.ToString();
 
         }
     }
