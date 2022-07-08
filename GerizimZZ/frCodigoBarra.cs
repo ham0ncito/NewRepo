@@ -67,8 +67,10 @@ namespace GerizimZZ
             else
             {
                 errorProvider1.SetError(groupBox1, "");
+                string consulta = "select * from Producto where codigoBarra = '" + textBox1.Text + "';";
+                Usuario.ConexionSinMensaje(consulta);
             }
-            string consulta = "select * from Producto where codigoBarra = '" + textBox1.Text + "';";
+           
         }
     }
 }

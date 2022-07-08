@@ -28,7 +28,15 @@ namespace GerizimZZ
 
             conexion.Close();            
         }
-
+        public static void ConexionSinMensaje(string consulta)
+        {
+            int cambio;
+            SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+            conexion.Open();
+            SqlCommand comando = new SqlCommand(consulta, conexion);
+            cambio = comando.ExecuteNonQuery();
+            
+        }
 
     }
     
