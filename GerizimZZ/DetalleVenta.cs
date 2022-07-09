@@ -86,9 +86,9 @@ namespace GerizimZZ
             }
             else
             {
+                
+                datagrid();
                 verificacion();
-                datagrid(); 
-
                 errorProvider1.SetError(groupBox1, "");
                 Imprimir = new PrintDocument();
                 PrinterSettings ps = new PrinterSettings();
@@ -238,7 +238,7 @@ namespace GerizimZZ
 
         private void datagrid ()
         {
-            
+            suma = 0;
             foreach (DataGridViewRow row in dgDetalleVenta.Rows)
             {
                 suma += Convert.ToInt32(row.Cells["Total"].Value);
@@ -284,13 +284,14 @@ namespace GerizimZZ
             {
                 errorProvider1.SetError(groupBox2, "");
             }
-            txtTotal.Text = suma.ToString();
+            txtTotal.Text = "L. " suma.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            verificacion();
             datagrid();
+            verificacion();
+            
         }
     }
 }
