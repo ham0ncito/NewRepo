@@ -143,6 +143,7 @@ namespace GerizimZZ
         {
 
             dgDetalleVenta.DataSource = tablita;
+            int numeroFactura = 0; 
             SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
             
             SqlCommand comando = new SqlCommand("Use Gerizim; select MAX(ID_factura) from Factura ;", conexion);
@@ -151,8 +152,8 @@ namespace GerizimZZ
             SqlDataReader registro = comando.ExecuteReader();
             if(registro.Read())
             {
-                x = Convert.ToInt32(registro[0]) + 1;
-                txtFactura.Text = x.ToString(); 
+                numeroFactura = Convert.ToInt32(registro[0]) + 1;
+                txtFactura.Text = numeroFactura.ToString(); 
             }
 
 
