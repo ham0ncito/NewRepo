@@ -79,16 +79,15 @@ namespace GerizimZZ
 
         private void button2_Click(object sender, EventArgs e)
         {
+            datagrid();
+            verificacion();
             if (string.IsNullOrEmpty(txtCliente.Text) == true  ||
                 string.IsNullOrEmpty(txtFactura.Text) == true || string.IsNullOrEmpty(cmbPago.Text) == true)
             {
                 errorProvider1.SetError(groupBox1, "Ingrese todos los campos");
             }
             else
-            {
-                
-                datagrid();
-                verificacion();
+            { 
                 errorProvider1.SetError(groupBox1, "");
                 Imprimir = new PrintDocument();
                 PrinterSettings ps = new PrinterSettings();
