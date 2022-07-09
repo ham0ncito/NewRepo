@@ -114,7 +114,7 @@ namespace GerizimZZ
         public void llenartablita()
         {
             int cont = 0;
-            if (tablita.Rows.Count == 0)
+            if (tablita.Rows.Count == 0 )
             {
                 tablita.Columns.Add("Id");
                 tablita.Columns.Add("Nombre");

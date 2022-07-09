@@ -213,6 +213,16 @@ namespace GerizimZZ.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap losentimos {
+            get {
+                object obj = ResourceManager.GetObject("losentimos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap menu {
             get {
                 object obj = ResourceManager.GetObject("menu", resourceCulture);
@@ -296,6 +306,16 @@ namespace GerizimZZ.Properties {
         internal static System.Drawing.Bitmap Presione_el_boton_de_escanear__1_ {
             get {
                 object obj = ResourceManager.GetObject("Presione el boton de escanear (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Presione_el_boton_de_escanear__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Presione el boton de escanear (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
