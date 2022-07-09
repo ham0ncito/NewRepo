@@ -132,10 +132,10 @@ namespace GerizimZZ
             if (tablita.Rows.Count == 0)
             {
                 tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
-            }
+            } 
             else
             {
-                int estado = 0;
+            int estado = 0;
                 for (int i = 0; i < tablita.Rows.Count; i++)
                 {
                   
