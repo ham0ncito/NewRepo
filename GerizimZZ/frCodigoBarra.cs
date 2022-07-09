@@ -109,7 +109,7 @@ namespace GerizimZZ
                         datarow = dt.NewRow();
                         if (productoEnElCarrito == false)
                         {
-                            if(dv.dgDetalleVenta.Rows.Count==0)
+                            if(dt.Columns.Count==0)
                             {
                                 dt.Columns.Add("Id");
                                 dt.Columns.Add("Nombre");
