@@ -83,7 +83,16 @@ namespace GerizimZZ
                     if (Convert.ToInt32(registro[4]) != 0 && Convert.ToInt32(textBox2.Text) <= Convert.ToInt32(registro[3]))
                     {
                         DetalleVenta dv = Owner as DetalleVenta;
-                        dv.DgView1.Rows.Add(registro[0].ToString, registro[2].ToString, textBox2.Text, registro[1].ToString, (Convert.ToInt32(textBox2.Text)* Convert.ToInt32(registro[1])));
+                        DataTable dt = new DataTable();
+                        dt = dv.dgDetalleVenta.DataSource as DataTable;
+                        DataRow datarow;
+                        datarow = dt.NewRow();
+                        datarow["Id"] = registro[0].ToString();
+                        datarow["Nombre"] = registro[2].ToString();
+                        datarow["Cantidad"] = textBox2.Text;
+                        datarow["Precio"] = registro[1].ToString();
+                        datarow["Total"]= (Convert.ToInt32(textBox2.Text)* Convert.ToInt32(registro[1])).ToString();
+                        dt.Rows.Add(datarow);
                     }
                     else
                     {
