@@ -66,7 +66,7 @@ namespace GerizimZZ
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Boolean existe = false;
+            Boolean productoEnElCarrito = false;
             int pos = 0; 
             if ((string.IsNullOrEmpty(textBox1.Text) == true || string.IsNullOrEmpty(textBox2.Text) == true))
             {
@@ -92,14 +92,14 @@ namespace GerizimZZ
                         for (int i = 0; i < dv.dgDetalleVenta.Rows.Count; i++)
                         {
                           
-                            if (Convert.ToInt32(dv.dgDetalleVenta.Rows[i].Cells[0].Value) == Convert.ToInt32(registro["Id"]))
+                            if (Convert.ToInt32(dv.dgDetalleVenta.Rows[i].Cells[0].Value) == Convert.ToInt32(registro["ID_codigoProducto"]))
                             {
-                                existe = true; // solo ocurre si es un id repetido
+                                productoEnElCarrito = true; 
                                 pos = i;
                             }
                         }
                         dt = dv.dgDetalleVenta.DataSource as DataTable;
-                        if (existe == false)
+                        if (productoEnElCarrito == false)
                         {
                             DataRow datarow;
                             datarow = dt.NewRow();
@@ -112,7 +112,11 @@ namespace GerizimZZ
                         }
                         else
                         {
-                            MessageBox.Show("Ese producto ya se encuentra agregado en el carrito"); 
+                            if(MessageBox.Show("Ese producto ya se encuentra agregado en el carrito ¿Desea Agregar mas cantidad?", "Producto en el carrito", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
+                            {
+
+                            }
+                            
                         }
                     }
                     else
