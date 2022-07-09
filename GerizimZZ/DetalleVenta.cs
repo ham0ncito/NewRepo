@@ -82,7 +82,7 @@ namespace GerizimZZ
             delivery.Checked = false;
             txtNumero.Clear();
             txtDireccion.Clear();
-           
+            
            
            
         }
