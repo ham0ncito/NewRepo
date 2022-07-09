@@ -60,6 +60,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
@@ -152,7 +155,7 @@
             // 
             this.delivery.AutoSize = true;
             this.delivery.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.delivery.Location = new System.Drawing.Point(290, 289);
+            this.delivery.Location = new System.Drawing.Point(12, 27);
             this.delivery.Name = "delivery";
             this.delivery.Size = new System.Drawing.Size(81, 22);
             this.delivery.TabIndex = 14;
@@ -162,9 +165,9 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(263, 7);
+            this.txtNumero.Location = new System.Drawing.Point(208, 25);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(125, 25);
+            this.txtNumero.Size = new System.Drawing.Size(139, 25);
             this.txtNumero.TabIndex = 16;
             this.txtNumero.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -174,6 +177,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(268, 25);
             this.txtDireccion.TabIndex = 15;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // txtTotal
             // 
@@ -349,6 +353,7 @@
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese todos los datos";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // errorProvider1
             // 
@@ -356,13 +361,46 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtDireccion);
             this.groupBox2.Controls.Add(this.txtNumero);
+            this.groupBox2.Controls.Add(this.delivery);
             this.groupBox2.Location = new System.Drawing.Point(278, 282);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(504, 101);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Informacion De Envio";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(117, 60);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(70, 18);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Direccion";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(117, 28);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 18);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Telefono";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(73, 331);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(115, 46);
+            this.button3.TabIndex = 37;
+            this.button3.Text = "Actualizar Informacion";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // DetalleVenta
             // 
@@ -370,6 +408,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(823, 640);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.button4);
@@ -381,7 +420,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.delivery);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -446,5 +484,8 @@
         private GroupBox groupBox1;
         private ErrorProvider errorProvider1;
         private GroupBox groupBox2;
+        private Label label3;
+        private Label label10;
+        private Button button3;
     }
 }

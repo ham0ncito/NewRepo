@@ -11,15 +11,18 @@ namespace GerizimZZ
     {
         int x = 0;
         double suma;
+        bool bandera = false; 
         public DetalleVenta()
         {
 
             InitializeComponent();
+            datagrid();
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-
+            
+            datagrid();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -34,7 +37,7 @@ namespace GerizimZZ
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -82,7 +85,9 @@ namespace GerizimZZ
             }
             else
             {
+                verificacion();
                 datagrid(); 
+
                 errorProvider1.SetError(groupBox1, "");
                 Imprimir = new PrintDocument();
                 PrinterSettings ps = new PrinterSettings();
@@ -152,7 +157,7 @@ namespace GerizimZZ
         }
         public void DetalleVenta_Load(object sender, EventArgs e)
         {
-            
+            datagrid();
             dgDetalleVenta.DataSource = tablita;
             int numeroFactura = 0; 
             SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
@@ -238,13 +243,52 @@ namespace GerizimZZ
                 suma += Convert.ToInt32(row.Cells["Total"].Value);
                 
             }
-            if (delivery.Checked && !string.IsNullOrEmpty(txtNumero.Text) && !string.IsNullOrEmpty(txtDireccion.Text))
+            txtTotal.Text = "L. " + suma.ToString();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void verificacion()
+        {
+            if (delivery.Checked && !string.IsNullOrEmpty(txtNumero.Text) && !string.IsNullOrEmpty(txtDireccion.Text) && bandera == false)
             {
                 errorProvider1.SetError(groupBox2, "");
                 suma += 100;
+                bandera = true;
+
+            }
+            else if (!delivery.Checked && (!string.IsNullOrEmpty(txtNumero.Text) || !string.IsNullOrEmpty(txtDireccion.Text)))
+            {
+                errorProvider1.SetError(groupBox2, "Ingrese todos los valores si hará un pedido");
                 
             }
-            txtTotal.Text = "L. " + suma.ToString();
+            else if (delivery.Checked && (string.IsNullOrEmpty(txtNumero.Text) || string.IsNullOrEmpty(txtDireccion.Text)))
+            {
+                errorProvider1.SetError(groupBox2, "Ingrese todos los valores si hará un pedido");
+            }
+            else
+            {
+                errorProvider1.SetError(groupBox2, "");
+            }
+            txtTotal.Text = suma.ToString();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            verificacion();
+            datagrid();
         }
     }
 }
