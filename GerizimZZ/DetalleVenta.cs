@@ -12,6 +12,7 @@ namespace GerizimZZ
         int x = 0;
         double suma;
         bool bandera = false; 
+
         public DetalleVenta()
         {
 
@@ -262,11 +263,12 @@ namespace GerizimZZ
         }
         private void verificacion()
         {
-            if (delivery.Checked && !string.IsNullOrEmpty(txtNumero.Text) && !string.IsNullOrEmpty(txtDireccion.Text) && bandera == false)
+            if (delivery.Checked && !string.IsNullOrEmpty(txtNumero.Text) && !string.IsNullOrEmpty(txtDireccion.Text) && !bandera)
             {
+                bandera = true;
                 errorProvider1.SetError(groupBox2, "");
                 suma += 100;
-                bandera = true;
+                
 
             }
             else if (!delivery.Checked && (!string.IsNullOrEmpty(txtNumero.Text) || !string.IsNullOrEmpty(txtDireccion.Text)))
