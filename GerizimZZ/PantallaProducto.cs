@@ -104,11 +104,18 @@ namespace GerizimZZ
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if (cantidad > 0)
             {
-                cantidad -= 1;
-                textBox1.Text = cantidad.ToString();
+                if (cantidad > 0)
+                {
+
+                    cantidad -= 1;
+                    textBox1.Text = cantidad.ToString();
+                    MessageBox.Show("Cantidad reducida correctamente", "Resta correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                DetalleVenta dgv = new DetalleVenta();
+                dgv.llenartablita();
             }
+
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
