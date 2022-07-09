@@ -127,7 +127,7 @@ namespace GerizimZZ
 
             }
             string comparacion = textc.Id;
-
+            int cantidadcero = Int16.Parse(textc.Cantidad);
 
             idlist.Add(comparacion);
 
@@ -144,11 +144,21 @@ namespace GerizimZZ
                   
                     if (idlist[i] == textc.Id)
                     {
-                        tablita.Rows.RemoveAt(i);
-                        tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
-                        idlist[i].Remove(i);
-                        estado = 1;
-                        break;
+                        if (cantidadcero == 0)
+                        {
+                            tablita.Rows.RemoveAt(i);
+                            idlist.RemoveAt(i);
+                            estado = 1;
+                            break;
+                        }
+                        else
+                        {
+                            tablita.Rows.RemoveAt(i);
+                            tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
+                            idlist.RemoveAt(i);
+                            estado = 1;
+                            break;
+                        }
                     }
                     if (idlist[i] != textc.Id)
                     {
