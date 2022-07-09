@@ -489,11 +489,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kevin\\source\\repos\\7.1.2022\\GerizimZZ\\GerizimZZ.csproj",
+      "projectUniqueName": "C:\\Users\\Kevin\\source\\repos\\7.8.2022\\GerizimZZ\\GerizimZZ.csproj",
       "projectName": "GerizimZZ",
-      "projectPath": "C:\\Users\\Kevin\\source\\repos\\7.1.2022\\GerizimZZ\\GerizimZZ.csproj",
+      "projectPath": "C:\\Users\\Kevin\\source\\repos\\7.8.2022\\GerizimZZ\\GerizimZZ.csproj",
       "packagesPath": "C:\\Users\\Kevin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kevin\\source\\repos\\7.1.2022\\GerizimZZ\\obj\\",
+      "outputPath": "C:\\Users\\Kevin\\source\\repos\\7.8.2022\\GerizimZZ\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kevin\\AppData\\Roaming\\NuGet\\NuGet.Config",

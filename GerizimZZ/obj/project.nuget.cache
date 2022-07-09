@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eQASqvXp23U3tFsZQZbD3DhCjaonTiPHl8ID66hdQAryhkh/6Joa5FeU+I9Y0nZtICNJGXQnPRV8cObAx1Y5Rg==",
+  "dgSpecHash": "gTErOZ53qmlVm566ycij60gb97EdJt03mDjE0D8RVXNiMCdLTAN9oBcAGem6OMDiHu4SlPxlQmiGueQ9QeBROg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kevin\\source\\repos\\7.1.2022\\GerizimZZ\\GerizimZZ.csproj",
+  "projectFilePath": "C:\\Users\\Kevin\\source\\repos\\7.8.2022\\GerizimZZ\\GerizimZZ.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kevin\\.nuget\\packages\\fontawesome.sharp\\5.15.4\\fontawesome.sharp.5.15.4.nupkg.sha512",
     "C:\\Users\\Kevin\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
