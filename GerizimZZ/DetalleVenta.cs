@@ -11,7 +11,9 @@ namespace GerizimZZ
     {
         int x = 0;
         double suma;
-        bool bandera = false; 
+        bool bandera = false;
+        private DataGridView dgView; 
+
 
         public DetalleVenta()
         {
@@ -111,6 +113,11 @@ namespace GerizimZZ
         static public DataTable tablita = new DataTable();
         static public List<string> idlist = new List<string>();
 
+        public DataGridView DgView1 { get => dgView; set => dgView = value; }
+        public void DataGridLector()
+        {
+            dgView = dgDetalleVenta; 
+        }
         public void llenartablita()
         {
             int cont = 0;
@@ -219,6 +226,7 @@ namespace GerizimZZ
         private void button4_Click(object sender, EventArgs e)
         {
             frCodigoBarra CodigoBarra = new frCodigoBarra();
+            AddOwnedForm(CodigoBarra);
             CodigoBarra.Show();
             
         }

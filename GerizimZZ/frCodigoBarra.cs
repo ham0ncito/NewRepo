@@ -20,6 +20,8 @@ namespace GerizimZZ
         public frCodigoBarra()
         {
             InitializeComponent();
+            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -73,15 +75,15 @@ namespace GerizimZZ
                 errorProvider1.SetError(groupBox1, "");
                 SqlCommand consulta = new SqlCommand("Select ID_codigoProducto, precio_producto, nombreProducto, cantidadProducto, estadoPRoducto from Producto where codigoBarra = '" + textBox1.Text + "';",connection);
                 connection.Open();
-                consulta.Parameters.AddWithValue("codigoBarra", textBox2.Text);
+                //consulta.Parameters.AddWithValue("codigoBarra", textBox2.Text);
                 SqlDataReader registro = consulta.ExecuteReader();
                 if (registro.Read())
                 {
                    
                     if (Convert.ToInt32(registro[4]) != 0 && Convert.ToInt32(textBox2.Text) < Convert.ToInt32(registro[3]))
                     {
-                        DetalleVenta fr = new DetalleVenta();
-                        fr.dgDetalleVenta.Rows.Add(registro[0].ToString, registro[2].ToString, textBox2.Text, registro[1].ToString, (Convert.ToInt32(textBox2.Text)* Convert.ToInt32(registro[1])));
+                        DetalleVenta dv = Owner as DetalleVenta;
+                        dv.DgView1.Rows.Add(registro[0].ToString, registro[2].ToString, textBox2.Text, registro[1].ToString, (Convert.ToInt32(textBox2.Text)* Convert.ToInt32(registro[1])));
                     }
                     else
                     {
@@ -93,7 +95,7 @@ namespace GerizimZZ
             {
                 MessageBox.Show("Algo Salio Mal. Lo sentimos");
             }
-
+            connection.Close(); 
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -141,7 +143,9 @@ namespace GerizimZZ
                     pictureBox1.Image = imagen;
                     
                 }
-                connection.Close(); 
-            } } 
+                
+            }
+            connection.Close();
+        }
     }
 }
