@@ -53,11 +53,11 @@ namespace GerizimZZ
                 sd.Stockactual = existencia;
                 sd.Codigobarra = codigoBarra_producto;
                  
-                if (sd.estado == "2")
+                /*if (sd.estado == "2")
                 {
                     sd.BackgroundImage = null;
                     sd.BackColor = Color.DodgerBlue;
-                }
+                }*/
                 Contenedor.Controls.Add(sd);
 
             }
