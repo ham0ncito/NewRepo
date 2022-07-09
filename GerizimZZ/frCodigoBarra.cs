@@ -66,6 +66,8 @@ namespace GerizimZZ
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Boolean existe = false;
+            int pos = 0; 
             if ((string.IsNullOrEmpty(textBox1.Text) == true || string.IsNullOrEmpty(textBox2.Text) == true))
             {
                 errorProvider1.SetError(groupBox1, "Ingrese todos los datos");
@@ -82,17 +84,36 @@ namespace GerizimZZ
                    
                     if (Convert.ToInt32(registro[4]) != 0 && Convert.ToInt32(textBox2.Text) <= Convert.ToInt32(registro[3]))
                     {
+
+                       
                         DetalleVenta dv = Owner as DetalleVenta;
                         DataTable dt = new DataTable();
+                       
+                        for (int i = 0; i < dv.dgDetalleVenta.Rows.Count; i++)
+                        {
+                          
+                            if (Convert.ToInt32(dv.dgDetalleVenta.Rows[i].Cells[0].Value) == Convert.ToInt32(registro["Id"]))
+                            {
+                                existe = true; // solo ocurre si es un id repetido
+                                pos = i;
+                            }
+                        }
                         dt = dv.dgDetalleVenta.DataSource as DataTable;
-                        DataRow datarow;
-                        datarow = dt.NewRow();
-                        datarow["Id"] = registro[0].ToString();
-                        datarow["Nombre"] = registro[2].ToString();
-                        datarow["Cantidad"] = textBox2.Text;
-                        datarow["Precio"] = registro[1].ToString();
-                        datarow["Total"]= (Convert.ToInt32(textBox2.Text)* Convert.ToInt32(registro[1])).ToString();
-                        dt.Rows.Add(datarow);
+                        if (existe == false)
+                        {
+                            DataRow datarow;
+                            datarow = dt.NewRow();
+                            datarow["Id"] = registro[0].ToString();
+                            datarow["Nombre"] = registro[2].ToString();
+                            datarow["Cantidad"] = textBox2.Text;
+                            datarow["Precio"] = registro[1].ToString();
+                            datarow["Total"] = (Convert.ToInt32(textBox2.Text) * Convert.ToInt32(registro[1])).ToString();
+                            dt.Rows.Add(datarow);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ese producto ya se encuentra agregado en el carrito"); 
+                        }
                     }
                     else
                     {
