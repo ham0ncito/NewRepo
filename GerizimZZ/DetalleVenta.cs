@@ -226,9 +226,13 @@ namespace GerizimZZ
             }
             if (delivery.Checked)
             {
-                e.Graphics.DrawString("Su costo de envio es de L100.00 " fuente, Brushes.Black, new RectangleF(200, 700, 1000, 100));
+                e.Graphics.DrawString("Su costo de envio es de L100.00 " ,fuente, Brushes.Black, new RectangleF(200, ubicacion +=40, 1000, 100));
+                e.Graphics.DrawString("Se le llamará al numero " + txtNumero.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
+                e.Graphics.DrawString("Su direccion de envio es : " + txtDireccion.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
             }
-            e.Graphics.DrawString("Su total es de : " + txtTotal.Text, fuente, Brushes.Black, new RectangleF(200, 740, 1000, 100));
+            e.Graphics.DrawString("Su total es de : " + txtTotal.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
+            e.Graphics.DrawString("Gracias por confiar en nosotros", fuente, Brushes.Black, new RectangleF(320, ubicacion += 40, 1000,100));
+
 
         }
 
