@@ -74,7 +74,18 @@ namespace GerizimZZ
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
+            dgDetalleVenta.Columns.Clear();
+            txtTotal.Text = "L 00";
+            txtCliente.Text = "Cliente";
+            delivery.Checked = false;
+            txtNumero.Clear();
+            txtDireccion.Clear();
+           
+            foreach (TextBox tx in Producto)
+            {
 
+            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -82,9 +93,9 @@ namespace GerizimZZ
             datagrid();
             verificacion();
             if (string.IsNullOrEmpty(txtCliente.Text) == true  ||
-                string.IsNullOrEmpty(txtFactura.Text) == true || string.IsNullOrEmpty(cmbPago.Text) == true)
+                string.IsNullOrEmpty(txtFactura.Text) == true || string.IsNullOrEmpty(cmbPago.Text) == true || txtTotal.Text == "L 00")
             {
-                errorProvider1.SetError(groupBox1, "Ingrese todos los campos");
+                errorProvider1.SetError(button2, "Ingrese todos los campos");
             }
             else
             { 

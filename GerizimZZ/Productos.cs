@@ -52,6 +52,7 @@ namespace GerizimZZ
                 sd.estado = estado_producto.ToString();
                 sd.Stockactual = existencia;
                 sd.Codigobarra = codigoBarra_producto;
+                 
                 if (sd.estado == "2")
                 {
                     sd.BackgroundImage = null;
@@ -65,6 +66,7 @@ namespace GerizimZZ
             conexion.Dispose();
 
         }
+       
 
     }
 }

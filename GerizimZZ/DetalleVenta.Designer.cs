@@ -186,7 +186,7 @@
             this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(125, 25);
             this.txtTotal.TabIndex = 17;
-            this.txtTotal.Text = "00";
+            this.txtTotal.Text = "L 00";
             this.txtTotal.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label2
