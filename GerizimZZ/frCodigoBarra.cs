@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace GerizimZZ
 {
@@ -85,9 +86,10 @@ namespace GerizimZZ
                 {
                     cantidad[1] = Convert.ToInt32(registro[3]);
                     if (Convert.ToInt32(registro[4]) != 0 && Convert.ToInt32(textBox2.Text) <= Convert.ToInt32(registro[3]))
-                    {
+{
 
-                       
+                        
+
                         DetalleVenta dv = Owner as DetalleVenta;
                         DataTable dt = new DataTable();
                        
@@ -101,17 +103,26 @@ namespace GerizimZZ
                                 cantidad[0] = Convert.ToInt32(dv.dgDetalleVenta.Rows[i].Cells[2].Value);
                             }
                         }
-                        dt = dv.dgDetalleVenta.DataSource as DataTable;
+                        
+                       dt = dv.dgDetalleVenta.DataSource as DataTable;
                         DataRow datarow;
                         datarow = dt.NewRow();
                         if (productoEnElCarrito == false)
                         {
-                            
+                            if(dv.dgDetalleVenta.Rows.Count==0)
+                            {
+                                dt.Columns.Add("Id");
+                                dt.Columns.Add("Nombre");
+                                dt.Columns.Add("Cantidad");
+                                dt.Columns.Add("Precio");
+                                dt.Columns.Add("Total"); 
+                            }
                             datarow["Id"] = registro[0].ToString();
                             datarow["Nombre"] = registro[2].ToString();
                             datarow["Cantidad"] = textBox2.Text;
                
                             datarow["Precio"] = registro[1].ToString();
+                          
                             datarow["Total"] = (Convert.ToInt32(textBox2.Text) * Convert.ToInt32(registro[1])).ToString();
                             dt.Rows.Add(datarow);
                         }
