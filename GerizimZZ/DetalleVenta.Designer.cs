@@ -59,12 +59,14 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -160,26 +162,27 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(91, 286);
+            this.txtNumero.Location = new System.Drawing.Point(263, 7);
             this.txtNumero.Name = "txtNumero";
-            this.txtNumero.ReadOnly = true;
             this.txtNumero.Size = new System.Drawing.Size(125, 25);
             this.txtNumero.TabIndex = 16;
             this.txtNumero.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(514, 286);
+            this.txtDireccion.Location = new System.Drawing.Point(208, 60);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(268, 25);
             this.txtDireccion.TabIndex = 15;
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(381, 286);
+            this.txtTotal.Location = new System.Drawing.Point(87, 286);
             this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(125, 25);
             this.txtTotal.TabIndex = 17;
+            this.txtTotal.Text = "00";
             this.txtTotal.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // label2
@@ -272,10 +275,10 @@
             this.dgDetalleVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgDetalleVenta.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDetalleVenta.Location = new System.Drawing.Point(25, 336);
+            this.dgDetalleVenta.Location = new System.Drawing.Point(25, 389);
             this.dgDetalleVenta.Name = "dgDetalleVenta";
             this.dgDetalleVenta.RowTemplate.Height = 25;
-            this.dgDetalleVenta.Size = new System.Drawing.Size(774, 209);
+            this.dgDetalleVenta.Size = new System.Drawing.Size(774, 183);
             this.dgDetalleVenta.TabIndex = 28;
             this.dgDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDetalleVenta_CellContentClick_1);
             // 
@@ -351,6 +354,16 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtDireccion);
+            this.groupBox2.Controls.Add(this.txtNumero);
+            this.groupBox2.Location = new System.Drawing.Point(278, 282);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(504, 101);
+            this.groupBox2.TabIndex = 36;
+            this.groupBox2.TabStop = false;
+            // 
             // DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -368,13 +381,12 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTotal);
-            this.Controls.Add(this.txtNumero);
-            this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.delivery);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -394,6 +406,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,5 +445,6 @@
         private System.Windows.Forms.Timer timer1;
         private GroupBox groupBox1;
         private ErrorProvider errorProvider1;
+        private GroupBox groupBox2;
     }
 }

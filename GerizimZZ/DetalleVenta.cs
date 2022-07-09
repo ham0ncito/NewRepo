@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
 using System.Windows.Markup;
@@ -9,6 +10,7 @@ namespace GerizimZZ
     public partial class DetalleVenta : Form
     {
         int x = 0;
+        double suma;
         public DetalleVenta()
         {
 
@@ -73,12 +75,21 @@ namespace GerizimZZ
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Imprimir = new PrintDocument();
-            PrinterSettings ps = new PrinterSettings();
-            Imprimir.PrinterSettings = ps;
-            Imprimir.PrintPage += printDocument1_PrintPage;
-            Imprimir.Print(); 
-
+            if (string.IsNullOrEmpty(txtCliente.Text) == true  ||
+                string.IsNullOrEmpty(txtFactura.Text) == true || string.IsNullOrEmpty(cmbPago.Text) == true)
+            {
+                errorProvider1.SetError(groupBox1, "Ingrese todos los campos");
+            }
+            else
+            {
+                datagrid(); 
+                errorProvider1.SetError(groupBox1, "");
+                Imprimir = new PrintDocument();
+                PrinterSettings ps = new PrinterSettings();
+                Imprimir.PrinterSettings = ps;
+                Imprimir.PrintPage += printDocument1_PrintPage;
+                Imprimir.Print();
+            }
 
 
 
@@ -141,7 +152,7 @@ namespace GerizimZZ
         }
         public void DetalleVenta_Load(object sender, EventArgs e)
         {
-
+            
             dgDetalleVenta.DataSource = tablita;
             int numeroFactura = 0; 
             SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
@@ -217,6 +228,23 @@ namespace GerizimZZ
         private void txtFactura_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void datagrid ()
+        {
+            
+            foreach (DataGridViewRow row in dgDetalleVenta.Rows)
+            {
+                suma += Convert.ToInt32(row.Cells["Total"].Value);
+                
+            }
+            if (delivery.Checked && !string.IsNullOrEmpty(txtNumero.Text) && !string.IsNullOrEmpty(txtDireccion.Text))
+            {
+                errorProvider1.SetError(groupBox2, "");
+                suma += 100;
+                
+            }
+            txtTotal.Text = "L. " + suma.ToString();
         }
     }
 }
