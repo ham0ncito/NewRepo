@@ -1,5 +1,8 @@
 ﻿using System.Data;
-using System.Drawing.Printing; 
+using System.Data.SqlClient;
+using System.Drawing.Printing;
+using System.Windows.Markup;
+
 
 namespace GerizimZZ
 {
@@ -140,6 +143,18 @@ namespace GerizimZZ
         {
 
             dgDetalleVenta.DataSource = tablita;
+            SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+            
+            SqlCommand comando = new SqlCommand("Use Gerizim; select MAX(ID_factura) from Factura ;", conexion);
+            comando.Parameters.AddWithValue("ID", txtFactura.Text);
+            conexion.Open();
+            SqlDataReader registro = comando.ExecuteReader();
+            if(registro.Read())
+            {
+                x = Convert.ToInt32(registro[0]) + 1;
+                txtFactura.Text = x.ToString(); 
+            }
+
 
         }
 
@@ -196,6 +211,11 @@ namespace GerizimZZ
             
             lblFecha.Text = DateTime.Now.ToLongDateString();
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss:ff");
+        }
+
+        private void txtFactura_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -37,7 +37,7 @@ namespace GerizimZZ
             cambio = comando.ExecuteNonQuery();
             
         }
-
+        
     }
     
 }

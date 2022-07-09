@@ -51,23 +51,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dgDetalleVenta = new System.Windows.Forms.DataGridView();
-            this.idproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoBarraproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoproductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.existenciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button4 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -106,14 +101,16 @@
             // 
             // txtFactura
             // 
-            this.txtFactura.Location = new System.Drawing.Point(290, 192);
+            this.txtFactura.Location = new System.Drawing.Point(171, 39);
             this.txtFactura.Name = "txtFactura";
+            this.txtFactura.ReadOnly = true;
             this.txtFactura.Size = new System.Drawing.Size(125, 25);
             this.txtFactura.TabIndex = 4;
+            this.txtFactura.TextChanged += new System.EventHandler(this.txtFactura_TextChanged);
             // 
             // txtCliente
             // 
-            this.txtCliente.Location = new System.Drawing.Point(290, 246);
+            this.txtCliente.Location = new System.Drawing.Point(496, 35);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(125, 25);
             this.txtCliente.TabIndex = 7;
@@ -136,16 +133,21 @@
             // cmbPago
             // 
             this.cmbPago.FormattingEnabled = true;
-            this.cmbPago.Location = new System.Drawing.Point(661, 191);
+            this.cmbPago.Items.AddRange(new object[] {
+            "Efectivo",
+            "Tarjeta ",
+            "Credito"});
+            this.cmbPago.Location = new System.Drawing.Point(171, 83);
             this.cmbPago.Name = "cmbPago";
             this.cmbPago.Size = new System.Drawing.Size(121, 26);
             this.cmbPago.TabIndex = 10;
+            this.cmbPago.Text = "Efectivo";
             // 
             // delivery
             // 
             this.delivery.AutoSize = true;
             this.delivery.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.delivery.Location = new System.Drawing.Point(510, 242);
+            this.delivery.Location = new System.Drawing.Point(290, 289);
             this.delivery.Name = "delivery";
             this.delivery.Size = new System.Drawing.Size(81, 22);
             this.delivery.TabIndex = 14;
@@ -155,8 +157,9 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(657, 242);
+            this.txtNumero.Location = new System.Drawing.Point(91, 286);
             this.txtNumero.Name = "txtNumero";
+            this.txtNumero.ReadOnly = true;
             this.txtNumero.Size = new System.Drawing.Size(125, 25);
             this.txtNumero.TabIndex = 16;
             this.txtNumero.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
@@ -170,7 +173,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(290, 290);
+            this.txtTotal.Location = new System.Drawing.Point(381, 286);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(125, 25);
             this.txtTotal.TabIndex = 17;
@@ -179,7 +182,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 199);
+            this.label2.Location = new System.Drawing.Point(17, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 18);
             this.label2.TabIndex = 18;
@@ -188,7 +191,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 246);
+            this.label5.Location = new System.Drawing.Point(347, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 18);
             this.label5.TabIndex = 21;
@@ -197,7 +200,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(510, 191);
+            this.label6.Location = new System.Drawing.Point(17, 91);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 18);
             this.label6.TabIndex = 22;
@@ -207,7 +210,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 293);
+            this.label7.Location = new System.Drawing.Point(39, 289);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 18);
             this.label7.TabIndex = 23;
@@ -262,75 +265,16 @@
             // dgDetalleVenta
             // 
             this.dgDetalleVenta.AllowUserToAddRows = false;
-            this.dgDetalleVenta.AutoGenerateColumns = false;
             this.dgDetalleVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgDetalleVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgDetalleVenta.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idproductoDataGridViewTextBoxColumn,
-            this.precioproductoDataGridViewTextBoxColumn,
-            this.nombreproductoDataGridViewTextBoxColumn,
-            this.codigoBarraproductoDataGridViewTextBoxColumn,
-            this.descripcionproductoDataGridViewTextBoxColumn,
-            this.estadoproductoDataGridViewTextBoxColumn,
-            this.existenciaDataGridViewTextBoxColumn});
-            this.dgDetalleVenta.DataSource = this.productosBindingSource;
             this.dgDetalleVenta.Location = new System.Drawing.Point(25, 336);
             this.dgDetalleVenta.Name = "dgDetalleVenta";
             this.dgDetalleVenta.RowTemplate.Height = 25;
             this.dgDetalleVenta.Size = new System.Drawing.Size(774, 209);
             this.dgDetalleVenta.TabIndex = 28;
             this.dgDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDetalleVenta_CellContentClick_1);
-            // 
-            // idproductoDataGridViewTextBoxColumn
-            // 
-            this.idproductoDataGridViewTextBoxColumn.DataPropertyName = "Idproducto";
-            this.idproductoDataGridViewTextBoxColumn.HeaderText = "Idproducto";
-            this.idproductoDataGridViewTextBoxColumn.Name = "idproductoDataGridViewTextBoxColumn";
-            this.idproductoDataGridViewTextBoxColumn.Width = 103;
-            // 
-            // precioproductoDataGridViewTextBoxColumn
-            // 
-            this.precioproductoDataGridViewTextBoxColumn.DataPropertyName = "Precio_producto";
-            this.precioproductoDataGridViewTextBoxColumn.HeaderText = "Precio_producto";
-            this.precioproductoDataGridViewTextBoxColumn.Name = "precioproductoDataGridViewTextBoxColumn";
-            this.precioproductoDataGridViewTextBoxColumn.Width = 138;
-            // 
-            // nombreproductoDataGridViewTextBoxColumn
-            // 
-            this.nombreproductoDataGridViewTextBoxColumn.DataPropertyName = "Nombre_producto";
-            this.nombreproductoDataGridViewTextBoxColumn.HeaderText = "Nombre_producto";
-            this.nombreproductoDataGridViewTextBoxColumn.Name = "nombreproductoDataGridViewTextBoxColumn";
-            this.nombreproductoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // codigoBarraproductoDataGridViewTextBoxColumn
-            // 
-            this.codigoBarraproductoDataGridViewTextBoxColumn.DataPropertyName = "CodigoBarra_producto";
-            this.codigoBarraproductoDataGridViewTextBoxColumn.HeaderText = "CodigoBarra_producto";
-            this.codigoBarraproductoDataGridViewTextBoxColumn.Name = "codigoBarraproductoDataGridViewTextBoxColumn";
-            this.codigoBarraproductoDataGridViewTextBoxColumn.Width = 177;
-            // 
-            // descripcionproductoDataGridViewTextBoxColumn
-            // 
-            this.descripcionproductoDataGridViewTextBoxColumn.DataPropertyName = "Descripcion_producto";
-            this.descripcionproductoDataGridViewTextBoxColumn.HeaderText = "Descripcion_producto";
-            this.descripcionproductoDataGridViewTextBoxColumn.Name = "descripcionproductoDataGridViewTextBoxColumn";
-            this.descripcionproductoDataGridViewTextBoxColumn.Width = 174;
-            // 
-            // estadoproductoDataGridViewTextBoxColumn
-            // 
-            this.estadoproductoDataGridViewTextBoxColumn.DataPropertyName = "Estado_producto";
-            this.estadoproductoDataGridViewTextBoxColumn.HeaderText = "Estado_producto";
-            this.estadoproductoDataGridViewTextBoxColumn.Name = "estadoproductoDataGridViewTextBoxColumn";
-            this.estadoproductoDataGridViewTextBoxColumn.Width = 143;
-            // 
-            // existenciaDataGridViewTextBoxColumn
-            // 
-            this.existenciaDataGridViewTextBoxColumn.DataPropertyName = "Existencia";
-            this.existenciaDataGridViewTextBoxColumn.HeaderText = "Existencia";
-            this.existenciaDataGridViewTextBoxColumn.Name = "existenciaDataGridViewTextBoxColumn";
-            this.existenciaDataGridViewTextBoxColumn.Width = 99;
             // 
             // productosBindingSource
             // 
@@ -385,6 +329,21 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.txtFactura);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.txtCliente);
+            this.groupBox1.Controls.Add(this.cmbPago);
+            this.groupBox1.Location = new System.Drawing.Point(34, 152);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(748, 124);
+            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ingrese todos los datos";
+            // 
             // DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -401,19 +360,14 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.txtNumero);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.delivery);
-            this.Controls.Add(this.cmbPago);
-            this.Controls.Add(this.txtCliente);
-            this.Controls.Add(this.txtFactura);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -430,6 +384,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productosBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -460,17 +416,11 @@
         public DataGridView dgDetalleVenta;
         private Button button4;
         private Label label4;
-        private DataGridViewTextBoxColumn idproductoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn precioproductoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nombreproductoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn codigoBarraproductoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn descripcionproductoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn estadoproductoDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn existenciaDataGridViewTextBoxColumn;
         private BindingSource productosBindingSource;
         public System.Drawing.Printing.PrintDocument Imprimir;
         private Label lblHora;
         private Label lblFecha;
         private System.Windows.Forms.Timer timer1;
+        private GroupBox groupBox1;
     }
 }
