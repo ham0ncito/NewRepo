@@ -19,6 +19,7 @@ namespace GerizimZZ
         {
 
             InitializeComponent();
+            DataGridLector(); 
             datagrid();
         }
 
