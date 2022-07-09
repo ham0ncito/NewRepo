@@ -81,10 +81,7 @@ namespace GerizimZZ
             txtNumero.Clear();
             txtDireccion.Clear();
            
-            foreach (TextBox tx in Producto)
-            {
-
-            }
+           
            
         }
 
@@ -276,6 +273,7 @@ namespace GerizimZZ
         private void datagrid ()
         {
             suma = 0;
+            bandera = false; 
             foreach (DataGridViewRow row in dgDetalleVenta.Rows)
             {
                 suma += Convert.ToInt32(row.Cells["Total"].Value);
