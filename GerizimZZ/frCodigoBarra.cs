@@ -67,7 +67,9 @@ namespace GerizimZZ
         private void button2_Click(object sender, EventArgs e)
         {
             Boolean productoEnElCarrito = false;
-            int pos = 0; 
+            int pos = 0;
+            int[] cantidad = new int[2]; 
+
             if ((string.IsNullOrEmpty(textBox1.Text) == true || string.IsNullOrEmpty(textBox2.Text) == true))
             {
                 errorProvider1.SetError(groupBox1, "Ingrese todos los datos");
@@ -81,7 +83,7 @@ namespace GerizimZZ
                 SqlDataReader registro = consulta.ExecuteReader();
                 if (registro.Read())
                 {
-                   
+                    cantidad[1] = Convert.ToInt32(registro[3]);
                     if (Convert.ToInt32(registro[4]) != 0 && Convert.ToInt32(textBox2.Text) <= Convert.ToInt32(registro[3]))
                     {
 
@@ -96,16 +98,19 @@ namespace GerizimZZ
                             {
                                 productoEnElCarrito = true; 
                                 pos = i;
+                                cantidad[0] = Convert.ToInt32(dv.dgDetalleVenta.Rows[i].Cells[2].Value);
                             }
                         }
                         dt = dv.dgDetalleVenta.DataSource as DataTable;
+                        DataRow datarow;
+                        datarow = dt.NewRow();
                         if (productoEnElCarrito == false)
                         {
-                            DataRow datarow;
-                            datarow = dt.NewRow();
+                            
                             datarow["Id"] = registro[0].ToString();
                             datarow["Nombre"] = registro[2].ToString();
                             datarow["Cantidad"] = textBox2.Text;
+               
                             datarow["Precio"] = registro[1].ToString();
                             datarow["Total"] = (Convert.ToInt32(textBox2.Text) * Convert.ToInt32(registro[1])).ToString();
                             dt.Rows.Add(datarow);
@@ -114,7 +119,14 @@ namespace GerizimZZ
                         {
                             if(MessageBox.Show("Ese producto ya se encuentra agregado en el carrito ¿Desea Agregar mas cantidad?", "Producto en el carrito", MessageBoxButtons.YesNo, MessageBoxIcon.Question)== DialogResult.Yes)
                             {
-
+                                if((Convert.ToInt32(dv.dgDetalleVenta.Rows[pos].Cells[2].Value) + Convert.ToInt32(textBox2.Text)) <= cantidad[1])
+                                {
+                                    dv.dgDetalleVenta.Rows[pos].Cells[2].Value = Convert.ToInt32(dv.dgDetalleVenta.Rows[pos].Cells[2].Value) + Convert.ToInt32(textBox2.Text); 
+                                }
+                                else
+                                {
+                                    MessageBox.Show("El Inventario es insuficiente");
+                                }
                             }
                             
                         }
