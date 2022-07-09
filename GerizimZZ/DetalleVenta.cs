@@ -210,12 +210,25 @@ namespace GerizimZZ
         {
             Font fuente = new Font("Arial",12);
             Font Titulo = new Font("Arial", 24,FontStyle.Bold);
+            float ubicacion = 460; 
             e.Graphics.DrawImage(pictureBox1.Image, 350, 60, 150, 150);
             e.Graphics.DrawString(" Multiservicios Gerizim  ", Titulo, Brushes.Black, new RectangleF(250,220,600, 60));
             e.Graphics.DrawString(" Barrio Paz Barahona  1 Calle  2 Avenida  22505876 ", fuente, Brushes.Black, new RectangleF(230, 280, 1000, 100));
             e.Graphics.DrawString(String.Concat("   " +lblFecha.Text + "   " + lblHora.Text) , fuente, Brushes.Black, new RectangleF(280, 300, 1000, 100));
             e.Graphics.DrawString(String.Concat("Factura #  " + txtFactura.Text), fuente, Brushes.Black, new RectangleF(360, 320, 1000, 100));
-            e.Graphics.DrawString(String.Concat("Cliente  " + txtCliente.Text), fuente, Brushes.Black, new RectangleF(340, 340, 1000, 100));
+            e.Graphics.DrawString(String.Concat("Cliente  " + txtCliente.Text), fuente, Brushes.Black, new RectangleF(360, 340, 1000, 100));
+            e.Graphics.DrawString("Listado de productos: ", fuente, Brushes.Black, new RectangleF(200, 400, 1000, 100));
+            foreach (DataGridViewRow row in dgDetalleVenta.Rows)
+            {
+                e.Graphics.DrawString(row.Cells["Id"].Value + "      " + row.Cells["Nombre"].Value + "      " + row.Cells["Cantidad"].Value + "       "
+                    + row.Cells["Precio"].Value + "       " + row.Cells["Total"].Value, fuente, Brushes.Black, new RectangleF(200, ubicacion, 1000, 100));
+                ubicacion += 30;
+            }
+            if (delivery.Checked)
+            {
+                e.Graphics.DrawString("Su costo de envio es de L100.00 " fuente, Brushes.Black, new RectangleF(200, 700, 1000, 100));
+            }
+            e.Graphics.DrawString("Su total es de : " + txtTotal.Text, fuente, Brushes.Black, new RectangleF(200, 740, 1000, 100));
 
         }
 
@@ -284,7 +297,7 @@ namespace GerizimZZ
             {
                 errorProvider1.SetError(groupBox2, "");
             }
-            txtTotal.Text = "L. " suma.ToString();
+            txtTotal.Text = "L. " + suma.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
