@@ -41,16 +41,7 @@ namespace GerizimZZ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            SqlConnection connect = new SqlConnection("Server=localhost;database=Gerizim;integrated security=true");
-            SqlCommand command = new SqlCommand("select imagen from Producto where ID_codigoProducto=17", connect);
-            SqlDataAdapter dp = new SqlDataAdapter(command);
-            DataSet ds = new DataSet("Producto");
-            byte[] MisDatos = new byte[0];
-            dp.Fill(ds, "Producto");
-            DataRow myRow = ds.Tables["Producto"].Rows[0];
-            MisDatos = (byte[])myRow["imagen"];
-            MemoryStream ms = new MemoryStream(MisDatos);
-            pictureBox1.Image = Image.FromStream(ms);
+           
         }
 
         private void label1_Click(object sender, EventArgs e)
