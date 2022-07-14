@@ -34,7 +34,6 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFactura = new System.Windows.Forms.TextBox();
-            this.txtCliente = new System.Windows.Forms.TextBox();
             this.Imprimir = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.cmbPago = new System.Windows.Forms.ComboBox();
@@ -63,6 +62,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
+            this.clientedstBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
@@ -70,6 +71,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientedstBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -114,14 +116,6 @@
             this.txtFactura.Size = new System.Drawing.Size(125, 25);
             this.txtFactura.TabIndex = 4;
             this.txtFactura.TextChanged += new System.EventHandler(this.txtFactura_TextChanged);
-            // 
-            // txtCliente
-            // 
-            this.txtCliente.Location = new System.Drawing.Point(496, 35);
-            this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(125, 25);
-            this.txtCliente.TabIndex = 7;
-            this.txtCliente.Text = "Cliente";
             // 
             // Imprimir
             // 
@@ -341,11 +335,11 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbCliente);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtFactura);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtCliente);
             this.groupBox1.Controls.Add(this.cmbPago);
             this.groupBox1.Location = new System.Drawing.Point(34, 152);
             this.groupBox1.Name = "groupBox1";
@@ -402,6 +396,19 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // cmbCliente
+            // 
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(487, 36);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(233, 26);
+            this.cmbCliente.TabIndex = 23;
+            // 
+            // clientedstBindingSource
+            // 
+            this.clientedstBindingSource.DataSource = typeof(GerizimZZ.Clientedst);
+            this.clientedstBindingSource.Position = 0;
+            // 
             // DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -446,6 +453,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clientedstBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +465,6 @@
         private PictureBox pictureBox2;
         private Label label1;
         private TextBox txtFactura;
-        private TextBox txtCliente;
         private PrintPreviewDialog printPreviewDialog1;
         private ComboBox cmbPago;
         private CheckBox delivery;
@@ -492,5 +499,7 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private ComboBox cmbCliente;
+        private BindingSource clientedstBindingSource;
     }
 }
