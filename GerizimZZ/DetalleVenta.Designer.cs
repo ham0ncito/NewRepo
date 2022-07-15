@@ -57,13 +57,15 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
-            this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.clientedstBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
@@ -335,6 +337,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cmbCliente);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtFactura);
@@ -348,6 +352,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese todos los datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cmbCliente
+            // 
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Location = new System.Drawing.Point(487, 36);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(233, 26);
+            this.cmbCliente.TabIndex = 23;
             // 
             // errorProvider1
             // 
@@ -396,18 +408,27 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // cmbCliente
-            // 
-            this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(487, 36);
-            this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.Size = new System.Drawing.Size(233, 26);
-            this.cmbCliente.TabIndex = 23;
-            // 
             // clientedstBindingSource
             // 
             this.clientedstBindingSource.DataSource = typeof(GerizimZZ.Clientedst);
             this.clientedstBindingSource.Position = 0;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(347, 83);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(102, 18);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Codigo Cliente";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(488, 82);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(113, 25);
+            this.textBox1.TabIndex = 25;
             // 
             // DetalleVenta
             // 
@@ -501,5 +522,7 @@
         private DataGridViewTextBoxColumn Column5;
         private ComboBox cmbCliente;
         private BindingSource clientedstBindingSource;
+        private Label label11;
+        private TextBox textBox1;
     }
 }

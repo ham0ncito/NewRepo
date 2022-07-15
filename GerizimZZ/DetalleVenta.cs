@@ -81,7 +81,7 @@ namespace GerizimZZ
             {
                 dgDetalleVenta.Columns.Clear();
                 txtTotal.Text = "L 00";
-                cmbCliente.Text = "Cliente";
+                cmbCliente.Text = "";
                 delivery.Checked = false;
                 txtNumero.Clear();
                 txtDireccion.Clear();
@@ -111,10 +111,17 @@ namespace GerizimZZ
             { 
                 errorProvider1.SetError(groupBox1, "");
                 Imprimir = new PrintDocument();
-                PrinterSettings ps = new PrinterSettings();
-                Imprimir.PrinterSettings = ps;
-                Imprimir.PrintPage += printDocument1_PrintPage;
-                Imprimir.Print();
+                try
+                {
+                    PrinterSettings ps = new PrinterSettings();
+                    Imprimir.PrinterSettings = ps;
+                    Imprimir.PrintPage += printDocument1_PrintPage;
+                    Imprimir.Print();
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.Message); 
+                }
             }
 
             //Foreach row in dgDetalleVenta
