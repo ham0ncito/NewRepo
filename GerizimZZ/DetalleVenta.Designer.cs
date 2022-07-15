@@ -195,7 +195,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(347, 39);
+            this.label5.Location = new System.Drawing.Point(320, 39);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 18);
             this.label5.TabIndex = 21;
@@ -320,7 +320,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(488, 82);
+            this.textBox1.Location = new System.Drawing.Point(428, 83);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(113, 25);
@@ -329,7 +329,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(347, 83);
+            this.label11.Location = new System.Drawing.Point(320, 85);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(102, 18);
             this.label11.TabIndex = 24;
@@ -338,10 +338,11 @@
             // cmbCliente
             // 
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Location = new System.Drawing.Point(487, 36);
+            this.cmbCliente.Location = new System.Drawing.Point(455, 36);
             this.cmbCliente.Name = "cmbCliente";
-            this.cmbCliente.Size = new System.Drawing.Size(233, 26);
+            this.cmbCliente.Size = new System.Drawing.Size(287, 26);
             this.cmbCliente.TabIndex = 23;
+            this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // errorProvider1
             // 

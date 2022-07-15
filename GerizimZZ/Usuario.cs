@@ -11,6 +11,8 @@ namespace GerizimZZ
     public static class Usuario
     {
         public static string username; 
+
+
        
         public static void Conexion(string consulta)
         {

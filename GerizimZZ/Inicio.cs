@@ -249,10 +249,17 @@ namespace GerizimZZ
             Productos pr = new Productos();
             if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
-                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or codigoBarra like '%"+ barraBusqueda.Text+ "%' order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC; ";
-                SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
-                Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
+                try
+                {
+                    busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or codigoBarra like '%" + barraBusqueda.Text + "%' and cantidadProducto >0 order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC; ";
+                    SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
+                    Contenedor.Controls.Clear();
+                    pr.llenado(Contenedor, busqueda);
+                }
+                catch (SqlException x)
+                {
+                    MessageBox.Show(x.Message); 
+                }
             }
             if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {

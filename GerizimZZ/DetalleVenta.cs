@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
@@ -19,6 +20,7 @@ namespace GerizimZZ
         {
 
             InitializeComponent();
+            nombresCliente(); 
             DataGridLector(); 
             datagrid();
         }
@@ -364,6 +366,33 @@ namespace GerizimZZ
             AddOwnedForm(frmCliente);
             frmCliente.Show(); 
 
+        }
+
+        private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void nombresCliente()
+        {
+            try
+            {
+                SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+                SqlCommand comando = new SqlCommand("select CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido, ' ' ) as Nombre from Cliente order by Nombre ASC; ", conexion);
+                conexion.Open();
+                SqlDataReader registro = comando.ExecuteReader();
+                while (registro.Read())
+                {
+                    cmbCliente.Items.Add(registro["Nombre"]).ToString();
+                }
+                conexion.Close();
+            }
+            catch(SqlException x)
+            {
+                MessageBox.Show(x.Message); 
+            }
+
+            
         }
     }
 }
