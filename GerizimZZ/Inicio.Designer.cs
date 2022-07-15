@@ -33,10 +33,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBodega = new System.Windows.Forms.Button();
+            this.btnDetalleVenta = new System.Windows.Forms.Button();
+            this.btnBusqueda = new System.Windows.Forms.Button();
+            this.btnMenuIzquierdo = new System.Windows.Forms.Button();
             this.bt = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.barraBusqueda = new System.Windows.Forms.TextBox();
@@ -47,7 +47,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel_titlebar = new System.Windows.Forms.Panel();
             this.panelsidemenu = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.btnclientesmi = new FontAwesome.Sharp.IconButton();
             this.btnventasmi = new FontAwesome.Sharp.IconButton();
             this.btnpedidosmi = new FontAwesome.Sharp.IconButton();
@@ -55,13 +55,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnregresarMI = new FontAwesome.Sharp.IconButton();
+            this.lblUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel_titlebar.SuspendLayout();
             this.panelsidemenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -73,7 +74,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(370, -29);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(291, 162);
+            this.pictureBox1.Size = new System.Drawing.Size(423, 162);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -86,19 +87,20 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnBodega);
+            this.panel1.Controls.Add(this.btnDetalleVenta);
+            this.panel1.Controls.Add(this.btnBusqueda);
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btnMenuIzquierdo);
             this.panel1.Controls.Add(this.bt);
             this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Controls.Add(this.barraBusqueda);
             this.panel1.Controls.Add(this.Contenedor);
             this.panel1.Location = new System.Drawing.Point(0, 43);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(994, 535);
+            this.panel1.Size = new System.Drawing.Size(1126, 619);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -106,78 +108,77 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(476, 112);
+            this.label2.Location = new System.Drawing.Point(544, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(87, 21);
             this.label2.TabIndex = 10;
             this.label2.Text = "VENTAS";
             // 
-            // button4
+            // btnBodega
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::GerizimZZ.Properties.Resources.warehouse;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.Color.Transparent;
-            this.button4.Location = new System.Drawing.Point(707, 58);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(48, 45);
-            this.button4.TabIndex = 9;
-            this.button4.UseVisualStyleBackColor = false;
-           // this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnBodega.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBodega.BackColor = System.Drawing.Color.Transparent;
+            this.btnBodega.BackgroundImage = global::GerizimZZ.Properties.Resources.warehouse;
+            this.btnBodega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBodega.FlatAppearance.BorderSize = 0;
+            this.btnBodega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBodega.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBodega.Location = new System.Drawing.Point(839, 58);
+            this.btnBodega.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBodega.Name = "btnBodega";
+            this.btnBodega.Size = new System.Drawing.Size(48, 45);
+            this.btnBodega.TabIndex = 9;
+            this.btnBodega.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnDetalleVenta
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::GerizimZZ.Properties.Resources.shopping_cart;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.Transparent;
-            this.button3.Location = new System.Drawing.Point(792, 58);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(48, 45);
-            this.button3.TabIndex = 8;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
-            this.button3.MouseHover += new System.EventHandler(this.button3_Hover);
+            this.btnDetalleVenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDetalleVenta.BackColor = System.Drawing.Color.Transparent;
+            this.btnDetalleVenta.BackgroundImage = global::GerizimZZ.Properties.Resources.shopping_cart;
+            this.btnDetalleVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDetalleVenta.FlatAppearance.BorderSize = 0;
+            this.btnDetalleVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDetalleVenta.ForeColor = System.Drawing.Color.Transparent;
+            this.btnDetalleVenta.Location = new System.Drawing.Point(924, 58);
+            this.btnDetalleVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDetalleVenta.Name = "btnDetalleVenta";
+            this.btnDetalleVenta.Size = new System.Drawing.Size(48, 45);
+            this.btnDetalleVenta.TabIndex = 8;
+            this.btnDetalleVenta.UseVisualStyleBackColor = false;
+            this.btnDetalleVenta.Click += new System.EventHandler(this.button3_Click);
+            this.btnDetalleVenta.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
+            this.btnDetalleVenta.MouseHover += new System.EventHandler(this.button3_Hover);
             // 
-            // button1
+            // btnBusqueda
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::GerizimZZ.Properties.Resources.search;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Location = new System.Drawing.Point(837, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 28);
-            this.button1.TabIndex = 7;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnBusqueda.BackColor = System.Drawing.Color.Transparent;
+            this.btnBusqueda.BackgroundImage = global::GerizimZZ.Properties.Resources.search;
+            this.btnBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBusqueda.Location = new System.Drawing.Point(959, 152);
+            this.btnBusqueda.Name = "btnBusqueda";
+            this.btnBusqueda.Size = new System.Drawing.Size(30, 28);
+            this.btnBusqueda.TabIndex = 7;
+            this.btnBusqueda.UseVisualStyleBackColor = false;
+            this.btnBusqueda.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnMenuIzquierdo
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::GerizimZZ.Properties.Resources.menu__2_;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Transparent;
-            this.button2.Location = new System.Drawing.Point(879, 58);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(51, 45);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
-            this.button2.MouseHover += new System.EventHandler(this.button2_Hover);
+            this.btnMenuIzquierdo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMenuIzquierdo.BackColor = System.Drawing.Color.Transparent;
+            this.btnMenuIzquierdo.BackgroundImage = global::GerizimZZ.Properties.Resources.menu__2_;
+            this.btnMenuIzquierdo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMenuIzquierdo.FlatAppearance.BorderSize = 0;
+            this.btnMenuIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuIzquierdo.ForeColor = System.Drawing.Color.Transparent;
+            this.btnMenuIzquierdo.Location = new System.Drawing.Point(1028, 58);
+            this.btnMenuIzquierdo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMenuIzquierdo.Name = "btnMenuIzquierdo";
+            this.btnMenuIzquierdo.Size = new System.Drawing.Size(51, 45);
+            this.btnMenuIzquierdo.TabIndex = 3;
+            this.btnMenuIzquierdo.UseVisualStyleBackColor = false;
+            this.btnMenuIzquierdo.Click += new System.EventHandler(this.button2_Click);
+            this.btnMenuIzquierdo.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
+            this.btnMenuIzquierdo.MouseHover += new System.EventHandler(this.button2_Hover);
             // 
             // bt
             // 
@@ -186,7 +187,7 @@
             this.bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.bt.FlatAppearance.BorderSize = 0;
             this.bt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt.Location = new System.Drawing.Point(88, 58);
+            this.bt.Location = new System.Drawing.Point(35, 34);
             this.bt.Name = "bt";
             this.bt.Size = new System.Drawing.Size(51, 45);
             this.bt.TabIndex = 5;
@@ -198,9 +199,9 @@
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = global::GerizimZZ.Properties.Resources.substract;
-            this.pictureBox2.Location = new System.Drawing.Point(88, 126);
+            this.pictureBox2.Location = new System.Drawing.Point(35, 126);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(847, 23);
+            this.pictureBox2.Size = new System.Drawing.Size(1065, 23);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
@@ -214,7 +215,7 @@
             this.barraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barraBusqueda.Multiline = true;
             this.barraBusqueda.Name = "barraBusqueda";
-            this.barraBusqueda.Size = new System.Drawing.Size(580, 39);
+            this.barraBusqueda.Size = new System.Drawing.Size(712, 39);
             this.barraBusqueda.TabIndex = 1;
             this.barraBusqueda.TextChanged += new System.EventHandler(this.BarraBusqueda_TextChanged);
             // 
@@ -229,9 +230,9 @@
             this.Contenedor.BackColor = System.Drawing.Color.Transparent;
             this.Contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Contenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Contenedor.Location = new System.Drawing.Point(105, 187);
+            this.Contenedor.Location = new System.Drawing.Point(35, 187);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(825, 322);
+            this.Contenedor.Size = new System.Drawing.Size(1065, 420);
             this.Contenedor.TabIndex = 6;
             this.Contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Contenedor_Paint);
             // 
@@ -300,9 +301,9 @@
             this.panel_titlebar.Controls.Add(this.btnMaximizar);
             this.panel_titlebar.Controls.Add(this.btnMinimizar);
             this.panel_titlebar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel_titlebar.Location = new System.Drawing.Point(258, 0);
+            this.panel_titlebar.Location = new System.Drawing.Point(390, 0);
             this.panel_titlebar.Name = "panel_titlebar";
-            this.panel_titlebar.Size = new System.Drawing.Size(736, 578);
+            this.panel_titlebar.Size = new System.Drawing.Size(736, 662);
             this.panel_titlebar.TabIndex = 2;
             this.panel_titlebar.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_titlebar_Paint);
             this.panel_titlebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_titlebar_MouseDown);
@@ -310,7 +311,7 @@
             // panelsidemenu
             // 
             this.panelsidemenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
-            this.panelsidemenu.Controls.Add(this.pictureBox3);
+            this.panelsidemenu.Controls.Add(this.pcbLogo);
             this.panelsidemenu.Controls.Add(this.btnclientesmi);
             this.panelsidemenu.Controls.Add(this.btnventasmi);
             this.panelsidemenu.Controls.Add(this.btnpedidosmi);
@@ -321,19 +322,20 @@
             this.panelsidemenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelsidemenu.Location = new System.Drawing.Point(0, 0);
             this.panelsidemenu.Name = "panelsidemenu";
-            this.panelsidemenu.Size = new System.Drawing.Size(240, 578);
+            this.panelsidemenu.Size = new System.Drawing.Size(240, 662);
             this.panelsidemenu.TabIndex = 11;
+            this.panelsidemenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelsidemenu_Paint);
             // 
-            // pictureBox3
+            // pcbLogo
             // 
-            this.pictureBox3.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
-            this.pictureBox3.Location = new System.Drawing.Point(69, 504);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pcbLogo.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
+            this.pcbLogo.Location = new System.Drawing.Point(52, 552);
+            this.pcbLogo.Name = "pcbLogo";
+            this.pcbLogo.Size = new System.Drawing.Size(118, 70);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pcbLogo.TabIndex = 11;
+            this.pcbLogo.TabStop = false;
+            this.pcbLogo.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // btnclientesmi
             // 
@@ -348,7 +350,7 @@
             this.btnclientesmi.Location = new System.Drawing.Point(35, 423);
             this.btnclientesmi.Name = "btnclientesmi";
             this.btnclientesmi.Padding = new System.Windows.Forms.Padding(10);
-            this.btnclientesmi.Size = new System.Drawing.Size(145, 57);
+            this.btnclientesmi.Size = new System.Drawing.Size(177, 69);
             this.btnclientesmi.TabIndex = 10;
             this.btnclientesmi.Tag = "user";
             this.btnclientesmi.Text = "Clientes";
@@ -368,16 +370,15 @@
             this.btnventasmi.IconColor = System.Drawing.Color.Black;
             this.btnventasmi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnventasmi.IconSize = 35;
-            this.btnventasmi.Location = new System.Drawing.Point(35, 343);
+            this.btnventasmi.Location = new System.Drawing.Point(35, 331);
             this.btnventasmi.Name = "btnventasmi";
             this.btnventasmi.Padding = new System.Windows.Forms.Padding(10);
-            this.btnventasmi.Size = new System.Drawing.Size(145, 57);
+            this.btnventasmi.Size = new System.Drawing.Size(177, 74);
             this.btnventasmi.TabIndex = 9;
             this.btnventasmi.Tag = "ventas";
             this.btnventasmi.Text = "Ventas";
             this.btnventasmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnventasmi.UseVisualStyleBackColor = false;
-           // this.btnventasmi.Click += new System.EventHandler(this.btnventasmi_Click);
             this.btnventasmi.MouseLeave += new System.EventHandler(this.btnventasmi_MouseLeaves);
             this.btnventasmi.MouseHover += new System.EventHandler(this.btnventasmi_Hover);
             // 
@@ -391,10 +392,10 @@
             this.btnpedidosmi.IconColor = System.Drawing.Color.Black;
             this.btnpedidosmi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnpedidosmi.IconSize = 35;
-            this.btnpedidosmi.Location = new System.Drawing.Point(35, 257);
+            this.btnpedidosmi.Location = new System.Drawing.Point(35, 240);
             this.btnpedidosmi.Name = "btnpedidosmi";
             this.btnpedidosmi.Padding = new System.Windows.Forms.Padding(10);
-            this.btnpedidosmi.Size = new System.Drawing.Size(145, 57);
+            this.btnpedidosmi.Size = new System.Drawing.Size(177, 74);
             this.btnpedidosmi.TabIndex = 8;
             this.btnpedidosmi.Tag = "pedidos";
             this.btnpedidosmi.Text = "Pedidos";
@@ -414,10 +415,10 @@
             this.btninventariomi.IconColor = System.Drawing.Color.Black;
             this.btninventariomi.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btninventariomi.IconSize = 35;
-            this.btninventariomi.Location = new System.Drawing.Point(35, 172);
+            this.btninventariomi.Location = new System.Drawing.Point(35, 151);
             this.btninventariomi.Name = "btninventariomi";
             this.btninventariomi.Padding = new System.Windows.Forms.Padding(10);
-            this.btninventariomi.Size = new System.Drawing.Size(145, 57);
+            this.btninventariomi.Size = new System.Drawing.Size(177, 73);
             this.btninventariomi.TabIndex = 7;
             this.btninventariomi.Tag = "Inventario";
             this.btninventariomi.Text = "Inventario";
@@ -441,7 +442,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(79, 101);
+            this.label1.Location = new System.Drawing.Point(76, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 24);
             this.label1.TabIndex = 1;
@@ -463,12 +464,23 @@
             this.btnregresarMI.UseVisualStyleBackColor = false;
             this.btnregresarMI.Click += new System.EventHandler(this.btnregresarMI_Click);
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Location = new System.Drawing.Point(128, 44);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(206, 24);
+            this.lblUsuario.TabIndex = 11;
+            this.lblUsuario.Text = "Bienvenido/a de nuevo";
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(994, 578);
+            this.ClientSize = new System.Drawing.Size(1126, 662);
             this.Controls.Add(this.panelsidemenu);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel_titlebar);
@@ -487,7 +499,7 @@
             this.panel_titlebar.ResumeLayout(false);
             this.panelsidemenu.ResumeLayout(false);
             this.panelsidemenu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -496,7 +508,7 @@
 
         private PictureBox pictureBox1;
         private Panel panel1;
-        private Button button2;
+        private Button btnMenuIzquierdo;
         private PictureBox pictureBox2;
         private Button bt;
         private ErrorProvider errorProvider1;
@@ -514,12 +526,13 @@
         private Panel panel3;
         private Label label1;
         private FontAwesome.Sharp.IconButton btnregresarMI;
-        private PictureBox pictureBox3;
-        private Button button1;
+        private PictureBox pcbLogo;
+        private Button btnBusqueda;
         public FlowLayoutPanel Contenedor;
-        private Button button3;
+        private Button btnDetalleVenta;
         public TextBox barraBusqueda;
-        private Button button4;
+        private Button btnBodega;
         private Label label2;
+        private Label lblUsuario;
     }
 }

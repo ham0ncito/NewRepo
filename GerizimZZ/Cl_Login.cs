@@ -22,7 +22,7 @@ namespace GerizimZZ
             SqlDataReader dr = cmd.ExecuteReader();
             if (dr.Read())
             {
-                MessageBox.Show("Login exitoso", "Log In", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Bienvenido/a de nuevo " + dr[1].ToString() , "Log In Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 entro = true;
             }

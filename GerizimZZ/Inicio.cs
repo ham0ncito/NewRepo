@@ -94,11 +94,11 @@ namespace GerizimZZ
 
         private void button2_Hover(object sender, EventArgs e)
         {
-            this.button2.BackColor = Color.Cyan;
+            this.btnMenuIzquierdo.BackColor = Color.Cyan;
         }
         private void button2_MouseLeave(object sender, EventArgs e)
         {
-            this.button2.BackColor = Color.Transparent;
+            this.btnMenuIzquierdo.BackColor = Color.Transparent;
         }
         // click a boton de minimizar
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -280,11 +280,11 @@ namespace GerizimZZ
         }
         private void button3_Hover(object sender, EventArgs e)
         {
-            this.button3.BackColor = Color.Cyan;
+            this.btnDetalleVenta.BackColor = Color.Cyan;
         }
         private void button3_MouseLeave(object sender, EventArgs e)
         {
-            this.button3.BackColor = Color.Transparent;
+            this.btnDetalleVenta.BackColor = Color.Transparent;
         }
 
         //Boton para abrir form de pedido
@@ -298,6 +298,16 @@ namespace GerizimZZ
         {
             FrmCliente cliente = new FrmCliente();
             cliente.ShowDialog();
+        }
+
+        private void panelsidemenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
