@@ -77,14 +77,24 @@ namespace GerizimZZ
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
-            dgDetalleVenta.Columns.Clear();
-            txtTotal.Text = "L 00";
-            cmbCliente.Text = "Cliente";
-            delivery.Checked = false;
-            txtNumero.Clear();
-            txtDireccion.Clear();
-            
-           
+            try
+            {
+                dgDetalleVenta.Columns.Clear();
+                txtTotal.Text = "L 00";
+                cmbCliente.Text = "Cliente";
+                delivery.Checked = false;
+                txtNumero.Clear();
+                txtDireccion.Clear();
+
+                Inicio Principal = Owner as Inicio;
+                Principal.IniciarFlowLayout(); 
+                Principal.FlpDatos.Controls.Clear(); 
+                Principal.Llenado();
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message); 
+            }
            
         }
 
@@ -107,7 +117,10 @@ namespace GerizimZZ
                 Imprimir.Print();
             }
 
-
+            //Foreach row in dgDetalleVenta
+            //{
+               
+            //}
 
         }
 

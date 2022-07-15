@@ -10,8 +10,11 @@ namespace GerizimZZ
         public string estado;
         private string nom;
         private string codigobarra;
+        private string textBox; 
         public int cantidad = 0;
+
         public DetalleVenta dgv = new DetalleVenta();
+
         public Producto()
         {
             InitializeComponent();
@@ -52,7 +55,12 @@ namespace GerizimZZ
             get { return id; }
             set { id = value; }
         }
+        public string text
+        {
+            get { return textBox1.Text;  }
+            set { textBox1.Text = value;  }
 
+        }
         public string DescripcionProducto
         {
             get
@@ -89,6 +97,8 @@ namespace GerizimZZ
             get { return codigobarra; }
             set { codigobarra = value; }
         }
+
+       
 
         private void button2_Click(object sender, EventArgs e)
         {

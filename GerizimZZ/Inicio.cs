@@ -5,12 +5,18 @@ namespace GerizimZZ
 {
     public partial class Inicio : Form
     {
+        private FlowLayoutPanel flp;
+
+        public FlowLayoutPanel FlpDatos { get => flp; set => flp = value; }
+
         public Inicio()
         {
             InitializeComponent();
             CollapseMenu();
             Llenado();
         }
+
+
         public void Llenado()
         {
             Productos llenar = new Productos();
@@ -18,6 +24,12 @@ namespace GerizimZZ
             llenar.llenado(Contenedor, consulta);
 
         }
+
+        public void IniciarFlowLayout()
+        {
+            flp = Contenedor; 
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -58,6 +70,7 @@ namespace GerizimZZ
             base.WndProc(ref m);
 
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -254,6 +267,7 @@ namespace GerizimZZ
         private void button3_Click(object sender, EventArgs e)
         {
             DetalleVenta detalleVenta = new DetalleVenta();
+            AddOwnedForm(detalleVenta); 
             detalleVenta.ShowDialog();
 
         }
