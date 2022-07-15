@@ -77,6 +77,7 @@ namespace GerizimZZ
                 dgvCliente.DataSource = dstCliente.Tables[0];
                 con.Close();
             }
+            actualizarDatos(); 
         }
 
         private void btnagregar_Cliente_Click(object sender, EventArgs e)
@@ -98,9 +99,15 @@ namespace GerizimZZ
                 dgvCliente.DataSource = dstCliente.Tables[0];
                 con.Close();
                 MessageBox.Show("Registro modificado con exito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }            
+            }
+            actualizarDatos(); 
         }
+        public void actualizarDatos()
+        {
+            DetalleVenta dr = Owner as DetalleVenta;
+            dr.nombresCliente();
 
+        }
         private void dgvCliente_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.dgvCliente.SelectedRows)

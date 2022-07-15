@@ -368,11 +368,12 @@ namespace GerizimZZ
             FrmCliente frmCliente = new FrmCliente();
             AddOwnedForm(frmCliente);
             frmCliente.Show(); 
-
+           
         }
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+         
             buscarId(); 
         }
 
@@ -404,6 +405,7 @@ namespace GerizimZZ
                 SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
                 SqlCommand comando = new SqlCommand("exec nombres; ", conexion);
                 conexion.Open();
+                cmbCliente.Items.Clear(); 
                 SqlDataReader registro = comando.ExecuteReader();
                 while (registro.Read())
                 {
@@ -417,6 +419,11 @@ namespace GerizimZZ
             }
 
             
+        }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
