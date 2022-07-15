@@ -133,5 +133,75 @@ namespace GerizimZZ
                 string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "direccion", txtBuscar.Text);
             dgvCliente.DataSource = dstCliente.Tables[0].DefaultView;
         }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblID_cliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblsegundoNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbldireccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtdireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsegundoNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtprimerNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_cliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltelefono_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblprimerApellido_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblsegundoApellido_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsegundoApellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtprimerApellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblprimerNombre_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
