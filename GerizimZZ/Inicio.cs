@@ -20,7 +20,7 @@ namespace GerizimZZ
         public void Llenado()
         {
             Productos llenar = new Productos();
-            string consulta = "select * from dbo.Producto  order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC;  ";
+            string consulta = "select * from dbo.Producto where cantidadProducto > 0 order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC ;  ";
             llenar.llenado(Contenedor, consulta);
 
         }

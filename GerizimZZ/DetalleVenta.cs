@@ -61,19 +61,19 @@ namespace GerizimZZ
 
         private void button1_Hover(object sender, EventArgs e)
         {
-            this.button1.BackColor = Color.IndianRed;
+            this.btnCancelarVenta.BackColor = Color.IndianRed;
         }
         private void button1_MouseLeaves(object sender, EventArgs e)
         {
-            this.button1.BackColor = Color.Transparent;
+            this.btnCancelarVenta.BackColor = Color.Transparent;
         }
         private void button2_Hover(object sender, EventArgs e)
         {
-            this.button2.BackColor = Color.Cyan;
+            this.btnGenerarVenta.BackColor = Color.Cyan;
         }
         private void button2_MouseLeaves(object sender, EventArgs e)
         {
-            this.button2.BackColor = Color.Transparent;
+            this.btnGenerarVenta.BackColor = Color.Transparent;
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -105,7 +105,7 @@ namespace GerizimZZ
             if (string.IsNullOrEmpty(cmbCliente.Text) == true  ||
                 string.IsNullOrEmpty(txtFactura.Text) == true || string.IsNullOrEmpty(cmbPago.Text) == true || txtTotal.Text == "L 00")
             {
-                errorProvider1.SetError(button2, "Ingrese todos los campos");
+                errorProvider1.SetError(btnGenerarVenta, "Ingrese todos los campos");
             }
             else
             { 
@@ -266,7 +266,7 @@ namespace GerizimZZ
             e.Graphics.DrawString("Listado de productos: ", fuente, Brushes.Black, new RectangleF(200, 400, 1000, 100));
             foreach (DataGridViewRow row in dgDetalleVenta.Rows)
             {
-                e.Graphics.DrawString(row.Cells["Id"].Value + "      " + row.Cells["Nombre"].Value + "      " + row.Cells["Cantidad"].Value + "       "
+                e.Graphics.DrawString(row.Cells["Nombre"].Value + "      " + row.Cells["Cantidad"].Value + "       "
                     + row.Cells["Precio"].Value + "       " + row.Cells["Total"].Value, fuente, Brushes.Black, new RectangleF(200, ubicacion, 1000, 100));
                 ubicacion += 30;
             }
@@ -356,6 +356,14 @@ namespace GerizimZZ
             datagrid();
             verificacion();
             
+        }
+
+        private void NuevoCliente_Click(object sender, EventArgs e)
+        {
+            FrmCliente frmCliente = new FrmCliente();
+            AddOwnedForm(frmCliente);
+            frmCliente.Show(); 
+
         }
     }
 }
