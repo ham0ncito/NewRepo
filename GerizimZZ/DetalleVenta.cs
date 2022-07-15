@@ -81,6 +81,11 @@ namespace GerizimZZ
         }
         private void button1_Click_1(object sender, EventArgs e)
         {
+            Limpiar(); 
+           
+        }
+        public void Limpiar()
+        {
             try
             {
                 dgDetalleVenta.Columns.Clear();
@@ -89,18 +94,17 @@ namespace GerizimZZ
                 delivery.Checked = false;
                 txtNumero.Clear();
                 txtDireccion.Clear();
-                txtCodigo.Clear(); 
+                txtCodigo.Clear();
 
                 Inicio Principal = Owner as Inicio;
-                Principal.IniciarFlowLayout(); 
-                Principal.FlpDatos.Controls.Clear(); 
+                Principal.IniciarFlowLayout();
+                Principal.FlpDatos.Controls.Clear();
                 Principal.Llenado();
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message); 
+                MessageBox.Show(x.Message);
             }
-           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -108,13 +112,41 @@ namespace GerizimZZ
             datagrid();
             verificacion();
             if (string.IsNullOrEmpty(cmbCliente.Text) == true  ||
-                string.IsNullOrEmpty(txtFactura.Text) == true || string.IsNullOrEmpty(cmbPago.Text) == true || txtTotal.Text == "L 00")
+                string.IsNullOrEmpty(txtFactura.Text) == true || string.IsNullOrEmpty(cmbPago.Text) == true || txtTotal.Text == "L 00" || dgDetalleVenta.Columns.Count == 0)
             {
-                errorProvider1.SetError(btnGenerarVenta, "Ingrese todos los campos");
+                errorProvider1.SetError(groupBox1, "Ingrese todos los campos");
+                errorProvider1.SetError(dgDetalleVenta, "Ingrese todos los campos");
             }
             else
             { 
                 errorProvider1.SetError(groupBox1, "");
+                errorProvider1.SetError(dgDetalleVenta, "");
+                try
+                {
+                    SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+                    conexion.Open();
+                    try 
+                    {
+                        SqlCommand comando = new SqlCommand("exec ventaNueva '"+ txtFactura.Text +"', '" + txtCodigo.Text + "','1','1'", conexion);
+                        comando.ExecuteNonQuery();
+                    }
+                    catch(SqlException x)
+                    {
+                        MessageBox.Show(x.Message); 
+                    }
+                    foreach (DataGridViewRow row in dgDetalleVenta.Rows)
+                    {
+                        
+                        SqlCommand comando = new SqlCommand("exec detalleVenta '" + txtFactura.Text.ToString() + "','" + row.Cells[0].Value + "' , '" + row.Cells[2].Value + "' , '" + row.Cells[3].Value + "';", conexion);
+                        comando.ExecuteNonQuery();
+                        
+                    }
+                    conexion.Close();
+                }
+                catch (SqlException x)
+                {
+                    MessageBox.Show(x.Message);
+                }
                 Imprimir = new PrintDocument();
                 try
                 {
@@ -127,12 +159,11 @@ namespace GerizimZZ
                 {
                     MessageBox.Show(x.Message); 
                 }
+                Limpiar();
+                Recargar(); 
             }
 
-            //Foreach row in dgDetalleVenta
-            //{
-               
-            //}
+           
 
         }
 
@@ -210,20 +241,23 @@ namespace GerizimZZ
         {
             datagrid();
             dgDetalleVenta.DataSource = tablita;
-            int numeroFactura = 0; 
+            Recargar(); 
+        }
+
+        public void Recargar ()
+        {
+            int numeroFactura = 0;
             SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
-            
+
             SqlCommand comando = new SqlCommand("Use Gerizim; select MAX(ID_factura) from Factura ;", conexion);
             comando.Parameters.AddWithValue("ID", txtFactura.Text);
             conexion.Open();
             SqlDataReader registro = comando.ExecuteReader();
-            if(registro.Read())
+            if (registro.Read())
             {
                 numeroFactura = Convert.ToInt32(registro[0]) + 1;
-                txtFactura.Text = numeroFactura.ToString(); 
+                txtFactura.Text = numeroFactura.ToString();
             }
-
-
         }
 
         public void dgDetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
