@@ -173,6 +173,7 @@ namespace GerizimZZ
                         if (reader.HasRows)
                         {
                             existe = true;
+                            lblNombre.Text = reader[1].ToString();
                             byte[] imag = (byte[])(reader[0]);
                             if (imag == null)
                             {
@@ -183,7 +184,7 @@ namespace GerizimZZ
                                 MemoryStream ms = new MemoryStream(imag);
                                 pictureBox1.Image = Image.FromStream(ms);
                             }
-                            lblNombre.Text = reader[1].ToString(); 
+                            
                             
                         }
                         else
