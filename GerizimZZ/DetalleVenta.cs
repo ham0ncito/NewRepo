@@ -13,6 +13,8 @@ namespace GerizimZZ
         int x = 0;
         double suma;
         bool bandera = false;
+       
+
         private DataGridView dgView; 
 
 
@@ -87,6 +89,7 @@ namespace GerizimZZ
                 delivery.Checked = false;
                 txtNumero.Clear();
                 txtDireccion.Clear();
+                txtCodigo.Clear(); 
 
                 Inicio Principal = Owner as Inicio;
                 Principal.IniciarFlowLayout(); 
@@ -370,7 +373,28 @@ namespace GerizimZZ
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+            buscarId(); 
+        }
 
+        public void buscarId ()
+        {
+            try
+            {
+                SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+                SqlCommand comando = new SqlCommand(" exec buscarId '" + cmbCliente.Text+"' ; ", conexion);
+                conexion.Open();
+                SqlDataReader registro = comando.ExecuteReader();
+                if (registro.Read())
+                {
+                    txtCodigo.Text = registro[0].ToString(); 
+                    
+                }
+                conexion.Close();
+            }
+            catch (SqlException x)
+            {
+                MessageBox.Show(x.Message);
+            }
         }
 
         public void nombresCliente()
@@ -378,7 +402,7 @@ namespace GerizimZZ
             try
             {
                 SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
-                SqlCommand comando = new SqlCommand("select CONCAT(primerNombre, ' ', segundoNombre, ' ', primerApellido, ' ', segundoApellido, ' ' ) as Nombre from Cliente order by Nombre ASC; ", conexion);
+                SqlCommand comando = new SqlCommand("exec nombres; ", conexion);
                 conexion.Open();
                 SqlDataReader registro = comando.ExecuteReader();
                 while (registro.Read())

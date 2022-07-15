@@ -54,7 +54,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -302,7 +302,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtCodigo);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.cmbCliente);
             this.groupBox1.Controls.Add(this.label2);
@@ -318,13 +318,13 @@
             this.groupBox1.Text = "Ingrese todos los datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(428, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(113, 25);
-            this.textBox1.TabIndex = 25;
+            this.txtCodigo.Location = new System.Drawing.Point(428, 83);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.ReadOnly = true;
+            this.txtCodigo.Size = new System.Drawing.Size(113, 25);
+            this.txtCodigo.TabIndex = 25;
             // 
             // label11
             // 
@@ -496,7 +496,7 @@
         private ComboBox cmbCliente;
         private BindingSource clientedstBindingSource;
         private Label label11;
-        private TextBox textBox1;
+        private TextBox txtCodigo;
         private Button NuevoCliente;
     }
 }
