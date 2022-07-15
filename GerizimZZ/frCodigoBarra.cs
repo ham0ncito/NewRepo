@@ -69,8 +69,8 @@ namespace GerizimZZ
         {
             Boolean productoEnElCarrito = false;
             int pos = 0;
-            int[] cantidad = new int[2]; 
-
+            int[] cantidad = new int[2];
+            
             if ((string.IsNullOrEmpty(textBox1.Text) == true || string.IsNullOrEmpty(textBox2.Text) == true))
             {
                 errorProvider1.SetError(groupBox1, "Ingrese todos los datos");
@@ -80,15 +80,13 @@ namespace GerizimZZ
                 errorProvider1.SetError(groupBox1, "");
                 SqlCommand consulta = new SqlCommand("Select ID_codigoProducto, precio_producto, nombreProducto, cantidadProducto, estadoPRoducto from Producto where codigoBarra = '" + textBox1.Text + "';",connection);
                 connection.Open();
-                //consulta.Parameters.AddWithValue("codigoBarra", textBox2.Text);
+                
                 SqlDataReader registro = consulta.ExecuteReader();
                 if (registro.Read())
                 {
                     cantidad[1] = Convert.ToInt32(registro[3]);
                     if (Convert.ToInt32(registro[4]) != 0 && Convert.ToInt32(textBox2.Text) <= Convert.ToInt32(registro[3]))
-{
-
-                        
+                       {
 
                         DetalleVenta dv = Owner as DetalleVenta;
                         DataTable dt = new DataTable();
@@ -119,6 +117,7 @@ namespace GerizimZZ
                             }
                             datarow["Id"] = registro[0].ToString();
                             datarow["Nombre"] = registro[2].ToString();
+                           
                             datarow["Cantidad"] = textBox2.Text;
                
                             datarow["Precio"] = registro[1].ToString();
@@ -136,7 +135,7 @@ namespace GerizimZZ
                                 }
                                 else
                                 {
-                                    MessageBox.Show("El Inventario es insuficiente");
+                                    MessageBox.Show("El Inventario es insuficiente, solo hay " + cantidad[1] + " productos en stock");
                                 }
                             }
                             
@@ -163,7 +162,7 @@ namespace GerizimZZ
             {
                 try
                 {
-                    sql = "Select imagen from Producto where codigoBarra = '" + textBox1.Text+ "'";
+                    sql = "Select imagen, nombreProducto from Producto where codigoBarra = '" + textBox1.Text+ "'";
                     if (connection.State != ConnectionState.Open)
                     {
                         connection.Open();
@@ -184,6 +183,7 @@ namespace GerizimZZ
                                 MemoryStream ms = new MemoryStream(imag);
                                 pictureBox1.Image = Image.FromStream(ms);
                             }
+                            lblNombre.Text = reader[1].ToString(); 
                             
                         }
                         else
@@ -191,6 +191,7 @@ namespace GerizimZZ
                             connection.Close();
                             MessageBox.Show("No existe el producto");
                             pictureBox1.Image = GerizimZZ.Properties.Resources.losentimos;
+                            lblNombre.Text = "Producto Inexistente"; 
                         }
                     }
                 }
