@@ -137,7 +137,7 @@ namespace GerizimZZ
                     foreach (DataGridViewRow row in dgDetalleVenta.Rows)
                     {
                         
-                        SqlCommand comando = new SqlCommand("exec detalleVenta '" + txtFactura.Text.ToString() + "','" + row.Cells[0].Value + "' , '" + row.Cells[2].Value + "' , '" + row.Cells[3].Value + "';", conexion);
+                        SqlCommand comando = new SqlCommand("exec detalleVenta '" + txtFactura.Text.ToString() + "','" + row.Cells[2].Value + "' , '" + row.Cells[3].Value + "' , '" + row.Cells[0].Value + "';", conexion);
                         comando.ExecuteNonQuery();
                         
                     }
@@ -301,8 +301,8 @@ namespace GerizimZZ
             e.Graphics.DrawString(" Barrio Paz Barahona  1 Calle  2 Avenida  22505876 ", fuente, Brushes.Black, new RectangleF(230, 280, 1000, 100));
             e.Graphics.DrawString(String.Concat("   " +lblFecha.Text + "   " + lblHora.Text) , fuente, Brushes.Black, new RectangleF(280, 300, 1000, 100));
             e.Graphics.DrawString(String.Concat("Factura #  " + txtFactura.Text), fuente, Brushes.Black, new RectangleF(360, 320, 1000, 100));
-            e.Graphics.DrawString(String.Concat("Cliente  " + cmbCliente.Text), fuente, Brushes.Black, new RectangleF(360, 340, 1000, 100));
-            e.Graphics.DrawString("Listado de productos: ", fuente, Brushes.Black, new RectangleF(200, 400, 1000, 100));
+            e.Graphics.DrawString(String.Concat("Cliente  " + cmbCliente.Text), fuente, Brushes.Black, new RectangleF(200, 380, 1000, 100));
+            e.Graphics.DrawString("Listado de productos: ", fuente, Brushes.Black, new RectangleF(200, 420 , 1000, 100));
             foreach (DataGridViewRow row in dgDetalleVenta.Rows)
             {
                 e.Graphics.DrawString(row.Cells["Nombre"].Value + "      " + row.Cells["Cantidad"].Value + "       "
