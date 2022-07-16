@@ -82,6 +82,7 @@ namespace GerizimZZ
                 estadoproducto = Convert.ToInt32(txtEstadoPRoducto.Text);
                 precio_producto = Convert.ToDouble(txtPrecio_producto.Text);
                 pesoproducto = Convert.ToDouble(txtPesoProducto.Text);
+                
                 productos.Agregar_Producto(codigo, precio_producto, txtNombreProducto.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatologo.Text, cantidadproducto, cantidadminima, txtDescripcionProducto.Text, estadoproducto, txtFechaingreso.Text);
                 SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
                 SqlDataAdapter comando = new SqlDataAdapter();

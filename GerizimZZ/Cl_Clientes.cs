@@ -11,7 +11,7 @@ namespace GerizimZZ
 {
     internal class Cl_Clientes
     {
-        SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+        SqlConnection con = new SqlConnection("Data Source=TATO180\\SQLEXPRESS;Initial Catalog=Gerizim; Integrated Security=True;");
         private string iD_cliente;
         private string primerNombre_Cliente;
         private string segundoNombre_Cliente;
@@ -30,7 +30,7 @@ namespace GerizimZZ
 
         private static SqlConnection GetConnection()
         {
-            SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+            SqlConnection con = new SqlConnection("Data Source=TATO180\\SQLEXPRESS;Initial Catalog=Gerizim; Integrated Security=True;");
             return con;
         }
 
