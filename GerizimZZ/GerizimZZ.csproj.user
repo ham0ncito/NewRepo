@@ -26,7 +26,13 @@
     <Compile Update="FrmInventario.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FrmRepartidores.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Frm_AsignarRepartidor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Inventarios.cs">

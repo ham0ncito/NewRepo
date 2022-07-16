@@ -196,7 +196,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerizimZZ.Properties.Resources._026_Saint_Petersburg;
             this.ClientSize = new System.Drawing.Size(676, 554);
             this.Controls.Add(this.intotal);
             this.Controls.Add(this.indetalle);

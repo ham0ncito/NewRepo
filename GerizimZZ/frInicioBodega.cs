@@ -301,7 +301,9 @@ namespace GerizimZZ
 
         private void button6_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Proximamente en nuevas actualizaciones", "Proximamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //Abrir Pantalla repartidores
+            FrmRepartidores repartidores = new FrmRepartidores();
+            repartidores.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)

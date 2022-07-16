@@ -211,25 +211,25 @@ namespace GerizimZZ
         private void button1_Click(object sender, EventArgs e)
         {
             string busqueda;
-            
+
             Productos pr = new Productos();
             if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
                 busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' order by nombreProducto, estadoPRoducto DESC; ";
                 SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
-                Contenedor.Controls.Clear(); 
-                pr.llenado(Contenedor, busqueda);       
+                Contenedor.Controls.Clear();
+                pr.llenado(Contenedor, busqueda);
             }
             if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
 
                 busqueda = "select * from dbo.Producto order by estadoPRoducto DESC; ";
                 Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda); 
-                
+                pr.llenado(Contenedor, busqueda);
+
             }
         }
-        private void BarraBusqueda_TextChanged (object sender, EventArgs e)
+        private void BarraBusqueda_TextChanged(object sender, EventArgs e)
         {
             string busqueda;
 
@@ -277,6 +277,20 @@ namespace GerizimZZ
         {
             FrmCliente cliente = new FrmCliente();
             cliente.ShowDialog();
+        }
+
+        private void btnventasmi_Click(object sender, EventArgs e)
+        {
+            RegistrosVentas registros = new RegistrosVentas();
+            registros.ShowDialog();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Boton para Abrir pantalla bodega
+            frInicioBodega bodega = new frInicioBodega();
+            bodega.ShowDialog();
         }
     }
 }

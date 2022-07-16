@@ -108,7 +108,7 @@
             this.label2.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(476, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 21);
+            this.label2.Size = new System.Drawing.Size(110, 27);
             this.label2.TabIndex = 10;
             this.label2.Text = "VENTAS";
             // 
@@ -127,7 +127,7 @@
             this.button4.Size = new System.Drawing.Size(48, 45);
             this.button4.TabIndex = 9;
             this.button4.UseVisualStyleBackColor = false;
-           // this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -377,7 +377,7 @@
             this.btnventasmi.Text = "Ventas";
             this.btnventasmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnventasmi.UseVisualStyleBackColor = false;
-           // this.btnventasmi.Click += new System.EventHandler(this.btnventasmi_Click);
+            this.btnventasmi.Click += new System.EventHandler(this.btnventasmi_Click);
             this.btnventasmi.MouseLeave += new System.EventHandler(this.btnventasmi_MouseLeaves);
             this.btnventasmi.MouseHover += new System.EventHandler(this.btnventasmi_Hover);
             // 
@@ -443,7 +443,7 @@
             this.label1.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(79, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 24);
+            this.label1.Size = new System.Drawing.Size(94, 30);
             this.label1.TabIndex = 1;
             this.label1.Tag = "Menu";
             this.label1.Text = "MENU";
@@ -465,7 +465,7 @@
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(994, 578);
