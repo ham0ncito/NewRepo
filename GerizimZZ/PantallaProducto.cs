@@ -37,6 +37,7 @@ namespace GerizimZZ
                     cantidad += 1;
                     textBox1.Text = cantidad.ToString();
                     MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                 }
                 DetalleVenta dgv = new DetalleVenta();
                 dgv.llenartablita();
@@ -122,10 +123,11 @@ namespace GerizimZZ
                     cantidad -= 1;
                     textBox1.Text = cantidad.ToString();
                     MessageBox.Show("Cantidad reducida correctamente", "Resta correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                DetalleVenta dgv = new DetalleVenta();
-                dgv.llenartablita();
-            
+                    
+            }
+            DetalleVenta dgv = new DetalleVenta();
+            dgv.llenartablita();
+
 
         }
 
@@ -157,20 +159,23 @@ namespace GerizimZZ
             if (!(String.IsNullOrEmpty(textBox1.Text)) && Convert.ToInt32(textBox1.Text) <= Convert.ToInt32(label3.Text))
             {
                 errorProvider1.SetError(textBox1, "");
-                string precio = this.PrecioProducto;
-                textc.Id = this.Id.ToString();
-                textc.NombreProducto = this.NombreProducto;
+                if (Convert.ToInt32(textBox1.Text) > 0)
+                {
+                    string precio = this.PrecioProducto;
+                    textc.Id = this.Id.ToString();
+                    textc.NombreProducto = this.NombreProducto;
 
 
-                string cantidadtextbox = textBox1.Text.ToString();
-                textc.Cantidad = cantidadtextbox;
-                textc.precio = this.PrecioProducto;
+                    string cantidadtextbox = textBox1.Text.ToString();
+                    textc.Cantidad = cantidadtextbox;
+                    textc.precio = this.PrecioProducto;
 
-                int cantidadtextbox2 = int.Parse(cantidadtextbox);
-                string precio2 = this.PrecioProducto.ToString();
-                float precio3 = float.Parse(precio2);
-                float total = cantidadtextbox2 * precio3;
-                textc.total = total.ToString();
+                    int cantidadtextbox2 = int.Parse(cantidadtextbox);
+                    string precio2 = this.PrecioProducto.ToString();
+                    float precio3 = float.Parse(precio2);
+                    float total = cantidadtextbox2 * precio3;
+                    textc.total = total.ToString();
+                }
             }
             else
             {

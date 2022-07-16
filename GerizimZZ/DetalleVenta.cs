@@ -3,6 +3,7 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
+using System.Windows.Forms;
 using System.Windows.Markup;
 
 
@@ -88,7 +89,9 @@ namespace GerizimZZ
         {
             try
             {
+                
                 dgDetalleVenta.Columns.Clear();
+                this.dgDetalleVenta.DataSource = null; 
                 txtTotal.Text = "L 00";
                 cmbCliente.Text = "";
                 delivery.Checked = false;
@@ -100,7 +103,8 @@ namespace GerizimZZ
                 Principal.IniciarFlowLayout();
                 Principal.FlpDatos.Controls.Clear();
                 Principal.Llenado();
-            }
+                
+            }       
             catch (Exception x)
             {
                 MessageBox.Show(x.Message);
@@ -199,45 +203,47 @@ namespace GerizimZZ
 
             idlist.Add(comparacion);
 
-
-            if (tablita.Rows.Count == 0)
+           
             {
-                tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
-            } 
-            else
-            {
-            int estado = 0;
-                for (int i = 0; i < tablita.Rows.Count; i++)
-                {
-                  
-                    if (idlist[i] == textc.Id)
-                    {
-                        if (cantidadcero == 0)
-                        {
-                            tablita.Rows.RemoveAt(i);
-                            idlist.RemoveAt(i);
-                            estado = 1;
-                            break;
-                        }
-                        else
-                        {
-                            tablita.Rows.RemoveAt(i);
-                            tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
-                            idlist.RemoveAt(i);
-                            estado = 1;
-                            break;
-                        }
-                    }
-                    if (idlist[i] != textc.Id)
-                    {
-                        estado = 2;
-                    }
-                }
-                if (estado == 2)
+                if (tablita.Rows.Count == 0)
                 {
                     tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
                 }
+                else
+                {
+                    int estado = 0;
+                    for (int i = 0; i < tablita.Rows.Count; i++)
+                    {
 
+                        if (idlist[i] == textc.Id)
+                        {
+                            if (cantidadcero == 0)
+                            {
+                                tablita.Rows.RemoveAt(i);
+                                idlist.RemoveAt(i);
+                                estado = 1;
+                                break;
+                            }
+                            else
+                            {
+                                tablita.Rows.RemoveAt(i);
+                                tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
+                                idlist.RemoveAt(i);
+                                estado = 1;
+                                break;
+                            }
+                        }
+                        if (idlist[i] != textc.Id)
+                        {
+                            estado = 2;
+                        }
+                    }
+                    if (estado == 2)
+                    {
+                        tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
+                    }
+                }
+                
             }
 
 
