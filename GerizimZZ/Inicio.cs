@@ -339,6 +339,11 @@ namespace GerizimZZ
 
         private void btnBodega_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnBodega_Click_1(object sender, EventArgs e)
+        {
             frInicioBodega frInicioBodega = new frInicioBodega();
             AddOwnedForm(frInicioBodega);
             frInicioBodega.Show();
