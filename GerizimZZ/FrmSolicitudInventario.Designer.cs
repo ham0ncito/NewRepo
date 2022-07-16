@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSolicitudInventario));
             this.label3 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -60,6 +61,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtFechaIngresoo = new System.Windows.Forms.TextBox();
             this.btnimprimir = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnLimpiar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -101,7 +104,7 @@
             this.LineaNegraEstetica.Location = new System.Drawing.Point(-99, 78);
             this.LineaNegraEstetica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LineaNegraEstetica.Name = "LineaNegraEstetica";
-            this.LineaNegraEstetica.Size = new System.Drawing.Size(936, 26);
+            this.LineaNegraEstetica.Size = new System.Drawing.Size(958, 26);
             this.LineaNegraEstetica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.LineaNegraEstetica.TabIndex = 36;
             this.LineaNegraEstetica.TabStop = false;
@@ -114,7 +117,7 @@
             this.LogoGerizim.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
             this.LogoGerizim.Location = new System.Drawing.Point(334, -10);
             this.LogoGerizim.Name = "LogoGerizim";
-            this.LogoGerizim.Size = new System.Drawing.Size(120, 113);
+            this.LogoGerizim.Size = new System.Drawing.Size(142, 113);
             this.LogoGerizim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.LogoGerizim.TabIndex = 35;
             this.LogoGerizim.TabStop = false;
@@ -211,7 +214,7 @@
             // 
             // btnSolicitar
             // 
-            this.btnSolicitar.Location = new System.Drawing.Point(228, 483);
+            this.btnSolicitar.Location = new System.Drawing.Point(259, 483);
             this.btnSolicitar.Name = "btnSolicitar";
             this.btnSolicitar.Size = new System.Drawing.Size(109, 38);
             this.btnSolicitar.TabIndex = 50;
@@ -329,6 +332,7 @@
             // 
             this.txtFechaIngresoo.Location = new System.Drawing.Point(630, 382);
             this.txtFechaIngresoo.Name = "txtFechaIngresoo";
+            this.txtFechaIngresoo.ReadOnly = true;
             this.txtFechaIngresoo.Size = new System.Drawing.Size(100, 23);
             this.txtFechaIngresoo.TabIndex = 63;
             this.txtFechaIngresoo.TextChanged += new System.EventHandler(this.txtFechaIngresoo_TextChanged);
@@ -343,11 +347,27 @@
             this.btnimprimir.UseVisualStyleBackColor = true;
             this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(127, 483);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(109, 38);
+            this.btnLimpiar.TabIndex = 65;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // FrmSolicitudInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 533);
+            this.ClientSize = new System.Drawing.Size(822, 533);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnimprimir);
             this.Controls.Add(this.txtFechaIngresoo);
             this.Controls.Add(this.label10);
@@ -424,6 +444,7 @@
         private Label label10;
         private TextBox txtFechaIngresoo;
         private Button btnimprimir;
-
+        private System.Windows.Forms.Timer timer1;
+        private Button btnLimpiar;
     }
 }

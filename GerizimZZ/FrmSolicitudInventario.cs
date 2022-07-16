@@ -134,6 +134,30 @@ namespace GerizimZZ
 
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            txtFechaIngresoo.Text = DateTime.Now.ToString("d");
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            limpiar(); 
+        }
+        public void limpiar ()
+        {
+            txtNombreOriginal.Clear();
+            txtBuscar.Clear();
+            txtCodigoCatalogo.Clear();
+            txtCantidadProducto.Clear();
+            txtCantidadMinima.Clear();
+            txtCodigoBarra.Clear();
+            txtEstadoProducto.Clear();
+            txtDescripcion.Clear();
+            txtPesoProducto.Clear();
+            txtPrecioProducto.Clear();
+            
+            txtID_CodigoProducto.Clear();
+        }
         public FrmSolicitudInventario()
         {
             InitializeComponent();
@@ -146,6 +170,7 @@ namespace GerizimZZ
             dstInventario = new Productosdst();
             dstInventario.Tables.Add(dtInventario);
             dgvInventario.DataSource = dstInventario.Tables[0];
+            
 
         }
 
