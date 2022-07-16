@@ -16,28 +16,22 @@ namespace GerizimZZ
             CollapseMenu();
             
             Llenado();
-           
+            NombreBienvenida();
         }
 
         public void NombreBienvenida ()
         {
-        var hora = DateTime.Parse("01:00:00 PM");
-        var ahora = DateTime.Parse(DateTime.Now.ToString("hh:mm:ss tt"));
-        SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
-        SqlCommand comando = new SqlCommand(" exec nombre '" + lblUsernma.Text + "' ; ", conexion);
             
-        conexion.Open();
+        SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+        string usern = Usuario.username.ToString();
+            MessageBox.Show(usern);
+        SqlCommand comando = new SqlCommand(" exec nombre '" + usern + "' ; ", conexion);
+            lblUsuario.Text = "Buenos días ";
+            conexion.Open();
         SqlDataReader registro = comando.ExecuteReader();
         if (registro.Read())
         {
-                if ( ahora >= hora)
-                {
-                    lblUsuario.Text = "Buenas tardes " + registro[0].ToString;
-                }
-                else
-                {
-                    lblUsuario.Text = "Buenos días " + registro[0].ToString;
-                }
+            
 
         }
         conexion.Close();
