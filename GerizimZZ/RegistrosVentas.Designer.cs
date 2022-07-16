@@ -35,7 +35,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.intsemanal = new System.Windows.Forms.TextBox();
+            this.intmensual = new System.Windows.Forms.TextBox();
             this.intventasdia = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataSet11BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -123,20 +123,20 @@
             this.label2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(18, 430);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 18);
+            this.label2.Size = new System.Drawing.Size(112, 18);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Total Semanal:";
+            this.label2.Text = "Total Mensual:";
             // 
-            // intsemanal
+            // intmensual
             // 
-            this.intsemanal.BackColor = System.Drawing.Color.Honeydew;
-            this.intsemanal.Location = new System.Drawing.Point(144, 429);
-            this.intsemanal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.intsemanal.Name = "intsemanal";
-            this.intsemanal.ReadOnly = true;
-            this.intsemanal.Size = new System.Drawing.Size(110, 23);
-            this.intsemanal.TabIndex = 14;
-            this.intsemanal.TextChanged += new System.EventHandler(this.intsemanal_TextChanged);
+            this.intmensual.BackColor = System.Drawing.Color.Honeydew;
+            this.intmensual.Location = new System.Drawing.Point(144, 429);
+            this.intmensual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.intmensual.Name = "intmensual";
+            this.intmensual.ReadOnly = true;
+            this.intmensual.Size = new System.Drawing.Size(110, 23);
+            this.intmensual.TabIndex = 14;
+            this.intmensual.TextChanged += new System.EventHandler(this.intsemanal_TextChanged);
             // 
             // intventasdia
             // 
@@ -348,7 +348,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.intventasdia);
-            this.Controls.Add(this.intsemanal);
+            this.Controls.Add(this.intmensual);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -378,7 +378,7 @@
         private PictureBox pictureBox2;
         private Label label1;
         private Label label2;
-        private TextBox intsemanal;
+        private TextBox intmensual;
         private TextBox intventasdia;
         private DataGridView dataGridView1;
         private Label label3;
