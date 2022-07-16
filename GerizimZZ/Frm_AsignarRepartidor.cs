@@ -31,7 +31,7 @@ namespace GerizimZZ
         private void btn_Asignar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Entrega Asignada Correctamente");
-            
+            this.Close(); 
         }
 
         private void Frm_AsignarRepartidor_Load(object sender, EventArgs e)
