@@ -296,7 +296,8 @@ namespace GerizimZZ
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Proximamente en nuevas actualizaciones", "Proximamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+           FrmSolicitudInventario frmSolicitudInventario = new FrmSolicitudInventario();
+            frmSolicitudInventario.ShowDialog();
         }
 
         private void button6_Click(object sender, EventArgs e)

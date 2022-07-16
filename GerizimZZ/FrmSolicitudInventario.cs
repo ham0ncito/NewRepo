@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Markup;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace GerizimZZ
 {
@@ -23,7 +27,7 @@ namespace GerizimZZ
 
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Su solicitud se a completado con exito","Solicitud",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -40,6 +44,94 @@ namespace GerizimZZ
             string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "EstadoPRoducto", txtBuscar.Text) + " OR " +
             string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "Fechaingreso", txtBuscar.Text);
             dgvInventario.DataSource = dstInventario.Tables[0].DefaultView;
+        }
+
+        private void btnimprimir_Click(object sender, EventArgs e)
+        {
+            if(dgvInventario.Rows.Count > 0)
+            {
+                SaveFileDialog guardar = new SaveFileDialog();
+                guardar.Filter = "PDF (*.pdf)|*.pdf";
+                guardar.FileName = "Resultado.pdf";
+                bool errormessage = false;
+                if(guardar.ShowDialog()==DialogResult.OK)
+                {
+                    if(File.Exists(guardar.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(guardar.FileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            errormessage = true;
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                    if(!errormessage)
+                    {
+                        try
+                        {
+                            PdfPTable pTable = new PdfPTable(dgvInventario.Columns.Count);
+                            pTable.DefaultCell.Padding = 4;
+                            pTable.WidthPercentage = 100;
+                            pTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                            foreach (DataGridViewColumn col in dgvInventario.Columns)
+                            {
+                                PdfPCell pcell = new PdfPCell(new Phrase(col.HeaderText));
+                                pTable.AddCell(pcell);
+                                
+                            }
+                            foreach (DataGridViewRow viewrow in dgvInventario.Rows)
+                            {
+                                if(viewrow.Selected == true)
+                                {
+                                    foreach (DataGridViewCell dcell in viewrow.Cells)
+                                    {
+                                        pTable.AddCell(dcell.Value.ToString());
+                                    }
+                                }
+                                    
+                            }
+                            using (FileStream fileStream = new FileStream(guardar.FileName,FileMode.Create))
+                            {
+                                Document document = new Document(PageSize.A4.Rotate(),8f, 16f, 16f, 8f);
+                                PdfWriter.GetInstance(document, fileStream);
+                                document.Open();
+                                document.Add(pTable);
+                                document.Close();
+                                fileStream.Close();
+                            }
+                            MessageBox.Show("Informacion guardara correctamente", "info");
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+                    }
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("No hay informacion en la tabla(datagrid)","Info");
+            }
+            
+            
+            
+
+        }
+
+        private void dgvInventario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtFechaIngresoo_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         public FrmSolicitudInventario()
@@ -97,7 +189,7 @@ namespace GerizimZZ
                 pesoproducto = Convert.ToDouble(txtPesoProducto.Text);
                 //Llama a la clase de Solicitar Inventario 
                 
-                inventario.Agregar_Solicitud(codigo, PrecioProducto, txtNombreOriginal.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatalogo.Text, cantidadproducto, cantidadminima, txtDescripcion.Text, estadoproducto,  txtFechaIngresoo.Text);
+                inventario.Agregar_Solicitud(codigo, PrecioProducto, txtNombreOriginal.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatalogo.Text, cantidadproducto, cantidadminima, txtDescripcion.Text, estadoproducto,  Convert.ToDateTime(txtFechaIngresoo.Text));
                 SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
                 SqlDataAdapter coman = new SqlDataAdapter();
                 string sql = "SELECT * FROM Producto";

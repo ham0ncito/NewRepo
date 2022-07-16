@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSolicitudInventario));
             this.label3 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
@@ -58,6 +59,7 @@
             this.txtCantidadMinima = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtFechaIngresoo = new System.Windows.Forms.TextBox();
+            this.btnimprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
@@ -129,6 +131,7 @@
             this.dgvInventario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInventario.Size = new System.Drawing.Size(746, 167);
             this.dgvInventario.TabIndex = 34;
+            this.dgvInventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInventario_CellClick);
             this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSolicitudInventario_CellContentClick);
             // 
             // label1
@@ -328,12 +331,24 @@
             this.txtFechaIngresoo.Name = "txtFechaIngresoo";
             this.txtFechaIngresoo.Size = new System.Drawing.Size(100, 23);
             this.txtFechaIngresoo.TabIndex = 63;
+            this.txtFechaIngresoo.TextChanged += new System.EventHandler(this.txtFechaIngresoo_TextChanged);
+            // 
+            // btnimprimir
+            // 
+            this.btnimprimir.Location = new System.Drawing.Point(555, 483);
+            this.btnimprimir.Name = "btnimprimir";
+            this.btnimprimir.Size = new System.Drawing.Size(109, 39);
+            this.btnimprimir.TabIndex = 64;
+            this.btnimprimir.Text = "Imprimir";
+            this.btnimprimir.UseVisualStyleBackColor = true;
+            this.btnimprimir.Click += new System.EventHandler(this.btnimprimir_Click);
             // 
             // FrmSolicitudInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 533);
+            this.Controls.Add(this.btnimprimir);
             this.Controls.Add(this.txtFechaIngresoo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtCantidadMinima);
@@ -364,7 +379,9 @@
             this.Controls.Add(this.LineaNegraEstetica);
             this.Controls.Add(this.LogoGerizim);
             this.Controls.Add(this.dgvInventario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSolicitudInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FrmSolicitudInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).EndInit();
@@ -406,5 +423,7 @@
         private TextBox txtCantidadMinima;
         private Label label10;
         private TextBox txtFechaIngresoo;
+        private Button btnimprimir;
+
     }
 }

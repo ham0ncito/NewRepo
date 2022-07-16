@@ -272,3 +272,5 @@ C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\Gerizi
 C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.FrmRepartidores.resources
 C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.FrmSolicitudInventario.resources
 C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Frm_AsignarRepartidor.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\bin\Debug\net6.0-windows\itextsharp.dll
