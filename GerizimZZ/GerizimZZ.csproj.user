@@ -14,9 +14,6 @@
     <Compile Update="frAgregarInformacionAviso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frCodigoBarra.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="frInicioBodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -29,13 +26,10 @@
     <Compile Update="FrmInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmRepartidores.cs">
+    <Compile Update="FrmSolicitudInventario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Frm_AsignarRepartidor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Inventarios.cs">
