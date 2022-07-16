@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSolicitudInventario));
             this.label3 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
@@ -330,6 +331,7 @@
             this.txtFechaIngresoo.Name = "txtFechaIngresoo";
             this.txtFechaIngresoo.Size = new System.Drawing.Size(100, 23);
             this.txtFechaIngresoo.TabIndex = 63;
+            this.txtFechaIngresoo.TextChanged += new System.EventHandler(this.txtFechaIngresoo_TextChanged);
             // 
             // btnimprimir
             // 
@@ -377,7 +379,9 @@
             this.Controls.Add(this.LineaNegraEstetica);
             this.Controls.Add(this.LogoGerizim);
             this.Controls.Add(this.dgvInventario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmSolicitudInventario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FrmSolicitudInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).EndInit();

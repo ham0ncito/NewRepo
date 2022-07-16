@@ -129,6 +129,11 @@ namespace GerizimZZ
 
         }
 
+        private void txtFechaIngresoo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         public FrmSolicitudInventario()
         {
             InitializeComponent();
@@ -184,7 +189,7 @@ namespace GerizimZZ
                 pesoproducto = Convert.ToDouble(txtPesoProducto.Text);
                 //Llama a la clase de Solicitar Inventario 
                 
-                inventario.Agregar_Solicitud(codigo, PrecioProducto, txtNombreOriginal.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatalogo.Text, cantidadproducto, cantidadminima, txtDescripcion.Text, estadoproducto,  txtFechaIngresoo.Text);
+                inventario.Agregar_Solicitud(codigo, PrecioProducto, txtNombreOriginal.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatalogo.Text, cantidadproducto, cantidadminima, txtDescripcion.Text, estadoproducto,  Convert.ToDateTime(txtFechaIngresoo.Text));
                 SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
                 SqlDataAdapter coman = new SqlDataAdapter();
                 string sql = "SELECT * FROM Producto";
