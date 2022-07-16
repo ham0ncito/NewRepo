@@ -136,12 +136,13 @@ namespace GerizimZZ
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            txtFechaIngresoo.Text = DateTime.Now.ToString("d");
+           
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            limpiar(); 
+            limpiar();
+            txtFechaIngresoo.Text = DateTime.Now.ToString("d");
         }
         public void limpiar ()
         {
@@ -170,7 +171,8 @@ namespace GerizimZZ
             dstInventario = new Productosdst();
             dstInventario.Tables.Add(dtInventario);
             dgvInventario.DataSource = dstInventario.Tables[0];
-            
+            txtFechaIngresoo.Text = DateTime.Now.ToString("d");
+
 
         }
 
