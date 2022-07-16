@@ -13,7 +13,7 @@ namespace GerizimZZ
 {
     public partial class Frm_AsignarRepartidor : Form
     {
-        SqlConnection conec = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+        SqlConnection conec = new SqlConnection("Data Source=localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
         public Frm_AsignarRepartidor()
         {
           
