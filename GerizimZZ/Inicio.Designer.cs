@@ -48,6 +48,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel_titlebar = new System.Windows.Forms.Panel();
             this.panelsidemenu = new System.Windows.Forms.Panel();
+            this.lblUsernma = new System.Windows.Forms.Label();
             this.pcbLogo = new System.Windows.Forms.PictureBox();
             this.btnclientesmi = new FontAwesome.Sharp.IconButton();
             this.btnventasmi = new FontAwesome.Sharp.IconButton();
@@ -123,7 +124,7 @@
             this.btnBodega.FlatAppearance.BorderSize = 0;
             this.btnBodega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBodega.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBodega.Location = new System.Drawing.Point(839, 58);
+            this.btnBodega.Location = new System.Drawing.Point(862, 58);
             this.btnBodega.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBodega.Name = "btnBodega";
             this.btnBodega.Size = new System.Drawing.Size(48, 45);
@@ -139,7 +140,7 @@
             this.btnDetalleVenta.FlatAppearance.BorderSize = 0;
             this.btnDetalleVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleVenta.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDetalleVenta.Location = new System.Drawing.Point(924, 58);
+            this.btnDetalleVenta.Location = new System.Drawing.Point(950, 58);
             this.btnDetalleVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDetalleVenta.Name = "btnDetalleVenta";
             this.btnDetalleVenta.Size = new System.Drawing.Size(48, 45);
@@ -321,6 +322,7 @@
             // panelsidemenu
             // 
             this.panelsidemenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(233)))), ((int)(((byte)(240)))));
+            this.panelsidemenu.Controls.Add(this.lblUsernma);
             this.panelsidemenu.Controls.Add(this.pcbLogo);
             this.panelsidemenu.Controls.Add(this.btnclientesmi);
             this.panelsidemenu.Controls.Add(this.btnventasmi);
@@ -336,10 +338,19 @@
             this.panelsidemenu.TabIndex = 11;
             this.panelsidemenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelsidemenu_Paint);
             // 
+            // lblUsernma
+            // 
+            this.lblUsernma.AutoSize = true;
+            this.lblUsernma.Location = new System.Drawing.Point(86, 544);
+            this.lblUsernma.Name = "lblUsernma";
+            this.lblUsernma.Size = new System.Drawing.Size(0, 20);
+            this.lblUsernma.TabIndex = 12;
+            this.lblUsernma.Visible = false;
+            // 
             // pcbLogo
             // 
             this.pcbLogo.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
-            this.pcbLogo.Location = new System.Drawing.Point(56, 527);
+            this.pcbLogo.Location = new System.Drawing.Point(57, 567);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(118, 70);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -436,7 +447,6 @@
             this.btninventariomi.UseVisualStyleBackColor = false;
             this.btninventariomi.Click += new System.EventHandler(this.btninventariomi_Click);
             this.btninventariomi.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn);
-            this.btninventariomi.MouseEnter += new System.EventHandler(this.btninventariomi_Click);
             this.btninventariomi.MouseLeave += new System.EventHandler(this.btninventarioomi_MouseLeaves);
             this.btninventariomi.MouseHover += new System.EventHandler(this.btninventarioomi_Hover);
             // 
@@ -533,5 +543,6 @@
         private Button btnBodega;
         private Label label2;
         private Label lblUsuario;
+        public Label lblUsernma;
     }
 }
