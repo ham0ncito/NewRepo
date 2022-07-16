@@ -38,13 +38,12 @@ namespace GerizimZZ
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtid.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
-            nventa.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            fechapago.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            idsucursal.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            idcajas.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-            intventasdia.Text = dataGridView1.CurrentRow.Cells[1*4].Value.ToString();
-            intmensual.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            txtid.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
+            nventa.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            fechapago.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            idsucursal.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            idcajas.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            
 
         }
 
@@ -137,7 +136,7 @@ namespace GerizimZZ
                 SqlCommand comando = new SqlCommand("exec totalMensual; ", conexion);
                 conexion.Open();
                 SqlDataReader registro = comando.ExecuteReader();
-                if (registro.Read())
+                if (registro.Read() && !registro.IsDBNull(0))
                 {
                     intmensual.Text = registro[0].ToString();
                 }
