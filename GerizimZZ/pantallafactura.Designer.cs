@@ -203,7 +203,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerizimZZ.Properties.Resources._026_Saint_Petersburg;
             this.ClientSize = new System.Drawing.Size(592, 416);
             this.Controls.Add(this.intotal);
             this.Controls.Add(this.indetalle);
@@ -222,7 +221,8 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "pantallafactura";
-            this.Text = "pantallafactura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Facturas";
             this.Load += new System.EventHandler(this.pantallafactura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
