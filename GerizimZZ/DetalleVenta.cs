@@ -153,6 +153,7 @@ namespace GerizimZZ
                         comando.ExecuteNonQuery();
                     }
                     conexion.Close();
+                    
                 }
                 catch (SqlException x)
                 {
@@ -162,6 +163,7 @@ namespace GerizimZZ
                 try
                 {
                     PrinterSettings ps = new PrinterSettings();
+                    MessageBox.Show("Factura " + txtFactura.Text + " en impresion", "Venta realizada");
                     Imprimir.PrinterSettings = ps;
                     Imprimir.PrintPage += printDocument1_PrintPage;
                     Imprimir.Print();

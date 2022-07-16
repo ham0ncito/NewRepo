@@ -265,3 +265,10 @@ C:\Users\PC\source\repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\refint\Geriz
 C:\Users\PC\source\repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.pdb
 C:\Users\PC\source\repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.genruntimeconfig.cache
 C:\Users\PC\source\repos\NewRepo\GerizimZZ\obj\Debug\net6.0-windows\ref\GerizimZZ.dll
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\bin\Debug\net6.0-windows\IronBarCode.dll
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\Interop.COMAdmin.dll
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\Interop.TxBDD.dll
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.frCodigoBarra.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.FrmRepartidores.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.FrmSolicitudInventario.resources
+C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\obj\Debug\net6.0-windows\GerizimZZ.Frm_AsignarRepartidor.resources
