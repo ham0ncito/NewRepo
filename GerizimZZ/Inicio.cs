@@ -24,7 +24,7 @@ namespace GerizimZZ
         var hora = DateTime.Parse("01:00:00 PM");
         var ahora = DateTime.Parse(DateTime.Now.ToString("hh:mm:ss tt"));
         SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
-        SqlCommand comando = new SqlCommand(" exec nombre '" + Usuario.username + "' ; ", conexion);
+        SqlCommand comando = new SqlCommand(" exec nombre '" + Usuario.username.ToString() + "' ", conexion);
             
         conexion.Open();
         SqlDataReader registro = comando.ExecuteReader();
