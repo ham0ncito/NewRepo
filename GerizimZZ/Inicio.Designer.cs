@@ -39,6 +39,7 @@
             this.btnMenuIzquierdo = new System.Windows.Forms.Button();
             this.bt = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.barraBusqueda = new System.Windows.Forms.TextBox();
             this.Contenedor = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCerrar = new FontAwesome.Sharp.IconButton();
@@ -55,7 +56,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnregresarMI = new FontAwesome.Sharp.IconButton();
-            this.lblUsuario = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -207,6 +207,16 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblUsuario.Location = new System.Drawing.Point(128, 44);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(0, 24);
+            this.lblUsuario.TabIndex = 11;
+            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
+            // 
             // barraBusqueda
             // 
             this.barraBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -329,7 +339,7 @@
             // pcbLogo
             // 
             this.pcbLogo.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
-            this.pcbLogo.Location = new System.Drawing.Point(52, 552);
+            this.pcbLogo.Location = new System.Drawing.Point(56, 527);
             this.pcbLogo.Name = "pcbLogo";
             this.pcbLogo.Size = new System.Drawing.Size(118, 70);
             this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -463,17 +473,6 @@
             this.btnregresarMI.TabIndex = 0;
             this.btnregresarMI.UseVisualStyleBackColor = false;
             this.btnregresarMI.Click += new System.EventHandler(this.btnregresarMI_Click);
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblUsuario.Location = new System.Drawing.Point(128, 44);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(206, 24);
-            this.lblUsuario.TabIndex = 11;
-            this.lblUsuario.Text = "Bienvenido/a de nuevo";
-            this.lblUsuario.Click += new System.EventHandler(this.lblUsuario_Click);
             // 
             // Inicio
             // 

@@ -35,7 +35,7 @@
             {
                 this.Hide();
                 inicio.Show();
-               
+                
 
             }
            

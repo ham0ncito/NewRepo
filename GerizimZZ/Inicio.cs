@@ -12,10 +12,31 @@ namespace GerizimZZ
         public Inicio()
         {
             InitializeComponent();
+          
             CollapseMenu();
+            
             Llenado();
+            NombreBienvenida();
         }
 
+        public void NombreBienvenida ()
+        {
+            
+        SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+        string usern = Usuario.username.ToString();
+            MessageBox.Show(usern);
+        SqlCommand comando = new SqlCommand(" exec nombre '" + usern + "' ; ", conexion);
+            lblUsuario.Text = "Buenos días ";
+            conexion.Open();
+        SqlDataReader registro = comando.ExecuteReader();
+        if (registro.Read())
+        {
+            
+
+        }
+        conexion.Close();
+            
+        }
 
         public void Llenado()
         {
