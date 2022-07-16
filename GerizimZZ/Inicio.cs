@@ -336,5 +336,24 @@ namespace GerizimZZ
         {
 
         }
+
+        private void btnBodega_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnBodega_Click_1(object sender, EventArgs e)
+        {
+            frInicioBodega frInicioBodega = new frInicioBodega();
+            AddOwnedForm(frInicioBodega);
+            frInicioBodega.Show();
+        }
+
+        private void btnventasmi_Click(object sender, EventArgs e)
+        {
+            RegistrosVentas frVentas = new RegistrosVentas();
+            AddOwnedForm(frVentas);
+            frVentas.Show();
+        }
     }
 }

@@ -19,7 +19,8 @@ namespace GerizimZZ
         public RegistrosVentas()
         {
             InitializeComponent();
-            
+            calculosDiarios();
+            calculosMensuales(); 
 
         }
 
@@ -43,7 +44,7 @@ namespace GerizimZZ
             idsucursal.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
             idcajas.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             intventasdia.Text = dataGridView1.CurrentRow.Cells[1*4].Value.ToString();
-            intsemanal.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            intmensual.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
 
         }
 
@@ -96,6 +97,61 @@ namespace GerizimZZ
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void intsemanal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void calculosDiarios ()
+        {
+            try
+            {
+                SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+                SqlCommand comando = new SqlCommand("exec totalDiario; ", conexion);
+                conexion.Open();
+                SqlDataReader registro = comando.ExecuteReader();
+                if (registro.Read() && !registro.IsDBNull(0))
+                {
+                    intventasdia.Text = registro[0].ToString(); 
+                }
+                else
+                {
+                    intventasdia.Text = "0";
+                }
+               
+                conexion.Close();
+            }
+            catch (SqlException x)
+            {
+                MessageBox.Show(x.Message);
+            }
+
+        }
+        public void calculosMensuales ()
+        {
+            try
+            {
+                SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+                SqlCommand comando = new SqlCommand("exec totalMensual; ", conexion);
+                conexion.Open();
+                SqlDataReader registro = comando.ExecuteReader();
+                if (registro.Read())
+                {
+                    intmensual.Text = registro[0].ToString();
+                }
+                else
+                {
+                    intmensual.Text = "0";
+                }
+
+                conexion.Close();
+            }
+            catch (SqlException x)
+            {
+                MessageBox.Show(x.Message);
+            }
         }
     }
     }

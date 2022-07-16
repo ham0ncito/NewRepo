@@ -130,6 +130,7 @@
             this.btnBodega.Size = new System.Drawing.Size(48, 45);
             this.btnBodega.TabIndex = 9;
             this.btnBodega.UseVisualStyleBackColor = false;
+            this.btnBodega.Click += new System.EventHandler(this.btnBodega_Click_1);
             // 
             // btnDetalleVenta
             // 
@@ -155,7 +156,7 @@
             this.btnBusqueda.BackColor = System.Drawing.Color.Transparent;
             this.btnBusqueda.BackgroundImage = global::GerizimZZ.Properties.Resources.search;
             this.btnBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusqueda.Location = new System.Drawing.Point(959, 152);
+            this.btnBusqueda.Location = new System.Drawing.Point(989, 152);
             this.btnBusqueda.Name = "btnBusqueda";
             this.btnBusqueda.Size = new System.Drawing.Size(30, 28);
             this.btnBusqueda.TabIndex = 7;
@@ -400,6 +401,7 @@
             this.btnventasmi.Text = "Ventas";
             this.btnventasmi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnventasmi.UseVisualStyleBackColor = false;
+            this.btnventasmi.Click += new System.EventHandler(this.btnventasmi_Click);
             this.btnventasmi.MouseLeave += new System.EventHandler(this.btnventasmi_MouseLeaves);
             this.btnventasmi.MouseHover += new System.EventHandler(this.btnventasmi_Hover);
             // 

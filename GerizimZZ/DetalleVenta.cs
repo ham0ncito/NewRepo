@@ -141,6 +141,13 @@ namespace GerizimZZ
                         comando.ExecuteNonQuery();
                         
                     }
+                    if (delivery.Checked)
+                    {
+                        Random rand = new Random();
+                        int id = rand.Next(1,5);
+                        SqlCommand comando = new SqlCommand("exec nuevoPedido '" + txtFactura.Text + "','" + id.ToString() + "', '" + txtDireccion.Text + "', ' " + txtNumero.Text + "';", conexion);
+                        comando.ExecuteNonQuery();
+                    }
                     conexion.Close();
                 }
                 catch (SqlException x)
@@ -456,6 +463,11 @@ namespace GerizimZZ
         }
 
         private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
 
         }
