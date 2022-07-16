@@ -97,6 +97,11 @@ namespace GerizimZZ
         {
 
         }
+
+        private void intsemanal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
     }
 

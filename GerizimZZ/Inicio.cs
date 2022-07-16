@@ -348,5 +348,12 @@ namespace GerizimZZ
             AddOwnedForm(frInicioBodega);
             frInicioBodega.Show();
         }
+
+        private void btnventasmi_Click(object sender, EventArgs e)
+        {
+            RegistrosVentas frVentas = new RegistrosVentas();
+            AddOwnedForm(frVentas);
+            frVentas.Show();
+        }
     }
 }
