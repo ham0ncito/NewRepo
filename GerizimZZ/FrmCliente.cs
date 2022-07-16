@@ -77,6 +77,7 @@ namespace GerizimZZ
                 dgvCliente.DataSource = dstCliente.Tables[0];
                 con.Close();
             }
+            actualizarDatos(); 
         }
 
         private void btnagregar_Cliente_Click(object sender, EventArgs e)
@@ -98,9 +99,15 @@ namespace GerizimZZ
                 dgvCliente.DataSource = dstCliente.Tables[0];
                 con.Close();
                 MessageBox.Show("Registro modificado con exito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }            
+            }
+            actualizarDatos(); 
         }
+        public void actualizarDatos()
+        {
+            DetalleVenta dr = Owner as DetalleVenta;
+            dr.nombresCliente();
 
+        }
         private void dgvCliente_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow item in this.dgvCliente.SelectedRows)
@@ -125,6 +132,76 @@ namespace GerizimZZ
                 string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "telefono", txtBuscar.Text) + " OR " +
                 string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "direccion", txtBuscar.Text);
             dgvCliente.DataSource = dstCliente.Tables[0].DefaultView;
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblID_cliente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblsegundoNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbldireccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtdireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsegundoNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtprimerNombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtID_cliente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbltelefono_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblprimerApellido_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblsegundoApellido_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtsegundoApellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtprimerApellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblprimerNombre_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

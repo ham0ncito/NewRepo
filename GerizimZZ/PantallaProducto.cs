@@ -10,8 +10,11 @@ namespace GerizimZZ
         public string estado;
         private string nom;
         private string codigobarra;
+        private string textBox; 
         public int cantidad = 0;
+
         public DetalleVenta dgv = new DetalleVenta();
+
         public Producto()
         {
             InitializeComponent();
@@ -27,13 +30,14 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            verificar();
             {
                 if (cantidad < Stockactual)
                 {
                     cantidad += 1;
                     textBox1.Text = cantidad.ToString();
                     MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                 }
                 DetalleVenta dgv = new DetalleVenta();
                 dgv.llenartablita();
@@ -52,7 +56,12 @@ namespace GerizimZZ
             get { return id; }
             set { id = value; }
         }
+        public string text
+        {
+            get { return textBox1.Text;  }
+            set { textBox1.Text = value;  }
 
+        }
         public string DescripcionProducto
         {
             get
@@ -90,6 +99,8 @@ namespace GerizimZZ
             set { codigobarra = value; }
         }
 
+       
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (estado == "2")
@@ -104,11 +115,20 @@ namespace GerizimZZ
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            if (cantidad > 0)
-            {
-                cantidad -= 1;
-                textBox1.Text = cantidad.ToString();
+            verificar();
+                
+                if (cantidad > 0)
+                {
+
+                    cantidad -= 1;
+                    textBox1.Text = cantidad.ToString();
+                    MessageBox.Show("Cantidad reducida correctamente", "Resta correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
             }
+            DetalleVenta dgv = new DetalleVenta();
+            dgv.llenartablita();
+
+
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -122,24 +142,57 @@ namespace GerizimZZ
             pr.ShowDialog();
 
         }
-
+        public void verificar()
+        {
+            if (textBox1.Text.Length > 0)
+            {
+                cantidad = Convert.ToInt32(textBox1.Text);
+            }
+            else
+            {
+                cantidad = 0;
+            }
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            int j = 0;
-            string precio = this.PrecioProducto;
-            textc.Id = this.Id.ToString();
-            textc.NombreProducto = this.NombreProducto;
+            verificar();
+            if (!(String.IsNullOrEmpty(textBox1.Text)) && Convert.ToInt32(textBox1.Text) <= Convert.ToInt32(label3.Text))
+            {
+                errorProvider1.SetError(textBox1, "");
+                if (Convert.ToInt32(textBox1.Text) > 0)
+                {
+                    string precio = this.PrecioProducto;
+                    textc.Id = this.Id.ToString();
+                    textc.NombreProducto = this.NombreProducto;
 
 
-            string cantidadtextbox = textBox1.Text.ToString();
-            textc.Cantidad = cantidadtextbox;
-            textc.precio = this.PrecioProducto;
+                    string cantidadtextbox = textBox1.Text.ToString();
+                    textc.Cantidad = cantidadtextbox;
+                    textc.precio = this.PrecioProducto;
 
-            int cantidadtextbox2 = int.Parse(cantidadtextbox);
-            string precio2 = this.PrecioProducto.ToString();
-            float precio3 = float.Parse(precio2);
-            float total = cantidadtextbox2 * precio3;
-            textc.total = total.ToString();
+                    int cantidadtextbox2 = int.Parse(cantidadtextbox);
+                    string precio2 = this.PrecioProducto.ToString();
+                    float precio3 = float.Parse(precio2);
+                    float total = cantidadtextbox2 * precio3;
+                    textc.total = total.ToString();
+                }
+            }
+            else
+            {
+                errorProvider1.SetError(textBox1, "Cantidad Ingresada excede el stock");
+                
+                textBox1.Text = label3.Text;
+                Thread.Sleep(1000); 
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
 
         }
     }

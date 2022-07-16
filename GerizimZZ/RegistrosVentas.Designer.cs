@@ -35,7 +35,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.intsemanal = new System.Windows.Forms.TextBox();
+            this.intmensual = new System.Windows.Forms.TextBox();
             this.intventasdia = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataSet11BindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -123,18 +123,20 @@
             this.label2.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(18, 430);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 18);
+            this.label2.Size = new System.Drawing.Size(112, 18);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Total Semanal:";
+            this.label2.Text = "Total Mensual:";
             // 
-            // intsemanal
+            // intmensual
             // 
-            this.intsemanal.BackColor = System.Drawing.Color.Honeydew;
-            this.intsemanal.Location = new System.Drawing.Point(144, 429);
-            this.intsemanal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.intsemanal.Name = "intsemanal";
-            this.intsemanal.Size = new System.Drawing.Size(110, 23);
-            this.intsemanal.TabIndex = 14;
+            this.intmensual.BackColor = System.Drawing.Color.Honeydew;
+            this.intmensual.Location = new System.Drawing.Point(144, 429);
+            this.intmensual.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.intmensual.Name = "intmensual";
+            this.intmensual.ReadOnly = true;
+            this.intmensual.Size = new System.Drawing.Size(110, 23);
+            this.intmensual.TabIndex = 14;
+            this.intmensual.TextChanged += new System.EventHandler(this.intsemanal_TextChanged);
             // 
             // intventasdia
             // 
@@ -142,6 +144,7 @@
             this.intventasdia.Location = new System.Drawing.Point(144, 394);
             this.intventasdia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.intventasdia.Name = "intventasdia";
+            this.intventasdia.ReadOnly = true;
             this.intventasdia.Size = new System.Drawing.Size(110, 23);
             this.intventasdia.TabIndex = 15;
             this.intventasdia.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -179,7 +182,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(263, 158);
+            this.label3.Location = new System.Drawing.Point(262, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(169, 25);
             this.label3.TabIndex = 17;
@@ -328,7 +331,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::GerizimZZ.Properties.Resources._026_Saint_Petersburg;
             this.ClientSize = new System.Drawing.Size(745, 467);
             this.Controls.Add(this.idcajas);
             this.Controls.Add(this.idsucursal);
@@ -346,7 +348,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.intventasdia);
-            this.Controls.Add(this.intsemanal);
+            this.Controls.Add(this.intmensual);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox2);
@@ -356,6 +358,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "RegistrosVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Registro Ventas";
             this.Load += new System.EventHandler(this.RegistrosVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -375,7 +378,7 @@
         private PictureBox pictureBox2;
         private Label label1;
         private Label label2;
-        private TextBox intsemanal;
+        private TextBox intmensual;
         private TextBox intventasdia;
         private DataGridView dataGridView1;
         private Label label3;
