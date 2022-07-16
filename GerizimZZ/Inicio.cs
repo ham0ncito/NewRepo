@@ -336,5 +336,12 @@ namespace GerizimZZ
         {
 
         }
+
+        private void btnBodega_Click(object sender, EventArgs e)
+        {
+            frInicioBodega frInicioBodega = new frInicioBodega();
+            AddOwnedForm(frInicioBodega);
+            frInicioBodega.Show();
+        }
     }
 }

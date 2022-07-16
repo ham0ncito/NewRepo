@@ -12,7 +12,7 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\keyyo\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\HP\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\keyyo\\.nuget\\packages"
     ],
     "configProperties": {

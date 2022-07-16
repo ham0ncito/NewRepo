@@ -65,7 +65,7 @@ namespace GerizimZZ
         {
             if (MessageBox.Show("¿Desea Continuar?", "Confirmacion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                Application.Exit();
+                this.Close();
             }
         }
 
