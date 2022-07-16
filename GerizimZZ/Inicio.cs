@@ -32,11 +32,11 @@ namespace GerizimZZ
         {
                 if ( ahora >= hora)
                 {
-                    label3.Text = "Buenas tardes " + registro[0].ToString;
+                    lblUsernma.Text = "Buenas tardes " + registro[0].ToString;
                 }
                 else
                 {
-                    label3.Text = "Buenos días " + registro[0].ToString;
+                    lblUsernma.Text = "Buenos días " + registro[0].ToString;
                 }
 
         }
