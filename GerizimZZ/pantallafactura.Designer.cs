@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(pantallafactura));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,10 +54,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(213, 7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(166, 149);
+            this.pictureBox1.Size = new System.Drawing.Size(145, 112);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -66,10 +66,11 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.Honeydew;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 318);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 238);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(628, 212);
+            this.dataGridView1.Size = new System.Drawing.Size(550, 159);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -78,9 +79,9 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(40, 179);
+            this.label1.Location = new System.Drawing.Point(35, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 22);
+            this.label1.Size = new System.Drawing.Size(71, 18);
             this.label1.TabIndex = 7;
             this.label1.Text = "Sucursal:";
             // 
@@ -89,9 +90,9 @@
             this.inttotalventa.AutoSize = true;
             this.inttotalventa.BackColor = System.Drawing.Color.Transparent;
             this.inttotalventa.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.inttotalventa.Location = new System.Drawing.Point(338, 172);
+            this.inttotalventa.Location = new System.Drawing.Point(296, 129);
             this.inttotalventa.Name = "inttotalventa";
-            this.inttotalventa.Size = new System.Drawing.Size(136, 22);
+            this.inttotalventa.Size = new System.Drawing.Size(110, 18);
             this.inttotalventa.TabIndex = 8;
             this.inttotalventa.Text = "Total de venta:";
             // 
@@ -100,9 +101,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(338, 221);
+            this.label3.Location = new System.Drawing.Point(296, 166);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 22);
+            this.label3.Size = new System.Drawing.Size(62, 18);
             this.label3.TabIndex = 9;
             this.label3.Text = "Detalle:";
             // 
@@ -111,20 +112,21 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Garamond", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(235, 82);
+            this.label4.Location = new System.Drawing.Point(35, 94);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 31);
+            this.label4.Size = new System.Drawing.Size(106, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "Factura #";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(40, 225);
+            this.label5.Location = new System.Drawing.Point(35, 169);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 22);
+            this.label5.Size = new System.Drawing.Size(61, 18);
             this.label5.TabIndex = 11;
             this.label5.Text = "Cliente:";
             // 
@@ -133,9 +135,9 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(40, 272);
+            this.label6.Location = new System.Drawing.Point(35, 204);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(141, 22);
+            this.label6.Size = new System.Drawing.Size(117, 18);
             this.label6.TabIndex = 12;
             this.label6.Text = "Fecha de venta:";
             // 
@@ -143,9 +145,9 @@
             // 
             this.id.AutoSize = true;
             this.id.BackColor = System.Drawing.Color.Transparent;
-            this.id.Location = new System.Drawing.Point(371, 89);
+            this.id.Location = new System.Drawing.Point(154, 99);
             this.id.Name = "id";
-            this.id.Size = new System.Drawing.Size(36, 20);
+            this.id.Size = new System.Drawing.Size(28, 15);
             this.id.TabIndex = 13;
             this.id.Text = "###";
             this.id.Click += new System.EventHandler(this.id_Click);
@@ -153,50 +155,56 @@
             // infecha
             // 
             this.infecha.BackColor = System.Drawing.Color.Honeydew;
-            this.infecha.Location = new System.Drawing.Point(187, 267);
+            this.infecha.Location = new System.Drawing.Point(164, 200);
+            this.infecha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.infecha.Name = "infecha";
-            this.infecha.Size = new System.Drawing.Size(125, 27);
+            this.infecha.Size = new System.Drawing.Size(110, 23);
             this.infecha.TabIndex = 18;
             this.infecha.TextChanged += new System.EventHandler(this.infecha_TextChanged);
             // 
             // incliente
             // 
             this.incliente.BackColor = System.Drawing.Color.Honeydew;
-            this.incliente.Location = new System.Drawing.Point(187, 218);
+            this.incliente.Location = new System.Drawing.Point(164, 164);
+            this.incliente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.incliente.Name = "incliente";
-            this.incliente.Size = new System.Drawing.Size(125, 27);
+            this.incliente.Size = new System.Drawing.Size(110, 23);
             this.incliente.TabIndex = 19;
             // 
             // insucursal
             // 
             this.insucursal.BackColor = System.Drawing.Color.Honeydew;
-            this.insucursal.Location = new System.Drawing.Point(187, 174);
+            this.insucursal.Location = new System.Drawing.Point(164, 130);
+            this.insucursal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.insucursal.Name = "insucursal";
-            this.insucursal.Size = new System.Drawing.Size(125, 27);
+            this.insucursal.Size = new System.Drawing.Size(110, 23);
             this.insucursal.TabIndex = 20;
             // 
             // indetalle
             // 
             this.indetalle.BackColor = System.Drawing.Color.Honeydew;
-            this.indetalle.Location = new System.Drawing.Point(507, 225);
+            this.indetalle.Location = new System.Drawing.Point(444, 169);
+            this.indetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.indetalle.Name = "indetalle";
-            this.indetalle.Size = new System.Drawing.Size(125, 27);
+            this.indetalle.Size = new System.Drawing.Size(110, 23);
             this.indetalle.TabIndex = 21;
             // 
             // intotal
             // 
             this.intotal.BackColor = System.Drawing.Color.Honeydew;
-            this.intotal.Location = new System.Drawing.Point(507, 174);
+            this.intotal.Location = new System.Drawing.Point(444, 130);
+            this.intotal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.intotal.Name = "intotal";
-            this.intotal.Size = new System.Drawing.Size(125, 27);
+            this.intotal.Size = new System.Drawing.Size(110, 23);
             this.intotal.TabIndex = 22;
             this.intotal.TextChanged += new System.EventHandler(this.intotal_TextChanged);
             // 
             // pantallafactura
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 554);
+            this.BackgroundImage = global::GerizimZZ.Properties.Resources._026_Saint_Petersburg;
+            this.ClientSize = new System.Drawing.Size(592, 416);
             this.Controls.Add(this.intotal);
             this.Controls.Add(this.indetalle);
             this.Controls.Add(this.insucursal);
@@ -211,6 +219,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "pantallafactura";
             this.Text = "pantallafactura";
             this.Load += new System.EventHandler(this.pantallafactura_Load);

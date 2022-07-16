@@ -5,19 +5,58 @@ namespace GerizimZZ
 {
     public partial class Inicio : Form
     {
+        private FlowLayoutPanel flp;
+
+        public FlowLayoutPanel FlpDatos { get => flp; set => flp = value; }
+
         public Inicio()
         {
             InitializeComponent();
+          
             CollapseMenu();
+            
             Llenado();
+           
         }
+
+        public void NombreBienvenida ()
+        {
+        var hora = DateTime.Parse("01:00:00 PM");
+        var ahora = DateTime.Parse(DateTime.Now.ToString("hh:mm:ss tt"));
+        SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+        SqlCommand comando = new SqlCommand(" exec nombre '" + lblUsernma.Text + "' ; ", conexion);
+            
+        conexion.Open();
+        SqlDataReader registro = comando.ExecuteReader();
+        if (registro.Read())
+        {
+                if ( ahora >= hora)
+                {
+                    lblUsuario.Text = "Buenas tardes " + registro[0].ToString;
+                }
+                else
+                {
+                    lblUsuario.Text = "Buenos días " + registro[0].ToString;
+                }
+
+        }
+        conexion.Close();
+            
+        }
+
         public void Llenado()
         {
             Productos llenar = new Productos();
-            string consulta = "select * from dbo.Producto order by estadoPRoducto DESC; ";
+            string consulta = "select * from dbo.Producto where cantidadProducto > 0 order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC ;  ";
             llenar.llenado(Contenedor, consulta);
 
         }
+
+        public void IniciarFlowLayout()
+        {
+            flp = Contenedor; 
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -58,6 +97,7 @@ namespace GerizimZZ
             base.WndProc(ref m);
 
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -81,11 +121,11 @@ namespace GerizimZZ
 
         private void button2_Hover(object sender, EventArgs e)
         {
-            this.button2.BackColor = Color.Cyan;
+            this.btnMenuIzquierdo.BackColor = Color.Cyan;
         }
         private void button2_MouseLeave(object sender, EventArgs e)
         {
-            this.button2.BackColor = Color.Transparent;
+            this.btnMenuIzquierdo.BackColor = Color.Transparent;
         }
         // click a boton de minimizar
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -211,35 +251,42 @@ namespace GerizimZZ
         private void button1_Click(object sender, EventArgs e)
         {
             string busqueda;
-
+            
             Productos pr = new Productos();
             if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
-                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' order by nombreProducto, estadoPRoducto DESC; ";
+                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or codigoBarra like '%" + barraBusqueda.Text + "%' order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC; ";
                 SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
-                Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
+                Contenedor.Controls.Clear(); 
+                pr.llenado(Contenedor, busqueda);       
             }
             if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
 
-                busqueda = "select * from dbo.Producto order by estadoPRoducto DESC; ";
+                busqueda = "select * from dbo.Producto order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC; ";
                 Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
-
+                pr.llenado(Contenedor, busqueda); 
+                
             }
         }
-        private void BarraBusqueda_TextChanged(object sender, EventArgs e)
+        private void BarraBusqueda_TextChanged (object sender, EventArgs e)
         {
             string busqueda;
 
             Productos pr = new Productos();
             if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
-                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' order by nombreProducto, estadoPRoducto DESC; ";
-                SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
-                Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
+                try
+                {
+                    busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or codigoBarra like '%" + barraBusqueda.Text + "%' and cantidadProducto >0 order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC; ";
+                    SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
+                    Contenedor.Controls.Clear();
+                    pr.llenado(Contenedor, busqueda);
+                }
+                catch (SqlException x)
+                {
+                    MessageBox.Show(x.Message); 
+                }
             }
             if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
@@ -254,16 +301,17 @@ namespace GerizimZZ
         private void button3_Click(object sender, EventArgs e)
         {
             DetalleVenta detalleVenta = new DetalleVenta();
+            AddOwnedForm(detalleVenta); 
             detalleVenta.ShowDialog();
 
         }
         private void button3_Hover(object sender, EventArgs e)
         {
-            this.button3.BackColor = Color.Cyan;
+            this.btnDetalleVenta.BackColor = Color.Cyan;
         }
         private void button3_MouseLeave(object sender, EventArgs e)
         {
-            this.button3.BackColor = Color.Transparent;
+            this.btnDetalleVenta.BackColor = Color.Transparent;
         }
 
         //Boton para abrir form de pedido
@@ -279,18 +327,14 @@ namespace GerizimZZ
             cliente.ShowDialog();
         }
 
-        private void btnventasmi_Click(object sender, EventArgs e)
+        private void panelsidemenu_Paint(object sender, PaintEventArgs e)
         {
-            RegistrosVentas registros = new RegistrosVentas();
-            registros.ShowDialog();
 
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void lblUsuario_Click(object sender, EventArgs e)
         {
-            //Boton para Abrir pantalla bodega
-            frInicioBodega bodega = new frInicioBodega();
-            bodega.ShowDialog();
+
         }
     }
 }

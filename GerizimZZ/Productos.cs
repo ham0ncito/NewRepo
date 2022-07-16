@@ -29,42 +29,45 @@ namespace GerizimZZ
         public void llenado(FlowLayoutPanel Contenedor, string consulta)
         {
             conexion.Open();
-
-            SqlCommand comando = new SqlCommand(consulta, conexion);
-            comando.CommandType = CommandType.Text;
-            SqlDataReader reader = comando.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                idproducto = Convert.ToInt32(reader[0]);
-                precio_producto = Convert.ToDecimal(reader[1]);
-                nombre_producto = reader[2].ToString();
-                codigoBarra_producto = reader[4].ToString();
-                descripcion_producto = reader[8].ToString();
-                estado_producto = Convert.ToInt32(reader[9]);
-                existencia = Convert.ToInt32(reader[6]);
+                SqlCommand comando = new SqlCommand(consulta, conexion);
+                comando.CommandType = CommandType.Text;
+                SqlDataReader reader = comando.ExecuteReader();
 
-                Producto sd = new Producto();
-                sd.Id = Convert.ToInt32(idproducto);
-                sd.DescripcionProducto = descripcion_producto;
-                sd.NombreProducto = nombre_producto;
-                sd.PrecioProducto = precio_producto.ToString();
-                sd.estado = estado_producto.ToString();
-                sd.Stockactual = existencia;
-                sd.Codigobarra = codigoBarra_producto;
-                if (sd.estado == "2")
+                while (reader.Read())
                 {
-                    sd.BackgroundImage = null;
-                    sd.BackColor = Color.DodgerBlue;
+                    idproducto = Convert.ToInt32(reader[0]);
+                    precio_producto = Convert.ToDecimal(reader[1]);
+                    nombre_producto = reader[2].ToString();
+                    codigoBarra_producto = reader[4].ToString();
+                    descripcion_producto = reader[8].ToString();
+                    estado_producto = Convert.ToInt32(reader[9]);
+                    existencia = Convert.ToInt32(reader[6]);
+
+                    Producto sd = new Producto();
+                    sd.Id = Convert.ToInt32(idproducto);
+                    sd.DescripcionProducto = descripcion_producto;
+                    sd.NombreProducto = nombre_producto;
+                    sd.PrecioProducto = precio_producto.ToString();
+                    sd.estado = estado_producto.ToString();
+                    sd.Stockactual = existencia;
+                    sd.Codigobarra = codigoBarra_producto;
+                    sd.text = "0";
+                    Contenedor.Controls.Add(sd);
                 }
-                Contenedor.Controls.Add(sd);
-
             }
-
+            catch (SqlException x)
+            {
+                MessageBox.Show(x.Message);
+            }
             conexion.Close();
             conexion.Dispose();
+             }
 
         }
+       
 
     }
-}
+
+
