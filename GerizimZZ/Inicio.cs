@@ -12,7 +12,7 @@ namespace GerizimZZ
         public Inicio()
         {
             InitializeComponent();
-          
+            
             CollapseMenu();
             
             Llenado();
@@ -24,7 +24,7 @@ namespace GerizimZZ
         var hora = DateTime.Parse("01:00:00 PM");
         var ahora = DateTime.Parse(DateTime.Now.ToString("hh:mm:ss tt"));
         SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
-        SqlCommand comando = new SqlCommand(" exec nombre '" + lblUsernma.Text + "' ; ", conexion);
+        SqlCommand comando = new SqlCommand(" exec nombre '" + Usuario.username.ToString() + "' ", conexion);
             
         conexion.Open();
         SqlDataReader registro = comando.ExecuteReader();
@@ -32,11 +32,11 @@ namespace GerizimZZ
         {
                 if ( ahora >= hora)
                 {
-                    lblUsuario.Text = "Buenas tardes " + registro[0].ToString;
+                    lblUsernma.Text = "Buenas tardes " + registro[0].ToString;
                 }
                 else
                 {
-                    lblUsuario.Text = "Buenos días " + registro[0].ToString;
+                    lblUsernma.Text = "Buenos días " + registro[0].ToString;
                 }
 
         }
