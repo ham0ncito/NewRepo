@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    internal class Cl_Inventario
+    internal class Cl_Inventario: Cl_conexiones
     {
         SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private int iD_codigoProducto;

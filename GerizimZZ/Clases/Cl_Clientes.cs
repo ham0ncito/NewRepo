@@ -3,10 +3,10 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    internal class Cl_Clientes : Cl_conexiones
+    public class Cl_Clientes : Cl_conexiones
     {
 
-
+        
         SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private string iD_cliente;
         private string primerNombre_Cliente;
