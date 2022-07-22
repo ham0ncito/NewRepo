@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Runtime.InteropServices;
 
 namespace GerizimZZ
 {
@@ -18,7 +8,7 @@ namespace GerizimZZ
         {
             InitializeComponent();
             CollapseMenu();
-            
+
 
         }
 
@@ -26,7 +16,7 @@ namespace GerizimZZ
 
         public void Llenado()
         {
-            
+
 
         }
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -119,13 +109,13 @@ namespace GerizimZZ
         //click a boton de cerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Desea Continuar?", "Confirmacion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes) 
+            if (MessageBox.Show("¿Desea Continuar?", "Confirmacion", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-               this.Close();
+                this.Close();
             }
-         
-                       
-           
+
+
+
         }
 
         private void bt_Click(object sender, EventArgs e)
@@ -227,14 +217,14 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
 
 
-            
+
+
         }
         private void BarraBusqueda_TextChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -296,7 +286,7 @@ namespace GerizimZZ
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-           FrmSolicitudInventario frmSolicitudInventario = new FrmSolicitudInventario();
+            FrmSolicitudInventario frmSolicitudInventario = new FrmSolicitudInventario();
             frmSolicitudInventario.ShowDialog();
         }
 

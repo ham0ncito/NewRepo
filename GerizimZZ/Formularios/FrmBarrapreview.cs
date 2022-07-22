@@ -1,21 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace GerizimZZ
+﻿namespace GerizimZZ
 {
     public partial class Barra_preview : Form
     {
         public Barra_preview()
         {
             InitializeComponent();
-            
+
         }
 
         private void Barra_preview_Load(object sender, EventArgs e)
@@ -54,7 +44,7 @@ namespace GerizimZZ
 
         private void btnOpcio_Click(object sender, EventArgs e)
         {
-            Opciones opciones=new Opciones();
+            Opciones opciones = new Opciones();
             opciones.ShowDialog();
 
         }
@@ -70,7 +60,7 @@ namespace GerizimZZ
 
         private void btnRepor_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnRepor_Hover(object sender, EventArgs e)
@@ -99,7 +89,7 @@ namespace GerizimZZ
         private void btnAviso_Click(object sender, EventArgs e)
         {
             frmAvisos aviso = new frmAvisos();
-            
+
             aviso.Show();
         }
 

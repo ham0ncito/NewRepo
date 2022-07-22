@@ -1,14 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using GerizimZZ.Clases;
 using System.Data.SqlClient;
-using GerizimZZ.Clases;
 
 namespace GerizimZZ
 {
@@ -17,8 +8,8 @@ namespace GerizimZZ
         SqlConnection conec = new SqlConnection("Data Source=localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
         public Frm_AsignarRepartidor()
         {
-          
-           
+
+
             InitializeComponent();
 
         }
@@ -32,12 +23,12 @@ namespace GerizimZZ
         private void btn_Asignar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Entrega Asignada Correctamente");
-            this.Close(); 
+            this.Close();
         }
 
         private void Frm_AsignarRepartidor_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private void tb_Codigo_TextChanged(object sender, EventArgs e)
@@ -52,14 +43,14 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
 
         }
 
         private void tb_Nombre_TextChanged(object sender, EventArgs e)
         {
-            
-            
+
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -70,7 +61,7 @@ namespace GerizimZZ
             }
         }
 
-        
-        }
-    
+
+    }
+
 }

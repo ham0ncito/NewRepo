@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Data.SqlClient;
-using GerizimZZ.Clases;
+﻿using GerizimZZ.Clases;
 
 namespace GerizimZZ
 {
@@ -36,7 +26,7 @@ namespace GerizimZZ
             indetalle.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             intotal.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
 
-           
+
         }
 
         private void id_Click(object sender, EventArgs e)

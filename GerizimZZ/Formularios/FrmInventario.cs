@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using GerizimZZ.Clases;
+using GerizimZZ.Datasets;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using GerizimZZ.Clases;
 
 namespace GerizimZZ
 {
@@ -25,7 +18,7 @@ namespace GerizimZZ
             InitializeComponent();
         }
 
-        
+
 
         private void FrmProducto_Load(object sender, EventArgs e)
         {
@@ -83,7 +76,7 @@ namespace GerizimZZ
                 estadoproducto = Convert.ToInt32(txtEstadoPRoducto.Text);
                 precio_producto = Convert.ToDouble(txtPrecio_producto.Text);
                 pesoproducto = Convert.ToDouble(txtPesoProducto.Text);
-                
+
                 productos.Agregar_Producto(codigo, precio_producto, txtNombreProducto.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatologo.Text, cantidadproducto, cantidadminima, txtDescripcionProducto.Text, estadoproducto, txtFechaingreso.Text);
                 SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
                 SqlDataAdapter comando = new SqlDataAdapter();

@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using GerizimZZ.Clases;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using GerizimZZ.Clases;
 
 namespace GerizimZZ
 {
@@ -56,7 +48,7 @@ namespace GerizimZZ
                 dstCliente.Tables.Add(dtCliente);
                 dgvCliente.DataSource = dstCliente.Tables[0];
                 con.Close();
-            }            
+            }
         }
 
         private void btnmodificar_Cliente_Click(object sender, EventArgs e)
@@ -78,7 +70,7 @@ namespace GerizimZZ
                 dgvCliente.DataSource = dstCliente.Tables[0];
                 con.Close();
             }
-            actualizarDatos(); 
+            actualizarDatos();
         }
 
         private void btnagregar_Cliente_Click(object sender, EventArgs e)
@@ -101,7 +93,7 @@ namespace GerizimZZ
                 con.Close();
                 MessageBox.Show("Registro modificado con exito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            actualizarDatos(); 
+            actualizarDatos();
         }
         public void actualizarDatos()
         {

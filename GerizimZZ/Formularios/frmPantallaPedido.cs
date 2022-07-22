@@ -1,28 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using GerizimZZ.Clases;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using GerizimZZ.Clases;
 
 namespace GerizimZZ
 {
     public partial class frmPantallaPedido : Form
 
     {
-        
+
         //Inicia el formulario
         public frmPantallaPedido()
         {
-          
+
             InitializeComponent();
-           
+
 
         }
 
@@ -30,7 +21,7 @@ namespace GerizimZZ
         private void PantallaDescripcionProducto_Load(object sender, EventArgs e)
         {
             cmda.llenargrid(datagridPedidosRecientes);
-            
+
         }
         //Clase para cerrar form
         //private void CerrarForm (object sender, EventArgs e)
@@ -39,7 +30,7 @@ namespace GerizimZZ
         //    this.Hide();
         //    FrmPrincipal.Show();
 
-        ConexionPedido cmda = new ConexionPedido ();
+        ConexionPedido cmda = new ConexionPedido();
 
         //_______________________________________________________________________________
         SqlConnection conectaa = new SqlConnection("Data Source =TATO180\\SQLEXPRESS ; Initial Catalog =Gerizim ; Integrated Security = True");
@@ -75,7 +66,7 @@ namespace GerizimZZ
 
         private void botonCancelarPedido_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea cancelar el pedido?","Precaución",MessageBoxButtons.YesNo,MessageBoxIcon.Warning) == DialogResult.Yes) 
+            if (MessageBox.Show("¿Desea cancelar el pedido?", "Precaución", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 MessageBox.Show("Pedido Cancelado");
                 txtEntrega.Clear();
@@ -83,7 +74,7 @@ namespace GerizimZZ
                 txtRepartidor.Clear();
                 txtFechaPedido.Clear();
                 txtFactura.Clear();
-            
+
             }
             //if (MessageBox.Show("¿Desea cancelar el pedido?", "Precaución", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             //{

@@ -1,14 +1,4 @@
 ﻿using GerizimZZ.Clases;
-using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GerizimZZ
 {
@@ -22,12 +12,12 @@ namespace GerizimZZ
 
         private void frmUsuario_Load()
         {
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,7 +27,7 @@ namespace GerizimZZ
 
         private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Desea continuar?", "Continuar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)== DialogResult.Yes)
+            if (MessageBox.Show("¿Desea continuar?", "Continuar", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 string contraseña = "";
                 string contra;
@@ -51,8 +41,8 @@ namespace GerizimZZ
 
                 }
             }
-            
-            
+
+
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)

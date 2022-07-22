@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using GerizimZZ.Clases;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using GerizimZZ.Clases;
 
 namespace GerizimZZ
 {
     public partial class RegistrosVentas : Form
 
     {
-       
+
         public RegistrosVentas()
         {
             InitializeComponent();
             calculosDiarios();
-            calculosMensuales(); 
+            calculosMensuales();
 
         }
 
@@ -43,11 +35,11 @@ namespace GerizimZZ
             fechapago.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             idsucursal.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             idcajas.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            
+
 
         }
 
-        
+
 
         private void barraBusqueda_TextChanged_1(object sender, EventArgs e)
         {
@@ -103,7 +95,7 @@ namespace GerizimZZ
 
         }
 
-        public void calculosDiarios ()
+        public void calculosDiarios()
         {
             try
             {
@@ -113,13 +105,13 @@ namespace GerizimZZ
                 SqlDataReader registro = comando.ExecuteReader();
                 if (registro.Read() && !registro.IsDBNull(0))
                 {
-                    intventasdia.Text = registro[0].ToString(); 
+                    intventasdia.Text = registro[0].ToString();
                 }
                 else
                 {
                     intventasdia.Text = "0";
                 }
-               
+
                 conexion.Close();
             }
             catch (SqlException x)
@@ -128,7 +120,7 @@ namespace GerizimZZ
             }
 
         }
-        public void calculosMensuales ()
+        public void calculosMensuales()
         {
             try
             {
@@ -153,7 +145,7 @@ namespace GerizimZZ
             }
         }
     }
-    }
+}
 
 
 

@@ -1,13 +1,4 @@
 ﻿using GerizimZZ.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace GerizimZZ
 {
@@ -35,10 +26,10 @@ namespace GerizimZZ
                 {
                     importancia = 2;
                 }
-                string comando = string.Concat("use Gerizim; insert into Mensajes(fechaEnvio, mensaje, Fk_Usuarios, importancia) values(GETDATE(), '", textBox1.Text,"', (Select ID_Usuarios from Usuarios where nombreUsuario = '", Usuario.username.ToString(), "'), ",importancia,")");
+                string comando = string.Concat("use Gerizim; insert into Mensajes(fechaEnvio, mensaje, Fk_Usuarios, importancia) values(GETDATE(), '", textBox1.Text, "', (Select ID_Usuarios from Usuarios where nombreUsuario = '", Usuario.username.ToString(), "'), ", importancia, ")");
                 Usuario.Conexion(comando);
                 frmAvisos avisos = new frmAvisos();
-                avisos.frmAvisos_Load(sender,e);
+                avisos.frmAvisos_Load(sender, e);
             }
         }
     }

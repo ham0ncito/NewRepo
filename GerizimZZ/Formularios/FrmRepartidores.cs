@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using GerizimZZ.Clases;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using GerizimZZ.Clases;
 
 namespace GerizimZZ
 {
@@ -32,13 +24,13 @@ namespace GerizimZZ
         {
             cmda.infogrid(dataGridView1);
         }
-        
-       private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //Llenar textboxt con datos del datagridview
             tb_Nombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             tb_CodigoRepartidor.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-           
+
         }
 
         private void brbRepartidores_TextChanged(object sender, EventArgs e)
@@ -60,10 +52,10 @@ namespace GerizimZZ
             dataGridView1.DataSource = dt;
 
             conectarr.Close();
-           
+
         }
 
-   
+
         private void btn_Asignar_Click(object sender, EventArgs e)
         {
             //Llamar datos de los Textboxt a otro form
@@ -79,7 +71,7 @@ namespace GerizimZZ
 
         private void tb_Fecha_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void fecha_Tick(object sender, EventArgs e)
@@ -93,7 +85,7 @@ namespace GerizimZZ
 
         }
     }
-  }
-    
-    
+}
+
+
 

@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Windows.Forms;
-using System.Data;
 
 namespace GerizimZZ.Clases
 {
-    internal class Cl_Clientes: Cl_conexiones
+    internal class Cl_Clientes : Cl_conexiones
     {
-        
+
 
         SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private string iD_cliente;

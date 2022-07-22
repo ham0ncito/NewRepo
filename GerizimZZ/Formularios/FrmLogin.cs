@@ -4,7 +4,7 @@ namespace GerizimZZ
 {
     public partial class FrmLogin : Form
     {
-       
+
         public FrmLogin()
         {
             InitializeComponent();
@@ -40,10 +40,10 @@ namespace GerizimZZ
                 inicio.lblUsernma.Text = txtUsuario.Text;
 
             }
-           
+
         }
-        
-  
+
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
