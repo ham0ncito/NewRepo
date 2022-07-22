@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using GerizimZZ.Clases;
+using System.Data;
 namespace GerizimZZ
 {
 

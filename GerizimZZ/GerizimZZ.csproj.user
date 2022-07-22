@@ -4,31 +4,31 @@
     <_LastSelectedProfileId>C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="Barra preview.cs">
+    <Compile Update="Formularios\FrmBarrapreview.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Component1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="DetalleVenta.cs">
+    <Compile Update="Formularios\DetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frAgregarInformacionAviso.cs">
+    <Compile Update="Formularios\frAgregarInformacionAviso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frCodigoBarra.cs">
+    <Compile Update="Formularios\frCodigoBarra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frInicioBodega.cs">
+    <Compile Update="Formularios\frInicioBodega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmAvisos.cs">
+    <Compile Update="Formularios\frmAvisos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmCliente.cs">
+    <Compile Update="Formularios\FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmInventario.cs">
+    <Compile Update="Formularios\FrmInventario.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmRepartidores.cs">
@@ -40,16 +40,16 @@
     <Compile Update="frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Frm_AsignarRepartidor.cs">
+    <Compile Update="Formularios\Frm_AsignarRepartidor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Inventarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmLogin.cs">
+    <Compile Update="Formularios\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmPantallaPedido.cs">
+    <Compile Update="Formularios\frmPantallaPedido.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Mensaje.cs">
