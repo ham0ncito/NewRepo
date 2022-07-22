@@ -148,7 +148,13 @@ namespace GerizimZZ
         //click a boton de cerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("¿Desea continuar?", "Salir del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            } else
+            {
+                MessageBox.Show("Salida del sistema cancelada"); 
+            }
         }
 
         private void bt_Click(object sender, EventArgs e)

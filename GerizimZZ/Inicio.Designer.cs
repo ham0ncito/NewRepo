@@ -156,7 +156,7 @@
             this.btnBusqueda.BackColor = System.Drawing.Color.Transparent;
             this.btnBusqueda.BackgroundImage = global::GerizimZZ.Properties.Resources.search;
             this.btnBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusqueda.Location = new System.Drawing.Point(989, 152);
+            this.btnBusqueda.Location = new System.Drawing.Point(968, 152);
             this.btnBusqueda.Name = "btnBusqueda";
             this.btnBusqueda.Size = new System.Drawing.Size(30, 28);
             this.btnBusqueda.TabIndex = 7;
@@ -223,6 +223,8 @@
             // 
             this.barraBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.barraBusqueda.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.barraBusqueda.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
             this.barraBusqueda.Location = new System.Drawing.Point(230, 141);
             this.barraBusqueda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barraBusqueda.Multiline = true;
@@ -234,9 +236,6 @@
             // Contenedor
             // 
             this.Contenedor.AllowDrop = true;
-            this.Contenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Contenedor.AutoScroll = true;
             this.Contenedor.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Contenedor.BackColor = System.Drawing.Color.Transparent;
