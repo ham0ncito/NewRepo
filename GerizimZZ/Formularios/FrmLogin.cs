@@ -7,6 +7,7 @@ namespace GerizimZZ
         public FrmLogin()
         {
             InitializeComponent();
+            chbxmotrar.Visible = false;
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
@@ -25,16 +26,31 @@ namespace GerizimZZ
 
         private void button2_Click(object sender, EventArgs e)
         {
-            bool entro = false;
-            Inicio inicio = new Inicio();
-            Cl_Login login = new Cl_Login();
-            entro = login.iniciarSesion(txtUsuario.Text, txtContraseña.Text);
-            Usuario.username = txtUsuario.Text;
-            if (entro)
+            if (string.IsNullOrEmpty(txtContraseña.Text) && string.IsNullOrEmpty(txtUsuario.Text))
             {
-                this.Hide();
-                inicio.Show();
-                inicio.lblUsernma.Text = txtUsuario.Text;
+                errorProvider1.SetError(groupBox1, "Ingrese todos los datos para continuar"); 
+            }
+            else
+            {
+                errorProvider1.SetError(groupBox1, "");
+                try
+                {
+                    bool entro = false;
+                    Inicio inicio = new Inicio();
+                    Cl_Login login = new Cl_Login();
+                    entro = login.iniciarSesion(txtUsuario.Text, txtContraseña.Text);
+                    Usuario.username = txtUsuario.Text;
+                    if (entro)
+                    {
+                        this.Hide();
+                        inicio.Show();
+                        inicio.lblUsernma.Text = txtUsuario.Text;
+                    }
+                }
+                catch (Exception x)
+                {
+                    MessageBox.Show(x.Message); 
+                }
             }
         }
 
@@ -52,7 +68,10 @@ namespace GerizimZZ
 
         private void btSalir_Click_1(object sender, EventArgs e)
         {
-            Application.Exit();
+            if (MessageBox.Show("Desea Continuar", "Saliendo del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -65,6 +84,23 @@ namespace GerizimZZ
             Random rnd = new Random();
             int llamar = rnd.Next(0, 6);
             MessageBox.Show("Para recuperar su contraseña, contactese con soporte " + numeros[llamar], "Restablecer Contraseña", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                chbxmotrar.Visible = true; 
+            }
+            catch (Exception x)
+            {
+                MessageBox.Show(x.Message); 
+            }
         }
     }
 }
