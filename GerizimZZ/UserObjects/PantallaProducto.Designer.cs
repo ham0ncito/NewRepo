@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ImagenProducto = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,22 +37,22 @@
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagenProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // ImagenProducto
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::GerizimZZ.Properties.Resources.imagencomprimida;
-            this.pictureBox1.Location = new System.Drawing.Point(21, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(151, 141);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            this.ImagenProducto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ImagenProducto.BackColor = System.Drawing.Color.Transparent;
+            this.ImagenProducto.Image = global::GerizimZZ.Properties.Resources.imagencomprimida;
+            this.ImagenProducto.Location = new System.Drawing.Point(21, 33);
+            this.ImagenProducto.Name = "ImagenProducto";
+            this.ImagenProducto.Size = new System.Drawing.Size(151, 141);
+            this.ImagenProducto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImagenProducto.TabIndex = 0;
+            this.ImagenProducto.TabStop = false;
+            this.ImagenProducto.Click += new System.EventHandler(this.pictureBox1_Click_1);
             // 
             // label1
             // 
@@ -142,11 +142,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.ImagenProducto);
             this.Name = "Producto";
             this.Size = new System.Drawing.Size(193, 239);
             this.Load += new System.EventHandler(this.Producto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImagenProducto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -159,7 +159,7 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        public PictureBox pictureBox1;
+        public PictureBox ImagenProducto;
         private ErrorProvider errorProvider1;
         private ComboBox comboBox1;
         /*private EventHandler button1_Click;

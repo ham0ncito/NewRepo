@@ -14,6 +14,7 @@ namespace GerizimZZ.Clases
         private string descripcion_producto;
         private int estado_producto;
         private int existencia;
+        private byte[] imagen; 
 
         public int Idproducto { get => idproducto; set => idproducto = value; }
         public decimal Precio_producto { get => precio_producto; set => precio_producto = value; }
@@ -22,8 +23,8 @@ namespace GerizimZZ.Clases
         public string Descripcion_producto { get => descripcion_producto; set => descripcion_producto = value; }
         public int Estado_producto { get => estado_producto; set => estado_producto = value; }
         public int Existencia { get => existencia; set => existencia = value; }
+        public byte[] Imagen { get => imagen; set => imagen = value; }
 
-      
         public void llenado(FlowLayoutPanel Contenedor, string consulta)
         {
             conex.Open();
@@ -42,6 +43,7 @@ namespace GerizimZZ.Clases
                     descripcion_producto = reader[8].ToString();
                     estado_producto = Convert.ToInt32(reader[9]);
                     existencia = Convert.ToInt32(reader[6]);
+                    Imagen = ((byte[])reader["imagen"]); 
 
                     Producto sd = new Producto();
                     sd.Id = Convert.ToInt32(idproducto);
@@ -51,6 +53,8 @@ namespace GerizimZZ.Clases
                     sd.estado = estado_producto.ToString();
                     sd.Stockactual = existencia;
                     sd.Codigobarra = codigoBarra_producto;
+                    MemoryStream ms = new MemoryStream(Imagen);
+                    sd.ImagenProducto.Image = Image.FromStream(ms);
                     sd.text = "0";
                     Contenedor.Controls.Add(sd);
                 }

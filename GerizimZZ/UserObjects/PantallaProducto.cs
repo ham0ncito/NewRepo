@@ -12,7 +12,7 @@ namespace GerizimZZ
         private string codigobarra;
         private string textBox;
         public int cantidad = 0;
-        private byte[] imagen; 
+        
         public DetalleVenta dgv = new DetalleVenta();
 
         public Producto()
@@ -99,6 +99,12 @@ namespace GerizimZZ
         {
             get { return codigobarra; }
             set { codigobarra = value; }
+        }
+
+        public Image Imagen 
+        {
+            get { return ImagenProducto.Image; }
+            set { ImagenProducto.Image = value; }
         }
 
         private void button2_Click(object sender, EventArgs e)
