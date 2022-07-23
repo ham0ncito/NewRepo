@@ -3,19 +3,19 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    internal class ConexionVentascs
+    internal class ConexionVentascs: Cl_conexiones
     {
-        private SqlConnection conectar = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
-
+       
         public void llenargrid(DataGridView grid)
         {
-            SqlCommand cm = new SqlCommand("Select * from Factura ", conectar);
+            SqlCommand cm = new SqlCommand("Select * from Factura ", conex);
             SqlDataAdapter da = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
 
             da.Fill(dt);
 
             grid.DataSource = dt;
+            
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Drawing.Printing;
 
 namespace GerizimZZ
 {
-    public partial class DetalleVenta : Form
+    public partial class DetalleVenta : Form 
     {
         private int x = 0;
         private double suma;
@@ -99,7 +99,7 @@ namespace GerizimZZ
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e) 
         {
             datagrid();
             verificacion();

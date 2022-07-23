@@ -3,13 +3,12 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    internal class Cl_Repartidores
+    internal class Cl_Repartidores: Cl_conexiones
     {
-        private SqlConnection conec = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
-
+        
         public void infogrid(DataGridView grid)
         {
-            SqlCommand cm = new SqlCommand("select * from Repartidores ;", conec);
+            SqlCommand cm = new SqlCommand("select * from Repartidores ;", conex);
             SqlDataAdapter da = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
 

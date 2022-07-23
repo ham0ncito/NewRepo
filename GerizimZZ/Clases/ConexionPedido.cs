@@ -3,13 +3,12 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    internal class ConexionPedido
+    internal class ConexionPedido: Cl_conexiones
     {
-        private SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
-
+        
         public void llenargrid(DataGridView grid)
         {
-            SqlCommand cm = new SqlCommand("Select * From Pedidos", conexion);
+            SqlCommand cm = new SqlCommand("Select * From Pedidos", conex);
             SqlDataAdapter da = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
 

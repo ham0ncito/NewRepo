@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    public class Productos
+    public class Productos: Cl_conexiones
     {
         /* atributos esenciales de los productos */
 
@@ -23,14 +23,13 @@ namespace GerizimZZ.Clases
         public int Estado_producto { get => estado_producto; set => estado_producto = value; }
         public int Existencia { get => existencia; set => existencia = value; }
 
-        private SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
-
+      
         public void llenado(FlowLayoutPanel Contenedor, string consulta)
         {
-            conexion.Open();
+            conex.Open();
             try
             {
-                SqlCommand comando = new SqlCommand(consulta, conexion);
+                SqlCommand comando = new SqlCommand(consulta, conex);
                 comando.CommandType = CommandType.Text;
                 SqlDataReader reader = comando.ExecuteReader();
 
@@ -60,8 +59,8 @@ namespace GerizimZZ.Clases
             {
                 MessageBox.Show(x.Message);
             }
-            conexion.Close();
-            conexion.Dispose();
+            conex.Close();
+            conex.Dispose();
         }
     }
 }
