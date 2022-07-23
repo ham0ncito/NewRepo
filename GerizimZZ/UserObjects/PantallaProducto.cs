@@ -137,6 +137,7 @@ namespace GerizimZZ
         {
             VentanaInfoProductos pr = new VentanaInfoProductos();
             pr.lblNombre.Text = this.NombreProducto;
+            pr.picImagen.Image = this.ImagenProducto.Image; 
             pr.lbldescripcion.Text = this.descripcion;
             pr.lblcodigo.Text = this.codigobarra.ToString();
             pr.lblprecio.Text = this.PrecioProducto.ToString();
