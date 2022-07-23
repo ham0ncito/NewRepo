@@ -62,10 +62,12 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.errorProvidercodigo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderprPrecio = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidercodigo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderprPrecio)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProducto
@@ -249,6 +251,7 @@
             this.txtPrecio_producto.Name = "txtPrecio_producto";
             this.txtPrecio_producto.Size = new System.Drawing.Size(130, 23);
             this.txtPrecio_producto.TabIndex = 46;
+            this.txtPrecio_producto.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrecio_producto_Validating);
             // 
             // txtNombreProducto
             // 
@@ -360,6 +363,10 @@
             // 
             this.errorProvidercodigo.ContainerControl = this;
             // 
+            // errorProviderprPrecio
+            // 
+            this.errorProviderprPrecio.ContainerControl = this;
+            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -405,6 +412,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidercodigo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderprPrecio)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,5 +451,6 @@
         private Button btnModificar;
         private Button btnEliminar;
         private ErrorProvider errorProvidercodigo;
+        private ErrorProvider errorProviderprPrecio;
     }
 }

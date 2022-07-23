@@ -48,7 +48,7 @@ namespace GerizimZZ
         private void txtID_codigoProducto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Regex rcod = new Regex(@"^\d$");
-            if(!rcod.IsMatch(txtID_codigoProducto.Text))
+            if (!rcod.IsMatch(txtID_codigoProducto.Text))
             {
                 e.Cancel = true;
                 txtID_codigoProducto.Focus();
@@ -58,6 +58,22 @@ namespace GerizimZZ
             {
                 e.Cancel = false;
                 errorProvidercodigo.SetError(txtID_codigoProducto, null);
+            }
+        }
+
+        private void txtPrecio_producto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex rprecio = new Regex(@"^\d+\.?\d*");
+            if(!rprecio.IsMatch(txtPrecio_producto.Text))
+            {
+                e.Cancel = true;
+                txtPrecio_producto.Focus();
+                errorProviderprPrecio.SetError(txtPrecio_producto, "Precio invalido");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProviderprPrecio.SetError(txtPrecio_producto, null);
             }
         }
 
