@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\guill\\OneDrive\\Documents\\GitHub\\NewRepo\\GerizimZZ\\GerizimZZ.csproj": {}
+    "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\GerizimZZ\\GerizimZZ.csproj": {}
   },
   "projects": {
-    "C:\\Users\\guill\\OneDrive\\Documents\\GitHub\\NewRepo\\GerizimZZ\\GerizimZZ.csproj": {
+    "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\GerizimZZ\\GerizimZZ.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\guill\\OneDrive\\Documents\\GitHub\\NewRepo\\GerizimZZ\\GerizimZZ.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\GerizimZZ\\GerizimZZ.csproj",
         "projectName": "GerizimZZ",
-        "projectPath": "C:\\Users\\guill\\OneDrive\\Documents\\GitHub\\NewRepo\\GerizimZZ\\GerizimZZ.csproj",
-        "packagesPath": "C:\\Users\\guill\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\guill\\OneDrive\\Documents\\GitHub\\NewRepo\\GerizimZZ\\obj\\",
+        "projectPath": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\GerizimZZ\\GerizimZZ.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\OneDrive\\Documentos\\GitHub\\GerizimZZ\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\guill\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +44,10 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "BarCode": {
+              "target": "Package",
+              "version": "[2022.5.5918, )"
+            },
             "FontAwesome.Sharp": {
               "target": "Package",
               "version": "[6.1.1, )"
@@ -51,6 +59,10 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.3, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
             }
           },
           "imports": [
@@ -71,7 +83,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
