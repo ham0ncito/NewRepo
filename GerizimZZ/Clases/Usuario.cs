@@ -6,8 +6,6 @@ namespace GerizimZZ.Clases
     {
         public static string username;
 
-
-
         public static void Conexion(string consulta)
         {
             int cambio;
@@ -18,12 +16,12 @@ namespace GerizimZZ.Clases
             if (cambio == 1)
             {
                 MessageBox.Show("Accion Ejecutada");
-
             }
             else { MessageBox.Show("No se realizo ninguna accion"); }
 
             conexion.Close();
         }
+
         public static void ConexionSinMensaje(string consulta)
         {
             int cambio;
@@ -31,9 +29,6 @@ namespace GerizimZZ.Clases
             conexion.Open();
             SqlCommand comando = new SqlCommand(consulta, conexion);
             cambio = comando.ExecuteNonQuery();
-
         }
-
     }
-
 }

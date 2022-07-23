@@ -18,6 +18,7 @@ namespace GerizimZZ
         }
 
         public FlowLayoutPanel FlpDatos { get => flp; set => flp = value; }
+
         public void IniciarFlowLayout()
         {
             flp = Contenedor;
@@ -52,6 +53,7 @@ namespace GerizimZZ
             }
             conexion.Close();
         }
+
         protected override void WndProc(ref Message m)
         {
             const int WM_NCCALCSIZE = 0x0083;

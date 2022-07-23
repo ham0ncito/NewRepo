@@ -5,7 +5,7 @@ namespace GerizimZZ.Clases
 {
     internal class ConexionVentascs
     {
-        SqlConnection conectar = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+        private SqlConnection conectar = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         public void llenargrid(DataGridView grid)
         {
@@ -16,9 +16,6 @@ namespace GerizimZZ.Clases
             da.Fill(dt);
 
             grid.DataSource = dt;
-
-
         }
-
     }
 }

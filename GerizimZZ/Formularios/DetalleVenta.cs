@@ -3,22 +3,18 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
 
-
 namespace GerizimZZ
 {
     public partial class DetalleVenta : Form
     {
-        int x = 0;
-        double suma;
-        bool bandera = false;
-
+        private int x = 0;
+        private double suma;
+        private bool bandera = false;
 
         private DataGridView dgView;
 
-
         public DetalleVenta()
         {
-
             InitializeComponent();
             nombresCliente();
             DataGridLector();
@@ -27,66 +23,62 @@ namespace GerizimZZ
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-
             datagrid();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label6_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label9_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Hover(object sender, EventArgs e)
         {
             this.btnCancelarVenta.BackColor = Color.IndianRed;
         }
+
         private void button1_MouseLeaves(object sender, EventArgs e)
         {
             this.btnCancelarVenta.BackColor = Color.Transparent;
         }
+
         private void button2_Hover(object sender, EventArgs e)
         {
             this.btnGenerarVenta.BackColor = Color.Cyan;
         }
+
         private void button2_MouseLeaves(object sender, EventArgs e)
         {
             this.btnGenerarVenta.BackColor = Color.Transparent;
         }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
             Limpiar();
-
         }
+
         public void Limpiar()
         {
             try
             {
-
                 dgDetalleVenta.Columns.Clear();
                 this.dgDetalleVenta.DataSource = null;
                 txtTotal.Text = "L 00";
@@ -100,7 +92,6 @@ namespace GerizimZZ
                 Principal.IniciarFlowLayout();
                 Principal.FlpDatos.Controls.Clear();
                 Principal.Llenado();
-
             }
             catch (Exception x)
             {
@@ -137,10 +128,8 @@ namespace GerizimZZ
                     }
                     foreach (DataGridViewRow row in dgDetalleVenta.Rows)
                     {
-
                         SqlCommand comando = new SqlCommand("exec detalleVenta '" + txtFactura.Text.ToString() + "','" + row.Cells[2].Value + "' , '" + row.Cells[3].Value + "' , '" + row.Cells[0].Value + "';", conexion);
                         comando.ExecuteNonQuery();
-
                     }
                     if (delivery.Checked)
                     {
@@ -150,7 +139,6 @@ namespace GerizimZZ
                         comando.ExecuteNonQuery();
                     }
                     conexion.Close();
-
                 }
                 catch (SqlException x)
                 {
@@ -172,19 +160,18 @@ namespace GerizimZZ
                 Limpiar();
                 Recargar();
             }
-
-
-
         }
 
-        static public DataTable tablita = new DataTable();
-        static public List<string> idlist = new List<string>();
+        public static DataTable tablita = new DataTable();
+        public static List<string> idlist = new List<string>();
 
         public DataGridView DgView1 { get => dgView; set => dgView = value; }
+
         public void DataGridLector()
         {
             dgView = dgDetalleVenta;
         }
+
         public void llenartablita()
         {
             int cont = 0;
@@ -195,13 +182,11 @@ namespace GerizimZZ
                 tablita.Columns.Add("Cantidad");
                 tablita.Columns.Add("Precio");
                 tablita.Columns.Add("Total");
-
             }
             string comparacion = textc.Id;
             int cantidadcero = Int16.Parse(textc.Cantidad);
 
             idlist.Add(comparacion);
-
 
             {
                 if (tablita.Rows.Count == 0)
@@ -213,7 +198,6 @@ namespace GerizimZZ
                     int estado = 0;
                     for (int i = 0; i < tablita.Rows.Count; i++)
                     {
-
                         if (idlist[i] == textc.Id)
                         {
                             if (cantidadcero == 0)
@@ -242,13 +226,9 @@ namespace GerizimZZ
                         tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
                     }
                 }
-
             }
-
-
-
-
         }
+
         public void DetalleVenta_Load(object sender, EventArgs e)
         {
             datagrid();
@@ -274,25 +254,18 @@ namespace GerizimZZ
 
         public void dgDetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-
-
         }
 
         private void dgDetalleVenta_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void textBox7_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -300,7 +273,6 @@ namespace GerizimZZ
             frCodigoBarra CodigoBarra = new frCodigoBarra();
             AddOwnedForm(CodigoBarra);
             CodigoBarra.Show();
-
         }
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
@@ -329,25 +301,20 @@ namespace GerizimZZ
             }
             e.Graphics.DrawString("Su total es de : " + txtTotal.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
             e.Graphics.DrawString("Gracias por confiar en nosotros", fuente, Brushes.Black, new RectangleF(320, ubicacion += 40, 1000, 100));
-
-
         }
 
         private void lblHora_Click(object sender, EventArgs e)
         {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
             lblFecha.Text = DateTime.Now.ToLongDateString();
             lblHora.Text = DateTime.Now.ToString("hh:mm:ss:ff");
         }
 
         private void txtFactura_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void datagrid()
@@ -357,25 +324,22 @@ namespace GerizimZZ
             foreach (DataGridViewRow row in dgDetalleVenta.Rows)
             {
                 suma += Convert.ToInt32(row.Cells["Total"].Value);
-
             }
             txtTotal.Text = "L. " + suma.ToString();
         }
 
         private void label3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void txtDireccion_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
+
         private void verificacion()
         {
             if (delivery.Checked && !string.IsNullOrEmpty(txtNumero.Text) && !string.IsNullOrEmpty(txtDireccion.Text) && !bandera)
@@ -383,13 +347,10 @@ namespace GerizimZZ
                 bandera = true;
                 errorProvider1.SetError(groupBox2, "");
                 suma += 100;
-
-
             }
             else if (!delivery.Checked && (!string.IsNullOrEmpty(txtNumero.Text) || !string.IsNullOrEmpty(txtDireccion.Text)))
             {
                 errorProvider1.SetError(groupBox2, "Ingrese todos los valores si hará un pedido");
-
             }
             else if (delivery.Checked && (string.IsNullOrEmpty(txtNumero.Text) || string.IsNullOrEmpty(txtDireccion.Text)))
             {
@@ -406,7 +367,6 @@ namespace GerizimZZ
         {
             datagrid();
             verificacion();
-
         }
 
         private void NuevoCliente_Click(object sender, EventArgs e)
@@ -414,12 +374,10 @@ namespace GerizimZZ
             FrmCliente frmCliente = new FrmCliente();
             AddOwnedForm(frmCliente);
             frmCliente.Show();
-
         }
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             buscarId();
         }
 
@@ -434,7 +392,6 @@ namespace GerizimZZ
                 if (registro.Read())
                 {
                     txtCodigo.Text = registro[0].ToString();
-
                 }
                 conexion.Close();
             }
@@ -463,18 +420,14 @@ namespace GerizimZZ
             {
                 MessageBox.Show(x.Message);
             }
-
-
         }
 
         private void printPreviewDialog1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }

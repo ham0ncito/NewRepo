@@ -8,45 +8,34 @@ namespace GerizimZZ
         {
             InitializeComponent();
             CollapseMenu();
-
-
         }
-
-
 
         public void Llenado()
         {
-
-
         }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void producto1_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-
         }
 
         protected override void WndProc(ref Message m)
@@ -57,12 +46,14 @@ namespace GerizimZZ
                 return;
             }
             base.WndProc(ref m);
-
         }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
+        private static extern void ReleaseCapture();
+
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+        private static extern void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
         private void panel_titlebar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
@@ -71,7 +62,6 @@ namespace GerizimZZ
 
         private void panel_titlebar_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -84,10 +74,12 @@ namespace GerizimZZ
         {
             this.button2.BackColor = Color.Cyan;
         }
+
         private void button2_MouseLeave(object sender, EventArgs e)
         {
             this.button2.BackColor = Color.Transparent;
         }
+
         // click a boton de minimizar
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
@@ -106,6 +98,7 @@ namespace GerizimZZ
                 this.WindowState = FormWindowState.Normal;
             }
         }
+
         //click a boton de cerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -113,20 +106,17 @@ namespace GerizimZZ
             {
                 this.Close();
             }
-
-
-
         }
 
         private void bt_Click(object sender, EventArgs e)
         {
             CollapseMenu();
         }
+
         private void CollapseMenu()
         {
             if (this.panelsidemenu.Width > 200)
             {
-
                 panelsidemenu.Width = 0;
                 //panelsidemenu.Dock = DockStyle.Left;
                 foreach (Button menuButton in panelsidemenu.Controls.OfType<Button>())
@@ -136,7 +126,6 @@ namespace GerizimZZ
             }
             else
             {
-
                 panelsidemenu.Width = 240;
                 //panelsidemenu.Dock = DockStyle.None;
                 foreach (Button menuButton in panelsidemenu.Controls.OfType<Button>())
@@ -153,53 +142,56 @@ namespace GerizimZZ
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
         }
 
         private void Contenedor_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void btninventariomi_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
 
         private void btninventarioomi_Hover(object sender, EventArgs e)
         {
             btninventariomi.BackColor = Color.Cyan;
         }
+
         private void btninventarioomi_MouseLeaves(object sender, EventArgs e)
         {
             btninventariomi.BackColor = Color.FromArgb(214, 224, 229);
         }
+
         private void btnclientesmi_Hover(object sender, EventArgs e)
         {
             btnclientesmi.BackColor = Color.Cyan;
         }
+
         private void btnclientesmi_MouseLeaves(object sender, EventArgs e)
         {
             btnclientesmi.BackColor = Color.FromArgb(214, 224, 229);
         }
+
         private void btnpedidosmi_Hover(object sender, EventArgs e)
         {
             btnpedidosmi.BackColor = Color.Cyan;
         }
+
         private void btnpedidosmi_MouseLeaves(object sender, EventArgs e)
         {
             btnpedidosmi.BackColor = Color.FromArgb(214, 224, 229);
         }
+
         private void btnventasmi_Hover(object sender, EventArgs e)
         {
             btnventasmi.BackColor = Color.Cyan;
         }
+
         private void btnventasmi_MouseLeaves(object sender, EventArgs e)
         {
             btnventasmi.BackColor = Color.FromArgb(214, 224, 229);
@@ -207,24 +199,18 @@ namespace GerizimZZ
 
         private void btn(object sender, MouseEventArgs e)
         {
-
         }
 
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-
-
-
         }
+
         private void BarraBusqueda_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -232,12 +218,13 @@ namespace GerizimZZ
             Inicio fr = new Inicio();
             fr.Show();
             this.Close();
-
         }
+
         private void button3_Hover(object sender, EventArgs e)
         {
             this.button3.BackColor = Color.Cyan;
         }
+
         private void button3_MouseLeave(object sender, EventArgs e)
         {
             this.button3.BackColor = Color.Transparent;
@@ -259,24 +246,19 @@ namespace GerizimZZ
         private void button4_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
 
         private void btnclientesmi_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Proximamente en la nueva actualizacion", "Muy Pronto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
-
-
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void button7_Click(object sender, EventArgs e)

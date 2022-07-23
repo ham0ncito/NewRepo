@@ -5,7 +5,7 @@ namespace GerizimZZ.Clases
 {
     internal class conexionfactura
     {
-        SqlConnection conec = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+        private SqlConnection conec = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         public void datosgrid(DataGridView grid)
         {

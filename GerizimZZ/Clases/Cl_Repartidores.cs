@@ -1,12 +1,11 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-
 namespace GerizimZZ.Clases
 {
     internal class Cl_Repartidores
     {
-        SqlConnection conec = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+        private SqlConnection conec = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         public void infogrid(DataGridView grid)
         {
@@ -20,7 +19,3 @@ namespace GerizimZZ.Clases
         }
     }
 }
-
-
-
-

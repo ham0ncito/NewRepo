@@ -2,11 +2,11 @@
 {
     public class textc
     {
-        static public string Id { get; set; }
-        static public string NombreProducto { get; set; }
-        static public string Cantidad { get; set; }
-        static public string precio { get; set; }
-        static public string total { get; set; }
-        static public int contcolumnas { get; set; }
+        public static string Id { get; set; }
+        public static string NombreProducto { get; set; }
+        public static string Cantidad { get; set; }
+        public static string precio { get; set; }
+        public static string total { get; set; }
+        public static int contcolumnas { get; set; }
     }
 }

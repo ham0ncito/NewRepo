@@ -13,8 +13,6 @@
             {
                 MessageBox.Show("Espere futuras actualizaciones", "Esta en Mantenimiento", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
     }
 }

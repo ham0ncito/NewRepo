@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
-<xs:schema id="Productosdst" 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="Productosdst"
                   targetNamespace="http://tempuri.org/Productosdst.xsd"
                   elementFormDefault="qualified"
                   attributeFormDefault="qualified"

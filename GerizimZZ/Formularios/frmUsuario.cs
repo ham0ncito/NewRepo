@@ -12,12 +12,10 @@ namespace GerizimZZ
 
         private void frmUsuario_Load()
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -38,16 +36,12 @@ namespace GerizimZZ
 
                     string consulta = "use Gerizim; Update Usuarios set contraseñaUsuario = '" + contraseña + "' where nombreUsuario = '" + Usuario.username + "';";
                     Usuario.Conexion(consulta);
-
                 }
             }
-
-
         }
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void cambiarCorreoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -63,7 +57,6 @@ namespace GerizimZZ
 
                     string consulta = "use Gerizim; Update Usuarios set EmailUsuario = '" + con + "' where nombreUsuario = '" + Usuario.username + "';";
                     Usuario.Conexion(consulta);
-
                 }
             }
         }

@@ -7,22 +7,17 @@ namespace GerizimZZ
     public partial class frmPantallaPedido : Form
 
     {
-
         //Inicia el formulario
         public frmPantallaPedido()
         {
-
             InitializeComponent();
-
-
         }
-
 
         private void PantallaDescripcionProducto_Load(object sender, EventArgs e)
         {
             cmda.llenargrid(datagridPedidosRecientes);
-
         }
+
         //Clase para cerrar form
         //private void CerrarForm (object sender, EventArgs e)
         //{
@@ -30,10 +25,10 @@ namespace GerizimZZ
         //    this.Hide();
         //    FrmPrincipal.Show();
 
-        ConexionPedido cmda = new ConexionPedido();
+        private ConexionPedido cmda = new ConexionPedido();
 
         //_______________________________________________________________________________
-        SqlConnection conectaa = new SqlConnection("Data Source =TATO180\\SQLEXPRESS ; Initial Catalog =Gerizim ; Integrated Security = True");
+        private SqlConnection conectaa = new SqlConnection("Data Source =TATO180\\SQLEXPRESS ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         private void BarraDeBusqueda_TextChanged(object sender, EventArgs e)
         {
@@ -50,7 +45,6 @@ namespace GerizimZZ
 
             datagridPedidosRecientes.DataSource = dt;
 
-
             conectaa.Close();
         }
 
@@ -61,7 +55,6 @@ namespace GerizimZZ
             txtRepartidor.Text = datagridPedidosRecientes.CurrentRow.Cells[3].Value.ToString();
             txtEntrega.Text = datagridPedidosRecientes.CurrentRow.Cells[4].Value.ToString();
             txtFechaPedido.Text = datagridPedidosRecientes.CurrentRow.Cells[1].Value.ToString();
-
         }
 
         private void botonCancelarPedido_Click(object sender, EventArgs e)
@@ -74,7 +67,6 @@ namespace GerizimZZ
                 txtRepartidor.Clear();
                 txtFechaPedido.Clear();
                 txtFactura.Clear();
-
             }
             //if (MessageBox.Show("¿Desea cancelar el pedido?", "Precaución", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
             //{
@@ -82,10 +74,6 @@ namespace GerizimZZ
 
             //}
         }
-
-
-
-
 
         //private void PantallaDescripcionProducto_Load(object sender, EventArgs e)
         //{
@@ -99,7 +87,6 @@ namespace GerizimZZ
         //    Inicio FrmPrincipal = new Inicio();
         //    this.Hide();
         //    FrmPrincipal.Show();
-
 
         //}
     }

@@ -6,25 +6,21 @@ namespace GerizimZZ
 {
     public partial class frCodigoBarra : Form
     {
-        SqlCommand cmd;
-        bool existe = false;
-        SqlConnection connection = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+        private SqlCommand cmd;
+        private bool existe = false;
+        private SqlConnection connection = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+
         public frCodigoBarra()
         {
             InitializeComponent();
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             using (OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "JPG|*.jpg|PNG|*.png" })
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-
-
                     pictureBox1.Image = Image.FromFile(openFileDialog.FileName);
                     BarcodeResult codigoLeido = BarcodeReader.QuicklyReadOneBarcode(pictureBox1.Image, BarcodeEncoding.QRCode | BarcodeEncoding.Code128, true);
 
@@ -33,27 +29,22 @@ namespace GerizimZZ
                         textBox1.Text = codigoLeido.ToString();
                     }
                 }
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -78,13 +69,11 @@ namespace GerizimZZ
                     cantidad[1] = Convert.ToInt32(registro[3]);
                     if (Convert.ToInt32(registro[4]) != 0 && Convert.ToInt32(textBox2.Text) <= Convert.ToInt32(registro[3]))
                     {
-
                         DetalleVenta dv = Owner as DetalleVenta;
                         DataTable dt = new DataTable();
 
                         for (int i = 0; i < dv.dgDetalleVenta.Rows.Count; i++)
                         {
-
                             if (Convert.ToInt32(dv.dgDetalleVenta.Rows[i].Cells[0].Value) == Convert.ToInt32(registro["ID_codigoProducto"]))
                             {
                                 productoEnElCarrito = true;
@@ -129,7 +118,6 @@ namespace GerizimZZ
                                     MessageBox.Show("El Inventario es insuficiente, solo hay " + cantidad[1] + " productos en stock");
                                 }
                             }
-
                         }
                     }
                     else
@@ -175,8 +163,6 @@ namespace GerizimZZ
                                 MemoryStream ms = new MemoryStream(imag);
                                 pictureBox1.Image = Image.FromStream(ms);
                             }
-
-
                         }
                         else
                         {
@@ -191,9 +177,7 @@ namespace GerizimZZ
                 {
                     Image imagen = GerizimZZ.Properties.Resources.Imagen1_PhotoRoom__1_;
                     pictureBox1.Image = imagen;
-
                 }
-
             }
             connection.Close();
         }

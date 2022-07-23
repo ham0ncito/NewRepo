@@ -3,10 +3,9 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-
     internal class Cl_SolicitarInventario
     {
-        SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+        private SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
 
         private static SqlConnection GetConnection()
         {
@@ -52,8 +51,6 @@ namespace GerizimZZ.Clases
                     MessageBox.Show(x.Message);
                 }
             }
-
-
         }
     }
 }

@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
-<xs:schema id="Clientedst" 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="Clientedst"
                   targetNamespace="http://tempuri.org/Clientedst.xsd"
                   elementFormDefault="qualified"
                   attributeFormDefault="qualified"

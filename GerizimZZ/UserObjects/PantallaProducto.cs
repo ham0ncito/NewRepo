@@ -1,7 +1,7 @@
 ﻿using GerizimZZ.Clases;
+
 namespace GerizimZZ
 {
-
     public partial class Producto : UserControl
     {
         private int id = 0;
@@ -19,13 +19,10 @@ namespace GerizimZZ
         {
             InitializeComponent();
             textBox1.Text = "0";
-
         }
-
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -37,18 +34,14 @@ namespace GerizimZZ
                     cantidad += 1;
                     textBox1.Text = cantidad.ToString();
                     MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 DetalleVenta dgv = new DetalleVenta();
                 dgv.llenartablita();
-
-
             }
         }
 
         public void Producto_Load(object sender, EventArgs e)
         {
-
         }
 
         public int Id
@@ -56,12 +49,13 @@ namespace GerizimZZ
             get { return id; }
             set { id = value; }
         }
+
         public string text
         {
             get { return textBox1.Text; }
             set { textBox1.Text = value; }
-
         }
+
         public string DescripcionProducto
         {
             get
@@ -77,16 +71,19 @@ namespace GerizimZZ
             set
             { label1.Text = value; }
         }
+
         public string NombreProducto
         {
             get { return label2.Text; }
             set { label2.Text = value; }
         }
+
         public int Stockactual
         {
             get { return Convert.ToInt32(label3.Text); }
             set { label3.Text = value.ToString(); }
         }
+
         public string Estado
         {
             get { return estado; }
@@ -99,8 +96,6 @@ namespace GerizimZZ
             set { codigobarra = value; }
         }
 
-
-
         private void button2_Click(object sender, EventArgs e)
         {
             if (estado == "2")
@@ -111,24 +106,20 @@ namespace GerizimZZ
             {
                 estado = "2";
             }
-
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
             verificar();
 
             if (cantidad > 0)
             {
-
                 cantidad -= 1;
                 textBox1.Text = cantidad.ToString();
                 MessageBox.Show("Cantidad reducida correctamente", "Resta correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             DetalleVenta dgv = new DetalleVenta();
             dgv.llenartablita();
-
-
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -140,8 +131,8 @@ namespace GerizimZZ
             pr.lblprecio.Text = this.PrecioProducto.ToString();
             pr.lblstock.Text = this.Stockactual.ToString();
             pr.ShowDialog();
-
         }
+
         public void verificar()
         {
             if (textBox1.Text.Length > 0)
@@ -153,6 +144,7 @@ namespace GerizimZZ
                 cantidad = 0;
             }
         }
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             verificar();
@@ -164,7 +156,6 @@ namespace GerizimZZ
                     string precio = this.PrecioProducto;
                     textc.Id = this.Id.ToString();
                     textc.NombreProducto = this.NombreProducto;
-
 
                     string cantidadtextbox = textBox1.Text.ToString();
                     textc.Cantidad = cantidadtextbox;
@@ -188,13 +179,10 @@ namespace GerizimZZ
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
-

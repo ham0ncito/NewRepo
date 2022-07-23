@@ -3,11 +3,10 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    public class Cl_Clientes : Cl_conexiones
+    internal class Cl_Clientes : Cl_conexiones
     {
-
         
-        SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+        private SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private string iD_cliente;
         private string primerNombre_Cliente;
         private string segundoNombre_Cliente;
@@ -61,8 +60,6 @@ namespace GerizimZZ.Clases
                 con.Close();
                 MessageBox.Show("Registro agregado con exito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         public void Modificar_Cliente(string ID_cliente, string primerNombre_Cliente, string segundoNombre_Cliente, string primerApellido_Cliente, string segundoApellido_Cliente, string Direccion_Cliente, string Telefono_Cliente)
@@ -85,7 +82,6 @@ namespace GerizimZZ.Clases
                 MessageBox.Show("Registro modificado con exito", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
 
         public void Eliminar_Cliente(string ID_cliente)
         {

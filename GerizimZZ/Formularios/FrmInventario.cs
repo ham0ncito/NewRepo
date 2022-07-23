@@ -7,18 +7,16 @@ namespace GerizimZZ
 {
     public partial class FrmInventario : Form
     {
-        Cl_Inventario productos = new Cl_Inventario();
-        Productosdst dstProducto;
-        DataTable dtProducto;
-        int codigo, cantidadproducto, cantidadminima, estadoproducto;
-        double precio_producto, pesoproducto;
+        private Cl_Inventario productos = new Cl_Inventario();
+        private Productosdst dstProducto;
+        private DataTable dtProducto;
+        private int codigo, cantidadproducto, cantidadminima, estadoproducto;
+        private double precio_producto, pesoproducto;
 
         public FrmInventario()
         {
             InitializeComponent();
         }
-
-
 
         private void FrmProducto_Load(object sender, EventArgs e)
         {

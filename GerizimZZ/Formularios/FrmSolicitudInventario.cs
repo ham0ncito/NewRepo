@@ -9,13 +9,12 @@ namespace GerizimZZ
 {
     public partial class FrmSolicitudInventario : Form
     {
+        private Cl_SolicitarInventario inventario = new Cl_SolicitarInventario();
+        private Productosdst dstInventario;
+        private DataTable dtInventario;
 
-        Cl_SolicitarInventario inventario = new Cl_SolicitarInventario();
-        Productosdst dstInventario;
-        DataTable dtInventario;
-
-        int codigo, cantidadproducto, cantidadminima, estadoproducto;
-        double PrecioProducto, pesoproducto;
+        private int codigo, cantidadproducto, cantidadminima, estadoproducto;
+        private double PrecioProducto, pesoproducto;
 
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
@@ -73,7 +72,6 @@ namespace GerizimZZ
                             {
                                 PdfPCell pcell = new PdfPCell(new Phrase(col.HeaderText));
                                 pTable.AddCell(pcell);
-
                             }
                             foreach (DataGridViewRow viewrow in dgvInventario.Rows)
                             {
@@ -84,7 +82,6 @@ namespace GerizimZZ
                                         pTable.AddCell(dcell.Value.ToString());
                                     }
                                 }
-
                             }
                             using (FileStream fileStream = new FileStream(guardar.FileName, FileMode.Create))
                             {
@@ -101,34 +98,25 @@ namespace GerizimZZ
                         {
                             MessageBox.Show(ex.Message);
                         }
-
                     }
                 }
-
             }
             else
             {
                 MessageBox.Show("No hay informacion en la tabla(datagrid)", "Info");
             }
-
-
-
-
         }
 
         private void dgvInventario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void txtFechaIngresoo_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -136,6 +124,7 @@ namespace GerizimZZ
             limpiar();
             txtFechaIngresoo.Text = DateTime.Now.ToString("d");
         }
+
         public void limpiar()
         {
             txtNombreOriginal.Clear();
@@ -151,11 +140,11 @@ namespace GerizimZZ
 
             txtID_CodigoProducto.Clear();
         }
+
         public FrmSolicitudInventario()
         {
             InitializeComponent();
         }
-
 
         private void FrmSolicitudInventario_Load(object sender, EventArgs e)
         {
@@ -164,8 +153,6 @@ namespace GerizimZZ
             dstInventario.Tables.Add(dtInventario);
             dgvInventario.DataSource = dstInventario.Tables[0];
             txtFechaIngresoo.Text = DateTime.Now.ToString("d");
-
-
         }
 
         private void dgvSolicitudInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -183,12 +170,8 @@ namespace GerizimZZ
                 txtDescripcion.Text = item.Cells[8].Value.ToString();
                 txtEstadoProducto.Text = item.Cells[9].Value.ToString();
                 txtFechaIngresoo.Text = item.Cells[10].Value.ToString();
-
             }
         }
-
-
-
 
         //Este es el boton de  Solicitud
         private void button2_Click(object sender, EventArgs e)
@@ -206,7 +189,7 @@ namespace GerizimZZ
                 estadoproducto = Convert.ToInt32(txtEstadoProducto.Text);
                 PrecioProducto = Convert.ToDouble(txtPrecioProducto.Text);
                 pesoproducto = Convert.ToDouble(txtPesoProducto.Text);
-                //Llama a la clase de Solicitar Inventario 
+                //Llama a la clase de Solicitar Inventario
 
                 inventario.Agregar_Solicitud(codigo, PrecioProducto, txtNombreOriginal.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatalogo.Text, cantidadproducto, cantidadminima, txtDescripcion.Text, estadoproducto, Convert.ToDateTime(txtFechaIngresoo.Text));
                 SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");

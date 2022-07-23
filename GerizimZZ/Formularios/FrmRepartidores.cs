@@ -4,20 +4,19 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ
 {
-
     public partial class FrmRepartidores : Form
     {
-        SqlConnection conec = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+        private SqlConnection conec = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+
         public FrmRepartidores()
         {
             InitializeComponent();
         }
-        Cl_Repartidores cmda = new Cl_Repartidores();
 
+        private Cl_Repartidores cmda = new Cl_Repartidores();
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void FrmRepartidores_Load(object sender, EventArgs e)
@@ -30,7 +29,6 @@ namespace GerizimZZ
             //Llenar textboxt con datos del datagridview
             tb_Nombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             tb_CodigoRepartidor.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-
         }
 
         private void brbRepartidores_TextChanged(object sender, EventArgs e)
@@ -52,9 +50,7 @@ namespace GerizimZZ
             dataGridView1.DataSource = dt;
 
             conectarr.Close();
-
         }
-
 
         private void btn_Asignar_Click(object sender, EventArgs e)
         {
@@ -71,7 +67,6 @@ namespace GerizimZZ
 
         private void tb_Fecha_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void fecha_Tick(object sender, EventArgs e)
@@ -82,10 +77,6 @@ namespace GerizimZZ
 
         private void lb_FechaPedido_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
-
-
-

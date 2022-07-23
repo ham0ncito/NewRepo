@@ -7,20 +7,17 @@ namespace GerizimZZ
     public partial class RegistrosVentas : Form
 
     {
-
         public RegistrosVentas()
         {
             InitializeComponent();
             calculosDiarios();
             calculosMensuales();
-
         }
 
-        ConexionVentascs cmda = new ConexionVentascs();
+        private ConexionVentascs cmda = new ConexionVentascs();
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void RegistrosVentas_Load(object sender, EventArgs e)
@@ -35,17 +32,13 @@ namespace GerizimZZ
             fechapago.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             idsucursal.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
             idcajas.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-
-
         }
-
-
 
         private void barraBusqueda_TextChanged_1(object sender, EventArgs e)
         {
-
         }
-        SqlConnection conectarr = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+
+        private SqlConnection conectarr = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         private void barraBusqueda_KeyUp(object sender, KeyEventArgs e)
         {
@@ -64,13 +57,10 @@ namespace GerizimZZ
             dataGridView1.DataSource = dt;
 
             conectarr.Close();
-
-
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
-
         }
 
         private void VFactura_Click(object sender, EventArgs e)
@@ -87,12 +77,10 @@ namespace GerizimZZ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void intsemanal_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         public void calculosDiarios()
@@ -118,8 +106,8 @@ namespace GerizimZZ
             {
                 MessageBox.Show(x.Message);
             }
-
         }
+
         public void calculosMensuales()
         {
             try
@@ -146,10 +134,3 @@ namespace GerizimZZ
         }
     }
 }
-
-
-
-
-
-
-

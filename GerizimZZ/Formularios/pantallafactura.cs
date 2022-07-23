@@ -8,7 +8,8 @@ namespace GerizimZZ
         {
             InitializeComponent();
         }
-        conexionfactura cme = new conexionfactura();
+
+        private conexionfactura cme = new conexionfactura();
 
         private void pantallafactura_Load(object sender, EventArgs e)
         {
@@ -25,28 +26,22 @@ namespace GerizimZZ
             id.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
             indetalle.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             intotal.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-
-
         }
 
         private void id_Click(object sender, EventArgs e)
         {
-
         }
 
         private void infecha_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void intotal_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void label4_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

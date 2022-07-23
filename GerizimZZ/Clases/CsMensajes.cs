@@ -3,7 +3,6 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-
     internal class CsMensajes
     {
         private string nombre_usuario;
@@ -17,7 +16,7 @@ namespace GerizimZZ.Clases
         public string IdMensaje { get => idMensaje; set => idMensaje = value; }
         public string Impor { get => impor; set => impor = value; }
 
-        SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
+        private SqlConnection conexion = new SqlConnection("Data Source =localhost ; Initial Catalog =Gerizim ; Integrated Security = True");
 
         public void init(FlowLayoutPanel panel, string consulta)
         {
@@ -26,8 +25,6 @@ namespace GerizimZZ.Clases
             SqlCommand comando = new SqlCommand(consulta, conexion);
             comando.CommandType = CommandType.Text;
             SqlDataReader reader = comando.ExecuteReader();
-
-
 
             while (reader.Read())
             {
@@ -59,7 +56,6 @@ namespace GerizimZZ.Clases
                     ms.panel2.BackColor = Color.Chartreuse;
                 }
                 panel.Controls.Add(ms);
-
             }
 
             conexion.Close();

@@ -4,12 +4,10 @@ namespace GerizimZZ
 {
     public partial class FrmLogin : Form
     {
-
         public FrmLogin()
         {
             InitializeComponent();
         }
-
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
@@ -23,7 +21,6 @@ namespace GerizimZZ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -38,12 +35,8 @@ namespace GerizimZZ
                 this.Hide();
                 inicio.Show();
                 inicio.lblUsernma.Text = txtUsuario.Text;
-
             }
-
         }
-
-
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -64,7 +57,6 @@ namespace GerizimZZ
 
         private void label1_Click(object sender, EventArgs e)
         {
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

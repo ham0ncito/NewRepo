@@ -2,8 +2,6 @@
 {
     internal class InputBox
     {
-
-
         public static DialogResult inputBox(string title, string promptText, ref string value)
         {
             Form form = new Form();

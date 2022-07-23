@@ -3,9 +3,9 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    internal class Cl_Inventario: Cl_conexiones
+    internal class Cl_Inventario : Cl_conexiones
     {
-        SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+        private SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private int iD_codigoProducto;
         private double precio_producto;
         private string nombreProducto;
@@ -67,8 +67,6 @@ namespace GerizimZZ.Clases
                 con.Close();
                 MessageBox.Show("Registro agregado con exito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         public void Modificar_Producto(int ID_codigoProducto, double Precio_producto, string NombreProducto, double PesoProducto, string CodigoBarra, string CodigoCatologo, int CantidadProducto, int CantidadMinima, string DescripcionProducto, int EstadoPRoducto, string Fechaingreso)
@@ -95,7 +93,6 @@ namespace GerizimZZ.Clases
                 MessageBox.Show("Registro modificado con exito", "Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
 
         public void Eliminar_Producto(int ID_codigoProducto)
         {

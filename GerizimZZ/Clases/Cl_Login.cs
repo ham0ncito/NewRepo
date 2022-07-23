@@ -4,10 +4,9 @@ namespace GerizimZZ.Clases
 {
     internal class Cl_Login
     {
-        SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+        private SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private string nombreUsuario { get; set; }
         private string contraseñaUsuario { get; set; }
-
 
         public bool iniciarSesion(string nombreUsuario, string contraseñaUsuario)
         {
@@ -33,10 +32,5 @@ namespace GerizimZZ.Clases
             con.Close();
             return entro;
         }
-
-
-
-
-
     }
 }
