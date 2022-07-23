@@ -10,7 +10,7 @@ namespace GerizimZZ
         private int x = 0;
         private double suma;
         private bool bandera = false;
-
+        bool creadas = false;
         private DataGridView dgView;
 
         public DetalleVenta()
@@ -87,6 +87,10 @@ namespace GerizimZZ
                 txtNumero.Clear();
                 txtDireccion.Clear();
                 txtCodigo.Clear();
+                                tablita.Columns.Clear();
+                tablita.Rows.Clear();
+                idlist.Clear();
+                cantidadlist.Clear();
 
                 Inicio Principal = Owner as Inicio;
                 Principal.IniciarFlowLayout();
@@ -164,6 +168,7 @@ namespace GerizimZZ
 
         public static DataTable tablita = new DataTable();
         public static List<string> idlist = new List<string>();
+        static public List<int> cantidadlist = new List<int>();
 
         public DataGridView DgView1 { get => dgView; set => dgView = value; }
 
@@ -183,49 +188,85 @@ namespace GerizimZZ
                 tablita.Columns.Add("Precio");
                 tablita.Columns.Add("Total");
             }
+            int contlista = 0;
             string comparacion = textc.Id;
+            int cantidad = int.Parse(textc.Cantidad);
             int cantidadcero = Int16.Parse(textc.Cantidad);
 
             idlist.Add(comparacion);
+            cantidadlist.Add(cantidad);
+            contlista += 1;
 
+
+            if (tablita.Rows.Count == 0)
             {
-                if (tablita.Rows.Count == 0)
+                tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
+            }
+            else
+            {
+                int estado = 0;
+                for (int i = 0; i < tablita.Rows.Count; i++)
+                {
+
+                    if (idlist[i] == textc.Id)
+                    {
+                        if (cantidadcero == 0)
+                        {
+                            tablita.Rows.RemoveAt(i);
+                            idlist.RemoveAt(i);
+                            cantidadlist.RemoveAt(i);
+                            estado = 1;
+                            break;
+                        }
+                        else
+                        {
+                            tablita.Rows.RemoveAt(i);
+                            tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
+                            idlist.RemoveAt(i);
+                            cantidadlist.RemoveAt(i);
+                            estado = 1;
+                            break;
+                        }
+                    }
+                    if (idlist[i] != textc.Id)
+                    {
+                        estado = 2;
+                    }
+                }
+                if (estado == 2)
                 {
                     tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
                 }
-                else
+
+
+                //string idrowborrar = "";
+                //for(int i = 0; i<tablita.Rows.Count; i++)
+                //{
+                //    if (cantidadlist[i] == 0)
+                //    {
+                //        idrowborrar = idlist[i];
+                //        break;
+                //    }
+                //}
+                //borrar:
+                //for(int i = 0; i<tablita.Rows.Count;i++)
+                //{
+                //    if (idlist[i] == idrowborrar)
+                //    {
+                //        tablita.Rows.RemoveAt(i);
+                //        idlist.RemoveAt(i);
+                //        cantidadlist.RemoveAt(i);
+                //        goto borrar;
+                //    }
+                //}
+
+                if (tablita.Rows.Count == 0)
                 {
-                    int estado = 0;
-                    for (int i = 0; i < tablita.Rows.Count; i++)
-                    {
-                        if (idlist[i] == textc.Id)
-                        {
-                            if (cantidadcero == 0)
-                            {
-                                tablita.Rows.RemoveAt(i);
-                                idlist.RemoveAt(i);
-                                estado = 1;
-                                break;
-                            }
-                            else
-                            {
-                                tablita.Rows.RemoveAt(i);
-                                tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
-                                idlist.RemoveAt(i);
-                                estado = 1;
-                                break;
-                            }
-                        }
-                        if (idlist[i] != textc.Id)
-                        {
-                            estado = 2;
-                        }
-                    }
-                    if (estado == 2)
-                    {
-                        tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
-                    }
+                    tablita.Columns.Clear();
+                    idlist.Clear();
+                    cantidadlist.Clear();
                 }
+
             }
         }
 
