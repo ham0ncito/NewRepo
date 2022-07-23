@@ -147,6 +147,7 @@
             this.txtID_cliente.Size = new System.Drawing.Size(171, 25);
             this.txtID_cliente.TabIndex = 7;
             this.txtID_cliente.TextChanged += new System.EventHandler(this.txtID_cliente_TextChanged);
+            this.txtID_cliente.Validating += new System.ComponentModel.CancelEventHandler(this.txtID_cliente_Validating);
             // 
             // txtprimerNombre
             // 

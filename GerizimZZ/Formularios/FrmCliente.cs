@@ -262,5 +262,21 @@ namespace GerizimZZ
                 errorProvider2apellido.SetError(txtsegundoApellido, null);
             }
         }
+
+        private void txtID_cliente_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex numid = new Regex(@"^[0-9]");
+            if(!numid.IsMatch(txtID_cliente.Text))
+            {
+                e.Cancel = true;
+                txtID_cliente.Focus();
+                errorProvidernumID.SetError(txtID_cliente, "Numero invalido");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvidernumID.SetError(txtID_cliente, null);
+            }
+        }
     }
 }
