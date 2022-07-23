@@ -15,7 +15,7 @@ namespace GerizimZZ
 
         public void infogrid(DataGridView grid)
         {
-            SqlCommand cm = new SqlCommand("select * from Repartidores ;", conec);
+            SqlCommand cm = new SqlCommand("select repartidores.ID_repartidores, repartidores.nombreRepartidor,repartidores.telefonoRepartidor,repartidores.ID_sucursal,pedidos.direccionEntrega,Pedidos.ID_factura From repartidores INNER JOIN pedidos ON repartidores.ID_repartidores = pedidos.ID_repartidores ;", conec);
             SqlDataAdapter da = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
 
