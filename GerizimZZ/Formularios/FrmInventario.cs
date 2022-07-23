@@ -47,7 +47,7 @@ namespace GerizimZZ
 
         private void txtID_codigoProducto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Regex rcod = new Regex(@"^\d$");
+            Regex rcod = new Regex(@"^(\d\d{0,1})$");
             if (!rcod.IsMatch(txtID_codigoProducto.Text))
             {
                 e.Cancel = true;
@@ -90,6 +90,22 @@ namespace GerizimZZ
             {
                 e.Cancel = false;
                 errorProviderCantidadpr.SetError(txtCantidadProducto, null);
+            }
+        }
+
+        private void txtCantidadMinima_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex rcantprmin = new Regex(@"^(\d\d{0,2})$");
+            if (!rcantprmin.IsMatch(txtCantidadMinima.Text))
+            {
+                e.Cancel = true;
+                txtCantidadMinima.Focus();
+                errorProvidercantMin.SetError(txtCantidadMinima, "Cantidad Invalida");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvidercantMin.SetError(txtCantidadMinima, null);
             }
         }
 

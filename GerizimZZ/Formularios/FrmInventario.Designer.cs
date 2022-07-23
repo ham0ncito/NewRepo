@@ -314,6 +314,7 @@
             this.txtCantidadMinima.Name = "txtCantidadMinima";
             this.txtCantidadMinima.Size = new System.Drawing.Size(118, 23);
             this.txtCantidadMinima.TabIndex = 53;
+            this.txtCantidadMinima.Validating += new System.ComponentModel.CancelEventHandler(this.txtCantidadMinima_Validating);
             // 
             // txtEstadoPRoducto
             // 
