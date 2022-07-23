@@ -66,6 +66,7 @@ namespace GerizimZZ
             this.button3 = new System.Windows.Forms.Button();
             this.clientedstBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NuevoCliente = new System.Windows.Forms.Button();
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
@@ -74,6 +75,7 @@ namespace GerizimZZ
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientedstBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -167,6 +169,7 @@ namespace GerizimZZ
             this.txtNumero.Size = new System.Drawing.Size(139, 25);
             this.txtNumero.TabIndex = 15;
             this.txtNumero.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.txtNumero.Validating += new System.ComponentModel.CancelEventHandler(this.txtNumero_Validating);
             // 
             // txtDireccion
             // 
@@ -412,6 +415,10 @@ namespace GerizimZZ
             this.NuevoCliente.UseVisualStyleBackColor = false;
             this.NuevoCliente.Click += new System.EventHandler(this.NuevoCliente_Click);
             // 
+            // errorProvider2
+            // 
+            this.errorProvider2.ContainerControl = this;
+            // 
             // DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -455,6 +462,7 @@ namespace GerizimZZ
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientedstBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -502,5 +510,6 @@ namespace GerizimZZ
         private Label label11;
         private TextBox txtCodigo;
         private Button NuevoCliente;
+        private ErrorProvider errorProvider2;
     }
 }

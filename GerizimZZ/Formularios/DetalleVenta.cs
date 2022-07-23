@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
+using System.Text.RegularExpressions;
 
 namespace GerizimZZ
 {
@@ -469,6 +470,25 @@ namespace GerizimZZ
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void txtNumero_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //textbox numero regular expression
+            Regex tboxnumerore = new Regex(@"^[0-9]{8}$");
+            
+            if(!tboxnumerore.IsMatch(txtNumero.Text))
+            {
+                e.Cancel = true;
+                txtNumero.Focus();
+                errorProvider2.SetError(txtNumero, "Numero de telefono invalido");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvider2.SetError(txtNumero, null);
+            }
+
         }
     }
 }
