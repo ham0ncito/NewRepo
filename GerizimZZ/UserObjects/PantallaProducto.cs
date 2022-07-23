@@ -12,13 +12,13 @@ namespace GerizimZZ
         private string codigobarra;
         private string textBox;
         public int cantidad = 0;
-
+        private byte[] imagen; 
         public DetalleVenta dgv = new DetalleVenta();
 
         public Producto()
         {
             InitializeComponent();
-            textBox1.Text = "0";
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace GerizimZZ
                 if (cantidad < Stockactual)
                 {
                     cantidad += 1;
-                    textBox1.Text = cantidad.ToString();
+                    comboBox1.Text = cantidad.ToString();
                     MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 DetalleVenta dgv = new DetalleVenta();
@@ -42,6 +42,11 @@ namespace GerizimZZ
 
         public void Producto_Load(object sender, EventArgs e)
         {
+            comboBox1.Text = "0";
+            for (int i = 1; i <= Stockactual; i++)
+            {
+                comboBox1.Items.Add(i.ToString());
+            }
         }
 
         public int Id
@@ -52,8 +57,8 @@ namespace GerizimZZ
 
         public string text
         {
-            get { return textBox1.Text; }
-            set { textBox1.Text = value; }
+            get { return comboBox1.Text; }
+            set { comboBox1.Text = value; }
         }
 
         public string DescripcionProducto
@@ -115,7 +120,7 @@ namespace GerizimZZ
             if (cantidad > 0)
             {
                 cantidad -= 1;
-                textBox1.Text = cantidad.ToString();
+                comboBox1.Text = cantidad.ToString();
                 MessageBox.Show("Cantidad reducida correctamente", "Resta correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             DetalleVenta dgv = new DetalleVenta();
@@ -135,9 +140,9 @@ namespace GerizimZZ
 
         public void verificar()
         {
-            if (textBox1.Text.Length > 0)
+            if (comboBox1.Text.Length > 0)
             {
-                cantidad = Convert.ToInt32(textBox1.Text);
+                cantidad = Convert.ToInt32(comboBox1.Text);
             }
             else
             {
@@ -148,16 +153,16 @@ namespace GerizimZZ
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             verificar();
-            if (!(String.IsNullOrEmpty(textBox1.Text)) && Convert.ToInt32(textBox1.Text) <= Convert.ToInt32(label3.Text))
+            if (!(String.IsNullOrEmpty(comboBox1.Text)) && Convert.ToInt32(comboBox1.Text) <= Convert.ToInt32(label3.Text))
             {
-                errorProvider1.SetError(textBox1, "");
-                if (Convert.ToInt32(textBox1.Text) > 0)
+                errorProvider1.SetError(comboBox1, "");
+                if (Convert.ToInt32(comboBox1.Text) > 0)
                 {
                     string precio = this.PrecioProducto;
                     textc.Id = this.Id.ToString();
                     textc.NombreProducto = this.NombreProducto;
 
-                    string cantidadtextbox = textBox1.Text.ToString();
+                    string cantidadtextbox = comboBox1.Text.ToString();
                     textc.Cantidad = cantidadtextbox;
                     textc.precio = this.PrecioProducto;
 
@@ -170,9 +175,9 @@ namespace GerizimZZ
             }
             else
             {
-                errorProvider1.SetError(textBox1, "Cantidad Ingresada excede el stock");
+                errorProvider1.SetError( comboBox1, "Cantidad Ingresada excede el stock");
 
-                textBox1.Text = label3.Text;
+                comboBox1.Text = label3.Text;
                 Thread.Sleep(1000);
             }
         }
@@ -183,6 +188,11 @@ namespace GerizimZZ
 
         private void label4_Click(object sender, EventArgs e)
         {
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

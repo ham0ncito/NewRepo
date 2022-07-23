@@ -79,7 +79,7 @@ namespace GerizimZZ.Clases
             }
         }
 
-        public void Modificar_Producto(int ID_codigoProducto, double Precio_producto, string NombreProducto, double PesoProducto, string CodigoBarra, string CodigoCatologo, int CantidadProducto, int CantidadMinima, string DescripcionProducto, int EstadoPRoducto, string Fechaingreso)
+        public void Modificar_Producto(int ID_codigoProducto, double Precio_producto, string NombreProducto, double PesoProducto, string CodigoBarra, string CodigoCatologo, int CantidadProducto, int CantidadMinima, string DescripcionProducto, int EstadoPRoducto)
         {
             DialogResult result = MessageBox.Show("Seguro que desea Modificar el producto?", "Modificacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
@@ -93,8 +93,7 @@ namespace GerizimZZ.Clases
                 CantidadProducto + "', cantidadMinima  = '" +
                 CantidadMinima + "', descripcionProducto  = '" +
                 DescripcionProducto + "', estadoPRoducto  = '" +
-                EstadoPRoducto + "', fechaingreso  = '" +
-                Fechaingreso + "' WHERE ID_codigoProducto = '" +
+                EstadoPRoducto + "' WHERE ID_codigoProducto = '" +
                 ID_codigoProducto + "'";
                 con.Open();
                 SqlCommand cmd = new SqlCommand(sql, con);

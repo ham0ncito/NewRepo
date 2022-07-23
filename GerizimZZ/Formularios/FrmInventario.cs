@@ -81,12 +81,12 @@ namespace GerizimZZ
                 SqlDataAdapter comando = new SqlDataAdapter();
                 string sql = "SELECT * FROM Producto";
                 comando.SelectCommand = new SqlCommand(sql, con);
-                dtProducto = Cl_Clientes.GetAll();
+                dtProducto = Cl_Inventario.GetAll();
                 dstProducto = new Productosdst();
                 dstProducto.Tables.Add(dtProducto);
                 dgvProducto.DataSource = dstProducto.Tables[0];
                 con.Close();
-                MessageBox.Show("Registro modificado con exito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
             }
         }
 
@@ -104,7 +104,7 @@ namespace GerizimZZ
                 estadoproducto = Convert.ToInt32(txtEstadoPRoducto.Text);
                 precio_producto = Convert.ToDouble(txtPrecio_producto.Text);
                 pesoproducto = Convert.ToDouble(txtPesoProducto.Text);
-                productos.Modificar_Producto(codigo, precio_producto, txtNombreProducto.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatologo.Text, cantidadproducto, cantidadminima, txtDescripcionProducto.Text, estadoproducto, txtFechaingreso.Text);
+                productos.Modificar_Producto(codigo, precio_producto, txtNombreProducto.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatologo.Text, cantidadproducto, cantidadminima, txtDescripcionProducto.Text, estadoproducto);
                 SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
                 SqlDataAdapter comando = new SqlDataAdapter();
                 string sql = "SELECT * FROM Producto";
