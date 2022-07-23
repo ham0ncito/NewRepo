@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             this.lblID_cliente = new System.Windows.Forms.Label();
             this.lblprimerNombre = new System.Windows.Forms.Label();
@@ -52,9 +53,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.LineaNegraEstetica = new System.Windows.Forms.PictureBox();
             this.LogoGerizim = new System.Windows.Forms.PictureBox();
+            this.errorProvidertelcli = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvidernumID = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1nombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2nombre = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1apellido = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2apellido = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidertelcli)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidernumID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1nombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2nombre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1apellido)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2apellido)).BeginInit();
             this.SuspendLayout();
             // 
             // lblID_cliente
@@ -174,6 +187,7 @@
             this.txtTelefono.Size = new System.Drawing.Size(171, 25);
             this.txtTelefono.TabIndex = 12;
             this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
+            this.txtTelefono.Validating += new System.ComponentModel.CancelEventHandler(this.txtTelefono_Validating);
             // 
             // txtdireccion
             // 
@@ -278,6 +292,30 @@
             this.LogoGerizim.TabIndex = 20;
             this.LogoGerizim.TabStop = false;
             // 
+            // errorProvidertelcli
+            // 
+            this.errorProvidertelcli.ContainerControl = this;
+            // 
+            // errorProvidernumID
+            // 
+            this.errorProvidernumID.ContainerControl = this;
+            // 
+            // errorProvider1nombre
+            // 
+            this.errorProvider1nombre.ContainerControl = this;
+            // 
+            // errorProvider2nombre
+            // 
+            this.errorProvider2nombre.ContainerControl = this;
+            // 
+            // errorProvider1apellido
+            // 
+            this.errorProvider1apellido.ContainerControl = this;
+            // 
+            // errorProvider2apellido
+            // 
+            this.errorProvider2apellido.ContainerControl = this;
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -318,6 +356,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidertelcli)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidernumID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1nombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2nombre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1apellido)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2apellido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -348,5 +392,11 @@
         private Label label3;
         private PictureBox LineaNegraEstetica;
         private PictureBox LogoGerizim;
+        private ErrorProvider errorProvidertelcli;
+        private ErrorProvider errorProvidernumID;
+        private ErrorProvider errorProvider1nombre;
+        private ErrorProvider errorProvider2nombre;
+        private ErrorProvider errorProvider1apellido;
+        private ErrorProvider errorProvider2apellido;
     }
 }

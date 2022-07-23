@@ -1,6 +1,7 @@
 ﻿using GerizimZZ.Clases;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace GerizimZZ
 {
@@ -181,6 +182,25 @@ namespace GerizimZZ
 
         private void lblprimerNombre_Click(object sender, EventArgs e)
         {
+        }
+
+        Regex tboxNombres = new Regex(@"^[a-z,.'-]+$");
+        private void txtTelefono_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex tboxnumerocli = new Regex(@"^[0-9]{8}$");
+
+            if (!tboxnumerocli.IsMatch(txtTelefono.Text))
+            {
+                e.Cancel = true;
+                txtTelefono.Focus();
+                errorProvidertelcli.SetError(txtTelefono, "Numero de telefono invalido");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvidertelcli.SetError(txtTelefono, null);
+            }
+
         }
     }
 }
