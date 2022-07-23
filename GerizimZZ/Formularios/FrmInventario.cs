@@ -77,6 +77,22 @@ namespace GerizimZZ
             }
         }
 
+        private void txtCantidadProducto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex rcantpr = new Regex(@"^(\d\d{0,2})$");
+            if(!rcantpr.IsMatch(txtCantidadProducto.Text))
+            {
+                e.Cancel= true;
+                txtCantidadProducto.Focus();
+                errorProviderCantidadpr.SetError(txtCantidadProducto, "Cantidad Invalida");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProviderCantidadpr.SetError(txtCantidadProducto, null);
+            }
+        }
+
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             dstProducto.Tables[0].DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "ID_codigoProducto", txtBuscar.Text) + " OR " +

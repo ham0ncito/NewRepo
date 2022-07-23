@@ -63,11 +63,15 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.errorProvidercodigo = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderprPrecio = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCantidadpr = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvidercantMin = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidercodigo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderprPrecio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCantidadpr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidercantMin)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProducto
@@ -301,6 +305,7 @@
             this.txtCantidadProducto.Name = "txtCantidadProducto";
             this.txtCantidadProducto.Size = new System.Drawing.Size(118, 23);
             this.txtCantidadProducto.TabIndex = 52;
+            this.txtCantidadProducto.Validating += new System.ComponentModel.CancelEventHandler(this.txtCantidadProducto_Validating);
             // 
             // txtCantidadMinima
             // 
@@ -367,6 +372,14 @@
             // 
             this.errorProviderprPrecio.ContainerControl = this;
             // 
+            // errorProviderCantidadpr
+            // 
+            this.errorProviderCantidadpr.ContainerControl = this;
+            // 
+            // errorProvidercantMin
+            // 
+            this.errorProvidercantMin.ContainerControl = this;
+            // 
             // FrmInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -413,6 +426,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.LogoGerizim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidercodigo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderprPrecio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCantidadpr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvidercantMin)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -452,5 +467,7 @@
         private Button btnEliminar;
         private ErrorProvider errorProvidercodigo;
         private ErrorProvider errorProviderprPrecio;
+        private ErrorProvider errorProviderCantidadpr;
+        private ErrorProvider errorProvidercantMin;
     }
 }
