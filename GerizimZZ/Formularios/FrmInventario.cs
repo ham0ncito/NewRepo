@@ -2,6 +2,7 @@
 using GerizimZZ.Datasets;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace GerizimZZ
 {
@@ -41,6 +42,22 @@ namespace GerizimZZ
                 txtDescripcionProducto.Text = item.Cells[8].Value.ToString();
                 txtEstadoPRoducto.Text = item.Cells[9].Value.ToString();
                 txtFechaingreso.Text = item.Cells[10].Value.ToString();
+            }
+        }
+
+        private void txtID_codigoProducto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex rcod = new Regex(@"^\d$");
+            if(!rcod.IsMatch(txtID_codigoProducto.Text))
+            {
+                e.Cancel = true;
+                txtID_codigoProducto.Focus();
+                errorProvidercodigo.SetError(txtID_codigoProducto, "Codigo invalido");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvidercodigo.SetError(txtID_codigoProducto, null);
             }
         }
 
