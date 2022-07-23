@@ -34,16 +34,11 @@ namespace GerizimZZ
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DetalleVenta));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtFactura = new System.Windows.Forms.TextBox();
             this.Imprimir = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.cmbPago = new System.Windows.Forms.ComboBox();
             this.delivery = new System.Windows.Forms.CheckBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.facturaLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -56,16 +51,24 @@ namespace GerizimZZ
             this.lblFecha = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblCodigoCliente = new System.Windows.Forms.Label();
+            this.lblCodCliente = new System.Windows.Forms.Label();
             this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnNuevaDireccion = new System.Windows.Forms.Button();
+            this.btnNuevoTelefono = new System.Windows.Forms.Button();
+            this.cmbNumero = new System.Windows.Forms.ComboBox();
+            this.cmbDireccion = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.clientedstBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NuevoCliente = new System.Windows.Forms.Button();
+            this.lblNumeroFactura = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgDetalleVenta)).BeginInit();
@@ -74,15 +77,17 @@ namespace GerizimZZ
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientedstBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = global::GerizimZZ.Properties.Resources.logoComprimido;
-            this.pictureBox1.Location = new System.Drawing.Point(290, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(240, 87);
+            this.pictureBox1.Size = new System.Drawing.Size(1057, 87);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -91,33 +96,14 @@ namespace GerizimZZ
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox2.Image = global::GerizimZZ.Properties.Resources.substract;
-            this.pictureBox2.Location = new System.Drawing.Point(25, 96);
+            this.pictureBox2.Location = new System.Drawing.Point(0, 87);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(774, 23);
+            this.pictureBox2.Size = new System.Drawing.Size(1057, 23);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(335, 122);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 27);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Detalles de la venta";
-            // 
-            // txtFactura
-            // 
-            this.txtFactura.Location = new System.Drawing.Point(171, 39);
-            this.txtFactura.Name = "txtFactura";
-            this.txtFactura.ReadOnly = true;
-            this.txtFactura.Size = new System.Drawing.Size(125, 25);
-            this.txtFactura.TabIndex = 4;
-            this.txtFactura.TextChanged += new System.EventHandler(this.txtFactura_TextChanged);
             // 
             // Imprimir
             // 
@@ -142,7 +128,7 @@ namespace GerizimZZ
             "Efectivo",
             "Tarjeta ",
             "Credito"});
-            this.cmbPago.Location = new System.Drawing.Point(171, 83);
+            this.cmbPago.Location = new System.Drawing.Point(146, 33);
             this.cmbPago.Name = "cmbPago";
             this.cmbPago.Size = new System.Drawing.Size(121, 26);
             this.cmbPago.TabIndex = 10;
@@ -160,40 +146,16 @@ namespace GerizimZZ
             this.delivery.UseVisualStyleBackColor = true;
             this.delivery.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // txtNumero
+            // facturaLbl
             // 
-            this.txtNumero.Location = new System.Drawing.Point(208, 25);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(139, 25);
-            this.txtNumero.TabIndex = 16;
-            this.txtNumero.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // txtDireccion
-            // 
-            this.txtDireccion.Location = new System.Drawing.Point(208, 60);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(268, 25);
-            this.txtDireccion.TabIndex = 15;
-            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Location = new System.Drawing.Point(87, 286);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(125, 25);
-            this.txtTotal.TabIndex = 17;
-            this.txtTotal.Text = "L 00";
-            this.txtTotal.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 18);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Numero Factura";
+            this.facturaLbl.AutoSize = true;
+            this.facturaLbl.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.facturaLbl.ForeColor = System.Drawing.Color.DarkBlue;
+            this.facturaLbl.Location = new System.Drawing.Point(161, 131);
+            this.facturaLbl.Name = "facturaLbl";
+            this.facturaLbl.Size = new System.Drawing.Size(98, 24);
+            this.facturaLbl.TabIndex = 18;
+            this.facturaLbl.Text = "Factura #";
             // 
             // label5
             // 
@@ -207,7 +169,7 @@ namespace GerizimZZ
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 91);
+            this.label6.Location = new System.Drawing.Point(14, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 18);
             this.label6.TabIndex = 22;
@@ -217,9 +179,11 @@ namespace GerizimZZ
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 289);
+            this.label7.Font = new System.Drawing.Font("Garamond", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.Green;
+            this.label7.Location = new System.Drawing.Point(30, 456);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(42, 18);
+            this.label7.Size = new System.Drawing.Size(68, 27);
             this.label7.TabIndex = 23;
             this.label7.Text = "Total";
             // 
@@ -227,9 +191,11 @@ namespace GerizimZZ
             // 
             this.btnCancelarVenta.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelarVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCancelarVenta.Location = new System.Drawing.Point(171, 583);
+            this.btnCancelarVenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCancelarVenta.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.btnCancelarVenta.Location = new System.Drawing.Point(0, 68);
             this.btnCancelarVenta.Name = "btnCancelarVenta";
-            this.btnCancelarVenta.Size = new System.Drawing.Size(140, 45);
+            this.btnCancelarVenta.Size = new System.Drawing.Size(126, 69);
             this.btnCancelarVenta.TabIndex = 26;
             this.btnCancelarVenta.Text = "Cancelar Venta";
             this.btnCancelarVenta.UseVisualStyleBackColor = false;
@@ -239,9 +205,10 @@ namespace GerizimZZ
             // 
             this.btnGenerarVenta.BackColor = System.Drawing.Color.Transparent;
             this.btnGenerarVenta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnGenerarVenta.Location = new System.Drawing.Point(320, 583);
+            this.btnGenerarVenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGenerarVenta.Location = new System.Drawing.Point(0, 137);
             this.btnGenerarVenta.Name = "btnGenerarVenta";
-            this.btnGenerarVenta.Size = new System.Drawing.Size(140, 45);
+            this.btnGenerarVenta.Size = new System.Drawing.Size(126, 69);
             this.btnGenerarVenta.TabIndex = 27;
             this.btnGenerarVenta.Text = "Generar Venta";
             this.btnGenerarVenta.UseVisualStyleBackColor = false;
@@ -250,28 +217,29 @@ namespace GerizimZZ
             // dgDetalleVenta
             // 
             this.dgDetalleVenta.AllowUserToAddRows = false;
-            this.dgDetalleVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgDetalleVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgDetalleVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgDetalleVenta.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dgDetalleVenta.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDetalleVenta.Location = new System.Drawing.Point(25, 389);
+            this.dgDetalleVenta.Location = new System.Drawing.Point(161, 413);
             this.dgDetalleVenta.Name = "dgDetalleVenta";
             this.dgDetalleVenta.RowTemplate.Height = 25;
-            this.dgDetalleVenta.Size = new System.Drawing.Size(774, 183);
+            this.dgDetalleVenta.Size = new System.Drawing.Size(861, 241);
             this.dgDetalleVenta.TabIndex = 28;
             this.dgDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDetalleVenta_CellContentClick_1);
             // 
             // productosBindingSource
             // 
-            this.productosBindingSource.DataSource = typeof(Productos);
+            this.productosBindingSource.DataSource = typeof(GerizimZZ.Clases.Productos);
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.Transparent;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.Location = new System.Drawing.Point(25, 583);
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.Location = new System.Drawing.Point(0, 273);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 45);
+            this.button4.Size = new System.Drawing.Size(126, 79);
             this.button4.TabIndex = 32;
             this.button4.Text = "Escanear Codigo";
             this.button4.UseVisualStyleBackColor = false;
@@ -281,7 +249,7 @@ namespace GerizimZZ
             // 
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblHora.Location = new System.Drawing.Point(55, 53);
+            this.lblHora.Location = new System.Drawing.Point(204, 56);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(43, 18);
             this.lblHora.TabIndex = 33;
@@ -292,7 +260,7 @@ namespace GerizimZZ
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFecha.Location = new System.Drawing.Point(55, 26);
+            this.lblFecha.Location = new System.Drawing.Point(204, 27);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(55, 18);
             this.lblFecha.TabIndex = 34;
@@ -305,39 +273,40 @@ namespace GerizimZZ
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.lblCodigoCliente);
+            this.groupBox1.Controls.Add(this.lblCodCliente);
             this.groupBox1.Controls.Add(this.cmbCliente);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtFactura);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.cmbPago);
-            this.groupBox1.Location = new System.Drawing.Point(34, 152);
+            this.groupBox1.Location = new System.Drawing.Point(161, 178);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(748, 124);
+            this.groupBox1.Size = new System.Drawing.Size(847, 113);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese todos los datos";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // txtCodigo
+            // lblCodigoCliente
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(428, 83);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.ReadOnly = true;
-            this.txtCodigo.Size = new System.Drawing.Size(113, 25);
-            this.txtCodigo.TabIndex = 25;
-            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.lblCodigoCliente.AutoSize = true;
+            this.lblCodigoCliente.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCodigoCliente.Location = new System.Drawing.Point(461, 71);
+            this.lblCodigoCliente.Name = "lblCodigoCliente";
+            this.lblCodigoCliente.Size = new System.Drawing.Size(24, 18);
+            this.lblCodigoCliente.TabIndex = 25;
+            this.lblCodigoCliente.Text = "00";
+            this.lblCodigoCliente.Visible = false;
             // 
-            // label11
+            // lblCodCliente
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(320, 85);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 18);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Codigo Cliente";
+            this.lblCodCliente.AutoSize = true;
+            this.lblCodCliente.Location = new System.Drawing.Point(329, 71);
+            this.lblCodCliente.Name = "lblCodCliente";
+            this.lblCodCliente.Size = new System.Drawing.Size(102, 18);
+            this.lblCodCliente.TabIndex = 24;
+            this.lblCodCliente.Text = "Codigo Cliente";
+            this.lblCodCliente.Visible = false;
             // 
             // cmbCliente
             // 
@@ -354,17 +323,54 @@ namespace GerizimZZ
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnNuevaDireccion);
+            this.groupBox2.Controls.Add(this.btnNuevoTelefono);
+            this.groupBox2.Controls.Add(this.cmbNumero);
+            this.groupBox2.Controls.Add(this.cmbDireccion);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.txtDireccion);
-            this.groupBox2.Controls.Add(this.txtNumero);
             this.groupBox2.Controls.Add(this.delivery);
-            this.groupBox2.Location = new System.Drawing.Point(278, 282);
+            this.groupBox2.Location = new System.Drawing.Point(161, 297);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(504, 101);
+            this.groupBox2.Size = new System.Drawing.Size(847, 110);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion De Envio";
+            // 
+            // btnNuevaDireccion
+            // 
+            this.btnNuevaDireccion.Location = new System.Drawing.Point(599, 60);
+            this.btnNuevaDireccion.Name = "btnNuevaDireccion";
+            this.btnNuevaDireccion.Size = new System.Drawing.Size(126, 35);
+            this.btnNuevaDireccion.TabIndex = 22;
+            this.btnNuevaDireccion.Text = "Otra direccion";
+            this.btnNuevaDireccion.UseVisualStyleBackColor = true;
+            // 
+            // btnNuevoTelefono
+            // 
+            this.btnNuevoTelefono.Location = new System.Drawing.Point(599, 19);
+            this.btnNuevoTelefono.Name = "btnNuevoTelefono";
+            this.btnNuevoTelefono.Size = new System.Drawing.Size(126, 35);
+            this.btnNuevoTelefono.TabIndex = 21;
+            this.btnNuevoTelefono.Text = "Otro Telefono";
+            this.btnNuevoTelefono.UseVisualStyleBackColor = true;
+            this.btnNuevoTelefono.Click += new System.EventHandler(this.btnNuevoTelefono_Click);
+            // 
+            // cmbNumero
+            // 
+            this.cmbNumero.FormattingEnabled = true;
+            this.cmbNumero.Location = new System.Drawing.Point(221, 25);
+            this.cmbNumero.Name = "cmbNumero";
+            this.cmbNumero.Size = new System.Drawing.Size(178, 26);
+            this.cmbNumero.TabIndex = 20;
+            // 
+            // cmbDireccion
+            // 
+            this.cmbDireccion.FormattingEnabled = true;
+            this.cmbDireccion.Location = new System.Drawing.Point(221, 60);
+            this.cmbDireccion.Name = "cmbDireccion";
+            this.cmbDireccion.Size = new System.Drawing.Size(306, 26);
+            this.cmbDireccion.TabIndex = 19;
             // 
             // label10
             // 
@@ -387,9 +393,10 @@ namespace GerizimZZ
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(73, 331);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.Location = new System.Drawing.Point(0, 206);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 46);
+            this.button3.Size = new System.Drawing.Size(126, 67);
             this.button3.TabIndex = 37;
             this.button3.Text = "Actualizar Informacion";
             this.button3.UseVisualStyleBackColor = true;
@@ -404,31 +411,75 @@ namespace GerizimZZ
             // 
             this.NuevoCliente.BackColor = System.Drawing.Color.Transparent;
             this.NuevoCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.NuevoCliente.Location = new System.Drawing.Point(475, 583);
+            this.NuevoCliente.Dock = System.Windows.Forms.DockStyle.Top;
+            this.NuevoCliente.Location = new System.Drawing.Point(0, 0);
             this.NuevoCliente.Name = "NuevoCliente";
-            this.NuevoCliente.Size = new System.Drawing.Size(140, 45);
+            this.NuevoCliente.Size = new System.Drawing.Size(126, 68);
             this.NuevoCliente.TabIndex = 38;
             this.NuevoCliente.Text = "Nuevo Cliente";
             this.NuevoCliente.UseVisualStyleBackColor = false;
             this.NuevoCliente.Click += new System.EventHandler(this.NuevoCliente_Click);
+            // 
+            // lblNumeroFactura
+            // 
+            this.lblNumeroFactura.AutoSize = true;
+            this.lblNumeroFactura.Font = new System.Drawing.Font("Garamond", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNumeroFactura.ForeColor = System.Drawing.Color.DarkBlue;
+            this.lblNumeroFactura.Location = new System.Drawing.Point(278, 131);
+            this.lblNumeroFactura.Name = "lblNumeroFactura";
+            this.lblNumeroFactura.Size = new System.Drawing.Size(30, 24);
+            this.lblNumeroFactura.TabIndex = 39;
+            this.lblNumeroFactura.Text = "00";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.Controls.Add(this.lblTotal);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnGenerarVenta);
+            this.panel1.Controls.Add(this.btnCancelarVenta);
+            this.panel1.Controls.Add(this.NuevoCliente);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 110);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(126, 578);
+            this.panel1.TabIndex = 40;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblTotal.ForeColor = System.Drawing.Color.MediumBlue;
+            this.lblTotal.Location = new System.Drawing.Point(3, 496);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(120, 48);
+            this.lblTotal.TabIndex = 41;
+            this.lblTotal.Text = "L 00";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Garamond", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(12, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 21);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Fecha y hora actuales";
             // 
             // DetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(823, 640);
-            this.Controls.Add(this.NuevoCliente);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.lblHora);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.dgDetalleVenta);
-            this.Controls.Add(this.btnGenerarVenta);
-            this.Controls.Add(this.btnCancelarVenta);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtTotal);
+            this.ClientSize = new System.Drawing.Size(1057, 688);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblNumeroFactura);
+            this.Controls.Add(this.lblFecha);
+            this.Controls.Add(this.facturaLbl);
+            this.Controls.Add(this.lblHora);
+            this.Controls.Add(this.dgDetalleVenta);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -455,6 +506,8 @@ namespace GerizimZZ
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientedstBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,15 +517,10 @@ namespace GerizimZZ
 
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private Label label1;
-        private TextBox txtFactura;
         private PrintPreviewDialog printPreviewDialog1;
         private ComboBox cmbPago;
         private CheckBox delivery;
-        private TextBox txtNumero;
-        private TextBox txtDireccion;
-        private TextBox txtTotal;
-        private Label label2;
+        private Label facturaLbl;
         private Label label5;
         private Label label6;
         private Label label7;
@@ -499,8 +547,16 @@ namespace GerizimZZ
         private DataGridViewTextBoxColumn Column5;
         private ComboBox cmbCliente;
         private BindingSource clientedstBindingSource;
-        private Label label11;
-        private TextBox txtCodigo;
+        private Label lblCodCliente;
         private Button NuevoCliente;
+        private Label lblNumeroFactura;
+        private Label lblCodigoCliente;
+        private Panel panel1;
+        private Label lblTotal;
+        private ComboBox cmbDireccion;
+        private ComboBox cmbNumero;
+        private Button btnNuevoTelefono;
+        private Button btnNuevaDireccion;
+        private Label label1;
     }
 }

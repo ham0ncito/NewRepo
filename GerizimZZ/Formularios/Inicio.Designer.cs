@@ -113,7 +113,7 @@
             this.btnBodega.FlatAppearance.BorderSize = 0;
             this.btnBodega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBodega.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBodega.Location = new System.Drawing.Point(1106, 58);
+            this.btnBodega.Location = new System.Drawing.Point(1115, 44);
             this.btnBodega.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBodega.Name = "btnBodega";
             this.btnBodega.Size = new System.Drawing.Size(48, 45);
@@ -130,7 +130,7 @@
             this.btnDetalleVenta.FlatAppearance.BorderSize = 0;
             this.btnDetalleVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetalleVenta.ForeColor = System.Drawing.Color.Transparent;
-            this.btnDetalleVenta.Location = new System.Drawing.Point(1194, 58);
+            this.btnDetalleVenta.Location = new System.Drawing.Point(1203, 44);
             this.btnDetalleVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDetalleVenta.Name = "btnDetalleVenta";
             this.btnDetalleVenta.Size = new System.Drawing.Size(48, 45);
@@ -142,12 +142,12 @@
             // 
             // btnBusqueda
             // 
-            this.btnBusqueda.BackColor = System.Drawing.Color.Transparent;
+            this.btnBusqueda.BackColor = System.Drawing.Color.Ivory;
             this.btnBusqueda.BackgroundImage = global::GerizimZZ.Properties.Resources.search;
-            this.btnBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnBusqueda.Location = new System.Drawing.Point(1203, 140);
+            this.btnBusqueda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnBusqueda.Location = new System.Drawing.Point(1203, 141);
             this.btnBusqueda.Name = "btnBusqueda";
-            this.btnBusqueda.Size = new System.Drawing.Size(30, 39);
+            this.btnBusqueda.Size = new System.Drawing.Size(35, 39);
             this.btnBusqueda.TabIndex = 7;
             this.btnBusqueda.UseVisualStyleBackColor = false;
             this.btnBusqueda.Click += new System.EventHandler(this.button1_Click);
@@ -161,7 +161,7 @@
             this.btnMenuIzquierdo.FlatAppearance.BorderSize = 0;
             this.btnMenuIzquierdo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMenuIzquierdo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnMenuIzquierdo.Location = new System.Drawing.Point(1272, 58);
+            this.btnMenuIzquierdo.Location = new System.Drawing.Point(1281, 44);
             this.btnMenuIzquierdo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMenuIzquierdo.Name = "btnMenuIzquierdo";
             this.btnMenuIzquierdo.Size = new System.Drawing.Size(51, 45);
@@ -217,6 +217,7 @@
             this.barraBusqueda.Name = "barraBusqueda";
             this.barraBusqueda.Size = new System.Drawing.Size(956, 39);
             this.barraBusqueda.TabIndex = 1;
+            this.barraBusqueda.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.barraBusqueda.TextChanged += new System.EventHandler(this.BarraBusqueda_TextChanged);
             // 
             // Contenedor

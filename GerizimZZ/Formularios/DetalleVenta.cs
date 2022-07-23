@@ -81,12 +81,12 @@ namespace GerizimZZ
             {
                 dgDetalleVenta.Columns.Clear();
                 this.dgDetalleVenta.DataSource = null;
-                txtTotal.Text = "L 00";
+                lblTotal.Text = "L 00";
                 cmbCliente.Text = "";
                 delivery.Checked = false;
-                txtNumero.Clear();
-                txtDireccion.Clear();
-                txtCodigo.Clear();
+                cmbNumero.Items.Clear();
+                cmbDireccion.Items.Clear();
+                lblCodigoCliente.Text = "";
 
                 Inicio Principal = Owner as Inicio;
                 Principal.IniciarFlowLayout();
@@ -104,7 +104,7 @@ namespace GerizimZZ
             datagrid();
             verificacion();
             if (string.IsNullOrEmpty(cmbCliente.Text) == true ||
-                string.IsNullOrEmpty(txtFactura.Text) == true || string.IsNullOrEmpty(cmbPago.Text) == true || txtTotal.Text == "L 00" || dgDetalleVenta.Columns.Count == 0)
+                string.IsNullOrEmpty(lblNumeroFactura.Text) == true || string.IsNullOrEmpty(cmbPago.Text) == true || lblTotal.Text == "L 00" || dgDetalleVenta.Columns.Count == 0)
             {
                 errorProvider1.SetError(groupBox1, "Ingrese todos los campos");
                 errorProvider1.SetError(dgDetalleVenta, "Ingrese todos los campos");
@@ -119,7 +119,7 @@ namespace GerizimZZ
                     conexion.Open();
                     try
                     {
-                        SqlCommand comando = new SqlCommand("exec ventaNueva '" + txtFactura.Text + "', '" + txtCodigo.Text + "','1','1'", conexion);
+                        SqlCommand comando = new SqlCommand("exec ventaNueva '" + lblNumeroFactura.Text + "', '" + lblCodigoCliente.Text + "','1','1'", conexion);
                         comando.ExecuteNonQuery();
                     }
                     catch (SqlException x)
@@ -128,14 +128,14 @@ namespace GerizimZZ
                     }
                     foreach (DataGridViewRow row in dgDetalleVenta.Rows)
                     {
-                        SqlCommand comando = new SqlCommand("exec detalleVenta '" + txtFactura.Text.ToString() + "','" + row.Cells[2].Value + "' , '" + row.Cells[3].Value + "' , '" + row.Cells[0].Value + "';", conexion);
+                        SqlCommand comando = new SqlCommand("exec detalleVenta '" + lblNumeroFactura.Text.ToString() + "','" + row.Cells[2].Value + "' , '" + row.Cells[3].Value + "' , '" + row.Cells[0].Value + "';", conexion);
                         comando.ExecuteNonQuery();
                     }
                     if (delivery.Checked)
                     {
                         Random rand = new Random();
                         int id = rand.Next(1, 5);
-                        SqlCommand comando = new SqlCommand("exec nuevoPedido '" + txtFactura.Text + "','" + id.ToString() + "', '" + txtDireccion.Text + "', ' " + txtNumero.Text + "';", conexion);
+                        SqlCommand comando = new SqlCommand("exec nuevoPedido '" + lblNumeroFactura.Text + "','" + id.ToString() + "', '" + cmbDireccion.Text + "', ' " + cmbNumero.Text + "';", conexion);
                         comando.ExecuteNonQuery();
                     }
                     conexion.Close();
@@ -148,7 +148,7 @@ namespace GerizimZZ
                 try
                 {
                     PrinterSettings ps = new PrinterSettings();
-                    MessageBox.Show("Factura " + txtFactura.Text + " en impresion", "Venta realizada");
+                    MessageBox.Show("Factura " + lblNumeroFactura.Text + " en impresion", "Venta realizada");
                     Imprimir.PrinterSettings = ps;
                     Imprimir.PrintPage += printDocument1_PrintPage;
                     Imprimir.Print();
@@ -242,13 +242,13 @@ namespace GerizimZZ
             SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
 
             SqlCommand comando = new SqlCommand("Use Gerizim; select MAX(ID_factura) from Factura ;", conexion);
-            comando.Parameters.AddWithValue("ID", txtFactura.Text);
+            comando.Parameters.AddWithValue("ID", lblNumeroFactura.Text);
             conexion.Open();
             SqlDataReader registro = comando.ExecuteReader();
             if (registro.Read())
             {
                 numeroFactura = Convert.ToInt32(registro[0]) + 1;
-                txtFactura.Text = numeroFactura.ToString();
+                lblNumeroFactura.Text = numeroFactura.ToString();
             }
         }
 
@@ -284,7 +284,7 @@ namespace GerizimZZ
             e.Graphics.DrawString(" Multiservicios Gerizim  ", Titulo, Brushes.Black, new RectangleF(250, 220, 600, 60));
             e.Graphics.DrawString(" Barrio Paz Barahona  1 Calle  2 Avenida  22505876 ", fuente, Brushes.Black, new RectangleF(230, 280, 1000, 100));
             e.Graphics.DrawString(String.Concat("   " + lblFecha.Text + "   " + lblHora.Text), fuente, Brushes.Black, new RectangleF(280, 300, 1000, 100));
-            e.Graphics.DrawString(String.Concat("Factura #  " + txtFactura.Text), fuente, Brushes.Black, new RectangleF(360, 320, 1000, 100));
+            e.Graphics.DrawString(String.Concat("Factura #  " + lblNumeroFactura.Text), fuente, Brushes.Black, new RectangleF(360, 320, 1000, 100));
             e.Graphics.DrawString(String.Concat("Cliente  " + cmbCliente.Text), fuente, Brushes.Black, new RectangleF(200, 380, 1000, 100));
             e.Graphics.DrawString("Listado de productos: ", fuente, Brushes.Black, new RectangleF(200, 420, 1000, 100));
             foreach (DataGridViewRow row in dgDetalleVenta.Rows)
@@ -296,10 +296,10 @@ namespace GerizimZZ
             if (delivery.Checked)
             {
                 e.Graphics.DrawString("Su costo de envio es de L100.00 ", fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
-                e.Graphics.DrawString("Se le llamará al numero " + txtNumero.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
-                e.Graphics.DrawString("Su direccion de envio es : " + txtDireccion.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
+                e.Graphics.DrawString("Se le llamará al numero " + cmbNumero.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
+                e.Graphics.DrawString("Su direccion de envio es : " + cmbDireccion.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
             }
-            e.Graphics.DrawString("Su total es de : " + txtTotal.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
+            e.Graphics.DrawString("Su total es de : " + lblTotal.Text, fuente, Brushes.Black, new RectangleF(200, ubicacion += 40, 1000, 100));
             e.Graphics.DrawString("Gracias por confiar en nosotros", fuente, Brushes.Black, new RectangleF(320, ubicacion += 40, 1000, 100));
         }
 
@@ -325,7 +325,7 @@ namespace GerizimZZ
             {
                 suma += Convert.ToInt32(row.Cells["Total"].Value);
             }
-            txtTotal.Text = "L. " + suma.ToString();
+            lblTotal.Text = "L. " + suma.ToString();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -342,17 +342,17 @@ namespace GerizimZZ
 
         private void verificacion()
         {
-            if (delivery.Checked && !string.IsNullOrEmpty(txtNumero.Text) && !string.IsNullOrEmpty(txtDireccion.Text) && !bandera)
+            if (delivery.Checked && !string.IsNullOrEmpty(cmbNumero.Text) && !string.IsNullOrEmpty(cmbDireccion.Text) && !bandera)
             {
                 bandera = true;
                 errorProvider1.SetError(groupBox2, "");
                 suma += 100;
             }
-            else if (!delivery.Checked && (!string.IsNullOrEmpty(txtNumero.Text) || !string.IsNullOrEmpty(txtDireccion.Text)))
+            else if (!delivery.Checked && (!string.IsNullOrEmpty(cmbNumero.Text) || !string.IsNullOrEmpty(cmbDireccion.Text)))
             {
                 errorProvider1.SetError(groupBox2, "Ingrese todos los valores si hará un pedido");
             }
-            else if (delivery.Checked && (string.IsNullOrEmpty(txtNumero.Text) || string.IsNullOrEmpty(txtDireccion.Text)))
+            else if (delivery.Checked && (string.IsNullOrEmpty(cmbNumero.Text) || string.IsNullOrEmpty(cmbDireccion.Text)))
             {
                 errorProvider1.SetError(groupBox2, "Ingrese todos los valores si hará un pedido");
             }
@@ -360,7 +360,7 @@ namespace GerizimZZ
             {
                 errorProvider1.SetError(groupBox2, "");
             }
-            txtTotal.Text = "L. " + suma.ToString();
+            lblTotal.Text = "L. " + suma.ToString();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -379,6 +379,8 @@ namespace GerizimZZ
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
             buscarId();
+            lblCodigoCliente.Visible = true;
+            lblCodCliente.Visible = true; 
         }
 
         public void buscarId()
@@ -391,7 +393,13 @@ namespace GerizimZZ
                 SqlDataReader registro = comando.ExecuteReader();
                 if (registro.Read())
                 {
-                    txtCodigo.Text = registro[0].ToString();
+                    lblCodigoCliente.Text = registro[0].ToString();
+                    cmbNumero.Items.Add(registro["telefono"].ToString());
+                    cmbDireccion.Items.Add(registro["direccion"].ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Tuvimos un problema buscando la informacion del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
                 }
                 conexion.Close();
             }
@@ -428,6 +436,11 @@ namespace GerizimZZ
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void btnNuevoTelefono_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
