@@ -44,7 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\.editorconfig" Link="Otros\.editorconfig" />
+    <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,7 +56,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Datasets\Productosdst.Designer.cs">
+    <Compile Update="Productosdst.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Productosdst.xsd</DependentUpon>
@@ -76,14 +76,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Datasets\Productosdst.xsd">
+    <None Update="Productosdst.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Productosdst.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Resources\NewFolder\" />
   </ItemGroup>
 
 </Project>
