@@ -42,11 +42,12 @@ namespace GerizimZZ
 
         public void Producto_Load(object sender, EventArgs e)
         {
-            comboBox1.Text = "0";
-            for (int i = 1; i <= Stockactual; i++)
+            
+            for (int i = 0; i <= Stockactual; i++)
             {
                 comboBox1.Items.Add(i.ToString());
             }
+            comboBox1.Text = "0";
         }
 
         public int Id
@@ -106,17 +107,20 @@ namespace GerizimZZ
             get { return ImagenProducto.Image; }
             set { ImagenProducto.Image = value; }
         }
+        public Label genero
+        {
+            get { return lblGenero; }
+            set { lblGenero = value; }
+        }
+        public Label Aroma
+        {
+            get { return lblAroma; }
+            set { lblAroma = value; }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (estado == "2")
-            {
-                estado = "1";
-            }
-            else
-            {
-                estado = "2";
-            }
+           
         }
 
         private void button3_Click(object sender, EventArgs e)

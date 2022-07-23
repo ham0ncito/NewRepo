@@ -14,7 +14,9 @@ namespace GerizimZZ.Clases
         private string descripcion_producto;
         private int estado_producto;
         private int existencia;
-        private byte[] imagen; 
+        private byte[] imagen;
+        private int genero; 
+            private int aroma;
 
         public int Idproducto { get => idproducto; set => idproducto = value; }
         public decimal Precio_producto { get => precio_producto; set => precio_producto = value; }
@@ -24,6 +26,8 @@ namespace GerizimZZ.Clases
         public int Estado_producto { get => estado_producto; set => estado_producto = value; }
         public int Existencia { get => existencia; set => existencia = value; }
         public byte[] Imagen { get => imagen; set => imagen = value; }
+        public int Genero { get => genero; set => genero = value; }
+        public int Aroma { get => aroma; set => aroma = value; }
 
         public void llenado(FlowLayoutPanel Contenedor, string consulta)
         {
@@ -43,6 +47,8 @@ namespace GerizimZZ.Clases
                     descripcion_producto = reader[8].ToString();
                     estado_producto = Convert.ToInt32(reader[9]);
                     existencia = Convert.ToInt32(reader[6]);
+                    genero = Convert.ToInt32(reader["genero"]);
+                    aroma = Convert.ToInt32(reader["codigoTipoProducto"]);
                     Imagen = ((byte[])reader["imagen"]); 
 
                     Producto sd = new Producto();
@@ -53,6 +59,60 @@ namespace GerizimZZ.Clases
                     sd.estado = estado_producto.ToString();
                     sd.Stockactual = existencia;
                     sd.Codigobarra = codigoBarra_producto;
+                    switch(genero)
+                    {
+                        case 1: sd.genero.Text = "Para el";
+                            sd.genero.ForeColor = Color.Aqua;
+                            sd.BackColor = Color.AntiqueWhite; 
+                                break;
+                        case 0:
+                            sd.genero.Text = "Para todos";
+                            sd.genero.ForeColor = Color.DarkCyan;
+                            sd.BackColor = Color.PapayaWhip;
+                            break;
+                        case 2:
+                            sd.genero.Text = "Para Ella";
+                            sd.genero.ForeColor = Color.ForestGreen;
+                            sd.BackColor = Color.Beige;
+                            break;
+
+                    }
+                    switch (aroma)
+                    {
+                        case 1:
+                            sd.Aroma.Text = "Maderable";
+                            sd.Aroma.ForeColor = Color.Sienna;
+                            break;
+                        case 2:
+                            sd.Aroma.Text = "Citrica";
+                            sd.Aroma.ForeColor = Color.Lime;
+                            break;
+                        case 3:
+                            sd.Aroma.Text = "Dulce";
+                            sd.Aroma.ForeColor = Color.SkyBlue;
+                            break; 
+                        case 4:
+                            sd.Aroma.Text = "Floral";
+                            sd.Aroma.ForeColor = Color.SpringGreen;
+                            break; 
+                        case 5:
+                            sd.Aroma.Text = "Sport";
+                            sd.Aroma.ForeColor = Color.MediumTurquoise;
+                            break;
+                        case 6:
+                            sd.Aroma.Text = "Neutral";
+                            sd.Aroma.ForeColor = Color.DimGray;
+                            
+                            break;
+                        default:
+                            sd.Aroma.Text = "Exotica";
+                            sd.Aroma.ForeColor = Color.Lime;
+
+                            break;
+
+
+                    }
+
                     MemoryStream ms = new MemoryStream(Imagen);
                     sd.ImagenProducto.Image = Image.FromStream(ms);
                     sd.text = "0";
