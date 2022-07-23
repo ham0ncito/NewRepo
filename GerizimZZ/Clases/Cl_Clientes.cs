@@ -25,6 +25,7 @@ namespace GerizimZZ.Clases
 
         private static SqlConnection GetConnection()
         {
+            
             SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
             return con;
         }
