@@ -230,10 +230,10 @@
             this.Contenedor.BackColor = System.Drawing.Color.FloralWhite;
             this.Contenedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Contenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Contenedor.Location = new System.Drawing.Point(35, 187);
+            this.Contenedor.Location = new System.Drawing.Point(0, 187);
             this.Contenedor.Margin = new System.Windows.Forms.Padding(50);
             this.Contenedor.Name = "Contenedor";
-            this.Contenedor.Size = new System.Drawing.Size(1288, 490);
+            this.Contenedor.Size = new System.Drawing.Size(1355, 509);
             this.Contenedor.TabIndex = 6;
             this.Contenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.Contenedor_Paint);
             // 

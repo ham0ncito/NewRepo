@@ -27,7 +27,7 @@ namespace GerizimZZ
         public void Llenado()
         {
             Productos llenar = new Productos();
-            string consulta = "select * from dbo.Producto where cantidadProducto > 0 order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC ;  ";
+            string consulta = "select * from dbo.Producto where cantidadProducto > 0 order by precio_producto, nombreProducto  DESC ;  ";
             llenar.llenado(Contenedor, consulta);
         }
 
@@ -72,29 +72,7 @@ namespace GerizimZZ
 
         private void BarraBusqueda_TextChanged(object sender, EventArgs e)
         {
-            string busqueda;
-
-            Productos pr = new Productos();
-            if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
-            {
-                try
-                {
-                    busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or codigoBarra like '%" + barraBusqueda.Text + "%' and cantidadProducto >0 order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC; ";
-                    SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
-                    Contenedor.Controls.Clear();
-                    pr.llenado(Contenedor, busqueda);
-                }
-                catch (SqlException x)
-                {
-                    MessageBox.Show(x.Message);
-                }
-            }
-            if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
-            {
-                busqueda = "select * from dbo.Producto order by estadoPRoducto DESC; ";
-                Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
-            }
+            
         }
 
         //Boton panel lateral derecho
@@ -223,19 +201,30 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
+            buscar(); 
+        }
+        private void buscar()
+        {
             string busqueda;
 
             Productos pr = new Productos();
             if (!(String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
-                busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or codigoBarra like '%" + barraBusqueda.Text + "%' order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC; ";
-                SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
-                Contenedor.Controls.Clear();
-                pr.llenado(Contenedor, busqueda);
+                try
+                {
+                    busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or codigoBarra like '%" + barraBusqueda.Text + "%' and cantidadProducto >0 order by precio_producto, nombreProducto  ASC; ";
+                    SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
+                    Contenedor.Controls.Clear();
+                    pr.llenado(Contenedor, busqueda);
+                }
+                catch (SqlException x)
+                {
+                    MessageBox.Show(x.Message);
+                }
             }
             if ((String.IsNullOrEmpty(this.barraBusqueda.Text)))
             {
-                busqueda = "select * from dbo.Producto order by estadoPRoducto, cantidadProducto, precio_producto, nombreProducto  DESC; ";
+                busqueda = "select * from dbo.Producto order by nombreProducto ASC; ";
                 Contenedor.Controls.Clear();
                 pr.llenado(Contenedor, busqueda);
             }
