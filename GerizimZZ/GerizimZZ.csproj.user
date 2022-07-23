@@ -1,76 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <PropertyGroup>
-    <_LastSelectedProfileId>C:\Users\HP\OneDrive\Documentos\GitHub\GerizimZZ\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
-    <Compile Update="Formularios\FrmBarrapreview.cs">
+    <Compile Update="Barra preview.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Otros\Component1.cs">
+    <Compile Update="Component1.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Formularios\DetalleVenta.cs">
+    <Compile Update="DetalleVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\frAgregarInformacionAviso.cs">
+    <Compile Update="frAgregarInformacionAviso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\frCodigoBarra.cs">
+    <Compile Update="frCodigoBarra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\frInicioBodega.cs">
+    <Compile Update="frInicioBodega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\frmAvisos.cs">
+    <Compile Update="frmAvisos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FrmCliente.cs">
+    <Compile Update="FrmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FrmInventario.cs">
+    <Compile Update="FrmInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FrmRepartidores.cs">
+    <Compile Update="FrmRepartidores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FrmSolicitudInventario.cs">
+    <Compile Update="FrmSolicitudInventario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\frmUsuario.cs">
+    <Compile Update="frmUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Frm_AsignarRepartidor.cs">
+    <Compile Update="Frm_AsignarRepartidor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Inventarios.cs">
+    <Compile Update="Inventarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\FrmLogin.cs">
+    <Compile Update="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\frmPantallaPedido.cs">
+    <Compile Update="frmPantallaPedido.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserObjects\Mensaje.cs">
+    <Compile Update="Mensaje.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="Formularios\Opciones.cs">
+    <Compile Update="Opciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\pantallafactura.cs">
+    <Compile Update="pantallafactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\RegistrosVentas.cs">
+    <Compile Update="RegistrosVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\VentanaInfoProductos.cs">
+    <Compile Update="VentanaInfoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\Inicio.cs">
+    <Compile Update="Inicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserObjects\PantallaProducto.cs">
+    <Compile Update="PantallaProducto.cs">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
@@ -80,10 +78,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Update="Datasets\Clientedst.xsd">
+    <None Update="Clientedst.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Update="Datasets\Productosdst.xsd">
+    <None Update="Productosdst.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
