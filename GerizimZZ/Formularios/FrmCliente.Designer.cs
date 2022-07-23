@@ -155,6 +155,7 @@
             this.txtprimerNombre.Size = new System.Drawing.Size(171, 25);
             this.txtprimerNombre.TabIndex = 8;
             this.txtprimerNombre.TextChanged += new System.EventHandler(this.txtprimerNombre_TextChanged);
+            this.txtprimerNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtprimerNombre_Validating);
             // 
             // txtsegundoNombre
             // 
@@ -163,6 +164,7 @@
             this.txtsegundoNombre.Size = new System.Drawing.Size(171, 25);
             this.txtsegundoNombre.TabIndex = 9;
             this.txtsegundoNombre.TextChanged += new System.EventHandler(this.txtsegundoNombre_TextChanged);
+            this.txtsegundoNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtsegundoNombre_Validating);
             // 
             // txtprimerApellido
             // 
@@ -171,6 +173,7 @@
             this.txtprimerApellido.Size = new System.Drawing.Size(171, 25);
             this.txtprimerApellido.TabIndex = 10;
             this.txtprimerApellido.TextChanged += new System.EventHandler(this.txtprimerApellido_TextChanged);
+            this.txtprimerApellido.Validating += new System.ComponentModel.CancelEventHandler(this.txtprimerApellido_Validating);
             // 
             // txtsegundoApellido
             // 
@@ -179,6 +182,7 @@
             this.txtsegundoApellido.Size = new System.Drawing.Size(171, 25);
             this.txtsegundoApellido.TabIndex = 11;
             this.txtsegundoApellido.TextChanged += new System.EventHandler(this.txtsegundoApellido_TextChanged);
+            this.txtsegundoApellido.Validating += new System.ComponentModel.CancelEventHandler(this.txtsegundoApellido_Validating);
             // 
             // txtTelefono
             // 
