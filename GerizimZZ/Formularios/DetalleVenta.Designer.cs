@@ -145,7 +145,7 @@ namespace GerizimZZ
             this.cmbPago.Location = new System.Drawing.Point(171, 83);
             this.cmbPago.Name = "cmbPago";
             this.cmbPago.Size = new System.Drawing.Size(121, 26);
-            this.cmbPago.TabIndex = 10;
+            this.cmbPago.TabIndex = 23;
             this.cmbPago.Text = "Efectivo";
             // 
             // delivery
@@ -165,7 +165,7 @@ namespace GerizimZZ
             this.txtNumero.Location = new System.Drawing.Point(208, 25);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(139, 25);
-            this.txtNumero.TabIndex = 16;
+            this.txtNumero.TabIndex = 15;
             this.txtNumero.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtDireccion
@@ -173,7 +173,7 @@ namespace GerizimZZ
             this.txtDireccion.Location = new System.Drawing.Point(208, 60);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(268, 25);
-            this.txtDireccion.TabIndex = 15;
+            this.txtDireccion.TabIndex = 16;
             this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // txtTotal
@@ -230,7 +230,7 @@ namespace GerizimZZ
             this.btnCancelarVenta.Location = new System.Drawing.Point(171, 583);
             this.btnCancelarVenta.Name = "btnCancelarVenta";
             this.btnCancelarVenta.Size = new System.Drawing.Size(140, 45);
-            this.btnCancelarVenta.TabIndex = 26;
+            this.btnCancelarVenta.TabIndex = 40;
             this.btnCancelarVenta.Text = "Cancelar Venta";
             this.btnCancelarVenta.UseVisualStyleBackColor = false;
             this.btnCancelarVenta.Click += new System.EventHandler(this.button1_Click_1);
@@ -242,7 +242,7 @@ namespace GerizimZZ
             this.btnGenerarVenta.Location = new System.Drawing.Point(320, 583);
             this.btnGenerarVenta.Name = "btnGenerarVenta";
             this.btnGenerarVenta.Size = new System.Drawing.Size(140, 45);
-            this.btnGenerarVenta.TabIndex = 27;
+            this.btnGenerarVenta.TabIndex = 41;
             this.btnGenerarVenta.Text = "Generar Venta";
             this.btnGenerarVenta.UseVisualStyleBackColor = false;
             this.btnGenerarVenta.Click += new System.EventHandler(this.button2_Click);
@@ -258,12 +258,12 @@ namespace GerizimZZ
             this.dgDetalleVenta.Name = "dgDetalleVenta";
             this.dgDetalleVenta.RowTemplate.Height = 25;
             this.dgDetalleVenta.Size = new System.Drawing.Size(774, 183);
-            this.dgDetalleVenta.TabIndex = 28;
+            this.dgDetalleVenta.TabIndex = 38;
             this.dgDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDetalleVenta_CellContentClick_1);
             // 
             // productosBindingSource
             // 
-            this.productosBindingSource.DataSource = typeof(Productos);
+            this.productosBindingSource.DataSource = typeof(GerizimZZ.Clases.Productos);
             // 
             // button4
             // 
@@ -272,7 +272,7 @@ namespace GerizimZZ
             this.button4.Location = new System.Drawing.Point(25, 583);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(140, 45);
-            this.button4.TabIndex = 32;
+            this.button4.TabIndex = 39;
             this.button4.Text = "Escanear Codigo";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -345,7 +345,7 @@ namespace GerizimZZ
             this.cmbCliente.Location = new System.Drawing.Point(455, 36);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(287, 26);
-            this.cmbCliente.TabIndex = 23;
+            this.cmbCliente.TabIndex = 10;
             this.cmbCliente.SelectedIndexChanged += new System.EventHandler(this.cmbCliente_SelectedIndexChanged);
             // 
             // errorProvider1
@@ -407,7 +407,7 @@ namespace GerizimZZ
             this.NuevoCliente.Location = new System.Drawing.Point(475, 583);
             this.NuevoCliente.Name = "NuevoCliente";
             this.NuevoCliente.Size = new System.Drawing.Size(140, 45);
-            this.NuevoCliente.TabIndex = 38;
+            this.NuevoCliente.TabIndex = 42;
             this.NuevoCliente.Text = "Nuevo Cliente";
             this.NuevoCliente.UseVisualStyleBackColor = false;
             this.NuevoCliente.Click += new System.EventHandler(this.NuevoCliente_Click);
