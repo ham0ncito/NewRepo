@@ -27,7 +27,7 @@ namespace GerizimZZ
         public void Llenado()
         {
             Productos llenar = new Productos();
-            string consulta = "select * from dbo.Producto where cantidadProducto > 0 order by precio_producto, nombreProducto  DESC ;  ";
+            string consulta = "select * from dbo.Producto where cantidadProducto > 0 order by nombreProducto  ASC ;  ";
             llenar.llenado(Contenedor, consulta);
         }
 
@@ -212,7 +212,7 @@ namespace GerizimZZ
             {
                 try
                 {
-                    busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or codigoBarra like '%" + barraBusqueda.Text + "%' and cantidadProducto >0 order by precio_producto, nombreProducto  ASC; ";
+                    busqueda = "select * from dbo.Producto where nombreProducto like '%" + barraBusqueda.Text + "%' or codigoBarra like '%" + barraBusqueda.Text + "%' and cantidadProducto >0 order by nombreProducto  ASC; ";
                     SqlConnection conexion = new SqlConnection("Data Source =DESKTOP-2H6N4DP ; Initial Catalog =Gerizim ; Integrated Security = True");
                     Contenedor.Controls.Clear();
                     pr.llenado(Contenedor, busqueda);

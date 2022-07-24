@@ -291,7 +291,7 @@ namespace GerizimZZ
             // 
             this.lblCodigoCliente.AutoSize = true;
             this.lblCodigoCliente.Font = new System.Drawing.Font("Garamond", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCodigoCliente.Location = new System.Drawing.Point(461, 71);
+            this.lblCodigoCliente.Location = new System.Drawing.Point(455, 71);
             this.lblCodigoCliente.Name = "lblCodigoCliente";
             this.lblCodigoCliente.Size = new System.Drawing.Size(24, 18);
             this.lblCodigoCliente.TabIndex = 25;
@@ -301,7 +301,7 @@ namespace GerizimZZ
             // lblCodCliente
             // 
             this.lblCodCliente.AutoSize = true;
-            this.lblCodCliente.Location = new System.Drawing.Point(329, 71);
+            this.lblCodCliente.Location = new System.Drawing.Point(320, 71);
             this.lblCodCliente.Name = "lblCodCliente";
             this.lblCodCliente.Size = new System.Drawing.Size(102, 18);
             this.lblCodCliente.TabIndex = 24;

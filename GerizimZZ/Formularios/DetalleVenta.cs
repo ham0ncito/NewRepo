@@ -5,12 +5,12 @@ using System.Drawing.Printing;
 using System.Text.RegularExpressions;
 namespace GerizimZZ
 {
-    public partial class DetalleVenta : Form 
+    public partial class DetalleVenta : Form
     {
         private int x = 0;
         private double suma;
         private bool bandera = false;
-       
+
         private DataGridView dgView;
 
         public DetalleVenta()
@@ -24,8 +24,8 @@ namespace GerizimZZ
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             datagrid();
-           btnNuevaDireccion.Visible = true;
-            btnNuevoTelefono.Visible = true; 
+            btnNuevaDireccion.Visible = true;
+            btnNuevoTelefono.Visible = true;
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace GerizimZZ
             }
         }
 
-        private void button2_Click(object sender, EventArgs e) 
+        private void button2_Click(object sender, EventArgs e)
         {
             datagrid();
             verificacion();
@@ -386,13 +386,13 @@ namespace GerizimZZ
             buscarId();
             lblCodigoCliente.Visible = true;
             lblCodCliente.Visible = true;
-            
-            TelefonosDireccions(); 
+
+            TelefonosDireccions();
         }
-        public void direccion ()
+        public void direccion()
         {
             SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
-            conexion.Open(); 
+            conexion.Open();
             SqlCommand coma = new SqlCommand(" exec Direcciones '" + lblCodigoCliente.Text + "' ; ", conexion);
             SqlDataReader regist = coma.ExecuteReader();
             while (regist.Read() && !(regist.IsDBNull(0) == true))
@@ -401,7 +401,7 @@ namespace GerizimZZ
             }
             conexion.Close();
         }
-        public void TelefonosDireccions ()
+        public void TelefonosDireccions()
         {
             try
             {
@@ -413,13 +413,13 @@ namespace GerizimZZ
                 {
                     cmbNumero.Items.Add(registro[0].ToString());
                 }
-                
-                comando.Dispose(); 
+
+                comando.Dispose();
                 conexion.Close();
                 direccion();
 
             }
-            
+
             catch (SqlException x)
             {
                 MessageBox.Show(x.Message);
@@ -443,7 +443,7 @@ namespace GerizimZZ
                 }
                 else
                 {
-                    MessageBox.Show("Tuvimos un problema buscando la informacion del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                    MessageBox.Show("Tuvimos un problema buscando la informacion del cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 conexion.Close();
             }
@@ -485,26 +485,58 @@ namespace GerizimZZ
 
         private void btnNuevoTelefono_Click(object sender, EventArgs e)
         {
+            vertelefono();
+        }
+        private void vertelefono()
+        {
             string telefono = "";
-            int cambio;
-            if (InputBox.inputBox("Ingrese su numero de telefono ", "Nuevo Telefono", ref telefono) == DialogResult.OK)
+            if (InputBox.inputBox("Ingrese su numero de telefono de envio ", "Nuevo Telefono de envio", ref telefono) == DialogResult.OK)
             {
-                
-                if (Regex.IsMatch(telefono, @"^[0-9]+$") && telefono.Length <= 0 && telefono.Length > 0   )
+
+                if (Regex.IsMatch(telefono, @"^[0-9]+$")  && telefono.Length == 8 && !string.Equals(lblCodigoCliente.Text, "00") && (string.Equals(telefono[0],3) || string.Equals(telefono[0], 2) || string.Equals(telefono[0], 8) || string.Equals(telefono[0], 9)))
                 {
-                    string consulta = "insert into telefonosClientes (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(telefono) + "';" ;
-                    cmbNumero.Items.Add(telefono); 
+                    string consulta = "insert into telefonosClientes (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(telefono) + "';";
+                    cmbNumero.Items.Add(telefono);
+                    MessageBox.Show("Valores Ingresados", "Ejecución exitosa");
                 }
                 else
                 {
-                    MessageBox.Show("Valores no validos", "Ingrese un telefono valido"); 
+                    MessageBox.Show("Valores no validos", "Ingrese un telefono valido");
                 }
             }
         }
-
         private void btnNuevaDireccion_Click(object sender, EventArgs e)
         {
+            verDireccion(); 
+        }
+        private void verDireccion()
+        {
+            string direccion = "";
             
+            if (InputBox.inputBox("Ingrese su nueva Direccion de envio ", "Direccion de envio", ref direccion) == DialogResult.OK)
+            {
+                int contador = 0; 
+                for (int i = 0; i < direccion.Length; i ++)
+                {
+                    if (string.Equals(direccion[i], direccion[i+1]))
+                    {
+                        contador += 1; 
+                    }
+                    
+                }
+                if (Regex.IsMatch(direccion, @"^[0-9]+$") && direccion.Length > 7 && direccion.Length <= 100 && contador < 3 && !string.Equals(lblCodigoCliente.Text,"00"))
+                {
+                    string consulta = "insert into Direcciones (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(direccion) + "';";
+                    cmbNumero.Items.Add(direccion);
+                    MessageBox.Show("Valores Ingresados", "Ejecución exitosa");
+                }
+                else
+                {
+                    MessageBox.Show("Valores no validos", "Ingrese un telefono valido");
+                }
+
+            }
+
         }
     }
 }
