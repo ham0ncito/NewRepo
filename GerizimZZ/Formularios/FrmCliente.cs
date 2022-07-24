@@ -191,7 +191,7 @@ namespace GerizimZZ
 
             if (!tboxnumerocli.IsMatch(txtTelefono.Text))
             {
-                e.Cancel = true;
+                
                 txtTelefono.Focus();
                 errorProvidertelcli.SetError(txtTelefono, "Numero de telefono invalido");
             }
@@ -207,13 +207,13 @@ namespace GerizimZZ
         {
             if(!tboxNombres.IsMatch(txtprimerNombre.Text))
             {
-                e.Cancel = true;
+                
                 txtprimerNombre.Focus();
                 errorProvider1nombre.SetError(txtprimerNombre, "Nombre invalido");
             }
             else
             {
-                e.Cancel = false;
+                
                 errorProvider1nombre.SetError(txtprimerNombre, null);
             }
         }
@@ -222,13 +222,13 @@ namespace GerizimZZ
         {
             if (!tboxNombres.IsMatch(txtsegundoNombre.Text))
             {
-                e.Cancel = true;
+                
                 txtsegundoNombre.Focus();
                 errorProvider2nombre.SetError(txtsegundoNombre, "Nombre invalido");
             }
             else
             {
-                e.Cancel = false;
+                
                 errorProvider2nombre.SetError(txtsegundoNombre, null);
             }
         }
@@ -237,13 +237,12 @@ namespace GerizimZZ
         {
             if (!tboxNombres.IsMatch(txtprimerApellido.Text))
             {
-                e.Cancel = true;
                 txtprimerApellido.Focus();
                 errorProvider1apellido.SetError(txtprimerApellido, "Apellido invalido");
             }
             else
             {
-                e.Cancel = false;
+                
                 errorProvider1apellido.SetError(txtprimerApellido, null);
             }
         }
@@ -252,13 +251,13 @@ namespace GerizimZZ
         {
             if (!tboxNombres.IsMatch(txtsegundoApellido.Text))
             {
-                e.Cancel = true;
+              
                 txtsegundoApellido.Focus();
                 errorProvider2apellido.SetError(txtsegundoApellido, "Apellido invalido");
             }
             else
             {
-                e.Cancel = false;
+               
                 errorProvider2apellido.SetError(txtsegundoApellido, null);
             }
         }
@@ -268,13 +267,12 @@ namespace GerizimZZ
             Regex numid = new Regex(@"^[0-9]");
             if(!numid.IsMatch(txtID_cliente.Text))
             {
-                e.Cancel = true;
+                
                 txtID_cliente.Focus();
                 errorProvidernumID.SetError(txtID_cliente, "Numero invalido");
             }
             else
             {
-                e.Cancel = false;
                 errorProvidernumID.SetError(txtID_cliente, null);
             }
         }

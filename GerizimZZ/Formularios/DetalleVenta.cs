@@ -90,10 +90,8 @@ namespace GerizimZZ
                 lblTotal.Text = "L 00";
                 cmbCliente.Text = "";
                 delivery.Checked = false;
-                txtNumero.Clear();
-                txtDireccion.Clear();
-                txtCodigo.Clear();
-                                tablita.Columns.Clear();
+            
+                          tablita.Columns.Clear();
                 tablita.Rows.Clear();
                 idlist.Clear();
                 cantidadlist.Clear();
@@ -532,24 +530,7 @@ namespace GerizimZZ
         {
         }
 
-        private void txtNumero_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            //textbox numero regular expression
-            Regex tboxnumerore = new Regex(@"^[0-9]{8}$");
-            
-            if(!tboxnumerore.IsMatch(txtNumero.Text))
-            {
-                e.Cancel = true;
-                txtNumero.Focus();
-                errorProvider2.SetError(txtNumero, "Numero de telefono invalido");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvider2.SetError(txtNumero, null);
-            }
-
-        }
+        
         private void btnNuevoTelefono_Click(object sender, EventArgs e)
         {
             vertelefono();
