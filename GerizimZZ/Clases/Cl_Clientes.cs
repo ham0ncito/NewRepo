@@ -5,7 +5,7 @@ namespace GerizimZZ.Clases
 {
     internal class Cl_Clientes : Cl_conexiones
     {
-
+        
         private SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
         private string iD_cliente;
         private string primerNombre_Cliente;
@@ -25,7 +25,7 @@ namespace GerizimZZ.Clases
 
         private static SqlConnection GetConnection()
         {
-
+            
             SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
             return con;
         }

@@ -4,7 +4,6 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing.Printing;
 
 namespace GerizimZZ
 {
@@ -19,7 +18,7 @@ namespace GerizimZZ
 
         private void btnSolicitar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Su solicitud se ha completado con exito", "Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Su solicitud se a completado con exito", "Solicitud", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
@@ -142,40 +141,6 @@ namespace GerizimZZ
             txtID_CodigoProducto.Clear();
         }
 
-        //Este es el boton que imprime
-        private void btnImpresion_Click(object sender, EventArgs e)
-        {
-            ImprimirSolicitud = new PrintDocument();
-            PrinterSettings ps = new PrinterSettings();
-            ImprimirSolicitud.PrinterSettings = ps;
-           // ImprimirSolicitud.PrintPage += imp;
-            ImprimirSolicitud.Print();
-            Impresion.Show();//Esta hace que imprima
-
-        }
-
-
-
-        private void ImprimirSolicitud_PrintPage(object sender, PrintPageEventArgs e)
-        {
-            System.Drawing.Font fuente = new System.Drawing.Font("Arial", 15, FontStyle.Regular, GraphicsUnit.Point);
-            ////Graphics.DrawImage(pictureBox1.Image, 350, 60, 150, 150);
-            e.Graphics.DrawImage(ImgLogoGerizim.Image, 370, 100, 150, 150); //(Desplazamiento Izquierda/Derecha, Altura en el Doc, Ancho, Alto)
-            e.Graphics.DrawString(" Multiservicios Gerizim  ", fuente, Brushes.Green, new RectangleF(330, 240, 600, 60));
-            e.Graphics.DrawString(" Barrio Paz Barahona  1 Calle  2 Avenida  22505876 ", fuente, Brushes.Black, new RectangleF(200, 280, 1000, 100));
-            e.Graphics.DrawString("Nombre Original: " + txtNombreOriginal.Text, fuente, Brushes.Black, new RectangleF(190, 350, 1000, 100));
-            e.Graphics.DrawString("Cantidad Producto: " + txtCantidadProducto.Text, fuente, Brushes.Black, new RectangleF(190, 380, 1000, 100));
-            e.Graphics.DrawString("Codigo Barra: " + txtCodigoBarra.Text, fuente, Brushes.Black, new RectangleF(190, 410, 1000, 100));
-            e.Graphics.DrawString("Estado Producto: " + txtEstadoProducto.Text, fuente, Brushes.Black, new RectangleF(190, 440, 1000, 100));
-            e.Graphics.DrawString("Peso Producto: " + txtPesoProducto.Text, fuente, Brushes.Black, new RectangleF(190, 470, 1000, 100));
-            e.Graphics.DrawString("Cantidad Minima: " + txtCantidadMinima.Text, fuente, Brushes.Black, new RectangleF(190, 500, 1000, 100));
-            e.Graphics.DrawString("Codigo Producto: " + txtID_CodigoProducto.Text, fuente, Brushes.Black, new RectangleF(190, 530, 1000, 100));
-            e.Graphics.DrawString("Codigo Catalogo: " + txtCodigoCatalogo.Text, fuente, Brushes.Black, new RectangleF(190, 560, 1000, 100));
-            e.Graphics.DrawString("Precio Producto: " + txtPrecioProducto.Text, fuente, Brushes.Black, new RectangleF(190, 590, 1000, 100));
-            e.Graphics.DrawString("Descripcion: " + txtDescripcion.Text, fuente, Brushes.Black, new RectangleF(190, 620, 500, 100));
-
-        }
-
         public FrmSolicitudInventario()
         {
             InitializeComponent();
@@ -194,7 +159,6 @@ namespace GerizimZZ
         {
             foreach (DataGridViewRow item in this.dgvInventario.SelectedRows)
             {
-
                 txtID_CodigoProducto.Text = item.Cells[0].Value.ToString();
                 txtPrecioProducto.Text = item.Cells[1].Value.ToString();
                 txtNombreOriginal.Text = item.Cells[2].Value.ToString();
@@ -218,34 +182,26 @@ namespace GerizimZZ
             }
             else
             {
-                try
-                {
-                    //cantidad = Convert.ToInt32(txtCantidadProducto.Text);
-                    codigo = Convert.ToInt32(txtID_CodigoProducto.Text);
-                    cantidadproducto = Convert.ToInt32(txtCantidadProducto.Text);
-                    cantidadminima = Convert.ToInt32(txtCantidadMinima.Text);
-                    estadoproducto = Convert.ToInt32(txtEstadoProducto.Text);
-                    PrecioProducto = Convert.ToDouble(txtPrecioProducto.Text);
-                    pesoproducto = Convert.ToDouble(txtPesoProducto.Text);
-                    //Llama a la clase de Solicitar Inventario 
+                //cantidad = Convert.ToInt32(txtCantidadProducto.Text);
+                codigo = Convert.ToInt32(txtID_CodigoProducto.Text);
+                cantidadproducto = Convert.ToInt32(txtCantidadProducto.Text);
+                cantidadminima = Convert.ToInt32(txtCantidadMinima.Text);
+                estadoproducto = Convert.ToInt32(txtEstadoProducto.Text);
+                PrecioProducto = Convert.ToDouble(txtPrecioProducto.Text);
+                pesoproducto = Convert.ToDouble(txtPesoProducto.Text);
+                //Llama a la clase de Solicitar Inventario
 
-                    inventario.Agregar_Solicitud(codigo, PrecioProducto, txtNombreOriginal.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatalogo.Text, cantidadproducto, cantidadminima, txtDescripcion.Text, estadoproducto, Convert.ToDateTime(txtFechaIngresoo.Text));
-                    SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
-                    SqlDataAdapter coman = new SqlDataAdapter();
-                    string sql = "SELECT * FROM Producto";
-                    coman.SelectCommand = new SqlCommand(sql, conec);
-                    dtInventario = Cl_SolicitarInventario.GetAll();
-                    dstInventario = new Productosdst();
-                    dstInventario.Tables.Add(dtInventario);
-                    dgvInventario.DataSource = dstInventario.Tables[0];
-                    conec.Close();
-                    MessageBox.Show("Registro modificado con exito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
+                inventario.Agregar_Solicitud(codigo, PrecioProducto, txtNombreOriginal.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatalogo.Text, cantidadproducto, cantidadminima, txtDescripcion.Text, estadoproducto, Convert.ToDateTime(txtFechaIngresoo.Text));
+                SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+                SqlDataAdapter coman = new SqlDataAdapter();
+                string sql = "SELECT * FROM Producto";
+                coman.SelectCommand = new SqlCommand(sql, conec);
+                dtInventario = Cl_SolicitarInventario.GetAll();
+                dstInventario = new Productosdst();
+                dstInventario.Tables.Add(dtInventario);
+                dgvInventario.DataSource = dstInventario.Tables[0];
+                conec.Close();
+                MessageBox.Show("Registro modificado con exito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

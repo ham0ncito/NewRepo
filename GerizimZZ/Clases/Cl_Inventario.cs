@@ -55,13 +55,14 @@ namespace GerizimZZ.Clases
 
         public void Agregar_Producto(int ID_codigoProducto, double Precio_producto, string NombreProducto, double PesoProducto, string CodigoBarra, string CodigoCatologo, int CantidadProducto, int CantidadMinima, string DescripcionProducto, int EstadoPRoducto, string Fechaingreso)
         {
-            try
+            DialogResult result = MessageBox.Show("Seguro que desea agregar el producto?", "Agregar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes)
             {
                 try
                 {
                     string sql = "INSERT INTO Producto(ID_codigoProducto, Precio_producto, NombreProducto, PesoProducto, CodigoBarra, CodigoCatologo, CantidadProducto, CantidadMinima, DescripcionProducto, EstadoPRoducto) VALUES ('"
                     + ID_codigoProducto + "','" + Precio_producto + "','" + NombreProducto + "','" + PesoProducto + "','" + CodigoBarra + "','" + CodigoCatologo +
-                    "','" + CantidadProducto + "','" + CantidadMinima + "','" + DescripcionProducto + "','" + EstadoPRoducto + "')";
+                    "','" + CantidadProducto + "','" + CantidadMinima + "','" + DescripcionProducto + "','" + EstadoPRoducto  + "')";
                     con.Open();
                     SqlCommand cmd = new SqlCommand(sql, con);
                     if (cmd.ExecuteNonQuery() == 1)
@@ -69,19 +70,13 @@ namespace GerizimZZ.Clases
                         con.Close();
                         MessageBox.Show("Registro agregado con exito", "Agregado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
-
-
-                }
-                catch (Exception x)
+                    
+                   
+                }catch( Exception x)
                 {
                     MessageBox.Show(x.Message);
                 }
             }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
         }
 
         public void Modificar_Producto(int ID_codigoProducto, double Precio_producto, string NombreProducto, double PesoProducto, string CodigoBarra, string CodigoCatologo, int CantidadProducto, int CantidadMinima, string DescripcionProducto, int EstadoPRoducto)

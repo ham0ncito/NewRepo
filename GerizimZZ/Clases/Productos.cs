@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    public class Productos : Cl_conexiones
+    public class Productos: Cl_conexiones
     {
         /* atributos esenciales de los productos */
 
@@ -15,8 +15,8 @@ namespace GerizimZZ.Clases
         private int estado_producto;
         private int existencia;
         private byte[] imagen;
-        private int genero;
-        private int aroma;
+        private int genero; 
+            private int aroma;
 
         public int Idproducto { get => idproducto; set => idproducto = value; }
         public decimal Precio_producto { get => precio_producto; set => precio_producto = value; }
@@ -49,7 +49,7 @@ namespace GerizimZZ.Clases
                     existencia = Convert.ToInt32(reader[6]);
                     genero = Convert.ToInt32(reader["genero"]);
                     aroma = Convert.ToInt32(reader["codigoTipoProducto"]);
-                    Imagen = ((byte[])reader["imagen"]);
+                    Imagen = ((byte[])reader["imagen"]); 
 
                     Producto sd = new Producto();
                     sd.Id = Convert.ToInt32(idproducto);
@@ -59,13 +59,12 @@ namespace GerizimZZ.Clases
                     sd.estado = estado_producto.ToString();
                     sd.Stockactual = existencia;
                     sd.Codigobarra = codigoBarra_producto;
-                    switch (genero)
+                    switch(genero)
                     {
-                        case 1:
-                            sd.genero.Text = "Para el";
+                        case 1: sd.genero.Text = "Para el";
                             sd.genero.ForeColor = Color.Aqua;
-                            sd.BackColor = Color.AntiqueWhite;
-                            break;
+                            sd.BackColor = Color.AntiqueWhite; 
+                                break;
                         case 0:
                             sd.genero.Text = "Para todos";
                             sd.genero.ForeColor = Color.DarkCyan;
@@ -91,11 +90,11 @@ namespace GerizimZZ.Clases
                         case 3:
                             sd.Aroma.Text = "Dulce";
                             sd.Aroma.ForeColor = Color.SkyBlue;
-                            break;
+                            break; 
                         case 4:
                             sd.Aroma.Text = "Floral";
                             sd.Aroma.ForeColor = Color.SpringGreen;
-                            break;
+                            break; 
                         case 5:
                             sd.Aroma.Text = "Sport";
                             sd.Aroma.ForeColor = Color.MediumTurquoise;
@@ -103,7 +102,7 @@ namespace GerizimZZ.Clases
                         case 6:
                             sd.Aroma.Text = "Neutral";
                             sd.Aroma.ForeColor = Color.DimGray;
-
+                            
                             break;
                         default:
                             sd.Aroma.Text = "Exotica";

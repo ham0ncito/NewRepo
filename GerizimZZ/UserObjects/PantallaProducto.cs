@@ -1,4 +1,5 @@
 ﻿using GerizimZZ.Clases;
+using System.Data;
 
 namespace GerizimZZ
 {
@@ -12,13 +13,13 @@ namespace GerizimZZ
         private string codigobarra;
         private string textBox;
         public int cantidad = 0;
-
+        
         public DetalleVenta dgv = new DetalleVenta();
 
         public Producto()
         {
             InitializeComponent();
-
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -27,12 +28,12 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         public void Producto_Load(object sender, EventArgs e)
         {
-
+            
             for (int i = 0; i <= Stockactual; i++)
             {
                 comboBox1.Items.Add(i.ToString());
@@ -92,7 +93,7 @@ namespace GerizimZZ
             set { codigobarra = value; }
         }
 
-        public Image Imagen
+        public Image Imagen 
         {
             get { return ImagenProducto.Image; }
             set { ImagenProducto.Image = value; }
@@ -110,19 +111,19 @@ namespace GerizimZZ
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             VentanaInfoProductos pr = new VentanaInfoProductos();
             pr.lblNombre.Text = this.NombreProducto;
-            pr.picImagen.Image = this.ImagenProducto.Image;
+            pr.picImagen.Image = this.ImagenProducto.Image; 
             pr.lbldescripcion.Text = this.descripcion;
             pr.lblcodigo.Text = this.codigobarra.ToString();
             pr.lblprecio.Text = this.PrecioProducto.ToString();
@@ -144,13 +145,13 @@ namespace GerizimZZ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
-
-
+            
+        
+            
         }
-        private void tabla()
+        private void tabla ()
         {
-
+           
             if (!(String.IsNullOrEmpty(comboBox1.Text)) && Convert.ToInt32(comboBox1.Text) <= Convert.ToInt32(label3.Text))
             {
                 errorProvider1.SetError(comboBox1, "");
@@ -184,8 +185,8 @@ namespace GerizimZZ
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             verificar();
-            tabla();
-            if (Convert.ToDecimal(comboBox1.Text) > 0)
+            tabla(); 
+            if (Convert.ToDecimal(comboBox1.Text )>0)
             {
                 DetalleVenta dgv = new DetalleVenta();
                 dgv.llenartablita();
@@ -194,7 +195,7 @@ namespace GerizimZZ
             {
 
             }
-
+           
 
         }
     }

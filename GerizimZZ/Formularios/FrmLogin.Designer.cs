@@ -125,7 +125,7 @@
             this.chbxmotrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chbxmotrar.Name = "chbxmotrar";
             this.chbxmotrar.Size = new System.Drawing.Size(126, 18);
-            this.chbxmotrar.TabIndex = 8;
+            this.chbxmotrar.TabIndex = 6;
             this.chbxmotrar.Text = "Mostrar Contraseña";
             this.chbxmotrar.UseVisualStyleBackColor = false;
             this.chbxmotrar.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -150,7 +150,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(183, 99);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(130, 18);
-            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabIndex = 8;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Recuperar Contraseña";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);

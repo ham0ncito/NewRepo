@@ -95,7 +95,7 @@ namespace GerizimZZ
                                 dt.Columns.Add("Precio");
                                 dt.Columns.Add("Total");
                             }
-                            if (Convert.ToInt32(cmbCantidad.Text) > 0)
+                            if (Convert.ToInt32(cmbCantidad.Text ) > 0)
                             {
                                 datarow["Id"] = registro[0].ToString();
                                 datarow["Nombre"] = registro[2].ToString();
@@ -109,7 +109,7 @@ namespace GerizimZZ
                             }
                             else
                             {
-                                MessageBox.Show("No se pueden agregar valores negativos", "No se pudo agregar al carrito");
+                                MessageBox.Show("No se pueden agregar valores negativos", "No se pudo agregar al carrito"); 
                             }
                         }
                         else
@@ -121,11 +121,11 @@ namespace GerizimZZ
                                     dv.dgDetalleVenta.Rows[pos].Cells[2].Value = Convert.ToInt32(cmbCantidad.Text);
                                     dv.dgDetalleVenta.Rows[pos].Cells[4].Value = Convert.ToInt32(cmbCantidad.Text) * Convert.ToDecimal(dv.dgDetalleVenta.Rows[pos].Cells[3].Value);
                                 }
-                                else if (Convert.ToInt32(cmbCantidad.Text) == 0)
+                                else if(Convert.ToInt32(cmbCantidad.Text) == 0)
                                 {
-
-                                    dv.dgDetalleVenta.Rows.Remove(dv.dgDetalleVenta.Rows[pos]);
-
+                                   
+                                        dv.dgDetalleVenta.Rows.Remove(dv.dgDetalleVenta.Rows[pos]);
+                                    
                                 }
                                 else
                                 {
@@ -150,7 +150,7 @@ namespace GerizimZZ
         private void button3_Click(object sender, EventArgs e)
         {
             string sql;
-            cmbCantidad.Items.Clear();
+            cmbCantidad.Items.Clear(); 
             if (!string.IsNullOrEmpty(textBox1.Text))
             {
                 try
@@ -179,10 +179,10 @@ namespace GerizimZZ
                             }
                             for (int i = 0; i <= Convert.ToInt32(reader["cantidadProducto"]); i++)
                             {
-                                cmbCantidad.Items.Add(i);
+                                cmbCantidad.Items.Add(i); 
                             }
                             lblcantidadAAgregar.Visible = true;
-                            cmbCantidad.Visible = true;
+                            cmbCantidad.Visible = true; 
                         }
                         else
                         {

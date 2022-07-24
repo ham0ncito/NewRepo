@@ -3,9 +3,9 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    internal class ConexionPedido : Cl_conexiones
+    internal class ConexionPedido: Cl_conexiones
     {
-
+        
         public void llenargrid(DataGridView grid)
         {
             SqlCommand cm = new SqlCommand("Select * From Pedidos", conex);

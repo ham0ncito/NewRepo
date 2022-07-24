@@ -1,7 +1,6 @@
 ﻿using GerizimZZ.Clases;
 using System.Data;
 using System.Data.SqlClient;
-using System.Text.RegularExpressions;
 
 namespace GerizimZZ
 {
@@ -182,99 +181,6 @@ namespace GerizimZZ
 
         private void lblprimerNombre_Click(object sender, EventArgs e)
         {
-        }
-
-        Regex tboxNombres = new Regex(@"^[a-zA-Z,.'-]+$");
-        private void txtTelefono_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Regex tboxnumerocli = new Regex(@"^[0-9]{8}$");
-
-            if (!tboxnumerocli.IsMatch(txtTelefono.Text))
-            {
-
-                txtTelefono.Focus();
-                errorProvidertelcli.SetError(txtTelefono, "Numero de telefono invalido");
-            }
-            else
-            {
-                e.Cancel = false;
-                errorProvidertelcli.SetError(txtTelefono, null);
-            }
-
-        }
-
-        private void txtprimerNombre_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (!tboxNombres.IsMatch(txtprimerNombre.Text))
-            {
-
-                txtprimerNombre.Focus();
-                errorProvider1nombre.SetError(txtprimerNombre, "Nombre invalido");
-            }
-            else
-            {
-
-                errorProvider1nombre.SetError(txtprimerNombre, null);
-            }
-        }
-
-        private void txtsegundoNombre_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (!tboxNombres.IsMatch(txtsegundoNombre.Text))
-            {
-
-                txtsegundoNombre.Focus();
-                errorProvider2nombre.SetError(txtsegundoNombre, "Nombre invalido");
-            }
-            else
-            {
-
-                errorProvider2nombre.SetError(txtsegundoNombre, null);
-            }
-        }
-
-        private void txtprimerApellido_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (!tboxNombres.IsMatch(txtprimerApellido.Text))
-            {
-                txtprimerApellido.Focus();
-                errorProvider1apellido.SetError(txtprimerApellido, "Apellido invalido");
-            }
-            else
-            {
-
-                errorProvider1apellido.SetError(txtprimerApellido, null);
-            }
-        }
-
-        private void txtsegundoApellido_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            if (!tboxNombres.IsMatch(txtsegundoApellido.Text))
-            {
-
-                txtsegundoApellido.Focus();
-                errorProvider2apellido.SetError(txtsegundoApellido, "Apellido invalido");
-            }
-            else
-            {
-
-                errorProvider2apellido.SetError(txtsegundoApellido, null);
-            }
-        }
-
-        private void txtID_cliente_Validating(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            Regex numid = new Regex(@"^[0-9]");
-            if (!numid.IsMatch(txtID_cliente.Text))
-            {
-
-                txtID_cliente.Focus();
-                errorProvidernumID.SetError(txtID_cliente, "Numero invalido");
-            }
-            else
-            {
-                errorProvidernumID.SetError(txtID_cliente, null);
-            }
         }
     }
 }
