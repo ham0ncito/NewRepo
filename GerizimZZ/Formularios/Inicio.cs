@@ -72,7 +72,7 @@ namespace GerizimZZ
 
         private void BarraBusqueda_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         //Boton panel lateral derecho
@@ -99,7 +99,7 @@ namespace GerizimZZ
         //click a boton de cerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea continuar?", "Salir del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea Salir?", "Salir del sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -201,7 +201,7 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-            buscar(); 
+            buscar();
         }
         private void buscar()
         {

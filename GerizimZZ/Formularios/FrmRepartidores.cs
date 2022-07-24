@@ -29,6 +29,9 @@ namespace GerizimZZ
             //Llenar textboxt con datos del datagridview
             tb_Nombre.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             tb_CodigoRepartidor.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            tb_Direccion.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            tb_Codigo.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+
         }
 
         private void brbRepartidores_TextChanged(object sender, EventArgs e)

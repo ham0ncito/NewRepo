@@ -2,6 +2,7 @@
 using GerizimZZ.Datasets;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace GerizimZZ
 {
@@ -45,6 +46,70 @@ namespace GerizimZZ
             }
         }
 
+        private void txtID_codigoProducto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex rcod = new Regex(@"^(\d\d{0,1})$");
+            if (!rcod.IsMatch(txtID_codigoProducto.Text))
+            {
+                e.Cancel = true;
+                txtID_codigoProducto.Focus();
+                errorProvidercodigo.SetError(txtID_codigoProducto, "Codigo invalido");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvidercodigo.SetError(txtID_codigoProducto, null);
+            }
+        }
+
+        private void txtPrecio_producto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex rprecio = new Regex(@"^\d+\.?\d*");
+            if (!rprecio.IsMatch(txtPrecio_producto.Text))
+            {
+                e.Cancel = true;
+                txtPrecio_producto.Focus();
+                errorProviderprPrecio.SetError(txtPrecio_producto, "Precio invalido");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProviderprPrecio.SetError(txtPrecio_producto, null);
+            }
+        }
+
+        private void txtCantidadProducto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex rcantpr = new Regex(@"^(\d\d{0,2})$");
+            if (!rcantpr.IsMatch(txtCantidadProducto.Text))
+            {
+                e.Cancel = true;
+                txtCantidadProducto.Focus();
+                errorProviderCantidadpr.SetError(txtCantidadProducto, "Cantidad Invalida");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProviderCantidadpr.SetError(txtCantidadProducto, null);
+            }
+        }
+
+        private void txtCantidadMinima_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Regex rcantprmin = new Regex(@"^(\d\d{0,2})$");
+            if (!rcantprmin.IsMatch(txtCantidadMinima.Text))
+            {
+                e.Cancel = true;
+                txtCantidadMinima.Focus();
+                errorProvidercantMin.SetError(txtCantidadMinima, "Cantidad Invalida");
+            }
+            else
+            {
+                e.Cancel = false;
+                errorProvidercantMin.SetError(txtCantidadMinima, null);
+            }
+        }
+
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             dstProducto.Tables[0].DefaultView.RowFilter = string.Format("Convert([{0}], 'System.String') LIKE '{1}%'", "ID_codigoProducto", txtBuscar.Text) + " OR " +
@@ -63,7 +128,7 @@ namespace GerizimZZ
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCantidadMinima.Text == "" || txtCantidadProducto.Text == "" || txtCodigoBarra.Text == "" || txtCodigoCatologo.Text == "" || txtDescripcionProducto.Text == "" || txtEstadoPRoducto.Text == ""  || txtID_codigoProducto.Text == "" || txtNombreProducto.Text == "" || txtPesoProducto.Text == "" || txtPrecio_producto.Text == "")
+            if (txtCantidadMinima.Text == "" || txtCantidadProducto.Text == "" || txtCodigoBarra.Text == "" || txtCodigoCatologo.Text == "" || txtDescripcionProducto.Text == "" || txtEstadoPRoducto.Text == "" || txtID_codigoProducto.Text == "" || txtNombreProducto.Text == "" || txtPesoProducto.Text == "" || txtPrecio_producto.Text == "")
             {
                 MessageBox.Show("Los campos no pueden ir vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -86,7 +151,7 @@ namespace GerizimZZ
                 dstProducto.Tables.Add(dtProducto);
                 dgvProducto.DataSource = dstProducto.Tables[0];
                 con.Close();
-              
+
             }
         }
 

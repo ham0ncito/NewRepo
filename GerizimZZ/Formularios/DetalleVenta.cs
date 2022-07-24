@@ -10,13 +10,8 @@ namespace GerizimZZ
         private int x = 0;
         private decimal suma;
         private bool bandera = false;
-
+        bool creadas = false;
         private DataGridView dgView;
-
-     
-
-
-
 
         public DetalleVenta()
         {
@@ -87,14 +82,19 @@ namespace GerizimZZ
             try
             {
                 dgDetalleVenta.Columns.Clear();
-                for  (int i = 1; i <= dgDetalleVenta.Rows.Count; i++ )
+                for (int i = 1; i <= dgDetalleVenta.Rows.Count; i++)
                 {
                     dgDetalleVenta.Rows.Remove(dgDetalleVenta.Rows[i]);
-                 }
+                }
                 dgDetalleVenta.DataSource = null;
                 lblTotal.Text = "L 00";
                 cmbCliente.Text = "";
                 delivery.Checked = false;
+
+                tablita.Columns.Clear();
+                tablita.Rows.Clear();
+                idlist.Clear();
+                cantidadlist.Clear();
                 cmbNumero.Items.Clear();
                 cmbDireccion.Items.Clear();
                 lblCodigoCliente.Text = "";
@@ -175,10 +175,10 @@ namespace GerizimZZ
 
         public static DataTable tablita = new DataTable();
         public static List<string> idlist = new List<string>();
+        static public List<int> cantidadlist = new List<int>();
 
         public DataGridView DgView1 { get => dgView; set => dgView = value; }
-      
-       
+
 
         public void DataGridLector()
         {
@@ -196,49 +196,85 @@ namespace GerizimZZ
                 tablita.Columns.Add("Precio");
                 tablita.Columns.Add("Total");
             }
+            int contlista = 0;
             string comparacion = textc.Id;
+            int cantidad = int.Parse(textc.Cantidad);
             int cantidadcero = Int16.Parse(textc.Cantidad);
 
             idlist.Add(comparacion);
+            cantidadlist.Add(cantidad);
+            contlista += 1;
 
+
+            if (tablita.Rows.Count == 0)
             {
-                if (tablita.Rows.Count == 0)
+                tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
+            }
+            else
+            {
+                int estado = 0;
+                for (int i = 0; i < tablita.Rows.Count; i++)
+                {
+
+                    if (idlist[i] == textc.Id)
+                    {
+                        if (cantidadcero == 0)
+                        {
+                            tablita.Rows.RemoveAt(i);
+                            idlist.RemoveAt(i);
+                            cantidadlist.RemoveAt(i);
+                            estado = 1;
+                            break;
+                        }
+                        else
+                        {
+                            tablita.Rows.RemoveAt(i);
+                            tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
+                            idlist.RemoveAt(i);
+                            cantidadlist.RemoveAt(i);
+                            estado = 1;
+                            break;
+                        }
+                    }
+                    if (idlist[i] != textc.Id)
+                    {
+                        estado = 2;
+                    }
+                }
+                if (estado == 2)
                 {
                     tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
                 }
-                else
+
+
+                //string idrowborrar = "";
+                //for(int i = 0; i<tablita.Rows.Count; i++)
+                //{
+                //    if (cantidadlist[i] == 0)
+                //    {
+                //        idrowborrar = idlist[i];
+                //        break;
+                //    }
+                //}
+                //borrar:
+                //for(int i = 0; i<tablita.Rows.Count;i++)
+                //{
+                //    if (idlist[i] == idrowborrar)
+                //    {
+                //        tablita.Rows.RemoveAt(i);
+                //        idlist.RemoveAt(i);
+                //        cantidadlist.RemoveAt(i);
+                //        goto borrar;
+                //    }
+                //}
+
+                if (tablita.Rows.Count == 0)
                 {
-                    int estado = 0;
-                    for (int i = 0; i < tablita.Rows.Count; i++)
-                    {
-                        if (idlist[i] == textc.Id)
-                        {
-                            if (cantidadcero == 0)
-                            {
-                                tablita.Rows.RemoveAt(i);
-                                idlist.RemoveAt(i);
-                                estado = 1;
-                                break;
-                            }
-                            else
-                            {
-                                tablita.Rows.RemoveAt(i);
-                                tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
-                                idlist.RemoveAt(i);
-                                estado = 1;
-                                break;
-                            }
-                        }
-                        if (idlist[i] != textc.Id)
-                        {
-                            estado = 2;
-                        }
-                    }
-                    if (estado == 2)
-                    {
-                        tablita.Rows.Add(textc.Id, textc.NombreProducto, textc.Cantidad, textc.precio, textc.total);
-                    }
+                    tablita.Columns.Clear();
+                    idlist.Clear();
+                    cantidadlist.Clear();
                 }
+
             }
         }
 
@@ -494,6 +530,7 @@ namespace GerizimZZ
         {
         }
 
+
         private void btnNuevoTelefono_Click(object sender, EventArgs e)
         {
             vertelefono();
@@ -504,7 +541,7 @@ namespace GerizimZZ
             if (InputBox.inputBox("Ingrese su numero de telefono de envio ", "Nuevo Telefono de envio", ref telefono) == DialogResult.OK)
             {
 
-                if (Regex.IsMatch(telefono, @"^[0-9]+$")  && telefono.Length == 8 && !string.Equals(lblCodigoCliente.Text, "00") && (string.Equals(telefono.Substring(0,1),"3") || string.Equals(telefono.Substring(0,1), "2") || string.Equals(telefono.Substring(0,1), "8") || string.Equals(telefono.Substring(0,1), "9")))
+                if (Regex.IsMatch(telefono, @"^[0-9]+$") && telefono.Length == 8 && !string.Equals(lblCodigoCliente.Text, "00") && (string.Equals(telefono.Substring(0, 1), "3") || string.Equals(telefono.Substring(0, 1), "2") || string.Equals(telefono.Substring(0, 1), "8") || string.Equals(telefono.Substring(0, 1), "9")))
                 {
                     string consulta = "insert into telefonosClientes (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(telefono) + "';";
                     cmbNumero.Items.Add(telefono);
@@ -518,24 +555,24 @@ namespace GerizimZZ
         }
         private void btnNuevaDireccion_Click(object sender, EventArgs e)
         {
-            verDireccion(); 
+            verDireccion();
         }
         private void verDireccion()
         {
             string direccion = "";
-            
+
             if (InputBox.inputBox("Ingrese su nueva Direccion de envio ", "Direccion de envio", ref direccion) == DialogResult.OK)
             {
-                int contador = 0; 
-                for (int i = 1; i < direccion.Length; i ++)
+                int contador = 0;
+                for (int i = 1; i < direccion.Length; i++)
                 {
-                    if (string.Equals(direccion.Substring(i,1), direccion.Substring((i-1), 1)) && direccion.Length > 1)
+                    if (string.Equals(direccion.Substring(i, 1), direccion.Substring((i - 1), 1)) && direccion.Length > 1)
                     {
-                        contador += 1; 
+                        contador += 1;
                     }
-                    
+
                 }
-                if (direccion.Length > 7 && direccion.Length < 100 && contador < Math.Floor(Convert.ToDecimal(direccion.Length / 2) ) && !string.Equals(lblCodigoCliente.Text,"00"))
+                if (direccion.Length > 7 && direccion.Length < 100 && contador < Math.Floor(Convert.ToDecimal(direccion.Length / 2)) && !string.Equals(lblCodigoCliente.Text, "00"))
                 {
                     string consulta = "insert into Direcciones (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(direccion) + "';";
                     cmbDireccion.Items.Add(direccion);
@@ -552,7 +589,7 @@ namespace GerizimZZ
 
         private void dgDetalleVenta_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            datagrid(); 
+            datagrid();
         }
     }
 }

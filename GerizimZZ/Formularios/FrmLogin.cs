@@ -28,7 +28,7 @@ namespace GerizimZZ
         {
             if (string.IsNullOrEmpty(txtContraseña.Text) && string.IsNullOrEmpty(txtUsuario.Text))
             {
-                errorProvider1.SetError(groupBox1, "Ingrese todos los datos para continuar"); 
+                errorProvider1.SetError(groupBox1, "Ingrese todos los datos para continuar");
             }
             else
             {
@@ -49,7 +49,7 @@ namespace GerizimZZ
                 }
                 catch (Exception x)
                 {
-                    MessageBox.Show(x.Message); 
+                    MessageBox.Show(x.Message);
                 }
             }
         }
@@ -95,11 +95,11 @@ namespace GerizimZZ
         {
             try
             {
-                chbxmotrar.Visible = true; 
+                chbxmotrar.Visible = true;
             }
             catch (Exception x)
             {
-                MessageBox.Show(x.Message); 
+                MessageBox.Show(x.Message);
             }
         }
     }
