@@ -524,10 +524,10 @@ namespace GerizimZZ
                     }
                     
                 }
-                if (Regex.IsMatch(direccion, @"^[0-9]+$") && direccion.Length > 7 && direccion.Length < 100 && contador < 3 && !string.Equals(lblCodigoCliente.Text,"00"))
+                if (direccion.Length > 7 && direccion.Length < 100 && contador < 3 && !string.Equals(lblCodigoCliente.Text,"00"))
                 {
                     string consulta = "insert into Direcciones (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(direccion) + "';";
-                    cmbNumero.Items.Add(direccion);
+                    cmbDireccion.Items.Add(direccion);
                     MessageBox.Show("Valores Ingresados", "Ejecución exitosa");
                 }
                 else
