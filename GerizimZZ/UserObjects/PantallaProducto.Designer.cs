@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.ImagenProducto = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -67,19 +67,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "100.00";
             // 
-            // label2
+            // lblNombre
             // 
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label2.Font = new System.Drawing.Font("Iosevka Nerd Font", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.Green;
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(246, 40);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Fragancia Aqva";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblNombre.Font = new System.Drawing.Font("Iosevka Nerd Font", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblNombre.ForeColor = System.Drawing.Color.Green;
+            this.lblNombre.Location = new System.Drawing.Point(0, 0);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(246, 40);
+            this.lblNombre.TabIndex = 2;
+            this.lblNombre.Text = "Fragancia Aqva";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblNombre.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -162,7 +162,7 @@
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblAroma);
             this.Controls.Add(this.lblGenero);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.ImagenProducto);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label5);
@@ -181,7 +181,7 @@
 
         #endregion
         private Label label1;
-        private Label label2;
+        private Label lblNombre;
         private Label label3;
         private Label label4;
         private Label label5;

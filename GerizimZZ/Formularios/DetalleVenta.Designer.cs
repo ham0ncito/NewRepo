@@ -227,6 +227,7 @@ namespace GerizimZZ
             this.dgDetalleVenta.Size = new System.Drawing.Size(861, 241);
             this.dgDetalleVenta.TabIndex = 28;
             this.dgDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDetalleVenta_CellContentClick_1);
+            this.dgDetalleVenta.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgDetalleVenta_RowsAdded);
             // 
             // productosBindingSource
             // 

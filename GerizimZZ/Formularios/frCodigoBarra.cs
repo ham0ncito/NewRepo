@@ -57,7 +57,7 @@ namespace GerizimZZ
             {
                 errorProvider1.SetError(groupBox1, "Ingrese todos los datos");
             }
-            else if (existe == true && string.IsNullOrEmpty(textBox1.Text) == false && string.IsNullOrEmpty(cmbCantidad.Text) == false)
+            else if (existe == true && string.IsNullOrEmpty(textBox1.Text) == false && String.IsNullOrEmpty(cmbCantidad.Text) == false)
             {
                 errorProvider1.SetError(groupBox1, "");
                 SqlCommand consulta = new SqlCommand("Select ID_codigoProducto, precio_producto, nombreProducto, cantidadProducto, estadoPRoducto from Producto where codigoBarra = '" + textBox1.Text + "';", connection);
@@ -95,28 +95,37 @@ namespace GerizimZZ
                                 dt.Columns.Add("Precio");
                                 dt.Columns.Add("Total");
                             }
-                            datarow["Id"] = registro[0].ToString();
-                            datarow["Nombre"] = registro[2].ToString();
+                            if (Convert.ToInt32(cmbCantidad.Text ) > 0)
+                            {
+                                datarow["Id"] = registro[0].ToString();
+                                datarow["Nombre"] = registro[2].ToString();
 
-                            datarow["Cantidad"] = cmbCantidad.Text;
+                                datarow["Cantidad"] = cmbCantidad.Text;
 
-                            datarow["Precio"] = registro[1].ToString();
+                                datarow["Precio"] = registro[1].ToString();
 
-                            datarow["Total"] = (Convert.ToInt32(cmbCantidad.Text) * Convert.ToInt32(registro[1])).ToString();
-                            dt.Rows.Add(datarow);
+                                datarow["Total"] = (Convert.ToInt32(cmbCantidad.Text) * Convert.ToInt32(registro[1])).ToString();
+                                dt.Rows.Add(datarow);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pueden agregar valores negativos", "No se pudo agregar al carrito"); 
+                            }
                         }
                         else
                         {
                             if (MessageBox.Show("Ese producto ya se encuentra agregado en el carrito ¿Desea modificar su cantidad?", "Producto en el carrito", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                if (Convert.ToInt32(cmbCantidad.Text) <= cantidad[1])
+                                if (Convert.ToInt32(cmbCantidad.Text) <= cantidad[1] && Convert.ToInt32(cmbCantidad.Text) >= 1)
                                 {
                                     dv.dgDetalleVenta.Rows[pos].Cells[2].Value = Convert.ToInt32(cmbCantidad.Text);
                                     dv.dgDetalleVenta.Rows[pos].Cells[4].Value = Convert.ToInt32(cmbCantidad.Text) * Convert.ToDecimal(dv.dgDetalleVenta.Rows[pos].Cells[3].Value);
                                 }
                                 else if(Convert.ToInt32(cmbCantidad.Text) == 0)
                                 {
-                                    dv.dgDetalleVenta.Rows.RemoveAt(pos); 
+                                   
+                                        dv.dgDetalleVenta.Rows.Remove(dv.dgDetalleVenta.Rows[pos]);
+                                    
                                 }
                                 else
                                 {

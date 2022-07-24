@@ -1,4 +1,5 @@
 ﻿using GerizimZZ.Clases;
+using System.Data;
 
 namespace GerizimZZ
 {
@@ -27,17 +28,7 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-            verificar();
-            {
-                if (cantidad < Stockactual)
-                {
-                    cantidad += 1;
-                    comboBox1.Text = cantidad.ToString();
-                    MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                DetalleVenta dgv = new DetalleVenta();
-                dgv.llenartablita();
-            }
+            
         }
 
         public void Producto_Load(object sender, EventArgs e)
@@ -80,8 +71,8 @@ namespace GerizimZZ
 
         public string NombreProducto
         {
-            get { return label2.Text; }
-            set { label2.Text = value; }
+            get { return lblNombre.Text; }
+            set { lblNombre.Text = value; }
         }
 
         public int Stockactual
@@ -125,16 +116,7 @@ namespace GerizimZZ
 
         private void button3_Click(object sender, EventArgs e)
         {
-            verificar();
-
-            if (cantidad > 0)
-            {
-                cantidad -= 1;
-                comboBox1.Text = cantidad.ToString();
-                MessageBox.Show("Cantidad reducida correctamente", "Resta correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            DetalleVenta dgv = new DetalleVenta();
-            dgv.llenartablita();
+           
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -163,7 +145,13 @@ namespace GerizimZZ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            verificar();
+            
+        
+            
+        }
+        private void tabla ()
+        {
+           
             if (!(String.IsNullOrEmpty(comboBox1.Text)) && Convert.ToInt32(comboBox1.Text) <= Convert.ToInt32(label3.Text))
             {
                 errorProvider1.SetError(comboBox1, "");
@@ -184,13 +172,6 @@ namespace GerizimZZ
                     textc.total = total.ToString();
                 }
             }
-            else
-            {
-                errorProvider1.SetError( comboBox1, "Cantidad Ingresada excede el stock");
-
-                comboBox1.Text = label3.Text;
-                Thread.Sleep(1000);
-            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -203,6 +184,18 @@ namespace GerizimZZ
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            verificar();
+            tabla(); 
+            if (Convert.ToDecimal(comboBox1.Text )>0)
+            {
+                DetalleVenta dgv = new DetalleVenta();
+                dgv.llenartablita();
+            }
+            else
+            {
+
+            }
+           
 
         }
     }

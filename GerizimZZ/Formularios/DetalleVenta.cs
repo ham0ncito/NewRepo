@@ -8,10 +8,15 @@ namespace GerizimZZ
     public partial class DetalleVenta : Form
     {
         private int x = 0;
-        private double suma;
+        private decimal suma;
         private bool bandera = false;
 
         private DataGridView dgView;
+
+     
+
+
+
 
         public DetalleVenta()
         {
@@ -82,7 +87,11 @@ namespace GerizimZZ
             try
             {
                 dgDetalleVenta.Columns.Clear();
-                this.dgDetalleVenta.DataSource = null;
+                for  (int i = 1; i <= dgDetalleVenta.Rows.Count; i++ )
+                {
+                    dgDetalleVenta.Rows.Remove(dgDetalleVenta.Rows[i]);
+                 }
+                dgDetalleVenta.DataSource = null;
                 lblTotal.Text = "L 00";
                 cmbCliente.Text = "";
                 delivery.Checked = false;
@@ -168,6 +177,8 @@ namespace GerizimZZ
         public static List<string> idlist = new List<string>();
 
         public DataGridView DgView1 { get => dgView; set => dgView = value; }
+      
+       
 
         public void DataGridLector()
         {
@@ -326,7 +337,7 @@ namespace GerizimZZ
             bandera = false;
             foreach (DataGridViewRow row in dgDetalleVenta.Rows)
             {
-                suma += Convert.ToInt32(row.Cells["Total"].Value);
+                suma += Convert.ToDecimal(row.Cells["Total"].Value);
             }
             lblTotal.Text = "L. " + suma.ToString();
         }
@@ -537,6 +548,11 @@ namespace GerizimZZ
 
             }
 
+        }
+
+        private void dgDetalleVenta_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            datagrid(); 
         }
     }
 }
