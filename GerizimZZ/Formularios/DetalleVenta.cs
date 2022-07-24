@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing.Printing;
-
+using System.Text.RegularExpressions;
 namespace GerizimZZ
 {
     public partial class DetalleVenta : Form 
@@ -10,7 +10,7 @@ namespace GerizimZZ
         private int x = 0;
         private double suma;
         private bool bandera = false;
-
+        SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
         private DataGridView dgView;
 
         public DetalleVenta()
@@ -24,6 +24,8 @@ namespace GerizimZZ
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             datagrid();
+            cmbNumero.Visible = true;
+            cmbDireccion.Visible = true; 
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -250,6 +252,7 @@ namespace GerizimZZ
                 numeroFactura = Convert.ToInt32(registro[0]) + 1;
                 lblNumeroFactura.Text = numeroFactura.ToString();
             }
+            conexion.Close();
         }
 
         public void dgDetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -378,16 +381,52 @@ namespace GerizimZZ
 
         private void cmbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
+            cmbDireccion.Items.Clear();
+            cmbNumero.Items.Clear();
             buscarId();
             lblCodigoCliente.Visible = true;
-            lblCodCliente.Visible = true; 
+            lblCodCliente.Visible = true;
+            
+            TelefonosDireccions(); 
+        }
+        public void direccion ()
+        {
+            SqlCommand coma = new SqlCommand(" exec Direcciones '" + lblCodigoCliente.Text + "' ; ", conexion);
+                        SqlDataReader regist = coma.ExecuteReader();
+            while (regist.Read() && !(regist.IsDBNull(0) == true))
+            {
+                cmbDireccion.Items.Add(regist[0].ToString());
+            }
+            conexion.Close();
+        }
+        public void TelefonosDireccions ()
+        {
+            try
+            {
+               
+                SqlCommand comando = new SqlCommand(" exec Telefonos '" + lblCodigoCliente.Text + "' ; ", conexion);
+                conexion.Open();
+                SqlDataReader registro = comando.ExecuteReader();
+                while (registro.Read() && !(registro.IsDBNull(0) == true))
+                {
+                    cmbNumero.Items.Add(registro[0].ToString());
+                }
+                direccion();
+                conexion.Close();
+
+            }
+            
+            catch (SqlException x)
+            {
+                MessageBox.Show(x.Message);
+            }
         }
 
         public void buscarId()
         {
             try
             {
-                SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+               
                 SqlCommand comando = new SqlCommand(" exec buscarId '" + cmbCliente.Text + "' ; ", conexion);
                 conexion.Open();
                 SqlDataReader registro = comando.ExecuteReader();
@@ -413,7 +452,7 @@ namespace GerizimZZ
         {
             try
             {
-                SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+              
                 SqlCommand comando = new SqlCommand("exec nombres; ", conexion);
                 conexion.Open();
                 cmbCliente.Items.Clear();
@@ -440,7 +479,26 @@ namespace GerizimZZ
 
         private void btnNuevoTelefono_Click(object sender, EventArgs e)
         {
+            string telefono = "";
+            int cambio;
+            if (InputBox.inputBox("Ingrese su numero de telefono ", "Nuevo Telefono", ref telefono) == DialogResult.OK)
+            {
+                
+                if (Regex.IsMatch(telefono, @"^[0-9]+$") && telefono.Length <= 0 && telefono.Length > 0   )
+                {
+                    string consulta = "insert into telefonosClientes (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(telefono) + "';" ;
+                    cmbNumero.Items.Add(telefono); 
+                }
+                else
+                {
+                    MessageBox.Show("Valores no validos", "Ingrese un telefono valido"); 
+                }
+            }
+        }
 
+        private void btnNuevaDireccion_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -345,6 +345,8 @@ namespace GerizimZZ
             this.btnNuevaDireccion.TabIndex = 22;
             this.btnNuevaDireccion.Text = "Otra direccion";
             this.btnNuevaDireccion.UseVisualStyleBackColor = true;
+            this.btnNuevaDireccion.Visible = false;
+            this.btnNuevaDireccion.Click += new System.EventHandler(this.btnNuevaDireccion_Click);
             // 
             // btnNuevoTelefono
             // 
@@ -354,6 +356,7 @@ namespace GerizimZZ
             this.btnNuevoTelefono.TabIndex = 21;
             this.btnNuevoTelefono.Text = "Otro Telefono";
             this.btnNuevoTelefono.UseVisualStyleBackColor = true;
+            this.btnNuevoTelefono.Visible = false;
             this.btnNuevoTelefono.Click += new System.EventHandler(this.btnNuevoTelefono_Click);
             // 
             // cmbNumero
