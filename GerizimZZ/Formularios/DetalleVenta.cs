@@ -493,7 +493,7 @@ namespace GerizimZZ
             if (InputBox.inputBox("Ingrese su numero de telefono de envio ", "Nuevo Telefono de envio", ref telefono) == DialogResult.OK)
             {
 
-                if (Regex.IsMatch(telefono, @"^[0-9]+$")  && telefono.Length == 8 && !string.Equals(lblCodigoCliente.Text, "00") && (string.Equals(telefono[0],3) || string.Equals(telefono[0], 2) || string.Equals(telefono[0], 8) || string.Equals(telefono[0], 9)))
+                if (Regex.IsMatch(telefono, @"^[0-9]+$")  && telefono.Length == 8 && !string.Equals(lblCodigoCliente.Text, "00") && (string.Equals(telefono.Substring(0,1),"3") || string.Equals(telefono.Substring(0,1), "2") || string.Equals(telefono.Substring(0,1), "8") || string.Equals(telefono.Substring(0,1), "9")))
                 {
                     string consulta = "insert into telefonosClientes (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(telefono) + "';";
                     cmbNumero.Items.Add(telefono);
@@ -516,15 +516,15 @@ namespace GerizimZZ
             if (InputBox.inputBox("Ingrese su nueva Direccion de envio ", "Direccion de envio", ref direccion) == DialogResult.OK)
             {
                 int contador = 0; 
-                for (int i = 0; i < direccion.Length; i ++)
+                for (int i = 1; i < direccion.Length; i ++)
                 {
-                    if (string.Equals(direccion[i], direccion[i+1]))
+                    if (string.Equals(direccion.Substring(i,1), direccion.Substring((i-1), 1)) && direccion.Length > 1)
                     {
                         contador += 1; 
                     }
                     
                 }
-                if (Regex.IsMatch(direccion, @"^[0-9]+$") && direccion.Length > 7 && direccion.Length <= 100 && contador < 3 && !string.Equals(lblCodigoCliente.Text,"00"))
+                if (Regex.IsMatch(direccion, @"^[0-9]+$") && direccion.Length > 7 && direccion.Length < 100 && contador < 3 && !string.Equals(lblCodigoCliente.Text,"00"))
                 {
                     string consulta = "insert into Direcciones (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(direccion) + "';";
                     cmbNumero.Items.Add(direccion);

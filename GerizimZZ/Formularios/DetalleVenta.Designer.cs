@@ -123,6 +123,7 @@ namespace GerizimZZ
             // 
             // cmbPago
             // 
+            this.cmbPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPago.FormattingEnabled = true;
             this.cmbPago.Items.AddRange(new object[] {
             "Efectivo",
@@ -132,7 +133,6 @@ namespace GerizimZZ
             this.cmbPago.Name = "cmbPago";
             this.cmbPago.Size = new System.Drawing.Size(121, 26);
             this.cmbPago.TabIndex = 10;
-            this.cmbPago.Text = "Efectivo";
             // 
             // delivery
             // 
@@ -310,6 +310,7 @@ namespace GerizimZZ
             // 
             // cmbCliente
             // 
+            this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.FormattingEnabled = true;
             this.cmbCliente.Location = new System.Drawing.Point(455, 36);
             this.cmbCliente.Name = "cmbCliente";
@@ -361,6 +362,7 @@ namespace GerizimZZ
             // 
             // cmbNumero
             // 
+            this.cmbNumero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNumero.FormattingEnabled = true;
             this.cmbNumero.Location = new System.Drawing.Point(221, 25);
             this.cmbNumero.Name = "cmbNumero";
@@ -369,6 +371,7 @@ namespace GerizimZZ
             // 
             // cmbDireccion
             // 
+            this.cmbDireccion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDireccion.FormattingEnabled = true;
             this.cmbDireccion.Location = new System.Drawing.Point(221, 60);
             this.cmbDireccion.Name = "cmbDireccion";
