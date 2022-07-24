@@ -17,6 +17,7 @@ namespace GerizimZZ
         public FrmInventario()
         {
             InitializeComponent();
+            txtFechaingreso.Text = DateTime.Now.ToString("yyyy'-'mm'-'dd' 'hh:mm");
         }
 
         private void FrmProducto_Load(object sender, EventArgs e)
@@ -127,7 +128,7 @@ namespace GerizimZZ
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCantidadMinima.Text == "" || txtCantidadProducto.Text == "" || txtCodigoBarra.Text == "" || txtCodigoCatologo.Text == "" || txtDescripcionProducto.Text == "" || txtEstadoPRoducto.Text == "" || txtFechaingreso.Text == "" || txtID_codigoProducto.Text == "" || txtNombreProducto.Text == "" || txtPesoProducto.Text == "" || txtPrecio_producto.Text == "")
+            if (txtCantidadMinima.Text == "" || txtCantidadProducto.Text == "" || txtCodigoBarra.Text == "" || txtCodigoCatologo.Text == "" || txtDescripcionProducto.Text == "" || txtEstadoPRoducto.Text == ""  || txtID_codigoProducto.Text == "" || txtNombreProducto.Text == "" || txtPesoProducto.Text == "" || txtPrecio_producto.Text == "")
             {
                 MessageBox.Show("Los campos no pueden ir vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -143,14 +144,14 @@ namespace GerizimZZ
                 productos.Agregar_Producto(codigo, precio_producto, txtNombreProducto.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatologo.Text, cantidadproducto, cantidadminima, txtDescripcionProducto.Text, estadoproducto, txtFechaingreso.Text);
                 SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
                 SqlDataAdapter comando = new SqlDataAdapter();
-                string sql = "SELECT * FROM Cliente";
+                string sql = "SELECT * FROM Producto";
                 comando.SelectCommand = new SqlCommand(sql, con);
-                dtProducto = Cl_Clientes.GetAll();
+                dtProducto = Cl_Inventario.GetAll();
                 dstProducto = new Productosdst();
                 dstProducto.Tables.Add(dtProducto);
                 dgvProducto.DataSource = dstProducto.Tables[0];
                 con.Close();
-                MessageBox.Show("Registro modificado con exito", "Modificar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+              
             }
         }
 
@@ -168,7 +169,7 @@ namespace GerizimZZ
                 estadoproducto = Convert.ToInt32(txtEstadoPRoducto.Text);
                 precio_producto = Convert.ToDouble(txtPrecio_producto.Text);
                 pesoproducto = Convert.ToDouble(txtPesoProducto.Text);
-                productos.Modificar_Producto(codigo, precio_producto, txtNombreProducto.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatologo.Text, cantidadproducto, cantidadminima, txtDescripcionProducto.Text, estadoproducto, txtFechaingreso.Text);
+                productos.Modificar_Producto(codigo, precio_producto, txtNombreProducto.Text, pesoproducto, txtCodigoBarra.Text, txtCodigoCatologo.Text, cantidadproducto, cantidadminima, txtDescripcionProducto.Text, estadoproducto);
                 SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
                 SqlDataAdapter comando = new SqlDataAdapter();
                 string sql = "SELECT * FROM Producto";
@@ -197,7 +198,7 @@ namespace GerizimZZ
                 }
                 SqlConnection con = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
                 SqlDataAdapter comando = new SqlDataAdapter();
-                string sql = "SELECT * FROM Cliente";
+                string sql = "SELECT * FROM Producto";
                 comando.SelectCommand = new SqlCommand(sql, con);
                 dtProducto = Cl_Inventario.GetAll();
                 dstProducto = new Productosdst();

@@ -1,4 +1,5 @@
 ﻿using GerizimZZ.Clases;
+using System.Data;
 
 namespace GerizimZZ
 {
@@ -12,13 +13,13 @@ namespace GerizimZZ
         private string codigobarra;
         private string textBox;
         public int cantidad = 0;
-
+        
         public DetalleVenta dgv = new DetalleVenta();
 
         public Producto()
         {
             InitializeComponent();
-            textBox1.Text = "0";
+           
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -27,21 +28,17 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-            verificar();
-            {
-                if (cantidad < Stockactual)
-                {
-                    cantidad += 1;
-                    textBox1.Text = cantidad.ToString();
-                    MessageBox.Show("Cantidad agregada correctamente", "Adiccion correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                DetalleVenta dgv = new DetalleVenta();
-                dgv.llenartablita();
-            }
+            
         }
 
         public void Producto_Load(object sender, EventArgs e)
         {
+            
+            for (int i = 0; i <= Stockactual; i++)
+            {
+                comboBox1.Items.Add(i.ToString());
+            }
+            comboBox1.Text = "0";
         }
 
         public int Id
@@ -52,8 +49,8 @@ namespace GerizimZZ
 
         public string text
         {
-            get { return textBox1.Text; }
-            set { textBox1.Text = value; }
+            get { return comboBox1.Text; }
+            set { comboBox1.Text = value; }
         }
 
         public string DescripcionProducto
@@ -74,8 +71,8 @@ namespace GerizimZZ
 
         public string NombreProducto
         {
-            get { return label2.Text; }
-            set { label2.Text = value; }
+            get { return lblNombre.Text; }
+            set { lblNombre.Text = value; }
         }
 
         public int Stockactual
@@ -96,36 +93,37 @@ namespace GerizimZZ
             set { codigobarra = value; }
         }
 
+        public Image Imagen 
+        {
+            get { return ImagenProducto.Image; }
+            set { ImagenProducto.Image = value; }
+        }
+        public Label genero
+        {
+            get { return lblGenero; }
+            set { lblGenero = value; }
+        }
+        public Label Aroma
+        {
+            get { return lblAroma; }
+            set { lblAroma = value; }
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            if (estado == "2")
-            {
-                estado = "1";
-            }
-            else
-            {
-                estado = "2";
-            }
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            verificar();
-
-            if (cantidad > 0)
-            {
-                cantidad -= 1;
-                textBox1.Text = cantidad.ToString();
-                MessageBox.Show("Cantidad reducida correctamente", "Resta correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            DetalleVenta dgv = new DetalleVenta();
-            dgv.llenartablita();
+           
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             VentanaInfoProductos pr = new VentanaInfoProductos();
             pr.lblNombre.Text = this.NombreProducto;
+            pr.picImagen.Image = this.ImagenProducto.Image; 
             pr.lbldescripcion.Text = this.descripcion;
             pr.lblcodigo.Text = this.codigobarra.ToString();
             pr.lblprecio.Text = this.PrecioProducto.ToString();
@@ -135,9 +133,9 @@ namespace GerizimZZ
 
         public void verificar()
         {
-            if (textBox1.Text.Length > 0)
+            if (comboBox1.Text.Length > 0)
             {
-                cantidad = Convert.ToInt32(textBox1.Text);
+                cantidad = Convert.ToInt32(comboBox1.Text);
             }
             else
             {
@@ -147,17 +145,23 @@ namespace GerizimZZ
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            verificar();
-            if (!(String.IsNullOrEmpty(textBox1.Text)) && Convert.ToInt32(textBox1.Text) <= Convert.ToInt32(label3.Text))
+            
+        
+            
+        }
+        private void tabla ()
+        {
+           
+            if (!(String.IsNullOrEmpty(comboBox1.Text)) && Convert.ToInt32(comboBox1.Text) <= Convert.ToInt32(label3.Text))
             {
-                errorProvider1.SetError(textBox1, "");
-                if (Convert.ToInt32(textBox1.Text) > 0)
+                errorProvider1.SetError(comboBox1, "");
+                if (Convert.ToInt32(comboBox1.Text) > 0)
                 {
                     string precio = this.PrecioProducto;
                     textc.Id = this.Id.ToString();
                     textc.NombreProducto = this.NombreProducto;
 
-                    string cantidadtextbox = textBox1.Text.ToString();
+                    string cantidadtextbox = comboBox1.Text.ToString();
                     textc.Cantidad = cantidadtextbox;
                     textc.precio = this.PrecioProducto;
 
@@ -168,13 +172,6 @@ namespace GerizimZZ
                     textc.total = total.ToString();
                 }
             }
-            else
-            {
-                errorProvider1.SetError(textBox1, "Cantidad Ingresada excede el stock");
-
-                textBox1.Text = label3.Text;
-                Thread.Sleep(1000);
-            }
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -183,6 +180,23 @@ namespace GerizimZZ
 
         private void label4_Click(object sender, EventArgs e)
         {
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            verificar();
+            tabla(); 
+            if (Convert.ToDecimal(comboBox1.Text )>0)
+            {
+                DetalleVenta dgv = new DetalleVenta();
+                dgv.llenartablita();
+            }
+            else
+            {
+
+            }
+           
+
         }
     }
 }

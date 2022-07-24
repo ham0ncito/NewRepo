@@ -53,11 +53,11 @@ namespace GerizimZZ
             int pos = 0;
             int[] cantidad = new int[2];
 
-            if ((string.IsNullOrEmpty(textBox1.Text) == true || string.IsNullOrEmpty(textBox2.Text) == true))
+            if ((string.IsNullOrEmpty(textBox1.Text) == true || string.IsNullOrEmpty(cmbCantidad.Text) == true))
             {
                 errorProvider1.SetError(groupBox1, "Ingrese todos los datos");
             }
-            else if (existe == true && string.IsNullOrEmpty(textBox1.Text) == false && string.IsNullOrEmpty(textBox2.Text) == false)
+            else if (existe == true && string.IsNullOrEmpty(textBox1.Text) == false && String.IsNullOrEmpty(cmbCantidad.Text) == false)
             {
                 errorProvider1.SetError(groupBox1, "");
                 SqlCommand consulta = new SqlCommand("Select ID_codigoProducto, precio_producto, nombreProducto, cantidadProducto, estadoPRoducto from Producto where codigoBarra = '" + textBox1.Text + "';", connection);
@@ -67,7 +67,7 @@ namespace GerizimZZ
                 if (registro.Read())
                 {
                     cantidad[1] = Convert.ToInt32(registro[3]);
-                    if (Convert.ToInt32(registro[4]) != 0 && Convert.ToInt32(textBox2.Text) <= Convert.ToInt32(registro[3]))
+                    if (Convert.ToInt32(registro[4]) != 0 && Convert.ToInt32(cmbCantidad.Text) <= Convert.ToInt32(registro[3]))
                     {
                         DetalleVenta dv = Owner as DetalleVenta;
                         DataTable dt = new DataTable();
@@ -95,23 +95,37 @@ namespace GerizimZZ
                                 dt.Columns.Add("Precio");
                                 dt.Columns.Add("Total");
                             }
-                            datarow["Id"] = registro[0].ToString();
-                            datarow["Nombre"] = registro[2].ToString();
+                            if (Convert.ToInt32(cmbCantidad.Text ) > 0)
+                            {
+                                datarow["Id"] = registro[0].ToString();
+                                datarow["Nombre"] = registro[2].ToString();
 
-                            datarow["Cantidad"] = textBox2.Text;
+                                datarow["Cantidad"] = cmbCantidad.Text;
 
-                            datarow["Precio"] = registro[1].ToString();
+                                datarow["Precio"] = registro[1].ToString();
 
-                            datarow["Total"] = (Convert.ToInt32(textBox2.Text) * Convert.ToInt32(registro[1])).ToString();
-                            dt.Rows.Add(datarow);
+                                datarow["Total"] = (Convert.ToInt32(cmbCantidad.Text) * Convert.ToInt32(registro[1])).ToString();
+                                dt.Rows.Add(datarow);
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se pueden agregar valores negativos", "No se pudo agregar al carrito"); 
+                            }
                         }
                         else
                         {
-                            if (MessageBox.Show("Ese producto ya se encuentra agregado en el carrito ¿Desea Agregar mas cantidad?", "Producto en el carrito", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            if (MessageBox.Show("Ese producto ya se encuentra agregado en el carrito ¿Desea modificar su cantidad?", "Producto en el carrito", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                             {
-                                if ((Convert.ToInt32(dv.dgDetalleVenta.Rows[pos].Cells[2].Value) + Convert.ToInt32(textBox2.Text)) <= cantidad[1])
+                                if (Convert.ToInt32(cmbCantidad.Text) <= cantidad[1] && Convert.ToInt32(cmbCantidad.Text) >= 1)
                                 {
-                                    dv.dgDetalleVenta.Rows[pos].Cells[2].Value = Convert.ToInt32(dv.dgDetalleVenta.Rows[pos].Cells[2].Value) + Convert.ToInt32(textBox2.Text);
+                                    dv.dgDetalleVenta.Rows[pos].Cells[2].Value = Convert.ToInt32(cmbCantidad.Text);
+                                    dv.dgDetalleVenta.Rows[pos].Cells[4].Value = Convert.ToInt32(cmbCantidad.Text) * Convert.ToDecimal(dv.dgDetalleVenta.Rows[pos].Cells[3].Value);
+                                }
+                                else if(Convert.ToInt32(cmbCantidad.Text) == 0)
+                                {
+                                   
+                                        dv.dgDetalleVenta.Rows.Remove(dv.dgDetalleVenta.Rows[pos]);
+                                    
                                 }
                                 else
                                 {
@@ -136,12 +150,12 @@ namespace GerizimZZ
         private void button3_Click(object sender, EventArgs e)
         {
             string sql;
-
+            cmbCantidad.Items.Clear(); 
             if (!string.IsNullOrEmpty(textBox1.Text))
             {
                 try
                 {
-                    sql = "Select imagen, nombreProducto from Producto where codigoBarra = '" + textBox1.Text + "'";
+                    sql = "Select imagen, nombreProducto, cantidadProducto from Producto where codigoBarra = '" + textBox1.Text + "'";
                     if (connection.State != ConnectionState.Open)
                     {
                         connection.Open();
@@ -163,6 +177,12 @@ namespace GerizimZZ
                                 MemoryStream ms = new MemoryStream(imag);
                                 pictureBox1.Image = Image.FromStream(ms);
                             }
+                            for (int i = 0; i <= Convert.ToInt32(reader["cantidadProducto"]); i++)
+                            {
+                                cmbCantidad.Items.Add(i); 
+                            }
+                            lblcantidadAAgregar.Visible = true;
+                            cmbCantidad.Visible = true; 
                         }
                         else
                         {
