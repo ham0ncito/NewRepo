@@ -72,7 +72,7 @@ namespace GerizimZZ
 
         private void BarraBusqueda_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         //Boton panel lateral derecho
@@ -201,7 +201,7 @@ namespace GerizimZZ
 
         private void button1_Click(object sender, EventArgs e)
         {
-            buscar(); 
+            buscar();
         }
         private void buscar()
         {

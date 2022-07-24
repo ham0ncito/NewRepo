@@ -3,9 +3,9 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    internal class ConexionVentascs: Cl_conexiones
+    internal class ConexionVentascs : Cl_conexiones
     {
-       
+
         public void llenargrid(DataGridView grid)
         {
             SqlCommand cm = new SqlCommand("Select * from Factura ", conex);
@@ -15,7 +15,7 @@ namespace GerizimZZ.Clases
             da.Fill(dt);
 
             grid.DataSource = dt;
-            
+
         }
     }
 }

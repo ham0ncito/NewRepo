@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 namespace GerizimZZ.Clases
 {
-    internal class CsMensajes: Cl_conexiones
+    internal class CsMensajes : Cl_conexiones
     {
         private string nombre_usuario;
         private string fecha = "Hoy";
@@ -16,7 +16,7 @@ namespace GerizimZZ.Clases
         public string IdMensaje { get => idMensaje; set => idMensaje = value; }
         public string Impor { get => impor; set => impor = value; }
 
-       
+
         public void init(FlowLayoutPanel panel, string consulta)
         {
             conex.Open();

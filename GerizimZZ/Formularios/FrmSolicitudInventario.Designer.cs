@@ -64,8 +64,10 @@
             this.Imprimir = new System.Drawing.Printing.PrintDocument();
             this.ImprimirSolicitud = new System.Drawing.Printing.PrintDocument();
             this.btnImpresion = new System.Windows.Forms.Button();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.Impresion = new System.Windows.Forms.PrintPreviewDialog();
             this.ImgLogoGerizim = new System.Windows.Forms.PictureBox();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.imp = new System.Drawing.Printing.PrintDocument();
             ((System.ComponentModel.ISupportInitialize)(this.LineaNegraEstetica)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImgLogoGerizim)).BeginInit();
@@ -346,10 +348,6 @@
             // 
             this.Imprimir.DocumentName = "Factura";
             // 
-            // ImprimirSolicitud
-            // 
-            this.ImprimirSolicitud.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.ImprimirSolicitud_PrintPage);
-            // 
             // btnImpresion
             // 
             this.btnImpresion.Location = new System.Drawing.Point(517, 483);
@@ -360,16 +358,16 @@
             this.btnImpresion.UseVisualStyleBackColor = true;
             this.btnImpresion.Click += new System.EventHandler(this.btnImpresion_Click);
             // 
-            // printPreviewDialog1
+            // Impresion
             // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.ImprimirSolicitud;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
+            this.Impresion.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.Impresion.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.Impresion.ClientSize = new System.Drawing.Size(400, 300);
+            this.Impresion.Document = this.ImprimirSolicitud;
+            this.Impresion.Enabled = true;
+            this.Impresion.Icon = ((System.Drawing.Icon)(resources.GetObject("Impresion.Icon")));
+            this.Impresion.Name = "printPreviewDialog1";
+            this.Impresion.Visible = false;
             // 
             // ImgLogoGerizim
             // 
@@ -380,6 +378,10 @@
             this.ImgLogoGerizim.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ImgLogoGerizim.TabIndex = 67;
             this.ImgLogoGerizim.TabStop = false;
+            // 
+            // imp
+            // 
+            this.imp.DocumentName = "Impresion";
             // 
             // FrmSolicitudInventario
             // 
@@ -466,7 +468,9 @@
         public System.Drawing.Printing.PrintDocument Imprimir;
         public System.Drawing.Printing.PrintDocument ImprimirSolicitud;
         private Button btnImpresion;
-        private PrintPreviewDialog printPreviewDialog1;
+        private PrintPreviewDialog Impresion;
         private PictureBox ImgLogoGerizim;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Drawing.Printing.PrintDocument imp;
     }
 }

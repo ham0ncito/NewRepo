@@ -4,8 +4,7 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Data;
 using System.Data.SqlClient;
-
-
+using System.Drawing.Printing;
 
 namespace GerizimZZ
 {
@@ -149,27 +148,23 @@ namespace GerizimZZ
             ImprimirSolicitud = new PrintDocument();
             PrinterSettings ps = new PrinterSettings();
             ImprimirSolicitud.PrinterSettings = ps;
-            ImprimirSolicitud.PrintPage += Impresion ;
+           // ImprimirSolicitud.PrintPage += imp;
             ImprimirSolicitud.Print();
-            printPreviewDialog1.Show();//Esta hace que imprima
-          
-        }
-
-        private void Impresion (object sender, PrintPageEventArgs e)
-        {
-           
+            Impresion.Show();//Esta hace que imprima
 
         }
+
+
 
         private void ImprimirSolicitud_PrintPage(object sender, PrintPageEventArgs e)
         {
             System.Drawing.Font fuente = new System.Drawing.Font("Arial", 15, FontStyle.Regular, GraphicsUnit.Point);
             ////Graphics.DrawImage(pictureBox1.Image, 350, 60, 150, 150);
-            e.Graphics.DrawImage(ImgLogoGerizim.Image,370,100,150,150); //(Desplazamiento Izquierda/Derecha, Altura en el Doc, Ancho, Alto)
+            e.Graphics.DrawImage(ImgLogoGerizim.Image, 370, 100, 150, 150); //(Desplazamiento Izquierda/Derecha, Altura en el Doc, Ancho, Alto)
             e.Graphics.DrawString(" Multiservicios Gerizim  ", fuente, Brushes.Green, new RectangleF(330, 240, 600, 60));
             e.Graphics.DrawString(" Barrio Paz Barahona  1 Calle  2 Avenida  22505876 ", fuente, Brushes.Black, new RectangleF(200, 280, 1000, 100));
-            e.Graphics.DrawString("Nombre Original: " + txtNombreOriginal.Text, fuente, Brushes.Black, new RectangleF (190, 350, 1000, 100));
-            e.Graphics.DrawString("Cantidad Producto: " + txtCantidadProducto.Text, fuente, Brushes.Black, new RectangleF (190, 380, 1000, 100));
+            e.Graphics.DrawString("Nombre Original: " + txtNombreOriginal.Text, fuente, Brushes.Black, new RectangleF(190, 350, 1000, 100));
+            e.Graphics.DrawString("Cantidad Producto: " + txtCantidadProducto.Text, fuente, Brushes.Black, new RectangleF(190, 380, 1000, 100));
             e.Graphics.DrawString("Codigo Barra: " + txtCodigoBarra.Text, fuente, Brushes.Black, new RectangleF(190, 410, 1000, 100));
             e.Graphics.DrawString("Estado Producto: " + txtEstadoProducto.Text, fuente, Brushes.Black, new RectangleF(190, 440, 1000, 100));
             e.Graphics.DrawString("Peso Producto: " + txtPesoProducto.Text, fuente, Brushes.Black, new RectangleF(190, 470, 1000, 100));
@@ -250,7 +245,7 @@ namespace GerizimZZ
                 {
                     MessageBox.Show(ex.Message);
                 }
-               
+
             }
         }
     }

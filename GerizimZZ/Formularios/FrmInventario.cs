@@ -65,7 +65,7 @@ namespace GerizimZZ
         private void txtPrecio_producto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Regex rprecio = new Regex(@"^\d+\.?\d*");
-            if(!rprecio.IsMatch(txtPrecio_producto.Text))
+            if (!rprecio.IsMatch(txtPrecio_producto.Text))
             {
                 e.Cancel = true;
                 txtPrecio_producto.Focus();
@@ -81,9 +81,9 @@ namespace GerizimZZ
         private void txtCantidadProducto_Validating(object sender, System.ComponentModel.CancelEventArgs e)
         {
             Regex rcantpr = new Regex(@"^(\d\d{0,2})$");
-            if(!rcantpr.IsMatch(txtCantidadProducto.Text))
+            if (!rcantpr.IsMatch(txtCantidadProducto.Text))
             {
-                e.Cancel= true;
+                e.Cancel = true;
                 txtCantidadProducto.Focus();
                 errorProviderCantidadpr.SetError(txtCantidadProducto, "Cantidad Invalida");
             }
@@ -128,7 +128,7 @@ namespace GerizimZZ
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (txtCantidadMinima.Text == "" || txtCantidadProducto.Text == "" || txtCodigoBarra.Text == "" || txtCodigoCatologo.Text == "" || txtDescripcionProducto.Text == "" || txtEstadoPRoducto.Text == ""  || txtID_codigoProducto.Text == "" || txtNombreProducto.Text == "" || txtPesoProducto.Text == "" || txtPrecio_producto.Text == "")
+            if (txtCantidadMinima.Text == "" || txtCantidadProducto.Text == "" || txtCodigoBarra.Text == "" || txtCodigoCatologo.Text == "" || txtDescripcionProducto.Text == "" || txtEstadoPRoducto.Text == "" || txtID_codigoProducto.Text == "" || txtNombreProducto.Text == "" || txtPesoProducto.Text == "" || txtPrecio_producto.Text == "")
             {
                 MessageBox.Show("Los campos no pueden ir vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -151,7 +151,7 @@ namespace GerizimZZ
                 dstProducto.Tables.Add(dtProducto);
                 dgvProducto.DataSource = dstProducto.Tables[0];
                 con.Close();
-              
+
             }
         }
 
