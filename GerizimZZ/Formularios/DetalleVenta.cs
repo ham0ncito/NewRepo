@@ -10,7 +10,7 @@ namespace GerizimZZ
         private int x = 0;
         private double suma;
         private bool bandera = false;
-        SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+       
         private DataGridView dgView;
 
         public DetalleVenta()
@@ -24,8 +24,8 @@ namespace GerizimZZ
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             datagrid();
-            cmbNumero.Visible = true;
-            cmbDireccion.Visible = true; 
+           btnNuevaDireccion.Visible = true;
+            btnNuevoTelefono.Visible = true; 
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
@@ -391,8 +391,10 @@ namespace GerizimZZ
         }
         public void direccion ()
         {
+            SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+            conexion.Open(); 
             SqlCommand coma = new SqlCommand(" exec Direcciones '" + lblCodigoCliente.Text + "' ; ", conexion);
-                        SqlDataReader regist = coma.ExecuteReader();
+            SqlDataReader regist = coma.ExecuteReader();
             while (regist.Read() && !(regist.IsDBNull(0) == true))
             {
                 cmbDireccion.Items.Add(regist[0].ToString());
@@ -403,7 +405,7 @@ namespace GerizimZZ
         {
             try
             {
-               
+                SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
                 SqlCommand comando = new SqlCommand(" exec Telefonos '" + lblCodigoCliente.Text + "' ; ", conexion);
                 conexion.Open();
                 SqlDataReader registro = comando.ExecuteReader();
@@ -411,8 +413,10 @@ namespace GerizimZZ
                 {
                     cmbNumero.Items.Add(registro[0].ToString());
                 }
-                direccion();
+                
+                comando.Dispose(); 
                 conexion.Close();
+                direccion();
 
             }
             
@@ -426,7 +430,8 @@ namespace GerizimZZ
         {
             try
             {
-               
+                SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+
                 SqlCommand comando = new SqlCommand(" exec buscarId '" + cmbCliente.Text + "' ; ", conexion);
                 conexion.Open();
                 SqlDataReader registro = comando.ExecuteReader();
@@ -452,7 +457,8 @@ namespace GerizimZZ
         {
             try
             {
-              
+                SqlConnection conexion = new SqlConnection("Data Source = localhost ; Initial Catalog = Gerizim; Integrated Security = True");
+
                 SqlCommand comando = new SqlCommand("exec nombres; ", conexion);
                 conexion.Open();
                 cmbCliente.Items.Clear();
