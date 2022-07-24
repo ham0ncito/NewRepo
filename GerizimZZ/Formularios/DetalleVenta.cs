@@ -524,7 +524,7 @@ namespace GerizimZZ
                     }
                     
                 }
-                if (direccion.Length > 7 && direccion.Length < 100 && contador < 3 && !string.Equals(lblCodigoCliente.Text,"00"))
+                if (direccion.Length > 7 && direccion.Length < 100 && contador < Math.Floor(Convert.ToDecimal(direccion.Length / 2) ) && !string.Equals(lblCodigoCliente.Text,"00"))
                 {
                     string consulta = "insert into Direcciones (ID_cliente, numeroCliente) values (" + lblCodigoCliente.Text + ", '" + Convert.ToString(direccion) + "';";
                     cmbDireccion.Items.Add(direccion);
