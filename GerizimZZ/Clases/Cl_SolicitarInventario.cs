@@ -1,18 +1,26 @@
-﻿using System.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
 using System.Data.SqlClient;
 
-namespace GerizimZZ.Clases
+namespace GerizimZZ
 {
+
     internal class Cl_SolicitarInventario
     {
-        private SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
+        SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
 
+        //Conexion con SQL
         private static SqlConnection GetConnection()
         {
             SqlConnection conec = new SqlConnection("Data Source=localhost;Initial Catalog=Gerizim; Integrated Security=True;");
             return conec;
         }
 
+        //Creación del Data Table én el que se selecciona la tabla con la que se trabajará
         public static DataTable GetAll()
         {
             SqlConnection conec = GetConnection();
@@ -30,6 +38,7 @@ namespace GerizimZZ.Clases
             }
         }
 
+        //Clase Agregar Solicitud para Modificar la base de datos con lo campos aquí descritos
         public void Agregar_Solicitud(int ID_codigoProducto, double Precio_producto, string NombreProducto, double PesoProducto, string CodigoBarra, string CodigoCatologo, int CantidadProducto, int CantidadMinima, string DescripcionProducto, int EstadoPRoducto, DateTime Fechaingreso)
         {
             DialogResult result = MessageBox.Show("Seguro que desea solicitar el producto?", "Agregar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -51,6 +60,8 @@ namespace GerizimZZ.Clases
                     MessageBox.Show(x.Message);
                 }
             }
+
+
         }
     }
 }
